@@ -1,0 +1,18 @@
+site_name: iFabric
+
+pages:
+
+  - home: index.md
+
+  - 概述: docs/hyperledger.md
+
+  - 快速开始: docs/gettingstarted.md
+
+  - Fabric运维: docs/Fabric_Ops.md
+
+  - Fabric开发: docs/Fabric_Dev.md
+
+  - Testing:
+    - Getting Started: docs/test.md
+
+theme: readthedocs
