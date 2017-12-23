@@ -62,17 +62,18 @@ Hyperledger Composer Node.js客户端API、REST API和命令行界面都可以�
 
 ## 相关任务
 
-[创建业务网络定义](https://hyperledger.github.io/composer/stable/business-network/bnd-create.html)
-[添加参与者](https://hyperledger.github.io/composer/stable/managing/participant-add.html)
-[向参与者发放新的身份](https://hyperledger.github.io/composer/stable/managing/identity-issue.html)
-[将现有身份绑定到参与者](https://hyperledger.github.io/composer/stable/managing/identity-bind.html)
-[列出业务网络中中所有身份](https://hyperledger.github.io/composer/stable/managing/identity-list.html)
-[从参与者中撤消身份](https://hyperledger.github.io/composer/stable/managing/identity-revoke.html)
+[创建业务网络定义](https://hyperledger.github.io/composer/stable/business-network/bnd-create.html)  
+[添加参与者](https://hyperledger.github.io/composer/stable/managing/participant-add.html)  
+[向参与者发放新的身份](https://hyperledger.github.io/composer/stable/managing/identity-issue.html)  
+[将现有身份绑定到参与者](https://hyperledger.github.io/composer/stable/managing/identity-bind.html)  
+[列出业务网络中中所有身份](https://hyperledger.github.io/composer/stable/managing/identity-list.html)  
+[从参与者中撤消身份](https://hyperledger.github.io/composer/stable/managing/identity-revoke.html)  
 
 ## 相关参考
 
-[composer参与者添加](https://hyperledger.github.io/composer/stable/reference/composer.participant.add.html)
-[composer身份发放](https://hyperledger.github.io/composer/stable/reference/composer.identity.issue.html)
-[composer身份绑定](https://hyperledger.github.io/composer/stable/reference/composer.identity.bind.html)
-[composer身份撤销](https://hyperledger.github.io/composer/stable/reference/composer.identity.revoke.html)
-[composer身份列表](https://hyperledger.github.io/composer/stable/reference/composer.identity.list.html)
+[composer参与者添加](https://hyperledger.github.io/composer/stable/reference/composer.participant.add.html)  
+[composer身份发放](https://hyperledger.github.io/composer/stable/reference/composer.identity.issue.html)  
+[composer身份绑定](https://hyperledger.github.io/composer/stable/reference/composer.identity.bind.html)  
+[composer身份撤销](https://hyperledger.github.io/composer/stable/reference/composer.identity.revoke.html)  
+[composer身份列表](https://hyperledger.github.io/composer/stable/reference/composer.identity.list.html)  
+ 
