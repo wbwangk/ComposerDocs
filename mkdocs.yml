@@ -25,6 +25,8 @@ pages:
       - 测试业务网络: business-network_testing.md
       - 发布模型或业务网络定义: business-network_bnd-publish.md
       - 查询和过滤业务网络数据: business-network_query.md
+      - 可编程访问控制: business-network_programmatic-access-control.md
+      - Hyperledger Composer历史库: business-network_historian.md
     - 教程: 
       - 教程: tutorials_tutorials.md
       - Playground教程: tutorials_playground-tutorial.md
