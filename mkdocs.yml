@@ -11,14 +11,14 @@ theme: readthedocs
 pages:
     - 介绍: introduction_introduction.md
     - 教程: 
-      - index: tutorials_tutorials.md
+      - _: tutorials_tutorials.md
       - Playground教程: tutorials_playground-tutorial.md
       - 开发者教程: tutorials_developer-tutorial.md
       - 查询教程: tutorials_queries.md
       - 为单个组织部署Hyperledger Fabric: tutorials_deploy-to-fabric-single-org.md
       - 为多个组织部署Hyperledger Fabric: tutorials_deploy-to-fabric-multi-org.md
     - 集成现有系统: 
-      - index: integrating_integrating-index.md
+      - _: integrating_integrating-index.md
       - 生成REST API: integrating_getting-started-rest-api.md
       - 从REST服务器发布事件: integrating_publishing-events.md
       - 为REST服务器启用身份认证: integrating_enabling-rest-authentication.md
@@ -28,7 +28,7 @@ pages:
       - 与Node-RED集成: integrating_node-red.md
       - 调用外部REST服务: integrating_call-out.md
     - 管理已部署业务网络: 
-      - index: managing_managingindex.md
+      - _: managing_managingindex.md
       - 参与者和身份: managing_participantsandidentities.md
       - 增加参与者: managing_participant-add.md
       - 创建、导出和导入业务网络卡片: managing_id-cards-playground.md
@@ -39,7 +39,7 @@ pages:
       - 更新Hyperledger Composer运行时: managing_updating-composer.md
     - 诊断问题: problems_diagnostics.md
     - 参考:
-      - index: reference-index.md
+      - _: reference-index.md
       - 建模语言: reference_cto_language.md
       - 查询语言: reference_query-language.md
       - 连接配置文件: reference_connectionprofile.md
