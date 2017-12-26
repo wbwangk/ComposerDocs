@@ -13,6 +13,8 @@ pages:
       - 介绍: introduction_introduction.md
       - 关键概念: introduction_key-concepts.md
       - 典型解决方案架构: introduction_solution-architecture.md
+    - 安装:
+      - 安装开发环境: installing_development-tools.md
     - 教程: 
       - 教程: tutorials_tutorials.md
       - Playground教程: tutorials_playground-tutorial.md
