@@ -16,6 +16,8 @@ pages:
     - 安装:
       - 本地安装Playground: installing_using-playground-locally.md
       - 安装开发环境: installing_development-tools.md
+    - 开发业务网络
+      - 开发业务网络: business-network_business-network-index.md
     - 教程: 
       - 教程: tutorials_tutorials.md
       - Playground教程: tutorials_playground-tutorial.md
