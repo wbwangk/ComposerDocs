@@ -21,7 +21,7 @@ pages:
       - 业务网络定义: business-network_businessnetworkdefinition.md
       - 创建一个业务网络定义: business-network_bnd-create.md
       - 部署业务网络: business-network_bnd-deploy.md
-      - 发送事件: business-network_publishing-events.md\
+      - 发送事件: business-network_publishing-events.md
       - 测试业务网络: business-network_testing.md
       - 发布模型或业务网络定义: business-network_bnd-publish.md
       - 查询和过滤业务网络数据: business-network_query.md
