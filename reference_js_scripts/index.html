@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>交易处理器函数 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u4ea4\u6613\u5904\u7406\u5668\u51fd\u6570";
+    var mkdocs_page_input_path = "reference_js_scripts.md";
+    var mkdocs_page_url = "/reference_js_scripts/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../introduction_introduction/">介绍</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">交易处理器函数</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">交易处理器函数</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">交易处理器结构</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">编写交易处理器函数</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">交易处理函数中的错误处理</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">解析交易中的关联</a></li>
+        
+            <li><a class="toctree-l4" href="#promise">交易处理器函数中的Promise返回</a></li>
+        
+            <li><a class="toctree-l4" href="#api">在交易处理器函数中使用API</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">接下来是什么？</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>参考 &raquo;</li>
+        
+      
+    
+    <li>交易处理器函数</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/reference_js_scripts.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">交易处理器函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>Hyperledger Composer业务网络定义由一组模型文件和一组脚本组成。这些脚本可能包含交易处理器函数，这些函数可以实现业务网络定义的模型文件中定义的交易。</p>
+<p>当使用BusinessNetworkConnection API提交交易时，交易处理函数将由运行时自动调用。</p>
+<p>带有文档注释的装饰器在运行时处理时，使用元数据对函数进行注解。</p>
+<p>每种交易类型都有一个关联的存储交易的库。</p>
+<h2 id="_2">交易处理器结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>交易处理器函数的结构包括装饰器和元数据，后面跟着一个JavaScript函数，这两个部分都是交易处理器函数工作所必需的。</p>
+<p>交易处理器函数之上的第一行注释包含交易处理器函数所做的人类可读描述。第二行必须包含<code>@param</code>标签来指示参数定义。该<code>@param</code>标签之后是触发交易处理器函数交易的资源名称，这需要业务网络的命名空间的格式，其次是交易的名称。资源名称后面是引用资源的参数名称，该参数必须作为参数提供给JavaScript函数。第三行必须包含<code>@transaction</code>标签，该标签将代码标识为交易处理器函数因而是必需的。</p>
+<pre><code>/**
+* A transaction processor function description
+* @param {org.example.sampleTransaction} parameter-name A human description of the parameter
+* @transaction
+*/
+</code></pre>
+
+<p>在注释之后是为交易提供价值的JavaScript函数。该函数可以具有任何名称，但必须包含在注解中定义的参数名称作为参数。</p>
+<pre><code>function transactionProcessor(parameter-name) {
+  //Do some things.
+}
+</code></pre>
+
+<p>完整的交易处理器函数将采用以下格式：</p>
+<pre><code>/**
+* A transaction processor function description
+* @param {org.example.sampleTransaction} parameter-name A human description of the parameter
+* @transaction
+*/
+function transactionProcessor(parameter-name) {
+  //Do some things.
+}
+</code></pre>
+
+<h2 id="_3">编写交易处理器函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>交易处理函数是在模型文件中定义的交易的逻辑操作。例如，交易的交易处理器函数<code>Trade</code>可以使用JavaScript将<code>owner</code>资产的属性从一个参与者改变到另一个参与者。</p>
+<p>下面是一个例子<code>basic-sample-network</code>，下面的<code>SampleAsset</code>定义包含一个名为<code>value</code>的属性，它被定义为一个字符串。该<code>SampleTransaction</code>交易需要一个到资产的关联，资产会被改变，<code>value</code>属性的新值由交易的属性<code>newValue</code>提供。</p>
+<pre><code>asset SampleAsset identified by assetId {
+  o String assetId
+  --&gt; SampleParticipant owner
+  o String value
+}
+
+transaction SampleTransaction {
+  --&gt; SampleAsset asset
+  o String newValue
+}
+</code></pre>
+
+<p>与交易<code>SampleTransaction</code>关联的交易处理器函数是使资产和资产存储库都发生变化的原因。</p>
+<p>交易处理函数将<code>SampleTransaction</code>类型定义为关联交易，并将其定义为参数<code>tx</code>。然后，它保存要由交易更改的资产的原始值，将其替换为在提交交易期间传递的值（<code>newValue</code>交易定义中的属性），更新库中的资产，然后发出事件。</p>
+<pre><code>/**
+ * Sample transaction processor function.
+ * @param {org.acme.sample.SampleTransaction} tx The sample transaction instance.
+ * @transaction
+ */
+function sampleTransaction(tx) {
+
+    // Save the old value of the asset.
+    var oldValue = tx.asset.value;
+
+    // Update the asset with the new value.
+    tx.asset.value = tx.newValue;
+
+    // Get the asset registry for the asset.
+    return getAssetRegistry('org.acme.sample.SampleAsset')
+        .then(function (assetRegistry) {
+
+            // Update the asset in the asset registry.
+            return assetRegistry.update(tx.asset);
+
+        })
+        .then(function () {
+
+            // Emit an event for the modified asset.
+            var event = getFactory().newEvent('org.acme.sample', 'SampleEvent');
+            event.asset = tx.asset;
+            event.oldValue = oldValue;
+            event.newValue = tx.newValue;
+            emit(event);
+
+        });
+
+}
+</code></pre>
+
+<h2 id="_4">交易处理函数中的错误处理<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>交易处理器函数将失败，并回滚任何已经发生错误的更改。整个交易失败，不仅仅是交易处理，交易处理器函数在错误发生之前改变的任何东西都将被回滚。</p>
+<pre><code>/**
+ * Sample transaction processor function.
+ * @param {org.acme.sample.SampleTransaction} tx The sample transaction instance.
+ * @transaction
+ */
+function sampleTransaction(tx) {
+    // Do something.
+    throw new Error('example error');
+    // Execution stops at this point; the transaction fails and rolls back.
+    // Any updates made by the transaction processor function are discarded.
+    // Transaction processor functions are atomic; all changes are committed,
+    // or no changes are committed.
+}
+</code></pre>
+
+<p>交易所做的更改是原子操作，要么交易成功且生效所有更改，或者交易失败且所有更改无效。</p>
+<h2 id="_5">解析交易中的关联<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>当一个交易涉及的资产、交易或参与者的某属性是一个关联时，关联会自动解析。所有关联，包括嵌套关联，会在交易处理函数运行之前解析。</p>
+<p>以下示例包含嵌套关联，交易含有一个到资产的关联，这个资产又含有一个到参与者的关联，因为所有关联都已解析，资产的<code>owner</code>属性被解析为指定的参与者。</p>
+<p>模型文件：</p>
+<pre><code>namespace org.acme.sample
+
+participant SampleParticipant identified by participantId {
+  o String participantId
+}
+
+asset SampleAsset identified by assetId {
+  o String assetId
+  --&gt; SampleParticipant owner
+}
+
+transaction SampleTransaction {
+  --&gt; SampleAsset asset
+}
+</code></pre>
+
+<p>脚本文件：</p>
+<pre><code class="javascript">/**
+ * Sample transaction processor function.
+ * @param {org.acme.sample.SampleTransaction} tx The sample transaction instance.
+ * @transaction
+ */
+function sampleTransaction(tx) {
+    // The relationships in the transaction are automatically resolved.
+    // This means that the asset can be accessed in the transaction instance.
+    var asset = tx.asset;
+    // The relationships are fully or recursively resolved, so you can also
+    // access nested relationships. This means that you can also access the
+    // owner of the asset.
+    var owner = tx.asset.owner;
+}
+</code></pre>
+
+<p>在这个例子中，不仅可以在交易中通过关联使用<code>tx.asset</code>引用特定的资产，还可以通过关联使用<code>tx.asset.owner</code>引用特定的参与者<code>owner</code>。在这种情况下，<code>tx.asset.owner</code>将被解析为引用一个特定的参与者。</p>
+<h2 id="promise">交易处理器函数中的Promise返回<a class="headerlink" href="#promise" title="Permanent link">&para;</a></h2>
+<p>与关联类似，交易处理器函数将在提交交易之前等待承诺解决。如果承诺被拒绝，交易将失败。</p>
+<p>在下面的示例代码中有几个承诺，在每个承诺都返回前交易将不会完成。</p>
+<p>模型文件：</p>
+<pre><code>namespace org.acme.sample
+
+transaction SampleTransaction {
+
+}
+</code></pre>
+
+<p>脚本文件：</p>
+<pre><code class="javascript">/**
+ * Sample transaction processor function.
+ * @param {org.acme.sample.SampleTransaction} tx The sample transaction instance.
+ * @transaction
+ */
+function sampleTransaction(tx) {
+    // Transaction processor functions can return promises; Composer will wait
+    // for the promise to be resolved before committing the transaction.
+    // Do something that returns a promise.
+    return Promise.resolve()
+        .then(function () {
+            // Do something else that returns a promise.
+            return Promise.resolve();
+        })
+        .then(function () {
+            // Do something else that returns a promise.
+            // This transaction is complete only when this
+            // promise is resolved.
+            return Promise.resolve();
+        });
+}
+</code></pre>
+
+<h2 id="api">在交易处理器函数中使用API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<p>Hyperledger Composer API可以在交易处理函数中调用，在下面的代码示例中，<code>getAssetRegistry</code>调用会返回一个在交易完成之前解决的承诺。</p>
+<p>模型文件：</p>
+<pre><code>namespace org.acme.sample
+
+asset SampleAsset identified by assetId {
+  o String assetId
+  o String value
+}
+
+transaction SampleTransaction {
+  --&gt; SampleAsset asset
+  o String newValue
+}
+</code></pre>
+
+<p>脚本文件：</p>
+<pre><code class="javascript">/**
+ * Sample transaction processor function.
+ * @param {org.acme.sample.SampleTransaction} tx The sample transaction instance.
+ * @transaction
+ */
+function sampleTransaction(tx) {
+    // Update the value in the asset.
+    var asset = tx.asset;
+    asset.value = tx.newValue;
+    // Get the asset registry that stores the assets. Note that
+    // getAssetRegistry() returns a promise, so we have to return
+    // the promise so that Composer waits for it to be resolved.
+    return getAssetRegistry('org.acme.sample.SampleAsset')
+        .then(function (assetRegistry) {
+            // Update the asset in the asset registry. Again, note
+            // that update() returns a promise, so so we have to return
+            // the promise so that Composer waits for it to be resolved.
+            return assetRegistry.update(asset);
+        })
+}
+</code></pre>
+
+<h2 id="_6">接下来是什么？<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>交易处理函数也可以用来：</p>
+<ul>
+<li><a href="https://hyperledger.github.io/composer/business-network/query.html"><strong>定义查询</strong></a>以从couchDB数据库获取有关区块链世界状态的信息。</li>
+<li><a href="https://hyperledger.github.io/composer/business-network/publishing-events.html"><strong>定义</strong></a>将事件数据发送给应用程序的事件。</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reference_commands/" class="btn btn-neutral float-right" title="Hyperledger Composer命令行">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../reference_connectionprofile/" class="btn btn-neutral" title="连接配置文件"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../reference_connectionprofile/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../reference_commands/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

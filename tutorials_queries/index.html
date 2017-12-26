@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>查询教程 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u67e5\u8be2\u6559\u7a0b";
+    var mkdocs_page_input_path = "tutorials_queries.md";
+    var mkdocs_page_url = "/tutorials_queries/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../introduction_introduction/">介绍</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">查询教程</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#composerrest-api">使用Composer查询语言和REST API的查询教程</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">先决条件</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">第一步：更新商业网络</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">第二步：创建一个查询定义文件</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">第三步：重新生成你的商业网络档案</a></li>
+        
+            <li><a class="toctree-l4" href="#_7">第四步：部署更新的商业网络定义</a></li>
+        
+            <li><a class="toctree-l4" href="#rest-api">第五步：为更新后的商业网络重新生成REST API</a></li>
+        
+            <li><a class="toctree-l4" href="#rest-api_1">第六步：测试REST API并创建一些数据</a></li>
+        
+            <li><a class="toctree-l4" href="#rest-api_2">第七步：使用商品交易REST API浏览器执行查询</a></li>
+        
+            <li><a class="toctree-l4" href="#rest_1">执行过滤的REST查询</a></li>
+        
+            <li><a class="toctree-l4" href="#_8">使用命名查询的结果执行交易修改</a></li>
+        
+            <li><a class="toctree-l4" href="#_9">恭喜！</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>教程 &raquo;</li>
+        
+      
+    
+    <li>查询教程</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/tutorials_queries.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="composerrest-api">使用Composer查询语言和REST API的查询教程<a class="headerlink" href="#composerrest-api" title="Permanent link">&para;</a></h2>
+<p>在本教程中，我们将在<a href="https://hyperledger.github.io/composer/tutorials/developer-tutorial.html">开发者教程</a>的基础上进行扩展，以展示查询。原生查询语言可以使用条件过滤返回的结果，并可以在交易中被调用以执行操作，例如更新或删除结果集上的资产。</p>
+<p>查询在查询文件（<code>.qry</code>）中定义，文件位于商业网络定义的父目录中的。查询包含一个WHERE子句，它定义了选择资产或参与者的过滤条件。</p>
+<p>本教程使用<code>tutorial-network</code>商业网络，该网络<a href="https://hyperledger.github.io/composer/tutorials/developer-tutorial.html">开发者教程</a>中被开发和部署。</p>
+<h3 id="_1">先决条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>开始本教程之前：</p>
+<ul>
+<li>完成<a href="https://hyperledger.github.io/composer/installing/development-tools.html">开发环境的安装</a>。</li>
+<li>完成<a href="https://hyperledger.github.io/composer/tutorials/developer-tutorial.html">开发者教程</a>。</li>
+</ul>
+<h3 id="_2">第一步：更新商业网络<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>开发者教程中创建的商业网络必须更新。更新的商业网络包含两个事件和一个额外的交易。</p>
+<h4 id="_3">更新模型文件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>模型文件必须更新以包含事件和新交易。</p>
+<ol>
+<li>
+<p>打开商业网络<code>tutorial-network</code>的模型（<code>.cto</code>）文件。</p>
+</li>
+<li>
+<p>将以下事件和交易添加到模型中：</p>
+</li>
+</ol>
+<p>```
+   event TradeNotification {
+       &ndash;&gt; Commodity commodity
+   }</p>
+<p>transaction RemoveHighQuantityCommodities {
+   }</p>
+<p>event RemoveNotification {
+       &ndash;&gt; Commodity commodity
+   }
+   ```</p>
+<ol>
+<li>将更改保存到模型中。</li>
+</ol>
+<h4 id="_4">更新交易逻辑以使用查询和事件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>现在，域模型已经更新，我们可以编写额外的业务逻辑，在提交交易处理时执行。在本教程中，我们将事件和查询添加到下面的业务逻辑中。</p>
+<ol>
+<li>
+<p>打开交易处理器函数文件<code>lib/logic.js</code>。</p>
+</li>
+<li>
+<p>用下面的JavaScript替换交易逻辑：
+   ```javascript
+   /**</p>
+<ul>
+<li>Track the trade of a commodity from one trader to another</li>
+<li>@param {org.acme.biznet.Trade} trade - the trade to be processed</li>
+<li>@transaction
+*/
+   function tradeCommodity(trade) {</li>
+</ul>
+<p>// set the new owner of the commodity
+   trade.commodity.owner = trade.newOwner;
+   return getAssetRegistry(&lsquo;org.acme.biznet.Commodity&rsquo;)
+       .then(function (assetRegistry) {</p>
+<pre><code>       // emit a notification that a trade has occurred
+       var tradeNotification = getFactory().newEvent('org.acme.biznet', 'TradeNotification');
+       tradeNotification.commodity = trade.commodity;
+       emit(tradeNotification);
+
+       // persist the state of the commodity
+       return assetRegistry.update(trade.commodity);
+   });
+</code></pre>
+<p>}</p>
+</li>
+</ol>
+<p>/*<em>
+    * Remove all high volume commodities
+    * @param {org.acme.biznet.RemoveHighQuantityCommodities} remove - the remove to be processed
+    * @transaction
+    </em>/
+   function removeHighQuantityCommodities(remove) {</p>
+<pre><code>   return getAssetRegistry('org.acme.biznet.Commodity')
+       .then(function (assetRegistry) {
+           return query('selectCommoditiesWithHighQuantity')
+                   .then(function (results) {
+
+                       var promises = [];
+
+                       for (var n = 0; n &lt; results.length; n++) {
+                           var trade = results[n];
+
+                           // emit a notification that a trade was removed
+                           var removeNotification = getFactory().newEvent('org.acme.biznet', 'RemoveNotification');
+                           removeNotification.commodity = trade;
+                           emit(removeNotification);
+
+                           // remove the commodity
+                           promises.push(assetRegistry.remove(trade));
+                       }
+
+                       // we have to return all the promises
+                       return Promise.all(promises);
+                   });
+       });
+</code></pre>
+<p>}
+   <code>``
+3. 保存你的更改到</code>logic.js`。</p>
+<p>第一个函数<code>tradeCommodity</code>将在收到的Trade交易时更改商品（用一个新的拥有者参与者）的拥有者属性，并发出通知事件。然后，将修改后的商品(Commodity)保存回用于存储商品实例的资产库中。</p>
+<p>第二个函数调用一个名为“selectCommoditiesWithHighQuantity”（在<code>queries.qry</code>中定义）的查询，它将返回数量大于60的所有商品资产记录; 发出一个事件; 并从AssetRegistry(资产库)中移除商品。</p>
+<h3 id="_5">第二步：创建一个查询定义文件<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>交易处理器逻辑使用的查询被定义在一个叫做<code>queries.qry</code>的文件中。每个查询条目定义执行查询的资源和条件。</p>
+<ol>
+<li>
+<p>在<code>tutorial-network</code>目录中，创建一个名为<code>queries.qry</code>的新文件。</p>
+</li>
+<li>
+<p>将以下代码复制并粘贴到<code>queries.qry</code>：
+   ```javascript
+   /*<em> Sample queries for Commodity Trading business network
+   </em>/</p>
+</li>
+</ol>
+<p>query selectCommodities {
+     description: &ldquo;Select all commodities&rdquo;
+     statement:
+         SELECT org.acme.biznet.Commodity
+   }</p>
+<p>query selectCommoditiesByExchange {
+     description: &ldquo;Select all commodities based on their main exchange&rdquo;
+     statement:
+         SELECT org.acme.biznet.Commodity
+             WHERE (mainExchange==_$exchange)
+   }</p>
+<p>query selectCommoditiesByOwner {
+     description: &ldquo;Select all commodities based on their owner&rdquo;
+     statement:
+         SELECT org.acme.biznet.Commodity
+             WHERE (owner == _$owner)
+   }</p>
+<p>query selectCommoditiesWithHighQuantity {
+     description: &ldquo;Select commodities based on quantity&rdquo;
+     statement:
+         SELECT org.acme.biznet.Commodity
+             WHERE (quantity &gt; 60)
+   }
+   ```</p>
+<ol>
+<li>保存你的更改到<code>queries.qry</code>。</li>
+</ol>
+<h3 id="_6">第三步：重新生成你的商业网络档案<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>在更改商业网络中的文件后，商业网络必须重新打包为商业网络档案（<code>.bna</code>），并重新部署到Hyperledger Fabric实例。</p>
+<ol>
+<li>
+<p>使用命令行，导航到<code>tutorial-network</code>目录。</p>
+</li>
+<li>
+<p>运行以下命令：
+   <code>bash
+   composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.1.bna</code></p>
+</li>
+</ol>
+<h3 id="_7">第四步：部署更新的商业网络定义<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>我们需要部署修改后的网络，成为区块链上的最新版本！我们正在使用新创建的商业网络档案文件来更新现有的已部署商业网络; 这是我们在开发者教程中使用的同一个商业网络名称。</p>
+<ol>
+<li>
+<p>切换到终端，将目录切换到包含<code>tutorial-network.bna</code>的文件夹。</p>
+</li>
+<li>
+<p>运行以下命令更新商业网络：
+   <code>bash
+   composer network update -a tutorial-network@0.0.1.bna -c admin@tutorial-network</code></p>
+</li>
+<li>
+<p>运行以下命令测试网络是否已部署：
+   <code>bash
+   composer network ping -c admin@tutorial-network</code></p>
+</li>
+</ol>
+<h3 id="rest-api">第五步：为更新后的商业网络重新生成REST API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h3>
+<p>现在，我们把刚更新的商业网络与添加的查询集成在一起，并为这个商业网络暴露REST API。</p>
+<ol>
+<li>
+<p>使用命令行，导航到<code>tutorial-network</code>目录。</p>
+</li>
+<li>
+<p>使用以下命令启动REST服务器：
+   <code>bash
+   composer-rest-server</code></p>
+</li>
+<li>
+<p>输入<code>admin@tutorial-network</code>作为卡片名称。</p>
+</li>
+<li>
+<p>当询问是否在生成的API中使用名称空间时，请选择<strong>不使用名称空间</strong>。</p>
+</li>
+<li>
+<p>当询问是否保护生成的API时选择<strong>否</strong>。</p>
+</li>
+<li>
+<p>当询问是否启用事件发布时，选择<strong>是</strong>。</p>
+</li>
+<li>
+<p>当询问是否启用TLS安全时，请选择<strong>否</strong>。</p>
+</li>
+</ol>
+<h3 id="rest-api_1">第六步：测试REST API并创建一些数据<a class="headerlink" href="#rest-api_1" title="Permanent link">&para;</a></h3>
+<p>打开Web浏览器并导航到<a href="http://localhost:3000/explorer">http：//localhost:3000/explorer</a>。你应该看到LoopBack API浏览器，允许你查看和测试生成的REST API。</p>
+<p>我们应该能够看到被添加了名为“Query”的REST端点，并且在展开时显示了商业网络 <code>tutorial-network</code>中定义的REST查询操作列表</p>
+<p><img alt="作为REST端点公开的查询" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/rest-explorer-discover.png" /></p>
+<p>在开始之前，我们需要创建一些数据，以充分展示查询。使用提供的示例JSON数据，使用REST API创建3个交易者（参与者）和更多商品（资产）。</p>
+<ol>
+<li>
+<p>首先，在REST Explorer中点击&rsquo;Trader&rsquo;，然后点击/Trader上的&rsquo;POST&rsquo;方法，然后向下滚动到Parameter部分 - 依次创建下面的Trader实例：
+   <code>json
+   {
+     "$class": "org.acme.biznet.Trader",
+     "tradeId": "TRADER1",
+     "firstName": "Jenny",
+     "lastName": "Jones"
+   }</code></p>
+</li>
+<li>
+<p>点击“Try it out”来创建参与者。“Response Code”（向下滚动）应该是200（成功）</p>
+</li>
+<li>
+<p>通过复制以下JSON创建另一个交易者：
+   <code>json
+   {
+     "$class": "org.acme.biznet.Trader",
+     "tradeId": "TRADER2",
+     "firstName": "Jack",
+     "lastName": "Sock"
+   }</code></p>
+</li>
+<li>
+<p>通过复制以下JSON创建第三个交易者：
+   <code>json
+   {
+     "$class": "org.acme.biznet.Trader",
+     "tradeId": "TRADER3",
+     "firstName": "Rainer",
+     "lastName": "Valens"
+   }</code></p>
+</li>
+<li>
+<p>现在滚动到顶部，并在REST浏览器中点击“Commodity”对象。</p>
+</li>
+<li>
+<p>点击POST操作，并向下滚动到Parameters 部分：以上述相同的方式，为拥有者TRADER1和TRADER2创建两个商品资产记录（见下文）：</p>
+</li>
+</ol>
+<pre><code class="json">{
+  &quot;$class&quot;: &quot;org.acme.biznet.Commodity&quot;,
+  &quot;tradingSymbol&quot;: &quot;EMA&quot;,
+  &quot;description&quot;: &quot;Corn&quot;,
+  &quot;mainExchange&quot;: &quot;EURONEXT&quot;,
+  &quot;quantity&quot;: 10,
+  &quot;owner&quot;: &quot;resource:org.acme.biznet.Trader#TRADER1&quot;
+}
+</code></pre>
+
+<pre><code class="json">{
+  &quot;$class&quot;: &quot;org.acme.biznet.Commodity&quot;,
+  &quot;tradingSymbol&quot;: &quot;CC&quot;,
+  &quot;description&quot;: &quot;Cocoa&quot;,
+  &quot;mainExchange&quot;: &quot;ICE&quot;,
+  &quot;quantity&quot;: 80,
+  &quot;owner&quot;: &quot;resource:org.acme.biznet.Trader#TRADER2&quot;
+}
+</code></pre>
+
+<h3 id="rest-api_2">第七步：使用商品交易REST API浏览器执行查询<a class="headerlink" href="#rest-api_2" title="Permanent link">&para;</a></h3>
+<p>现在我们有了一些资产和参与者，我们可以使用生成的Query REST操作来测试一些查询。</p>
+<h4 id="rest">执行一个简单REST查询<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h4>
+<p>现在我们有资产和参与者，我们可以尝试一些查询。</p>
+<p>我们可以首先尝试的最简单的REST查询是我们的命令查询<code>selectCommodities</code>。</p>
+<p>展开“Query”REST端点，你将看到我们在模型中定义的命名查询。</p>
+<p>这些查询现在暴露为REST查询，并为每个生成一个/GET操作。请注意，查询的描述（我们在模型定义中定义的）显示在右侧。</p>
+<p><img alt="商品：REST端点" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/commodity-rest-endpointhdr.png" /></p>
+<ol>
+<li>展开<code>selectCommodities</code>查询。</li>
+<li>点击“Try it Out”按钮。</li>
+</ol>
+<p><img alt="设置REST查询：选择所有商品" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/query-select-commodities.png" /></p>
+<p>它将返回所有现有的商品 - 应该有2个资产返回。</p>
+<p><img alt="查询结果：所有商品" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/query-commodity-results.png" /></p>
+<h3 id="rest_1">执行过滤的REST查询<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h3>
+<p>让我们通过他们的交易所选择商品 - 例如“EURONEXT”的主交易所。</p>
+<ol>
+<li>展开查询端点“selectCommoditiesByExchange”并滚动到“Parameters”部分。</li>
+<li>在“Exchange”参数中输入“EURONEXT”。</li>
+<li>点击“Try it Out”。</li>
+</ol>
+<p><img alt="由Exchange安装REST查询" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/query-selectby-exchange.png" /></p>
+<p>结果显示，只有那些与“EURONEXT”交易所的商品才会显示在响应正文中</p>
+<p><img alt="查询结果：商品交换" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/queryresults-selectby-exchange.png" /></p>
+<h3 id="_8">使用命名查询的结果执行交易修改<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>最后，你会记得我们已经定义了一个简单的查询，用于在我们的查询文件中筛选数量大于60的商品。在交易函数中使用时查询非常强大，例如允许交易逻辑查询出一组资产或参与者来执行更新或删除操作。</p>
+<p><img alt="重新搜索查询定义" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/querydef-recall-high-qty-commodities.png" /></p>
+<p>我们在交易<code>removeHighQuantityCommodities</code>中使用<code>selectCommoditiesWithHighQuantity</code>查询。如果你在REST浏览器中执行这个/GET操作，你将看到它仅选择数量大于60的资产。</p>
+<p><img alt="使用查询重新记录交易逻辑" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/functiondef-recall-high-qty-commodities.png" /></p>
+<p>现在，让我们使用查询来执行一个针对大数量商品的删除。</p>
+<p>首先检查自己有多少商品（使用&rsquo;Commodity&rsquo;/GET操作），你应该看到至少两个商品，其中一个商品（Cocoa）的数量大于60。</p>
+<p><img alt="商品REST端点" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/commodity-rest-endpointhdr.png" /><img alt="“删除交易”调用之前的结果" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/txn-query-commodity-pre-rm.png" /></p>
+<p>让我们看看实际的查询，通过点击REST Endpoint <code>/selectCommoditiesWithHighQuantity</code>然后点击/GET，然后向下滚动到“Try it Out” - 应该有一个符合条件的商品。</p>
+<p><img alt="查询大量商品" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/query-selectby-comm-high-qty.png" /></p>
+<p>好。现在让我们执行一个REST交易，它使用我们的“大数量”查询定义来决定删除哪些商品。</p>
+<p>单击RemoveHighQuantityCommodities REST端点以显示相同的/POST操作。</p>
+<p><img alt="显示RemoveHighQuantityCommodities端点" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/txn-show-rm-comm-high-qty.png" /></p>
+<p>点击POST，向下滚动到参数部分，并点击“Try it Out” -请注意：你<em>不是</em>必须在“数据”部分输入数据。</p>
+<p>向下滚动，你应该看到一个transactionId，它代表交易处理器函数中的“remove”调用（本身就是一个区块链交易），它将更新世界状态 - 响应码应该是200</p>
+<p><img alt="进行“高数量”清除交易" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/txn-exec-rm-comm-high-qty.png" /></p>
+<p>最后，让我们来验证我们的商品状态。返回到“Commodity”REST操作并再次执行/GET操作....“Try it Out”。</p>
+<p>结果应该显示，商品资产“Cocoa”已经消失，即只有数量&lt;= 60的商品资产仍然存在，即我们的例子中的资产“Corn”。命名查询为交易更新提供了输入（以删除大数量商品），并在业务逻辑中执行。</p>
+<p><img alt="查询驱动的交易函数的最终结果" src="https://hyperledger.github.io/composer/assets/img/tutorials/query/txn-query-commodities-post-rm.png" /></p>
+<h3 id="_9">恭喜！<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
+<p>干得好，现在你已经完成了这个教程，我们希望你现在对Composer中查询的能力有了更好的理解。你可以开始创建/构建你自己的查询（或修改现有查询并将相关数据添加到此商业网络 - 请注意：任何查询更改都需要重新部署）才能试用！</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tutorials_deploy-to-fabric-single-org/" class="btn btn-neutral float-right" title="为单个组织部署Hyperledger Fabric">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tutorials_developer-tutorial/" class="btn btn-neutral" title="开发者教程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../tutorials_developer-tutorial/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tutorials_deploy-to-fabric-single-org/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

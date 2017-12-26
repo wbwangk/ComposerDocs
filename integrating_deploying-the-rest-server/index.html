@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>为业务网络部署REST服务器 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u4e3a\u4e1a\u52a1\u7f51\u7edc\u90e8\u7f72REST\u670d\u52a1\u5668";
+    var mkdocs_page_input_path = "integrating_deploying-the-rest-server.md";
+    var mkdocs_page_url = "/integrating_deploying-the-rest-server/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../introduction_introduction/">介绍</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">为业务网络部署REST服务器</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#rest">为业务网络部署REST服务器</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">业务网络卡片和业务网络卡片存储</a></li>
+        
+            <li><a class="toctree-l4" href="#rest_1">使用持久数据存储配置REST服务器</a></li>
+        
+            <li><a class="toctree-l4" href="#nodejsrestdocker">用附加的Node.js模块扩展REST服务器的Docker镜像</a></li>
+        
+            <li><a class="toctree-l4" href="#dockerrest">使用Docker部署持久和安全的REST服务器</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">最后的笔记</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>集成现有系统 &raquo;</li>
+        
+      
+    
+    <li>为业务网络部署REST服务器</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/integrating_deploying-the-rest-server.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="rest">为业务网络部署REST服务器<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h1>
+<p>在生产环境（例如使用Docker Swarm或Kubernetes）中部署Hyperledger Composer REST服务器时，应将REST服务器配置为高度可用。这意味着你必须部署多个REST服务器实例，并且应该配置这些实例以共享数据。例如，应共享连接配置文件，区块链身份和REST API身份认证设置等数据，以便REST API客户端可以向任何实例发出请求，而无需重新进行身份认证。</p>
+<h2 id="_1">业务网络卡片和业务网络卡片存储<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>REST服务器使用在启动期间指定的业务网络卡片来连接并发现已部署业务网络中的资产、参与者和交易。这些信息是为了生成REST API所必需的。这个业务网络卡片被称为发现业务网络卡片。默认情况下，发现业务网络卡片也用于处理对REST API的所有请求。但是，REST服务器也可以配置为多用户模式，允许经过身份认证的用户提供自己的业务网络卡片来处理对REST API的请求。</p>
+<p>为了使用发现业务网络卡片，必须首先将该业务网络卡片导入到REST服务器可用的业务网络卡片存储中。默认的业务网络卡片存储是一个本地文件系统目录<code>~/.composer</code>（其中<code>~</code>是当前用户主目录）。REST服务器使用Docker映像时，必须挂载一个卷到默认业务网络卡片存储区，其中应包含导入的发现业务网络卡片。在REST服务器的Docker镜像中，REST服务器使用的业务网络卡片存储位于目录<code>/home/composer/.composer</code>（因为Docker镜像中的REST服务器始终在<code>composer</code>用户下运行）。</p>
+<p>业务网络卡片包含一个连接配置文件，用于描述如何连接到正在运行的已部署业务网络的Hyperledger Fabric网络。请注意，连接配置文件必须在用于REST服务器的Docker镜像中有效，并且主机名必须正确且可由此Docker镜像访问。</p>
+<h2 id="rest_1">使用持久数据存储配置REST服务器<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h2>
+<p>有关已认证用户及其钱包（多用户模式启用时包含多个用户的业务网络卡片）的所有信息将通过LoopBack连接器持久化在LoopBack数据源中。默认情况下，REST服务器使用LoopBack“内存”连接器来持久化用户信息，当REST服务器终止时会丢失这些信息。REST服务器应配置一个LoopBack连接器，用于将数据存储在高度可用的数据源（例如数据库）中。</p>
+<p>你应该能够使用任何LoopBack连接器，但是我们建议你为NoSQL数据库使用LoopBack连接器。例如，MongoDB或Apache CouchDB。</p>
+<p>需要安装LoopBack连接器才能让REST服务器找到并使用它。你可以使用<code>npm</code>安装附加LoopBack连接器，例如：</p>
+<pre><code class="bash">npm install -g loopback-connector-mongodb
+</code></pre>
+
+<p>最后，你需要为REST服务器提供LoopBack连接器所需的连接信息。这个连接信息应该使用<code>COMPOSER_DATASOURCES</code>环境变量来提供。有关可用于配置REST服务器的环境变量的更多信息，请参阅参考文档：<a href="https://hyperledger.github.io/composer/stable/reference/rest-server.html">Hyperledger Composer REST服务器</a></p>
+<h2 id="nodejsrestdocker">用附加的Node.js模块扩展REST服务器的Docker镜像<a class="headerlink" href="#nodejsrestdocker" title="Permanent link">&para;</a></h2>
+<p>为了将REST服务器部署为具有附加LoopBack连接器和Passport策略的Docker容器，你必须扩展<code>hyperledger/composer-rest-server</code>Docker镜像。</p>
+<p>以下是一个Dockerfile示例，它将MongoDB的LoopBack连接器和GitHub的Passport策略添加到Docker镜像中：</p>
+<pre><code class="dockerfile">FROM hyperledger/composer-rest-server
+RUN npm install --production loopback-connector-mongodb passport-github &amp;&amp; \
+    npm cache clean --force &amp;&amp; \
+    ln -s node_modules .node_modules
+</code></pre>
+
+<p>你可以通过将Dockerfile放置在一个目录中并使用<code>docker build</code>命令来构建此Docker镜像，例如：</p>
+<pre><code class="bash">docker build -t myorg/my-composer-rest-server .
+</code></pre>
+
+<p>你可能需要将此Docker镜像发布到Docker镜像库（例如Docker Hub），以便将其用于基于云的Docker部署服务。</p>
+<h2 id="dockerrest">使用Docker部署持久和安全的REST服务器<a class="headerlink" href="#dockerrest" title="Permanent link">&para;</a></h2>
+<p>以下的例子将演示如何使用Docker部署REST服务器。部署的REST服务器将使用MongoDB保存数据，并使用GitHub身份认证进行保护。</p>
+<p>这些例子基于作为开发者教程的一部分部署到Hyperledger Fabric v1.0的业务网络，可能需要调整你的配置，例如，如果Docker网络名称不匹配。</p>
+<ol>
+<li>通过运行以下<code>composer network ping</code>命令，确保你的业务网络的有效业务网络卡片位于本地业务网络卡片存储中。这个例子在业务网络<code>my-network</code>上，使用了用户<code>admin</code>的业务网络卡片：
+   <code>bash
+   composer network ping -c admin@my-network</code></li>
+</ol>
+<p>请注意，在继续之前，你<strong>必须</strong>使用<code>composer network ping</code>命令来测试与业务网络的连接。如果业务网络卡片只包含了用户ID和登记密码，则<code>composer network ping</code>命令会触发登记过程，并将证书存储在业务网络卡片中。以Docker镜像方式运行REST服务器时，<strong>不</strong>建议使用只有一个用户ID和登记密码的业务网络卡片。</p>
+<ol>
+<li>启动一个名为<code>mongo</code>的MongoDB Docker实例。这个MongoDB实例被REST服务器用来保存被认证用户和他们钱包（当多个用户模式被启用时会包含多个用户业务网络卡片）的所有信息。
+   <code>bash
+   docker run -d --name mongo --network composer_default -p 27017:27017 mongo</code></li>
+</ol>
+<p>请注意，MongoDB实例已连接到名为<code>composer_default</code>的Docker网络。这意味着在Docker网络<code>composer_default</code>中可以使用主机名<code>mongo</code>来访问MongoDB实例。在随后的步骤我们将使用主机名<code>mongo</code>来配置REST服务器。根据你的Docker网络配置，你可能需要指定不同的Docker网络名称。MongoDB端口<code>27017</code>也使用端口<code>27017</code>暴露在主机网络上，因此如果需要，你也可以使用其他MongoDB客户端应用与此MongoDB实例进行交互。</p>
+<ol>
+<li>通过添加用于MongoDB的LoopBack连接器和用于GitHub身份认证的Passport策略，来扩展REST服务器的Docker镜像。在本地文件系统上创建一个新的空目录，并在新目录中创建一个名为<code>Dockerfile</code>新文件，内容如下：</li>
+</ol>
+<p><code>Dockerfile
+   FROM hyperledger/composer-rest-server
+   RUN npm install --production loopback-connector-mongodb passport-github &amp;&amp; \
+       npm cache clean --force &amp;&amp; \
+       ln -s node_modules .node_modules</code></p>
+<p>在包含新建的<code>Dockerfile</code>文件的目录中运行以下的<code>docker build</code>命令来构建扩展的Docker镜像：
+   <code>bash
+   docker build -t myorg/my-composer-rest-server .</code></p>
+<p>如果此命令成功完成，则会创建一个新的名为<code>myorg/my-composer-rest-server</code>的Docker镜像，并将其存储在系统的本地Docker镜像库中。如果你想在其他主机上使用这个Docker镜像，你可能需要将Docker镜像推送到Docker镜像库，如Docker Hub。</p>
+<ol>
+<li>REST服务器的Docker映像是使用环境变量而不是命令行选项配置的。创建一个名为<code>envvars.txt</code>的新文件，为REST服务器存储环境变量，其中包含以下内容：
+   <code>bash
+   COMPOSER_CARD=admin@my-network
+   COMPOSER_NAMESPACES=never
+   COMPOSER_AUTHENTICATION=true
+   COMPOSER_MULTIUSER=true
+   COMPOSER_PROVIDERS='{
+       "github": {
+           "provider": "github",
+           "module": "passport-github",
+           "clientID": "REPLACE_WITH_CLIENT_ID",
+           "clientSecret": "REPLACE_WITH_CLIENT_SECRET",
+           "authPath": "/auth/github",
+           "callbackURL": "/auth/github/callback",
+           "successRedirect": "/",
+           "failureRedirect": "/"
+       }
+   }'
+   COMPOSER_DATASOURCES='{
+       "db": {
+           "name": "db",
+           "connector": "mongodb",
+           "host": "mongo"
+       }
+   }'</code></li>
+</ol>
+<p>请注意，发现业务网络卡片的名称<code>admin@my-network</code>已被设置为<code>COMPOSER_CARD</code>环境变量的值。我们已经通过环境变量<code>never</code>的值来禁用生成的REST API中的命名空间<code>COMPOSER_NAMESPACES</code>。我们通过设置环境变量<code>COMPOSER_AUTHENTICATION</code>的值为<code>true</code>来启用REST API客户端身份认证，并通过设置环境变量<code>COMPOSER_MULTIUSER</code>的值为<code>true</code>来启用多用户模式。</p>
+<p>我们通过环境变量<code>COMPOSER_PROVIDERS</code>来设置REST服务器使用GitHub的Passport策略以使用GitHub身份认证。请注意，你必须将<code>REPLACE_WITH_CLIENT_ID</code>和<code>REPLACE_WITH_CLIENT_SECRET</code>替换为GitHub中的正确值，才能使这个配置成功运行。</p>
+<p>我们通过在<code>COMPOSER_DATASOURCES</code>环境变量中配置MongoDB的LoopBack连接器来让REST服务器使用MongoDB实例。请注意，MongoDB实例的主机名<code>mongo</code>被指定名为<code>db</code>的LoopBack数据源的<code>host</code>属性值。</p>
+<p>通过运行以下命令将环境变量加载到当前shell中：
+   <code>bash
+   source envvars.txt</code></p>
+<p>如果你打开一个新的shell，例如一个新的终端窗口或标签，那么你必须再次运行相同的<code>source</code>命令，把环境变量加载到新的shell中。</p>
+<p>关于配置REST服务器的环境变量的更多信息，请参阅参考文档：<a href="https://hyperledger.github.io/composer/stable/reference/rest-server.html">Hyperledger Composer REST服务器</a></p>
+<ol>
+<li>通过运行以下<code>docker run</code>命令，为步骤3中创建的REST服务器的扩展Docker镜像启动新实例：</li>
+</ol>
+<p><code>bash
+   docker run \
+       -d \
+       -e COMPOSER_CARD=${COMPOSER_CARD} \
+       -e COMPOSER_NAMESPACES=${COMPOSER_NAMESPACES} \
+       -e COMPOSER_AUTHENTICATION=${COMPOSER_AUTHENTICATION} \
+       -e COMPOSER_MULTIUSER=${COMPOSER_MULTIUSER} \
+       -e COMPOSER_PROVIDERS="${COMPOSER_PROVIDERS}" \
+       -e COMPOSER_DATASOURCES="${COMPOSER_DATASOURCES}" \
+       -v ~/.composer:/home/composer/.composer \
+       --name rest \
+       --network composer_default \
+       -p 3000:3000 \
+       myorg/my-composer-rest-server</code></p>
+<p>请注意，我们通过使用多个<code>-e</code>选项传入前面步骤中设置的所有环境变量。如果你需要添加或删除其他环境变量来配置REST服务器，则需要添加或删除相应的<code>-e</code>选项。</p>
+<p>我们已经通过指定<code>-v ~/.composer:/home/composer/.composer</code>将本地业务网络卡片存储挂载到REST服务器的Docker容器中。这允许REST服务器在使用<code>COMPOSER_CARD</code>环境变量尝试加载发现业务网络卡片时，访问和使用本地的业务网络存储卡片。</p>
+<p>我们还指定了Docker网络名称<code>composer_default</code>和Docker容器的名称<code>rest</code>。这意味在<code>composer_default</code>Docker网络上，可以使用主机名<code>rest</code>访问REST服务器实例。REST服务器端口<code>3000</code>也使用端口<code>3000</code>暴露在主机网络上。</p>
+<p>你可以使用<code>docker logs</code>命令检查REST服务器是否已成功启动，例如：
+   <code>bash
+   docker logs -f rest</code></p>
+<p>如果REST服务器已经成功启动，那么你将看到它输出的日志消息类似于<code>Browse your REST API at http://localhost:3000/explorer</code>。</p>
+<p>现在REST服务器已经成功启动，你可以使用以下URL访问运行在Docker容器内的REST服务器：[http://localhost:3000/explorer/(http://localhost:3000/explorer/)。</p>
+<h2 id="_2">最后的笔记<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>在本指南中，你已经看到了如何使用Docker启动REST服务器的单个实例，其中单个实例被配置为使用MongoDB作为持久数据存储。要获得真正高度可用的REST服务器的生产部署，你需要：</p>
+<ul>
+<li>配置持久数据存储的高可用性实例，例如MongoDB副本集。</li>
+<li>运行REST服务器Docker镜像的多个实例。通过使用<code>--name</code>参数更改Docker容器的名称以及使用参数<code>-p 3000:3000</code>更新或删除后续REST服务器实例的主机端口映射。</li>
+<li>部署负载均衡器（例如Nginx），以便将客户端的REST请求分发到REST服务器的所有实例。</li>
+</ul>
+<p>完成这三项任务后，你应能够停止、重新启动或删除任何REST服务器实例（但不是全部！），而不会丢失通过REST访问已部署的业务网络的访问。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../integrating_node-red/" class="btn btn-neutral float-right" title="与Node-RED集成">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../integrating_securing-the-rest-server/" class="btn btn-neutral" title="使用HTTPS和TLS来保护REST服务器"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../integrating_securing-the-rest-server/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../integrating_node-red/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

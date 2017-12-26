@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>为REST服务器启用身份认证 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u4e3aREST\u670d\u52a1\u5668\u542f\u7528\u8eab\u4efd\u8ba4\u8bc1";
+    var mkdocs_page_input_path = "integrating_enabling-rest-authentication.md";
+    var mkdocs_page_url = "/integrating_enabling-rest-authentication/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../introduction_introduction/">介绍</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">为REST服务器启用身份认证</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#rest">为REST服务器启用身份认证</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">选择一个认证策略</a></li>
+        
+            <li><a class="toctree-l4" href="#rest_1">配置REST服务器以使用认证策略</a></li>
+        
+            <li><a class="toctree-l4" href="#rest-apirest">启动 启用了REST API身份认证的REST服务器</a></li>
+        
+            <li><a class="toctree-l4" href="#webrest">使用Web浏览器向REST服务器认证</a></li>
+        
+            <li><a class="toctree-l4" href="#httprestrest">使用HTTP或REST客户端向REST服务器认证</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>集成现有系统 &raquo;</li>
+        
+      
+    
+    <li>为REST服务器启用身份认证</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/integrating_enabling-rest-authentication.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="rest">为REST服务器启用身份认证<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h1>
+<p>REST服务器可以配置为对客户端进行身份认证。启用此选项时，客户端必须在允许调用REST API之前向REST服务器进行身份认证。</p>
+<h2 id="_1">选择一个认证策略<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>REST服务器使用开源<a href="http://passportjs.org/">Passport</a>身份认证中间件。REST服务器的管理员必须选择Passport策略来认证客户端。可以选择多个Passport策略，允许REST服务器的客户端选择首选的身份认证机制。Passport包括广泛的策略（在写作时为300+），包括社交媒体（Google、Facebook、Twitter）和企业（SAML，LDAP）策略的组合。</p>
+<p>本文档的其余部分将演示如何使用<code>passport-github</code>策略来使用他们的GitHub ID对用户进行身份认证。<code>passport-github</code>通过执行以下命令来安装策略:</p>
+<pre><code class="bash">npm install -g passport-github
+</code></pre>
+
+<h2 id="rest_1">配置REST服务器以使用认证策略<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h2>
+<p>在启用REST API身份认证之前，必须为REST服务器配置一个要使用的Passport策略列表。该配置包括要使用的策略的名称以及每个策略的单独配置。</p>
+<p>为了配置<code>passport-github</code>策略，我们需要在GitHub上注册一个OAuth应用程序，并获取客户端ID和客户端密码。按照以下步骤在GitHub上注册OAuth应用程序:</p>
+<ol>
+<li>导航到<a href="https://github.com/">GitHub</a>并使用你的用户名和密码登录。</li>
+<li>点击右上角的个人资料图片，然后从下拉菜单中点击<strong>设置</strong>。</li>
+<li>点击左侧栏的<strong>开发人员设置</strong>下的<strong>OAuth应用程序</strong>。</li>
+<li>点击<strong>注册一个新的应用程序</strong>。</li>
+<li>指定以下设置:</li>
+<li>应用程序名称:Composer</li>
+<li>主页:<a href="http://localhost:3000/">http://localhost:3000/</a></li>
+<li>应用程序描述:Composer的OAuth应用程序</li>
+<li>授权回调URL:<a href="http://localhost:3000/auth/github/callback">http://localhost:3000/auth/github/callback</a></li>
+<li>点击<strong>注册申请</strong>。</li>
+<li>记下<strong>客户端ID</strong>和<strong>客户端密钥</strong>的值。</li>
+</ol>
+<p>使用环境变量<code>COMPOSER_PROVIDERS</code>来指定REST服务器的配置。要配置REST服务器，需要用步骤7中获取的值替换<code>REPLACE_WITH_CLIENT_ID</code>和<code>REPLACE_WITH_CLIENT_SECRET</code>，然后执行以下命令:</p>
+<pre><code class="bash">export COMPOSER_PROVIDERS='{
+  &quot;github&quot;: {
+    &quot;provider&quot;: &quot;github&quot;,
+    &quot;module&quot;: &quot;passport-github&quot;,
+    &quot;clientID&quot;: &quot;REPLACE_WITH_CLIENT_ID&quot;,
+    &quot;clientSecret&quot;: &quot;REPLACE_WITH_CLIENT_SECRET&quot;,
+    &quot;authPath&quot;: &quot;/auth/github&quot;,
+    &quot;callbackURL&quot;: &quot;/auth/github/callback&quot;,
+    &quot;successRedirect&quot;: &quot;/&quot;,
+    &quot;failureRedirect&quot;: &quot;/&quot;
+  }
+}'
+</code></pre>
+
+<h2 id="rest-apirest">启动 启用了REST API身份认证的REST服务器<a class="headerlink" href="#rest-apirest" title="Permanent link">&para;</a></h2>
+<p>一旦设置了环境变量<code>COMPOSER_PROVIDERS</code>，就可以使用该<code>-a true</code>参数启动启用了身份认证的REST服务器。启用身份认证后，客户端必须先进行身份认证，然后才能向业务网络发出任何请求。</p>
+<p>例如，以下是作为开发者教程一部分部署的业务网络的命令，然而你可能需要为你的业务网络修改命令:</p>
+<pre><code class="bash">composer-rest-server -c admin@my-network -a true
+</code></pre>
+
+<p>现在，导航到<a href="http://localhost:3000/explorer/">http://localhost:3000/explorer/</a>上的REST API浏览器。如果已成功启用身份认证，则任何尝试使用REST API浏览器调用其中一个业务网络REST API操作的尝试都会被拒绝，并显示一条<code>HTTP 401 Authorization Required</code>消息。</p>
+<h2 id="webrest">使用Web浏览器向REST服务器认证<a class="headerlink" href="#webrest" title="Permanent link">&para;</a></h2>
+<p>此步骤取决于REST服务器正在使用的Passport策略的配置和行为。</p>
+<ol>
+<li>（Web浏览器）通过导航到环境变量<code>COMPOSER_PROVIDERS</code>中定义的属性<code>authPath</code>的值，来向到REST服务器认证。在上面的例子中，这是<a href="http://localhost:3000/auth/github">http://localhost:3000/auth/github</a>。</li>
+<li>REST服务器会将身份认证重定向到GitHub以执行OAuth Web服务器身份认证流程。GitHub会询问身份认证是否要授权Composer应用程序访问身份认证的帐户。点击<strong>授权</strong>按钮。</li>
+<li>如果成功，GitHub会将身份认证重定向到REST服务器。</li>
+</ol>
+<p>现在，导航到<a href="http://localhost:3000/explorer/">http://localhost:3000/explorer/</a>上的REST API浏览器。尝试再次使用REST API浏览器调用其中一个业务网络REST API操作。这一次，调用应该能成功。</p>
+<h2 id="httprestrest">使用HTTP或REST客户端向REST服务器认证<a class="headerlink" href="#httprestrest" title="Permanent link">&para;</a></h2>
+<p>当用户向REST服务器进行身份认证时，会生成一个唯一的访问令牌并将其分配给经过身份认证的用户。当用户使用web浏览器进行认证时，访问令牌被存储在用户网络浏览器的本地存储器中的cookie中。当经过身份认证的用户发出后续请求时，将从cookie中获取令牌，并且验证访问令牌而不是重新认证用户身份。</p>
+<p>访问令牌可用于认证任何希望调用REST服务器的HTTP或REST客户端。当HTTP或REST客户端无法执行配置的Passport策略所需的身份认证流程时，这是需要的。例如，所有OAuth2 Web认证流程都需要使用Web浏览器导航到认证提供商网站。</p>
+<p>为了使用访问令牌，必须首先使用Web浏览器来获取访问令牌。当你向REST服务器进行身份认证时，REST API浏览器会在<a href="http://localhost:3000/explorer/">http:// localhost:3000 / explorer /上</a>的页面顶部显示访问令牌。默认情况下，访问令牌是隐藏的，但可以通过点击<code>Show</code>按钮来显示。访问令牌是一个长的字母数字字符串，例如:<code>e9M3CLDEEj8SDq0Bx1tkYAZucOTWbgdiWQGLnOxCe7K9GhTruqlet1h5jsw10YjJ</code></p>
+<p>一旦访问令牌已被获取，访问令牌可以被放入任何HTTP或REST请求来认证HTTP或REST客户端。传递访问令牌有两种选择 - 使用查询字符串参数或HTTP头。对于以下两个示例，请将字符串<code>xxxxx</code>替换为访问令牌的值。</p>
+<p>查询字符串 - 将<code>access_token</code>查询字符串参数添加到所有HTTP或REST请求:</p>
+<pre><code class="bash">curl -v http://localhost:3000/api/system/ping?access_token=xxxxx
+</code></pre>
+
+<p>HTTP头 - 将<code>X-Access-Token</code>头添加到所有HTTP或REST请求:</p>
+<pre><code class="bash">curl -v -H 'X-Access-Token: xxxxx' http://localhost:3000/api/system/ping
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../integrating_enabling-multiuser/" class="btn btn-neutral float-right" title="为REST服务器启用多用户模式">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../integrating_publishing-events/" class="btn btn-neutral" title="从REST服务器发布事件"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../integrating_publishing-events/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../integrating_enabling-multiuser/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

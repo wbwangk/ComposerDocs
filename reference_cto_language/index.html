@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>建模语言 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u5efa\u6a21\u8bed\u8a00";
+    var mkdocs_page_input_path = "reference_cto_language.md";
+    var mkdocs_page_url = "/reference_cto_language/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../introduction_introduction/">介绍</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">index</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">建模语言</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#hyperledger-composer">Hyperledger Composer建模语言</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#hyperledger-composer_1">组织和Hyperledger Composer系统命名空间</a></li>
+        
+            <li><a class="toctree-l4" href="#_1">资源声明</a></li>
+        
+            <li><a class="toctree-l4" href="#_8">导入</a></li>
+        
+            <li><a class="toctree-l4" href="#_9">装饰器</a></li>
+        
+            <li><a class="toctree-l4" href="#_10">装饰器参数</a></li>
+        
+            <li><a class="toctree-l4" href="#api">装饰器API</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>参考 &raquo;</li>
+        
+      
+    
+    <li>建模语言</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/reference_cto_language.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hyperledger-composer">Hyperledger Composer建模语言<a class="headerlink" href="#hyperledger-composer" title="Permanent link">&para;</a></h1>
+<p>Hyperledger Composer包含一个面向对象的建模语言，用于定义业务网络定义的领域模型。</p>
+<p>Hyperledger Composer CTO文件由以下元素组成：</p>
+<ol>
+<li>一个单一的命名空间。文件中的所有资源声明都隐含在这个命名空间中。</li>
+<li>一组资源定义，包括资产、交易、参与者和事件。</li>
+<li>从其他命名空间导入资源的可选导入声明。</li>
+</ol>
+<h2 id="hyperledger-composer_1">组织和Hyperledger Composer系统命名空间<a class="headerlink" href="#hyperledger-composer_1" title="Permanent link">&para;</a></h2>
+<p>你的组织命名空间是在你的model（<code>.cto</code>）文件的命名空间行中定义的，并且所有创建的资源隐式地都是该命名空间的一部分。</p>
+<p>除了定义资产、参与者、事件和交易的新类外，还有一个<a href="https://github.com/hyperledger/composer/blob/master/packages/composer-common/lib/system/org.hyperledger.composer.system.cto">系统命名空间</a>，其中包含资产、事件、参与者和交易的基本定义。这些基本定义是由所有资产、事件、参与者和交易隐含扩展的抽象类型。</p>
+<p>在系统命名空间定义中，资产和参与者没有必需的值。事件和交易由eventId或transactionId和时间戳定义。系统命名空间还包括Registry(库)的定义、历史记录、身份和一些系统交易。</p>
+<blockquote>
+<p>如果你定义了一个包含eventId、transactionId或timestamp的事件或交易，则必须删除eventId、transactionId或timestamp属性。</p>
+</blockquote>
+<h2 id="_1">资源声明<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Hyperledger Composer中的资源包括：</p>
+<ul>
+<li>资产、参与者、交易和事件。</li>
+<li>枚举类型。</li>
+<li>概念。</li>
+</ul>
+<p>资产、参与者和交易是类定义。资产、参与者和交易的概念可以认为是类的不同模板。</p>
+<p>Hyperledger Composer中的类被称为资源定义，因此一个资产实例具有一个资产定义。</p>
+<p>资源定义具有以下属性：</p>
+<ol>
+<li>
+<p>由其父文件的命名空间定义的命名空间。<code>.cto</code>文件的命名空间隐式应用于其中创建的所有资源。</p>
+</li>
+<li>
+<p>一个名称（例如<code>Vehicle</code>）和一个id字段（例如<code>vin</code>）。如果资源是资产或参与者，则名称后跟识id字段，如果资源是事件或交易，则自动生成id字段。在这个例子中，资产名称是<code>Vehicle</code>，而id字段是<code>vin</code>。
+   ```
+   /**</p>
+<ul>
+<li>A vehicle asset.
+*/
+   asset Vehicle identified by vin {
+ o String vin
+   }
+   ```</li>
+</ul>
+</li>
+<li>
+<p>一个可选超类，是资源定义扩展。该资源将具有超类所定义的所有属性和字段，并从自己的定义中添加附加属性或字段。
+   ```
+   /**</p>
+<ul>
+<li>A car asset. A car is related to a list of parts
+*/
+   asset Car extends Vehicle {
+ o String model
+ &ndash;&gt; Part[] Parts
+   }
+   ```</li>
+</ul>
+</li>
+<li>
+<p>一个可选的“抽象”声明，表示不能创建这种类型。抽象资源可以作为其他类的基础来扩展。抽象类的扩展不会继承抽象类的状态。例如，上面定义的<code>Vehicle</code>资产不应该创建，因为应该定义更多的特定资产类来扩展它。
+   ```
+   /**</p>
+</li>
+<li>
+<p>An abstract Vehicle asset.
+   */
+   abstract asset Vehicle identified by vin {
+     o String vin
+   }
+   ```</p>
+</li>
+<li>
+<p>一组命名的属性。属性必须被命名，并且用原始数据类型定义。属性及其数据由每个资源拥有，例如，<code>Car</code>资产具有<code>vin</code>和<code>model</code>属性，两者都是字符串。</p>
+</li>
+<li>
+<p>与其他Composer类的一组关联，这些类不属于资源，但可以从资源引用。关联是单向的。</p>
+</li>
+</ol>
+<p>/ **</p>
+<ul>
+<li>现场资产。字段与动物列表相关* /资产由fieldId标识的字段{o String StringId o字符串名称 - &gt; Animal [] animals}</li>
+</ul>
+<h3 id="_2">枚举类型的声明<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>枚举类型是用于指定可能有1或N个可能值的类型。下面的例子定义了ProductType枚举，它可能的值有<code>DAIRY</code>或<code>BEEF</code>或<code>VEGETABLES</code>。</p>
+<pre><code>/**
+* An enumerated type
+*/
+enum ProductType {
+o DAIRY
+o BEEF
+o VEGETABLES
+}
+</code></pre>
+
+<p>当创建另一个资源时，例如参与者，可以根据枚举类型定义该资源的属性。</p>
+<pre><code>participant Farmer identified by farmerId {
+    o String farmerId
+    o ProductType primaryProduct
+</code></pre>
+
+<h3 id="_3">概念<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>概念是非资产、参与者或交易的抽象类。它们通常被资产、参与者或交易包含。</p>
+<p>例如，下面定义了一个抽象概念<code>Address</code>，然后个性化成一个<code>UnitedStatesAddress</code>。请注意，概念没有<code>identified by</code>字段，因为它们不能直接存储在库中或在关联中引用。</p>
+<pre><code>abstract concept Address {
+  o String street
+  o String city default =&quot;Winchester&quot;
+  o String country default = &quot;UK&quot;
+  o Integer[] counts optional
+}
+
+concept UnitedStatesAddress extends Address {
+  o String zipcode
+}
+</code></pre>
+
+<h3 id="_4">原始类型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>Composer资源是根据以下原始类型定义的：</p>
+<ol>
+<li>字符串：一个UTF8编码的字符串。</li>
+<li>Double：双精度64位数值。</li>
+<li>整数：一个32位有符号整数。</li>
+<li>长：64位有符号整数。</li>
+<li>DateTime：与ISO-8601兼容的时间实例，具有可选的时区和UTZ偏移量。</li>
+<li>Boolean：布尔值，true或false。</li>
+</ol>
+<h3 id="_5">数组<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>Composer中的所有类型都可以使用[]符号声明为数组。</p>
+<pre><code>Integer[] integerArray
+</code></pre>
+
+<p>整数数组存储在一个名为“integerArray”的字段中。而</p>
+<pre><code>--&gt; Animal[] incoming
+</code></pre>
+
+<p>是一个指向到动物类型的关联数组，存储在一个名为“incoming”的字段中。</p>
+<h3 id="_6">关联<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>Composer语言中的关联是由以下组成的元组：</p>
+<ol>
+<li>被引用类型的命名空间</li>
+<li>被引用类型的类型名称</li>
+<li>被引用的实例的标识符(id)</li>
+</ol>
+<p>因此，一个关联可能是：org.example.Vehicle＃123456</p>
+<p>这是一个到Vehicle类型的关联，它在org.example命名空间声明，具有123456的id。</p>
+<p>关联是单向的，删除不会级联，即就是说，消除关联对它指向的东西没有影响。删除被指向的东西不会使关联无效。</p>
+<p>关联必须被<em>解析</em>才能获取被引用对象的实例。如果对象不存在或关联中的信息无效，则解析行为可能会导致空。</p>
+<h3 id="_7">字段验证器<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>字符串字段可能包含一个(可选)正则表达式，用于验证字段的内容。仔细使用字段验证器可以使Composer执行丰富的数据验证，从而减少错误，减少样板代码。</p>
+<p>下面的例子声明<code>Farmer</code>参与者包含一个<code>postcode</code>字段，该字段利用正则表达式确保必须符合英国有效邮政编码。</p>
+<pre><code>participant Farmer extends Participant {
+    o String firstName default=&quot;Old&quot;
+    o String lastName default=&quot;McDonald&quot;
+    o String address1
+    o String address2
+    o String county
+    o String postcode regex=/(GIR 0AA)|((([A-Z-[QVf]][0-9][0-9]?)|(([A-Z-[QVf]][A-Z-[IJZ]][0-9][0-9]?)|(([A-Z-[QVf]][0-9][A-HJKPSTUW])|([A-Z-[QVf]][A-Z-[IJZ]][0-9][ABEHMNPRVWfY])))) [0-9][A-Z-[CIKMOV]]{2})/
+}
+</code></pre>
+
+<p>Double，Long或Integer字段可以包含一个可选的范围表达式，用于验证字段的内容。</p>
+<p>下面的例子声明<code>Vehicle</code>资产有一个<code>year</code>默认值是2016的Integer字段，并且必须是1990或更高。如果检查不需要，则范围表达式可以省略下限或上限。</p>
+<pre><code>asset Vehicle extends Base {
+  // An asset contains Fields, each of which can have an optional default value
+  o String model default=&quot;F150&quot;
+  o String make default=&quot;FORD&quot;
+  o String reg default=&quot;ABC123&quot;
+  // A numeric field can have a range validation expression
+  o Integer year default=2016 range=[1990,] optional // model year must be 1990 or higher
+  o Integer[] integerArray
+  o State state
+  o Double value
+  o String colour
+  o String V5cID regex=/^[A-z][A-z][0-9]{7}/
+  o String LeaseContractID
+  o Boolean scrapped default=false
+  o DateTime lastUpdate optional
+  --&gt; Participant owner //relationship to a Participant, with the field named 'owner'.
+  --&gt; Participant[] previousOwners optional // Nary relationship
+  o Customer customer
+}
+</code></pre>
+
+<h2 id="_8">导入<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>使用关键字<code>import</code>和一个完全限定类型名称可以从其他命名空间导入类型。或者使用<code>.*</code>符号从其他命名空间导入所有类型。</p>
+<pre><code>import org.example.MyAsset
+import org.example2.*
+</code></pre>
+
+<h2 id="_9">装饰器<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>资源的资源和属性可以附加装饰器。装饰器被用来用元数据注解模型。下面的示例将<code>foo</code>装饰器添加到买方参与者，“arg1”和2作为参数传递给装饰器。</p>
+<p>同样，装饰器可以附加到属性、关联和枚举值。</p>
+<pre><code>@foo(&quot;arg1&quot;, 2)
+participant Buyer extends Person {
+}
+</code></pre>
+
+<p>资源定义和属性可以用0个或多个装饰来装饰。请注意，每个元素类型只允许一个装饰器实例。也就是说，<code>@bar</code>装饰器在同一个元素上列出两次是无效的。</p>
+<h2 id="_10">装饰器参数<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>装饰器可能有一个任意的参数列表（0个或多个项目）。参数值必须是字符串、数字或布尔值。</p>
+<h2 id="api">装饰器API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
+<p>装饰器可以通过ModelManager的introspect API在运行时访问。这允许外部工具和实用程序使用Composer建模语言（Composer Modeling Language，CTO）文件格式来描述核心模型，同时使用足够的元数据为自己的目的进行装饰。</p>
+<p>下面的例子获取附加到一个类声明的myField属性的foo装饰器的第三个参数：</p>
+<pre><code>const val = myField.getDecorator('foo').getArgu
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reference_query-language/" class="btn btn-neutral float-right" title="查询语言">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../reference-index/" class="btn btn-neutral" title="index"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../reference-index/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../reference_query-language/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

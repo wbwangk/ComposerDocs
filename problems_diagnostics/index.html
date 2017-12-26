@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>诊断问题 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u8bca\u65ad\u95ee\u9898";
+    var mkdocs_page_input_path = "problems_diagnostics.md";
+    var mkdocs_page_url = "/problems_diagnostics/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../introduction_introduction/">介绍</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">诊断问题</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#_1">诊断问题</a></li>
+    
+
+    <li class="toctree-l2"><a href="#_2">诊断问题</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#_3">应用</a></li>
+        
+            <li><a class="toctree-l3" href="#_4">默认配置</a></li>
+        
+            <li><a class="toctree-l3" href="#_5">信息的位置</a></li>
+        
+            <li><a class="toctree-l3" href="#_6">控制生成什么</a></li>
+        
+            <li><a class="toctree-l3" href="#_7">启用更多信息</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#_8">如何找出哪个链码容器有已部署网络？</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>诊断问题</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/problems_diagnostics.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">诊断问题<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>Composer默认使用Winston日志记录模块，并使用Config模块查找任何配置信息。如果没有找到，那么将使用一组默认值。</p>
+<p>如果没有设置配置文件，配置模块会写出警告。例如。<code>WARNING: No configurations found in configuration directory</code>。如果您对默认值感到满意，并且不希望在应用程序中使用配置，则可以使用环境变量来抑制这种情况。<a href="https://github.com/lorenwest/node-config/wiki/Environment-Variables#suppress_no_config_warning">在这里</a>查看更多信息。</p>
+<h1 id="_2">诊断问题<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h1>
+<p>如果应用程序出现问题，应该如何处理诊断？</p>
+<p>我们来看一下<code>digitalproperty-app</code>示例，并用它来解释如何从框架中获取诊断信息。</p>
+<blockquote>
+<p>请注意：这是一个框架 - 所以你的应用程序将需要它自己的日志框架。另外，您的应用程序也可以用配置信息来控制Hyperledger Composer自己的日志记录。</p>
+</blockquote>
+<p>有两个容器与日志相关：</p>
+<ul>
+<li>运行应用程序的容器</li>
+<li>执行交易函数的链码容器。</li>
+</ul>
+<h2 id="_3">应用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>在内部，默认情况下，Hyperledger Composer使用<a href="https://github.com/winstonjs/winston">Winston</a> node.js日志包，初始级别为日志点和目标。</p>
+<h2 id="_4">默认配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>该框架将记录这些级别的信息。</p>
+<ul>
+<li>错误</li>
+<li>警告</li>
+<li>信息</li>
+<li>详细</li>
+<li>调试</li>
+</ul>
+<p>“Silly”级别没有被使用。</p>
+<h2 id="_5">信息的位置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>默认情况下，有两个数据位置：</p>
+<ul>
+<li>一个文本文件，位于<code>${CurrentWorkingDir}/logs/trace_&lt;processid&gt;.trc</code></li>
+<li>另一个是<code>stdout</code>。默认情况下，<code>stdout</code>只显示任何以“错误”级别记录的数据，文件将显示“信息”或以上（即信息，警告和错误）日志数据。</li>
+</ul>
+<h2 id="_6">控制生成什么<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>配置模块用于定位信息以控制如何生成日志。</p>
+<p>例如</p>
+<pre><code class="json">{
+  &quot;gettingstarted&quot;: {
+       &quot;participantId&quot; : &quot;WebAppAdmin&quot;,
+       &quot;participantPwd&quot; :&quot;DJY27pEnl16d&quot;,
+       &quot;businessNetworkIdentifier&quot; : &quot;digitalproperty-network&quot;,
+       &quot;connectionProfile&quot; :&quot;defaultProfile&quot;
+    },
+    &quot;ComposerConfig&quot;: {
+       &quot;debug&quot;: {
+         &quot;logger&quot;: &quot;default&quot;,
+         &quot;config&quot;: {
+           &quot;console&quot;: {
+             &quot;enabledLevel&quot;: &quot;info&quot;,
+             &quot;alwaysLevel&quot;: &quot;none&quot;
+
+           },
+           &quot;file&quot;: {
+             &quot;filename&quot;: &quot;./trace_PID.log&quot;,
+             &quot;enabledLevel&quot;: &quot;silly&quot;,
+             &quot;alwaysLevel&quot;: &quot;info&quot;
+           }
+         }
+       }
+      }
+
+}
+</code></pre>
+
+<p>第一部分针对Getting Started应用程序，第二个<code>ComposerConfig</code>部分针对Hyperledger Composer。</p>
+<ul>
+<li><code>logger</code>用于指定实际记录日志的模块。默认是暗示这是winston框架</li>
+<li><code>config</code>传递给日志记录器来控制它做什么。所以这部分是特定于使用的记录器。</li>
+</ul>
+<h2 id="_7">启用更多信息<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>调试node.js应用程序的标准方法是使用<code>DEBUG</code>环境变量。所以呢</p>
+<pre><code>DEBUG=composer:* node myApplication.js
+</code></pre>
+
+<p>将启用更多的跟踪 - 这将使用<code>enabledLevel</code>上面配置中标记的级别。</p>
+<h1 id="_8">如何找出哪个链码容器有已部署网络？<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h1>
+<p>每个业务网络都部署到自己的链码容器中。在使用事务函数说错误的情况下，查看来自该容器的日志并查看发生了什么可能会有所帮助。</p>
+<p>要确定哪个Docker容器具有部署的网络，请运行以下命令：</p>
+<pre><code>docker ps
+</code></pre>
+
+<p>Docker容器名称应包含已部署网络的名称。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reference-index/" class="btn btn-neutral float-right" title="index">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../managing_updating-composer/" class="btn btn-neutral" title="更新Hyperledger Composer运行时"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../managing_updating-composer/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../reference-index/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

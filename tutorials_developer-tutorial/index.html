@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>开发者教程 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u5f00\u53d1\u8005\u6559\u7a0b";
+    var mkdocs_page_input_path = "tutorials_developer-tutorial.md";
+    var mkdocs_page_url = "/tutorials_developer-tutorial/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../introduction_introduction/">介绍</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">开发者教程</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#hyperledger-composer">创建一个Hyperledger Composer解决方案的开发者教程</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">先决条件</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">第一步：创建一个商业网络结构</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">第二步：定义一个商业网络</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">第三步：生成一个商业网络档案</a></li>
+        
+            <li><a class="toctree-l4" href="#_7">第四步：部署商业网络</a></li>
+        
+            <li><a class="toctree-l4" href="#rest">第五步：生成一个REST服务器</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>教程 &raquo;</li>
+        
+      
+    
+    <li>开发者教程</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/tutorials_developer-tutorial.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="hyperledger-composer">创建一个Hyperledger Composer解决方案的开发者教程<a class="headerlink" href="#hyperledger-composer" title="Permanent link">&para;</a></h2>
+<p>本教程将引导你从头开始构建Hyperledger Composer区块链解决方案。在几个小时的时间里，你将能够从破坏性区块链创新的想法转变为针对真正的Hyperledger Fabric区块链网络执行交易，并生成/运行与区块链网络交互的示例Angular 2应用程序。</p>
+<p>本教程给出了对该技术的概述，以及可用于你自己用例的可用资源。</p>
+<p>注意：本教程是针对在Ubuntu Linux上构建的最新的Hyperledger Composer编写的，它与Hyperledger Fabric v1.0运行在一起，也针对Mac环境进行了测试。</p>
+<h3 id="_1">先决条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>开始本教程之前：</p>
+<ul>
+<li><a href="https://hyperledger.github.io/composer/installing/development-tools.html">建立你的开发环境</a></li>
+<li>安装一个编辑器，例如VSCode或Atom</li>
+</ul>
+<h3 id="_2">第一步：创建一个商业网络结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>关键概念是<strong>商业网络定义(BND)</strong>。它为你的区块链解决方案定义了数据模型、交易逻辑和访问控制规则。要创建一个BND，我们需要在磁盘上创建一个合适的项目结构。</p>
+<p>最简单的方法就是使用Yeoman生成器创建骨架商业网络。这将创建一个包含商业网络的所有组件的目录。</p>
+<ol>
+<li>使用Yeoman创建一个骨架商业网络。此命令将需要一个商业网络名称、说明、作者姓名、作者电子邮件地址、许可证选择和命名空间。</li>
+</ol>
+<pre><code class="bash">yo hyperledger-composer:businessnetwork
+</code></pre>
+
+<ol>
+<li>
+<p>输入<code>tutorial-network</code>网络名称，以及描述，作者姓名和作者电子邮件的所需信息。</p>
+</li>
+<li>
+<p>选择<code>Apache-2.0</code>作为许可证。</p>
+</li>
+<li>
+<p>选择<code>org.acme.biznet</code>作为命名空间。</p>
+</li>
+</ol>
+<h3 id="_3">第二步：定义一个商业网络<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>商业网络由资产、参与者、交易、访问控制规则以及可选的事件和查询组成。在前面步骤中创建的骨架商业网络中，有一个模型(<code>.cto</code>)文件，其中将包含商业网络中所有资产、参与者和交易的类定义。骨架商业网络还包含了一个具有基本访问控制规则的访问控制（<code>permissions.acl</code>）文档，一个含有交易处理器函数的脚本（<code>logic.js</code>）文件以及一个包含商业网络元数据的<code>package.json</code>文件。</p>
+<h4 id="_4">对资产、参与者和交易建模<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>第一个要更新的文档是模型l（<code>.cto</code>）文件。该文件使用Hyperledger Composer建模语言编写。这个模型文件包含资产、交易、参与者和事件的每个类别的定义。它隐含地扩展了建模语言文档中描述的Hyperledger Composer系统模型。</p>
+<ol>
+<li>
+<p>打开<code>org.acme.biznet.cto</code>模型文件。</p>
+</li>
+<li>
+<p>替换为以下内容：</p>
+</li>
+</ol>
+<pre><code>/**
+ * My commodity trading network
+ */
+namespace org.acme.biznet
+asset Commodity identified by tradingSymbol {
+    o String tradingSymbol
+    o String description
+    o String mainExchange
+    o Double quantity
+    --&gt; Trader owner
+}
+participant Trader identified by tradeId {
+    o String tradeId
+    o String firstName
+    o String lastName
+}
+transaction Trade {
+    --&gt; Commodity commodity
+    --&gt; Trader newOwner
+}
+</code></pre>
+
+<ol>
+<li>保存你的更改到<code>org.acme.biznet.cto</code>。</li>
+</ol>
+<h4 id="javascript">添加JavaScript交易逻辑<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h4>
+<p>在模型文件中，定义了一个<code>Trade</code>交易，指定与资产的关系和一个参与者。交易处理器函数文件包含执行模型文件中定义的交易的JavaScript逻辑。</p>
+<p>这个<code>Trade</code>交易被设定为简单地接收要交易的类型为<code>Commodity</code>的资产，以及类型为<code>Trader</code>的参与者作为新的拥有者。</p>
+<ol>
+<li>
+<p>打开<code>logic.js</code>脚本文件。</p>
+</li>
+<li>
+<p>替换为以下内容：</p>
+</li>
+</ol>
+<pre><code>/**
+ * Track the trade of a commodity from one trader to another
+ * @param {org.acme.biznet.Trade} trade - the trade to be processed
+ * @transaction
+ */
+function tradeCommodity(trade) {
+    trade.commodity.owner = trade.newOwner;
+    return getAssetRegistry('org.acme.biznet.Commodity')
+        .then(function (assetRegistry) {
+            return assetRegistry.update(trade.commodity);
+        });
+}
+</code></pre>
+
+<p>保存你的更改到<code>logic.js</code>。</p>
+<h4 id="_5">添加访问控制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>在<code>tutorial-network</code>目录中创建一个<code>permissions.acl</code>文件。</p>
+</li>
+<li>
+<p>将以下访问控制规则添加到<code>permissions.acl</code>：</p>
+</li>
+</ol>
+<pre><code>/**
+ * Access control rules for tutorial-network
+ */
+rule Default {
+    description: &quot;Allow all participants access to all resources&quot;
+    participant: &quot;ANY&quot;
+    operation: ALL
+    resource: &quot;org.acme.biznet.*&quot;
+    action: ALLOW
+}
+
+rule SystemACL {
+  description:  &quot;System ACL to permit all access&quot;
+  participant: &quot;ANY&quot;
+  operation: ALL
+  resource: &quot;org.hyperledger.composer.system.**&quot;
+  action: ALLOW
+}
+</code></pre>
+
+<p>保存你的更改到<code>permissions.acl</code>。</p>
+<h3 id="_6">第三步：生成一个商业网络档案<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>现在已经定义了商业网络，它必须打包到可部署的商业网络档案（.bna）文件中。</p>
+<ol>
+<li>
+<p>使用命令行，导航到<code>tutorial-network</code>目录。</p>
+</li>
+<li>
+<p>从<code>tutorial-network</code>目录中运行以下命令：</p>
+</li>
+</ol>
+<pre><code class="bash">composer archive create -t dir -n .
+</code></pre>
+
+<p>在命令运行之后，一个叫<code>tutorial-network@0.0.1.bna</code>的商业网络存档文件在<code>tutorial-network</code>目录中被创建。</p>
+<h3 id="_7">第四步：部署商业网络<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>创建<code>.bna</code>文件后，商业网络就可以部署到Hyperledger Fabric实例。通常情况下，为了创建一个<code>PeerAdmin</code>身份，需要来自Fabric管理员的信息，还需要有将链码部署到peer的权限。但是，作为开发环境安装的一部分，已经创建了一个<code>PeerAdmin</code>身份。</p>
+<p>在运行时被安装后，就可以将一个商业网络部署到peer。根据最佳实践，应该创建一个新的身份来管理部署后的商业网络。这个身份被称为网络管理员。</p>
+<h4 id="_8">获取正确的凭据<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p>一个有正确凭据的<code>PeerAdmin</code>商业网络卡片已作为开发环境安装的一部分而创建。</p>
+<h4 id="_9">部署商业网络<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>为了将商业网络部署到Hyperledger Fabric，需要在peer上安装Hyperledger Composer链码，然后必须将商业网络档案（<code>.bna</code>）发送给peer，并且必须创建一个新的参与者（由卡片标识和关联）作为网络管理员。最后，必须导入网络管理员商业网络卡片，才能ping通网络，查看是否有响应。</p>
+<ol>
+<li>要安装Composer运行时，请运行以下命令：</li>
+</ol>
+<pre><code class="bash">composer runtime install --card PeerAdmin@hlfv1 --businessNetworkName tutorial-network
+</code></pre>
+
+<p>该<code>composer runtime install</code>命令需要一个<code>PeerAdmin</code>商业网络卡片（在这案例中已经预先创建和导入了一个）以及商业网络的名称。</p>
+<ol>
+<li>为了部署商业网络，要从目录<code>tutorial-network</code>中运行以下命令：</li>
+</ol>
+<pre><code class="bash">composer network start --card PeerAdmin@hlfv1 --networkAdmin admin --networkAdminEnrollSecret adminpw --archiveFile tutorial-network@0.0.1.bna --file networkadmin.card
+</code></pre>
+
+<p>该<code>composer network start</code>命令需要一个商业网络卡片，以及商业网络的管理员身份名称、<code>.bna</code>文件路径和要创建的文件的名称（即准备导入的商业网络卡片）。</p>
+<ol>
+<li>要将网络管理员身份导入为可用的商业网络卡片，请运行以下命令：</li>
+</ol>
+<pre><code class="bash">composer card import --file networkadmin.card
+</code></pre>
+
+<p>该<code>composer card import</code>命令需要指定一个文件名，就是在<code>composer network start</code>命令创建卡片时指定的。</p>
+<ol>
+<li>要检查商业网络是否已成功部署，请运行以下命令来ping网络：</li>
+</ol>
+<pre><code class="bash">composer network ping --card admin@tutorial-network
+</code></pre>
+
+<p>该<code>composer network ping</code>命令需要一张商业网络卡片来认证要ping的网络。</p>
+<h3 id="rest">第五步：生成一个REST服务器<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h3>
+<p>Hyperledger Composer可以基于商业网络生成定制的REST API。为了开发Web应用程序，REST API提供了一个与语言无关的有用抽象层。</p>
+<ol>
+<li>要创建REST API，请导航到<code>tutorial-network目</code>录并运行以下命令：</li>
+</ol>
+<pre><code class="bash">composer-rest-server
+</code></pre>
+
+<ol>
+<li>
+<p>输入<code>admin@tutorial-network</code>作为卡片名称。</p>
+</li>
+<li>
+<p>当询问是否在生成的API中使用名称空间时，请选择<strong>不使用名n称空间</strong>。</p>
+</li>
+<li>
+<p>当询问是否保护生成的API时选择<strong>否</strong>。</p>
+</li>
+<li>
+<p>当询问是否启用事件发布时，选择<strong>是</strong>。</p>
+</li>
+<li>
+<p>当询问是否启用TLS安全时，请选择<strong>否</strong>。</p>
+</li>
+</ol>
+<p>生成的API连接到部署的区块链和商业网络。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tutorials_queries/" class="btn btn-neutral float-right" title="查询教程">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tutorials_playground-tutorial/" class="btn btn-neutral" title="Playground教程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../tutorials_playground-tutorial/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tutorials_queries/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

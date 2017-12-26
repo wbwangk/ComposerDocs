@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>创建、导出和导入业务网络卡片 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u521b\u5efa\u3001\u5bfc\u51fa\u548c\u5bfc\u5165\u4e1a\u52a1\u7f51\u7edc\u5361\u7247";
+    var mkdocs_page_input_path = "managing_id-cards-playground.md";
+    var mkdocs_page_url = "/managing_id-cards-playground/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../introduction_introduction/">介绍</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">创建、导出和导入业务网络卡片</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">创建、导出和导入业务网络卡片</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">创建业务网络卡片</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">导入和导出业务网络卡片</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">index</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>管理已部署业务网络 &raquo;</li>
+        
+      
+    
+    <li>创建、导出和导入业务网络卡片</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/managing_id-cards-playground.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">创建、导出和导入业务网络卡片<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>业务网络卡片由几个<code>.card</code>文件组成，包括一个<code>metadata.JSON</code>文件，一个连接配置文件和可选的证书文件。</p>
+<p>Hyperledger Composer Playground中可以使用业务网络卡片来管理不同业务网络和连接配置文件的身份。</p>
+<h2 id="_2">创建业务网络卡片<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>业务网络卡片可以在钱包屏幕中创建，可以从组件文件创建，也可以在业务网络中创建。</p>
+<p><em>请注意</em>：如果卡片从钱包屏幕创建，或者从组件文件创建，则必须在业务网络中创建相应的身份。</p>
+<h3 id="_3">在业务网络中创建业务网络卡片<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<ol>
+<li>从 <strong>我的钱包</strong>屏幕中，选择一个用于连接到你的业务网络的身份。点击<strong>立即连接</strong>。<em>请注意：</em>你使用的身份必须具有创建新身份的权限。</li>
+<li><em>可选</em>：要创建关联到身份的参与者，请单击<strong>测试</strong>选项卡，然后单击<strong>创建新参与者</strong>。</li>
+<li>点击右上方你的身份名称，然后点击<strong>ID库</strong>。</li>
+<li>点击<strong>发行新的ID</strong>。</li>
+<li>选择一个<strong>ID名称</strong>，然后选择一个<strong>参与者</strong>将新的身份与之关联。</li>
+<li>点击<strong>新建</strong>。</li>
+<li>点击<strong>添加到我的钱包</strong>。将业务网络卡片添加到钱包，将允许你使用它连接到业务网络，或将其导出供其他人使用。</li>
+</ol>
+<p>在<strong>我的钱包</strong>屏幕现在应该显示新的业务网络卡片。</p>
+<h3 id="_4">使用钱包创建业务网络卡片<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>可以从“ <strong>我的钱包”</strong>页面创建业务网络卡片，但是，业务网络中必须已经创建了相应的身份。从 <strong>我的钱包</strong>页面创建业务网络卡片，需要使用与在业务网络内创建身份时相同的<em>用户ID</em>、<em>用户密码</em>和正确的<em>业务网络名称</em>凭证。</p>
+<p>从“ <strong>我的钱包”</strong>页面创建业务网络卡：</p>
+<ol>
+<li>收到有效的<em>用户ID</em>和<em>用户密码</em>后，点击<strong>我的钱包</strong>页面右上角的<strong>创建业务网络卡片</strong>按钮。</li>
+<li>选择一个连接配置文件，然后单击<strong>下一步</strong>。</li>
+<li>输入创建身份时生成的<em>用户ID</em>和<em>用户密码</em>。</li>
+<li>输入正确的<em>业务网络名称</em>，然后点击<strong>创建</strong>。</li>
+</ol>
+<p>业务网络卡片现在应显示在“ <strong>我的钱包”</strong>页面中。</p>
+<h3 id="_5">从组件文件创建一个业务网络卡片<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>业务网络卡片是包含三个元素的复合文件：</p>
+<ul>
+<li>连接配置文件。（<code>connection.json</code>）</li>
+<li>包含用于连接到业务网络的身份数据的元数据文件。（<code>metadata.json</code>）</li>
+<li>一个可选的<code>credentials</code>目录，包含身份的一个证书（文件名<code>certificate</code>）和一个私钥（文件名<code>privateKey</code>）。</li>
+</ul>
+<p><em>请注意</em>：如果没有<code>credentials</code>目录，则元数据文件的<em>enrollmentSecret</em>属性必须包含用于获取凭据的<em>登记密码</em>。如果指定了<em>enrollmentSecret</em>，并且业务网络卡片用于连接到业务网络，则一个包含证书的凭据目录会被自动创建和填充（如果业务网络卡片已导出）。</p>
+<p>元数据文件应采用以下格式：</p>
+<pre><code class="json">{
+    &quot;version&quot;: 1,
+    &quot;userName&quot;: &quot;alice&quot;,
+    &quot;description&quot;: &quot;Alice's identity for basic-sample-network&quot;,
+    &quot;businessNetwork&quot;: &quot;basic-sample-network&quot;,
+    &quot;enrollmentSecret&quot;: &quot;UserSecret&quot;,
+    &quot;roles&quot;: [
+    ]
+}
+</code></pre>
+
+<p>该<em>businessNetworkName</em>、<em>description</em>、<em>enrollmentSecret</em>和<em>roles</em>属性是可选的。可用的<em>roles</em>是<code>PeerAdmin</code>和<code>ChannelAdmin</code>。</p>
+<p>要创建业务网络卡片文件，请运行<code>composer card create</code>命令。</p>
+<p>现在可以使用Hyperledger Composer Playground导入此业务网络卡片。</p>
+<h2 id="_6">导入和导出业务网络卡片<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>导入和导出业务网络卡片是允许其他用户访问Playground中业务网络的最简单方式。有效的业务网络卡片必须使用上述方法之一创建，但可以导出并发送给其他用户。</p>
+<h3 id="_7">导出业务网络卡片<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<ol>
+<li>要导出业务网络卡片，请通过<a href="https://hyperledger.github.io/composer/stable/managing/id-cards-playground#creating-an-id-card-within-a-business-network">使用业务网络</a>创建一个身份并将业务网络卡片添加到你的钱包。</li>
+<li>在“ <strong>我的钱包”</strong>页面上，单击你想<strong>导出</strong>的业务网络卡片上的<strong>导出</strong>图标。业务网络卡片会作为<code>.card</code>文件下载。</li>
+</ol>
+<p><em>请注意</em>：如果你导出一个从未使用过的业务网络卡片，例如发送给新的参与者，它将包含获取证书和公钥所需的登记ID和登记密钥，然后用它们来认证者。或者，如果你导出之前使用过的业务网络卡片，它将已经包含证书和公钥。</p>
+<p><strong>重要</strong>：导出的身份卡片应小心处理，因为它们包含不受保护的证书。例如，你绝不应通过电子邮件或其他未加密的通讯方式发送身份卡片。</p>
+<h3 id="_8">导入业务网络卡片<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>导入业务网络卡片允许你连接到业务网络，而无需创建连接配置文件，身份和证书。业务网络的成员可以创建业务网络卡片并将其导出，以便其他人访问业务网络。</p>
+<ol>
+<li>在“ <strong>我的钱包”</strong>屏幕上，单击右上角的<strong>导入业务网络卡片</strong>。</li>
+<li>拖放或浏览以选择要导入的业务网络卡片（<code>.card</code>）文件。点击<strong>导入</strong>。</li>
+</ol>
+<p>业务网络卡片现在应该可以在钱包中看到。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../managing_identity-issue/" class="btn btn-neutral float-right" title="向参与者发放新的身份">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../managing_participant-add/" class="btn btn-neutral" title="增加参与者"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../managing_participant-add/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../managing_identity-issue/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
