@@ -2,19 +2,133 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+        
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//introduction_introduction/</loc>
      <lastmod>2017-12-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//introduction_key-concepts/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//introduction_solution-architecture/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
+        
     <url>
-     <loc>https://wbwangk.github.io/ComposerDocs//introduction_introduction/</loc>
+     <loc>https://wbwangk.github.io/ComposerDocs//installing_using-playground-locally/</loc>
      <lastmod>2017-12-26</lastmod>
      <changefreq>daily</changefreq>
     </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//installing_development-tools/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//business-network_business-network-index/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//business-network_businessnetworkdefinition/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//business-network_bnd-create/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//business-network_bnd-deploy/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//business-network_publishing-events/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//business-network_testing/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//business-network_bnd-publish/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//business-network_query/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//business-network_programmatic-access-control/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//business-network_historian/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//applications_applications-index/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//applications_node/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//applications_web/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//applications_subscribing-to-events/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
     
 
     
@@ -191,6 +305,12 @@
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//reference_cto_language/</loc>
+     <lastmod>2017-12-26</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//reference_acl_language/</loc>
      <lastmod>2017-12-26</lastmod>
      <changefreq>daily</changefreq>
     </url>

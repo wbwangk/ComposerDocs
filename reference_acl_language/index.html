@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>访问控制语言 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u8bbf\u95ee\u63a7\u5236\u8bed\u8a00";
+    var mkdocs_page_input_path = "reference_acl_language.md";
+    var mkdocs_page_url = "/reference_acl_language/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">介绍</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../introduction_introduction/">介绍</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../introduction_key-concepts/">关键概念</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../introduction_solution-architecture/">典型解决方案架构</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">安装</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../installing_using-playground-locally/">本地安装Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../installing_development-tools/">安装开发环境</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">开发业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../business-network_business-network-index/">开发业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_businessnetworkdefinition/">业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-create/">创建一个业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-deploy/">部署业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_publishing-events/">发送事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_testing/">测试业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-publish/">发布模型或业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_query/">查询和过滤业务网络数据</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_programmatic-access-control/">可编程访问控制</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_historian/">Hyperledger Composer历史库</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">开发应用程序</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../applications_applications-index/">开发应用程序</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_node/">编写Node.js应用程序</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_web/">编写Web或移动应用</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_subscribing-to-events/">订阅事件</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">集成现有系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">管理已部署业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">参考</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">访问控制语言</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#hyperledger-composer">Hyperledger Composer访问控制语言</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">网络访问控制</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">访问控制规则的评估</a></li>
+        
+            <li><a class="toctree-l4" href="#_5">访问控制规则语法</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">例子</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>参考 &raquo;</li>
+        
+      
+    
+    <li>访问控制语言</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/reference_acl_language.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hyperledger-composer">Hyperledger Composer访问控制语言<a class="headerlink" href="#hyperledger-composer" title="Permanent link">&para;</a></h1>
+<p>Hyperledger Composer包含一个访问控制语言（ACL），提供对领域模型元素的声明式访问控制。通过定义ACL规则，你可以确定允许哪些用户/角色在业务网络的领域模型中创建、读取、更新或删除元素。</p>
+<h2 id="_1">网络访问控制<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>Hyperledger Composer区分业务网络（业务访问控制）内的资源的访问控制和网络管理变更（网络访问控制）的访问控制。业务访问控制和网络访问控制都在业务网络的访问控制文件（<code>.acl</code>）中定义。</p>
+<p>网络访问控制使用系统命名空间，由业务网络中的所有资源隐式扩展; 并授予或拒绝访问下面定义的指定操作，并且旨在允许对某些网络级操作进行更细微的访问。</p>
+<h3 id="_2">网络访问控制允许或不允许什么？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p>网络访问控制会影响以下CLI命令：</p>
+<h4 id="composer">Composer 网络<a class="headerlink" href="#composer" title="Permanent link">&para;</a></h4>
+<p><strong>Composer网络部署</strong></p>
+<p>对库和网络的CREATE操作</p>
+<p><strong>Composer 网络下载</strong></p>
+<p>对库和网络的READ操作</p>
+<p><strong>Composer 网络清单</strong></p>
+<p>对库和网络的READ操作</p>
+<p><strong>Composer 网络日志级别</strong></p>
+<p>对网络的UPDATE操作。</p>
+<p><strong>Composer 网络ping</strong></p>
+<p>库和网络上的READ操作。</p>
+<p><strong>Composer 网络取消部署</strong></p>
+<p>库和网络上的DELETE操作。</p>
+<p><strong>Composer 网络更新</strong></p>
+<p>对库的UPDATE或CREATE操作，或对网络上的UPDATE操作。</p>
+<h4 id="composer_1">Composer 的身份<a class="headerlink" href="#composer_1" title="Permanent link">&para;</a></h4>
+<p><strong>Composer 身份导入</strong></p>
+<p>身份库的UPDATE操作或身份的CREATE操作。</p>
+<p><strong>Composer 的身份发放</strong></p>
+<p>身份库的UPDATE操作或身份的CREATE操作。</p>
+<p><strong>Composer 身份撤销</strong></p>
+<p>身份库的UPDATE操作或身份的DELETE操作。</p>
+<h4 id="composer_2">Composer 参与者<a class="headerlink" href="#composer_2" title="Permanent link">&para;</a></h4>
+<p><strong>Composer 参与者添加</strong></p>
+<p>参与者的CREATE操作或参与者库的UPDATE操作。</p>
+<h3 id="_3">授予网络访问控制权<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>网络访问使用系统命名空间来授予。系统命名空间对于网络访问始终是<code>org.hyperledger.composer.system.Network</code>，对于所有访问始终是<code>org.hyperledger.composer.system</code>。以下访问控制规则赋予<strong>networkControl</strong>参与者使用网络命令的所有操作的权限。</p>
+<pre><code>rule networkControlPermission {
+  description:  &quot;networkControl can access network commands&quot;
+  participant: &quot;org.acme.vehicle.auction.networkControl&quot;
+  operation: ALL
+  resource: &quot;org.hyperledger.composer.system.Network&quot;
+  action: ALLOW  
+}
+</code></pre>
+
+<p>以下访问控制规则将使所有参与者都能访问业务网络中的所有操作和命令，包括网络访问和业务访问。</p>
+<pre><code>rule AllAccess {
+  description: &quot;AllAccess - grant everything to everybody&quot;
+  participant: &quot;org.hyperledger.composer.system.Participant&quot;
+  operation: ALL
+  resource: &quot;org.hyperledger.composer.system.**&quot;
+  action: ALLOW
+}
+</code></pre>
+
+<h2 id="_4">访问控制规则的评估<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>业务网络的访问控制由一组有序的ACL规则来定义。规则按顺序进行评估，条件匹配的第一条规则决定访问是被授予还是被拒绝。如果没有规则匹配，则访问被<strong>拒绝</strong>。</p>
+<p>ACL规则是在业务网络的根目录中一个叫<code>permissions.acl</code>的文件中定义的。如果该文件从业务网络中缺失，则<strong>允许</strong>所有访问。</p>
+<h2 id="_5">访问控制规则语法<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<p>有两种类型的ACL规则：简单ACL规则和条件ACL规则。简单的规则根据参与者类型或参与者实例对命令空间、资产、资产或资产属性的访问进行控制。</p>
+<p>例如，下面的规则指出，<code>org.example.SampleParticipant</code>类型的所有实例都可以对<code>org.example.SampleAsset</code>的所有实例执行所有操作。</p>
+<pre><code>rule SimpleRule {
+    description: &quot;Description of the ACL rule&quot;
+    participant: &quot;org.example.SampleParticipant&quot;
+    operation: ALL
+    resource: &quot;org.example.SampleAsset&quot;
+    action: ALLOW
+}
+</code></pre>
+
+<p>条件ACL规则为参与者和被访问的资源引入变量绑定，以及一个布尔型JavaScript表达式，如果为true则允许参与者访问资源，否则拒绝访问。</p>
+<p>例如，下面的规则指出，所有<code>org.example.SampleParticipant</code>类型的实例都可以执行所有<code>org.example.SampleAsset</code>示例的所有操作，只要那个参与者是这个资产的所有者。</p>
+<pre><code>rule SampleConditionalRule {
+    description: &quot;Description of the ACL rule&quot;
+    participant(m): &quot;org.example.SampleParticipant&quot;
+    operation: ALL
+    resource(v): &quot;org.example.SampleAsset&quot;
+    condition: (v.owner.getIdentifier() == m.getIdentifier())
+    action: ALLOW
+}
+</code></pre>
+
+<p>条件ACL规则也可以指定一个可选的交易子句。当指定交易子句时，ACL规则只允许发起交易的参与者访问资源，并且该交易是指定的类型。</p>
+<p>例如，下面的规则指出，任何<code>org.example.SampleParticipant</code>类型的实例都可以访问<code>org.example.SampleAsset</code>的所有示例执行所有操作，如果那个参与者是这个资产的所有者，并且参与者提交<code>org.example.SampleTransaction</code>类型的交易以执行操作。</p>
+<pre><code>rule SampleConditionalRuleWithTransaction {
+    description: &quot;Description of the ACL rule&quot;
+    participant(m): &quot;org.example.SampleParticipant&quot;
+    operation: READ, CREATE, UPDATE
+    resource(v): &quot;org.example.SampleAsset&quot;
+    transaction(tx): &quot;org.example.SampleTransaction&quot;
+    condition: (v.owner.getIdentifier() == m.getIdentifier())
+    action: ALLOW
+}
+</code></pre>
+
+<p>可以定义多个ACL规则，从概念上定义决策表。决策树的行为定义了访问控制决策（ALLOW或DENY）。如果决策表无法匹配，则默认访问被拒绝。</p>
+<p><strong>资源</strong>定义了ACL规则适用的东西。这可以是一个类、一个命名空间中的所有类、或者一个命名空间下的所有类。它也可以是一个类的实例。</p>
+<p>资源示例：</p>
+<ul>
+<li>命名空间：<code>org.example.*</code></li>
+<li>命名空间（递归）：<code>org.example.**</code></li>
+<li>命名空间中的类：<code>org.example.Car</code></li>
+<li>类的实例：<code>org.example.Car#ABC123</code></li>
+</ul>
+<p><strong>操作</strong>标识规则管理的操作。支持四种操作：CREATE、READ、UPDATE和DELETE。你可以使用ALL指定规则管理所有支持的操作。或者，可以使用逗号分隔列表来指定规则管理一组支持的操作。</p>
+<p><strong>参与者</strong>定义已提交交易进行处理的个人或实体。如果指定了参与者，他们必须存在于参与者库中。PARTICIPANT可以选择性地绑定到一个变量，用于PREDICATE。特殊值“ANY”可以用来表示参与者类型检查不被强制执行。</p>
+<p><strong>交易</strong>定义参与者为了对指定资源执行指定操作而必须提交的交易。如果指定了此子句，并且参与者未提交此类型的交易（例如，他们正在使用CRUD API），则ACL规则不允许访问。</p>
+<p><strong>条件</strong>是绑定变量上的布尔型JavaScript表达式。任何带有<code>if(...)</code>的JavaScript表达式都是合法，可以在这里使用。用于ACL规则条件的JavaScript表达式可以引用脚本文件中的JavaScript工具函数。这允许用户轻松实现复杂的访问控制逻辑，并在多个ACL规则中重复使用相同的访问控制逻辑函数。</p>
+<p><strong>操作</strong>标识规则的操作。它必须是两个之一：ALLOW、 DENY。</p>
+<h2 id="_6">例子<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>ACL规则示例（按评估顺序）：</p>
+<pre><code>rule R1 {
+    description: &quot;Fred can DELETE the car ABC123&quot;
+    participant: &quot;org.example.Driver#Fred&quot;
+    operation: DELETE
+    resource: &quot;org.example.Car#ABC123&quot;
+    action: ALLOW
+}
+
+rule R2 {
+    description: &quot;regulator with ID Bill can not update a Car if they own it&quot;
+    participant(r): &quot;org.example.Regulator#Bill&quot;
+    operation: UPDATE
+    resource(c): &quot;org.example.Car&quot;
+    condition: (c.owner == r)
+    action: DENY
+}
+
+rule R3 {
+    description: &quot;regulators can perform all operations on Cars&quot;
+    participant: &quot;org.example.Regulator&quot;
+    operation: ALL
+    resource: &quot;org.example.Car&quot;
+    action: ALLOW
+}
+
+rule R4 {
+    description: &quot;Everyone can read all resources in the org.example namespace&quot;
+    participant: &quot;ANY&quot;
+    operation: READ
+    resource: &quot;org.example.*&quot;
+    action: ALLOW
+}
+
+rule R5 {
+    description: &quot;Everyone can read all resources under the org.example namespace&quot;
+    participant: &quot;ANY&quot;
+    operation: READ
+    resource: &quot;org.example.**&quot;
+    action: ALLOW
+}
+</code></pre>
+
+<p>规则从顶部（最具体）到底部（最不具体）进行评估。一旦参与者、操作和资源匹配一个规则，那么后续规则就不会被评估。</p>
+<p>这种排序使决策表更快地扫描人和计算机。如果没有ACL规则触发，那么访问控制决定是DENY（拒绝）。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../reference_query-language/" class="btn btn-neutral float-right" title="查询语言">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../reference_cto_language/" class="btn btn-neutral" title="建模语言"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../reference_cto_language/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../reference_query-language/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

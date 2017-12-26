@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>查询和过滤业务网络数据 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u67e5\u8be2\u548c\u8fc7\u6ee4\u4e1a\u52a1\u7f51\u7edc\u6570\u636e";
+    var mkdocs_page_input_path = "business-network_query.md";
+    var mkdocs_page_url = "/business-network_query/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">介绍</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../introduction_introduction/">介绍</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../introduction_key-concepts/">关键概念</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../introduction_solution-architecture/">典型解决方案架构</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">安装</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../installing_using-playground-locally/">本地安装Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../installing_development-tools/">安装开发环境</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">开发业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../business-network_business-network-index/">开发业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_businessnetworkdefinition/">业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-create/">创建一个业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-deploy/">部署业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_publishing-events/">发送事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_testing/">测试业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-publish/">发布模型或业务网络定义</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">查询和过滤业务网络数据</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">查询和过滤业务网络数据</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_2">查询的类型</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">使用过滤器</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_programmatic-access-control/">可编程访问控制</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_historian/">Hyperledger Composer历史库</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">开发应用程序</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../applications_applications-index/">开发应用程序</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_node/">编写Node.js应用程序</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_web/">编写Web或移动应用</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_subscribing-to-events/">订阅事件</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">集成现有系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">管理已部署业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">参考</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_acl_language/">访问控制语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>开发业务网络 &raquo;</li>
+        
+      
+    
+    <li>查询和过滤业务网络数据</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/business-network_query.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">查询和过滤业务网络数据<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>查询用于返回区块链世界状态的数据; 例如，你可以编写一个查询来返回指定年龄的所有司机，或具有指定名称的所有司机。<code>composer-rest-server</code>组件通过生成的REST API暴露命名查询。</p>
+<p>查询是业务网络定义的可选组件，用一个查询文件（<code>queries.qry</code>）编写。</p>
+<p>注意：使用Hyperledger Fabric v1.0时，Hyperledger Fabric必须配置为使用CouchDB持久化。</p>
+<p>过滤器与查询类似，但使用LoopBack过滤器语法，只能使用Hyperledger Composer REST API发送。目前只支持<code>WHERE</code>LoopBack过滤器。其中支持的<code>WHERE</code>中的运算符是：<strong>=</strong>、<strong>和</strong>、<strong>或</strong>、<strong>gt</strong>、<strong>gte</strong>、<strong>lt</strong>、<strong>lte</strong>、<strong>neq</strong>。过滤去通过<code>GET</code>方法针对资产类型、参与者类型或交易类型发出调用; 然后提供参数给过滤器。过滤器从指定的类中返回结果集，而不会返回指定类的扩展类的结果集。</p>
+<h2 id="_2">查询的类型<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>Hyperledger Composer支持两种类型的查询：命名查询和动态查询。命名查询在业务网络定义中指定，并由composer-rest-server组件暴露为GET方法。动态查询可以在事务处理器函数的运行时动态构建，也可以从客户端代码动态构建。</p>
+<h3 id="_3">编写命名查询<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>查询必须包含说明和语句。查询描述是一个描述查询功能的字符串。查询语句包含控制查询行为的运算符和函数。</p>
+<p>查询描述可以是任何描述性的字符串。查询语句必须包括<code>SELECT</code>运算符，可以选择<code>FROM</code>、<code>WHERE</code>、<code>AND</code>、<code>ORDER BY</code>、<code>SKIP</code>或<code>LIMIT</code>。</p>
+<p>查询应采用以下格式：</p>
+<pre><code>query Q1{
+  description: &quot;Select all drivers older than 65.&quot;
+  statement:
+      SELECT org.acme.Driver
+          WHERE (age&gt;65)
+}
+</code></pre>
+
+<h4 id="_4">查询参数<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>查询可以使用<code>_$</code>语法嵌入参数。请注意，查询参数必须是原始类型（字符串、整数、双精度、长整型、布尔型、日期时间）、关联或枚举。</p>
+<p>下面的命名查询是根据3个参数定义的：</p>
+<pre><code>query Q18 {
+    description: &quot;Select all drivers aged older than PARAM&quot;
+    statement:
+        SELECT org.acme.Driver
+            WHERE (_$ageParam &lt; age)
+                ORDER BY [lastName ASC, firstName DESC]
+                    LIMIT _$limitParam
+                        SKIP _$skipParam
+}
+</code></pre>
+
+<p>查询参数通过composer-rest-server为命名查询创建的GET方法自动暴露。</p>
+<p>有关Hyperledger Composer查询语言的详细信息，请参阅<a href="../reference_query-language/">查询语言参考文档</a>。</p>
+<h3 id="api">使用API查询<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
+<p>查询可以通过调用<em>buildQuery</em>或<em>query * API 来调用。</em>BuildQuery<em> API需要在API输入中指定整个查询字符串。</em>query* API需要你指定要运行的查询的名称。</p>
+<p>有关查询API的更多信息，请参阅<a href="https://hyperledger.github.io/composer/api/api-doc-index.html">API文档</a>。</p>
+<h3 id="_5">查询访问控制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>在返回查询结果时，你的访问控制规则将应用于结果。当前用户无权查看的任何内容将从结果中删除。</p>
+<p>例如，如果当前用户发送将返回所有资产的查询，如果他们只有权限查看部分资产，那么查询将仅返回部分资产。</p>
+<h2 id="_6">使用过滤器<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>过滤器只能使用Hyperledger Composer REST API进行提交，并且必须使用<a href="https://loopback.io/doc/en/lb2/Where-filter.html">LoopBack语法</a>。要提交查询，必须针对资产类型、参与者类型或交易类型提交<strong>GET</strong> REST调用，并将过滤器作为参数提供。过滤器参数支持的数据类型是<em>数字</em>、<em>布尔值</em>、<em>日期时间</em>和<em>字符串</em>。基本过滤器采用以下格式，其中<code>op</code>表示运算符：</p>
+<pre><code>{&quot;where&quot;: {&quot;field1&quot;: {&quot;op&quot;:&quot;value1&quot;}}}
+</code></pre>
+
+<p><em>请注意</em>：只有顶层<code>WHERE</code>运算符可以有两个以上的操作对象。</p>
+<p>目前仅支持<code>WHERE</code>LoopBack过滤器。<code>WHERE</code>中支持的运算符是：<strong>=</strong>、<strong>和</strong>、<strong>或</strong>、<strong>gt</strong>、<strong>gte</strong>、<strong>lt</strong>、<strong>lte</strong>、<strong>neq</strong>。过滤器可以组合多个运算符，在以下示例中，一个<strong>和</strong>运算符嵌套在一个<strong>or</strong>运算符中。</p>
+<pre><code>{&quot;where&quot;:{&quot;or&quot;:[{&quot;and&quot;:[{&quot;field1&quot;:&quot;foo&quot;},{&quot;field2&quot;:&quot;bar&quot;}]},{&quot;field3&quot;:&quot;foobar&quot;}]}}
+</code></pre>
+
+<p>的<strong>between</strong>运算符返回给定范围的值。它接受数字、日期时间值和字符串。如果提供字符串，则<strong>between</strong>运算符将按字母顺序返回提供的字符串之间的结果。在下面的示例中，过滤器将返回司机属性在<em>a</em>和<em>c</em>之间(含)的所有资源（按字母顺序排列）。</p>
+<pre><code>{&quot;where&quot;:{&quot;driver&quot;:{&quot;between&quot;: [&quot;a&quot;,&quot;c&quot;]}}}
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../business-network_programmatic-access-control/" class="btn btn-neutral float-right" title="可编程访问控制">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../business-network_bnd-publish/" class="btn btn-neutral" title="发布模型或业务网络定义"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../business-network_bnd-publish/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../business-network_programmatic-access-control/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

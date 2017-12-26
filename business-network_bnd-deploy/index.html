@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>部署业务网络 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u90e8\u7f72\u4e1a\u52a1\u7f51\u7edc";
+    var mkdocs_page_input_path = "business-network_bnd-deploy.md";
+    var mkdocs_page_url = "/business-network_bnd-deploy/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">介绍</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../introduction_introduction/">介绍</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../introduction_key-concepts/">关键概念</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../introduction_solution-architecture/">典型解决方案架构</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">安装</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../installing_using-playground-locally/">本地安装Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../installing_development-tools/">安装开发环境</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">开发业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../business-network_business-network-index/">开发业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_businessnetworkdefinition/">业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-create/">创建一个业务网络定义</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">部署业务网络</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#_1">部署业务网络</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#hyperledger-fabric-v10">将业务网络部署到Hyperledger Fabric v1.0</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">业务网络管理员</a></li>
+        
+            <li><a class="toctree-l4" href="#playground">在本地使用Playground部署业务网络</a></li>
+        
+            <li><a class="toctree-l4" href="#hyperledger-composer-playgroundfabric">使用Hyperledger Composer Playground将业务网络部署到本地Fabric碰到的问题</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">参考</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_publishing-events/">发送事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_testing/">测试业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-publish/">发布模型或业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_query/">查询和过滤业务网络数据</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_programmatic-access-control/">可编程访问控制</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_historian/">Hyperledger Composer历史库</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">开发应用程序</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../applications_applications-index/">开发应用程序</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_node/">编写Node.js应用程序</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_web/">编写Web或移动应用</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_subscribing-to-events/">订阅事件</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">集成现有系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">管理已部署业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">参考</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_acl_language/">访问控制语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>开发业务网络 &raquo;</li>
+        
+      
+    
+    <li>部署业务网络</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/business-network_bnd-deploy.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1">部署业务网络<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<p>在部署业务网络定义之前，必须将其打包到<em>业务网络档案</em>（.bna）文件中。<code>composer archive create</code>命令用于从磁盘上的业务网络定义文件夹创建业务网络档案文件。</p>
+<p>一旦创建了业务网络档案文件，就可以使用<a href="https://hyperledger.github.io/composer/reference/composer.runtime.install.html"><code>composer runtime install</code></a>命令和<a href="https://hyperledger.github.io/composer/reference/composer.network.start.html"><code>composer network start</code></a>命令将其部署到运行时。</p>
+<p>例如：</p>
+<pre><code class="bash">composer runtime install -n tutorial-network -c PeerAdmin@fabric-network
+</code></pre>
+
+<p>要更新已部署业务网络的业务网络定义，请使用<a href="https://hyperledger.github.io/composer/reference/composer.network.update.html"><code>composer network update</code></a>CLI命令。</p>
+<h2 id="hyperledger-fabric-v10">将业务网络部署到Hyperledger Fabric v1.0<a class="headerlink" href="#hyperledger-fabric-v10" title="Permanent link">&para;</a></h2>
+<p>在Hyperledger Fabric v1.0中，peer强制使用管理员和成员（或用户）的概念。管理员有权将新建业务网络的Hyperledger Fabric链码安装到peer。成员没有安装链码的权限。为了将业务网络部署到一组peer，你必须提供具有所有这些peer的管理权限的身份。</p>
+<p>要使该身份及其证书可用，你必须使用与peer管理员身份关联的证书和私钥创建peer管理业务网络卡片。Hyperledger Composer提供了一个示例Hyperledger Fabric v1.0网络。此网络的peer管理员被称为<code>PeerAdmin</code>，并且使用示例脚本启动网络时会自动为你导入该身份。请注意，对于其他Hyperledger Fabric v1.0网络，peer管理员可能会被赋予不同的名称。</p>
+<h2 id="_2">业务网络管理员<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>在部署业务网络时，根据业务网络定义中指定的访问控制规则强制执行访问控制。每个业务网络必须至少有一个参与者，并且该参与者必须具有访问该业务网络的有效身份。否则，客户端应用程序将无法与业务网络进行交互。</p>
+<p>业务网络管理员是业务网络部署后负责为其组织配置业务网络的参与者，并负责载入组织的其他参与者。由于业务网络包括多个组织，因此对于任何给定的业务网络应该有多个业务网络管理员。</p>
+<p>Hyperledger Composer提供了一个内置的参与者类型，<code>org.hyperledger.composer.system.NetworkAdmin</code>，代表了业务网络管理员。此内置参与者类型没有任何特殊权限; 它们仍然服从业务网络定义中指定的访问控制规则。因此，建议你从以下示例访问控制规则开始，向业务网络管理员授予对业务网络的完全访问权限：</p>
+<pre><code>rule NetworkAdminUser {
+    description: &quot;Grant business network administrators full access to user resources&quot;
+    participant: &quot;org.hyperledger.composer.system.NetworkAdmin&quot;
+    operation: ALL
+    resource: &quot;**&quot;
+    action: ALLOW
+}
+
+rule NetworkAdminSystem {
+    description: &quot;Grant business network administrators full access to system resources&quot;
+    participant: &quot;org.hyperledger.composer.system.NetworkAdmin&quot;
+    operation: ALL
+    resource: &quot;org.hyperledger.composer.system.**&quot;
+    action: ALLOW
+}
+</code></pre>
+
+<p>默认情况下，Hyperledger Composer将在部署期间自动创建一个业务网络管理员参与者。用于部署业务网络的身份也将绑定到该业务网络管理员参与者，以便在部署之后可以使用身份与业务网络进行交互。</p>
+<p>Hyperledger Fabric peer管理员可能没有权限使用Hyperledger Fabric证书颁发机构（CA）颁发新身份。这可能会限制业务网络管理员加入其他组织的其他参与者的能力。因此，最好创建一个业务网络管理员，让该管理员具有使用Hyperledger Fabric Certificate Authority（CA）颁发新身份的权限。</p>
+<p>你可以使用其他选项来<a href="https://hyperledger.github.io/composer/reference/composer.network.start.html"><code>composer network start</code></a>指定在部署业务网络期间应创建的业务网络管理员。</p>
+<p>如果业务网络管理员具有登记ID和登记密码，则可以使用<code>-A</code>（业务网络管理员）和<code>-S</code>（业务网络管理员用的登记密码）标志。例如，以下命令将为现有<code>admin</code>登记ID 创建一个业务网络管理员：</p>
+<pre><code class="bash">composer network start -c PeerAdmin@fabric-network -A admin -S
+</code></pre>
+
+<h2 id="playground">在本地使用Playground部署业务网络<a class="headerlink" href="#playground" title="Permanent link">&para;</a></h2>
+<p>在本地使用Playground将业务网络部署到Hyperledger Fabric v1.0时，必须按照上述过程使用peer管理员身份进行连接。</p>
+<p>Playground中的身份与业务网络卡片相关联，包括连接配置文件、身份元数据和证书。</p>
+<p>在本地部署使用Playground的业务网络时，必须至少有一个具有<code>PeerAdmin</code>角色的业务网络卡片和至少一个具有<code>ChannelAdmin</code>角色的业务网络卡片。每个这些业务网络卡片都必须包含正确的管理员证书。</p>
+<h2 id="hyperledger-composer-playgroundfabric">使用Hyperledger Composer Playground将业务网络部署到本地Fabric碰到的问题<a class="headerlink" href="#hyperledger-composer-playgroundfabric" title="Permanent link">&para;</a></h2>
+<p>使用本地安装的Hyperledger Composer Playground将业务网络部署到Hyperledger Fabric实例时，可能会遇到以下错误：</p>
+<pre><code>Error: error trying to list instantiated chaincodes. Error: chaincode error (status 500, message: Authorization for GETCHAINCODES on channel getchaincodes has been denied with error Failed verifying that proposal's creator satisfies local MSP principal during channelless check policy with policy [Admins]:[This identity is not an admin])
+</code></pre>
+
+<p>一旦发生此错误，你必须删除本地浏览器存储以恢复正常功能。<em>请注意</em>：删除本地浏览器存储将删除你的连接配置文件和你的钱包中的身份。有关此错误的更多信息，请参阅<a href="https://hyperledger.github.io/composer/problems/deployment-local-playground.html">特定的错误页面</a></p>
+<h2 id="_3">参考<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://hyperledger.github.io/composer/reference/commands.html"><strong>Composer CLI命令</strong></a></li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../business-network_publishing-events/" class="btn btn-neutral float-right" title="发送事件">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../business-network_bnd-create/" class="btn btn-neutral" title="创建一个业务网络定义"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../business-network_bnd-create/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../business-network_publishing-events/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
