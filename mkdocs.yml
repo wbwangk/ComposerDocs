@@ -27,6 +27,11 @@ pages:
       - 查询和过滤业务网络数据: business-network_query.md
       - 可编程访问控制: business-network_programmatic-access-control.md
       - Hyperledger Composer历史库: business-network_historian.md
+    - 开发应用程序
+      - 开发应用程序: applications_applications-index.md
+      - 编写Node.js应用程序: applications_node.md
+      - 编写Web或移动应用: applications_web.md
+      - 订阅事件: applications_subscribing-to-events.md
     - 教程: 
       - 教程: tutorials_tutorials.md
       - Playground教程: tutorials_playground-tutorial.md
