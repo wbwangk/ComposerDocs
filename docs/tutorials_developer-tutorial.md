@@ -9,7 +9,7 @@
 ### 先决条件
 开始本教程之前：
 
- - [建立你的开发环境](https://hyperledger.github.io/composer/installing/development-tools.html)
+ - [建立你的开发环境](installing_development-tools.md)
  - 安装一个编辑器，例如VSCode或Atom
 ### 第一步：创建一个商业网络结构
 关键概念是**商业网络定义(BND)**。它为你的区块链解决方案定义了数据模型、交易逻辑和访问控制规则。要创建一个BND，我们需要在磁盘上创建一个合适的项目结构。
