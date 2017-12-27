@@ -16,7 +16,7 @@ Playground教程通过使用Playground来追踪业务网络中商品的所有权
 
 开发者教程将引导你完成从零开始构建Hyperledger Composer区块链解决方案所需的步骤。在一天左右的时间里，你应该能够从破坏性区块链创新的想法转变为在Hyperledger Fabric上运行的完整业务网络。
 
-[**开始开发者教程**](tutorials/developer-tutorial.md)
+[**开始开发者教程**](tutorials_developer-tutorial.md)
 
 ## 查询教程
 
