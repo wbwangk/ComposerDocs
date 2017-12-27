@@ -412,18 +412,18 @@
 <p>Hyperledger Composer JavaScript SDK是一组Node.js API，使开发人员能够创建应用程序来管理和与已部署业务网络进行交互。</p>
 <p>这些API分成两个npm模块：</p>
 <ol>
-<li><code>composer-client</code> 用于向业务网络提交事务或对资产和参与者执行创建、读取、更新和删除操作</li>
+<li><code>composer-client</code> 用于向业务网络提交交易或对资产和参与者执行创建、读取、更新和删除操作</li>
 <li><code>composer-admin</code> 用于管理业务网络（部署、取消部署）</li>
 </ol>
 <p>所有API的细节都可以作为JSDocs（请参阅参考资料）。</p>
 <h3 id="composer">Composer客户端<a class="headerlink" href="#composer" title="Permanent link">&para;</a></h3>
-<p>这个模块通常作为应用程序的本地依赖来安装。它提供了业务应用程序用来连接到业务网络以访问<strong>资产</strong>、<strong>参与者</strong>和提交<strong>事务</strong>的API 。在生产中，这是需要添加为应用程序的直接依赖的唯一模块。</p>
+<p>这个模块通常作为应用程序的本地依赖来安装。它提供了业务应用程序用来连接到业务网络以访问<strong>资产</strong>、<strong>参与者</strong>和提交<strong>交易</strong>的API 。在生产中，这是需要添加为应用程序的直接依赖的唯一模块。</p>
 <h3 id="composer_1">Composer管理员<a class="headerlink" href="#composer_1" title="Permanent link">&para;</a></h3>
 <p>通常将该模块安装为<strong>管理</strong>应用程序的本地依赖项。该API允许创建和部署<strong>业务网络定义</strong>。</p>
 <h2 id="_3">命令行接口<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>该<code>composer</code>命令行工具使开发人员和管理员部署和管理业务网络定义。</p>
 <h2 id="rest">REST服务器<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h2>
-<p>Hyperledger Composer REST服务器自动为业务网络生成Open API（Swagger）REST API。REST服务器（基于LoopBack技术）将业务网络的Composer模型转换为Open API定义，并在运行时实现对资产和参与者的创建、读取、更新和删除支持，并允许事务提交处理或获取。</p>
+<p>Hyperledger Composer REST服务器自动为业务网络生成Open API（Swagger）REST API。REST服务器（基于LoopBack技术）将业务网络的Composer模型转换为Open API定义，并在运行时实现对资产和参与者的创建、读取、更新和删除支持，并允许交易提交处理或获取。</p>
 <h2 id="loopback">LoopBack连接器<a class="headerlink" href="#loopback" title="Permanent link">&para;</a></h2>
 <p>Hyperledger Composer LoopBack连接器由Composer REST服务器使用，但也可以由本机支持LoopBack的集成工具单独使用。或者，它可以与LoopBack工具一起使用，以创建更复杂的REST API自定义。</p>
 <h2 id="playground-web">Playground Web用户界面<a class="headerlink" href="#playground-web" title="Permanent link">&para;</a></h2>

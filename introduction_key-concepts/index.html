@@ -377,7 +377,7 @@
             <div class="section">
               
                 <h1 id="hyperledger-composer">Hyperledger Composer的关键概念<a class="headerlink" href="#hyperledger-composer" title="Permanent link">&para;</a></h1>
-<p>Hyperledger Composer是一种编程模型，包含建模语言和一组API，可快速定义和部署业务网络和应用程序，允许<strong>参与者</strong>发送交换<strong>资产的</strong><strong>交易</strong>。</p>
+<p>Hyperledger Composer是一种编程模型，包含建模语言和一组API，可快速定义和部署业务网络和应用程序，允许<strong>参与者</strong>发出<strong>交易</strong>来交换<strong>资产的</strong>。</p>
 <h2 id="hyperledger-composer_1">Hyperledger Composer组件<a class="headerlink" href="#hyperledger-composer_1" title="Permanent link">&para;</a></h2>
 <p>你可以使用我们基于浏览器的界面（称为Hyperledger Composer Playground）体验Hyperledger Composer。Playground可作为托管版本（无需安装）或本地安装（适用于离线编辑和测试示例业务网络）。</p>
 <p>想要使用Hyperledger Composer的完整应用程序开发功能的开发人员应安装开发人员工具。</p>
@@ -386,7 +386,7 @@
 <h3 id="_1">区块链状态存储<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>通过业务网络提交的所有交易都存储在区块链账本中，资产和参与者的当前状态存储在区块链状态数据库中。区块链将账本和状态数据库分布在一组peer上，并确保使用一致性算法在所有peer上对账本和状态数据库的更新是一致的。</p>
 <h3 id="_2">连接配置文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>Hyperledger Composer使用<em>连接配置文件</em>连接到运行时。连接配置文件是一个JSON文档，位于用户的主目录（或可能来自环境变量），并在使用Composer API或命令行工具时用名称引用。使用连接配置文件可确保代码和脚本轻松地从一个运行时实例移植到另一个实例。你可以在参考部分阅读更多关于连接配置文件的文档。</p>
+<p>Hyperledger Composer使用<em>连接配置文件</em>连接到运行时。连接配置文件是一个JSON文档，位于用户的主目录（或可能来自环境变量），并在使用Composer API或命令行工具时用名称引用。使用连接配置文件可确保代码和脚本轻松地从一个运行时实例移植到另一个实例。你可以在参考部分阅读更多关于<a href="../reference_connectionprofile/">连接配置文件</a>的文档。</p>
 <h3 id="_3">资产<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <p>资产是有形或无形的商品、服务或财产，并存储在库(registry)中。资产几乎可以代表业务网络中的任何东西，例如，待售房屋、销售清单、该房屋的土地登记证书以及该房屋的保险文件都可以是一个或多个业务网络中的资产。</p>
 <p>资产必须具有唯一的标识符(identifier)，但除此之外，它们可以包含你定义的任何属性。资产可能<em>与</em>其他资产或参与者关联。</p>

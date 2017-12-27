@@ -417,28 +417,32 @@ chmod u+x prereqs-ubuntu.sh
 <h2 id="1hyperledger-composer">步骤1：安装Hyperledger Composer开发工具<a class="headerlink" href="#1hyperledger-composer" title="Permanent link">&para;</a></h2>
 <p>你将需要的开发工具都可以用<code>npm install -g</code>安装（作为非特权用户，例如非root用户）。</p>
 <ol>
-<li>要安装<code>composer-cli</code>运行以下命令：
-   <code>bash
-   npm install -g composer-cli</code></li>
+<li>要安装<code>composer-cli</code>运行以下命令：</li>
 </ol>
+<pre><code class="bash">npm install -g composer-cli
+</code></pre>
+
 <p><code>composer-cli</code>包含了用于开发业务网络的所有命令行操作。</p>
 <ol>
-<li>要安装<code>generator-hyperledger-composer</code>运行以下命令：
-   <code>bash
-   npm install -g generator-hyperledger-composer</code></li>
+<li>要安装<code>generator-hyperledger-composer</code>运行以下命令：</li>
 </ol>
+<pre><code class="bash">npm install -g generator-hyperledger-composer
+</code></pre>
+
 <p>这<code>generator-hyperledger-composer</code>是一个Yeoman插件，为你的业务网络创建定制的应用程序。</p>
 <ol>
-<li>要安装<code>composer-rest-server</code>运行以下命令：
-   <code>bash
-   npm install -g composer-rest-server</code></li>
+<li>要安装<code>composer-rest-server</code>运行以下命令：</li>
 </ol>
+<pre><code class="bash">npm install -g composer-rest-server
+</code></pre>
+
 <p>在<code>composer-rest-server</code>使用Hyperledger Composer LoopBack连接器连接到一个业务网络，提取模型，然后呈现一个页面，页面包含了按模型生成的REST API。</p>
 <ol>
-<li>要安装<code>Yeoman</code>运行以下命令：
-   <code>bash
-   npm install -g yo</code></li>
+<li>要安装<code>Yeoman</code>运行以下命令：</li>
 </ol>
+<pre><code class="bash">npm install -g yo
+</code></pre>
+
 <p>Yeoman是一个生成应用程序的工具。与<code>generator-hyperledger-composer</code>组件结合使用时，它可以解释业务网络并基于它们生成应用程序。</p>
 <h3 id="_2">可选的开发工具<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <ol>
@@ -449,13 +453,15 @@ chmod u+x prereqs-ubuntu.sh
 <p>如果要在本地使用Playground运行连接到业务网络，使用以下命令安装<code>composer-playground</code>。</p>
 </li>
 </ol>
-<p><code>bash
-   npm install -g composer-playground</code></p>
+<pre><code class="bash">npm install -g composer-playground
+</code></pre>
+
 <ol>
 <li>要在本地运行Playground，请运行以下命令：</li>
 </ol>
-<p><code>bash
-   composer-playground</code></p>
+<pre><code class="bash">composer-playground
+</code></pre>
+
 <p>Playground会在以下地址自动打开：<a href="http://localhost:8080/login">http://localhost:8080/login</a></p>
 <h2 id="2hyperledger-fabric">步骤2：启动Hyperledger Fabric<a class="headerlink" href="#2hyperledger-fabric" title="Permanent link">&para;</a></h2>
 <p>如果你在<a href="../installing_using-playground-locally/">本地安装了Hyperledger Composer Playground</a>，则需要使用以下脚本关闭容器。</p>
@@ -468,32 +474,35 @@ docker rmi $(docker images dev-* -q)
 </code></pre>
 
 <ol>
-<li>在你选择的目录中（假设<code>~/fabric-tools</code>）获得包含安装Hyperledger Fabric v1.0的工具的zip文件。
-   <code>bash
-   mkdir ~/fabric-tools &amp;&amp; cd ~/fabric-tools
-   curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.zip
-   unzip fabric-dev-servers.zip</code></li>
+<li>在你选择的目录中（假设<code>~/fabric-tools</code>）获得包含安装Hyperledger Fabric v1.0的工具的zip文件。</li>
 </ol>
-<p>还可以选择<code>tar.gz</code>文件
-   ```bash
-   mkdir ~/fabric-tools &amp;&amp; cd ~/fabric-tools
-   curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz</p>
-<p>tar xvzf fabric-dev-servers.tar.gz
-   ```</p>
+<pre><code class="bash">mkdir ~/fabric-tools &amp;&amp; cd ~/fabric-tools
+curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.zip
+unzip fabric-dev-servers.zip
+</code></pre>
+
+<p>还可以选择<code>tar.gz</code>文件</p>
+<pre><code class="bash">mkdir ~/fabric-tools &amp;&amp; cd ~/fabric-tools
+curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.tar.gz
+tar xvzf fabric-dev-servers.tar.gz
+</code></pre>
+
 <ol>
 <li>如果这是第一次，则需要先下载fabric运行时。如果你已经下载了它，请启动fabric环境，并创建一个Hyperledger Composer profile（配置文件）。之后，你可以选择停止该fabric，然后再次启动。你也可以彻底清理Hyperledger Fabric和Hyperledger Composer配置文件。</li>
 </ol>
-<p>所有脚本将在目录<code>~/fabric-tools</code> 中。使用Hyperledger Composer的典型顺序是
-   <code>bash
-   cd ~/fabric-tools
-   ./downloadFabric.sh
-   ./startFabric.sh
-   ./createPeerAdminCard.sh</code>
+<p>所有脚本将在目录<code>~/fabric-tools</code> 中。使用Hyperledger Composer的典型顺序是</p>
+<pre><code class="bash">cd ~/fabric-tools
+./downloadFabric.sh
+./startFabric.sh
+./createPeerAdminCard.sh
+   ```
    然后在开发阶段结束
-   <code>bash
-   cd ~/fabric-tools
-   ./stopFabric.sh
-   ./teardownFabric.sh</code></p>
+```bash
+cd ~/fabric-tools
+./stopFabric.sh
+./teardownFabric.sh
+</code></pre>
+
 <blockquote>
 <p>请注意：所创建的开发环境将包含一个<code>PeerAdmin</code>身份，包括部署业务网络所需的加密材料。</p>
 </blockquote>
