@@ -31,7 +31,7 @@ cd ~/fabric-tools
 ```bash
 git clone -b issue-6978 https://github.com/sstone1/fabric-samples.git
 ```
-按照[建立你的首个网络](https://hyperledgercn.github.io/hyperledgerDocs/build_network_zh/)教程，确保你使用了上面步骤克隆的Github库。你不能克隆和使用Hyperledger Fabric版本的Github库，因为它当前没有更新到这个教程需要的内容。
+按照[建立你的首个网络](https://hyperledgercn.github.io/hyperledgerDocs/build_network_zh/)教程，确保你使用了上面克隆的Github库。你不能克隆和使用Hyperledger Fabric版本的Github库，因为它当前没有更新到这个教程需要的内容。
 
 ### ◎步骤一：启动一个Hyperledger Fabric网络
 为了遵照这个教程，你必须启动一个Hyperledger Fabric网络。
