@@ -236,7 +236,7 @@ composer card create -p connection.json -u PeerAdmin -c Admin@org1.example.com-c
 在这里，我们指定用户拥有哪些角色。此信息是必需的，以便Hyperledger Composer知道哪些用户能够执行哪些操作。用户`Admin@org1.example.com`是Hyperledger Fabric网络的管理员，具有角色`PeerAdmin`（能够安装链码）和角色`ChannelAdmin`（能够实例化链码）。
 
 ### 步骤六：为Hyperledger Fabric管理员导入业务网络卡片
-Hyperledger Composer只能使用放置在钱包中的业务网络卡片。钱包是包含业务网络卡片的文件系统上的目录。在这一步中，你将将步骤五中创建的业务网络卡片导入到钱包中，以便你可以在后续步骤中使用这个业务网络卡片。
+Hyperledger Composer只能使用放置在钱包中的业务网络卡片。钱包是包含业务网络卡片的文件系统目录。在这一步中，你将将步骤五中创建的业务网络卡片导入到钱包中，以便你可以在后续步骤中使用这个业务网络卡片。
 
 运行`composer card import`命令将业务网络卡片导入钱包：
 ```bash
