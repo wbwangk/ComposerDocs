@@ -6,17 +6,17 @@
 
 Playground教程通过使用Playground来追踪业务网络中商品的所有权。
 
-如果你想运行Playground教程，请先[在本地安装Playground ](https://hyperledger.github.io/composer/installing/using-playground-locally.html)，然后使用Playground教程。
+如果你想运行Playground教程，请先[在本地安装Playground ](installing_using-playground-locally.md)，然后使用Playground教程。
 
-[**开始Playground教程**](https://hyperledger.github.io/composer/tutorials/playground-tutorial.html)
+[**开始Playground教程**](tutorials_playground-tutorial.md)
 
 ## 开发者教程
 
-本教程假定你有一个开发环境设置，包括[**安装开发工具**](https://hyperledger.github.io/composer/installing/development-tools.html)。
+本教程假定你有一个开发环境设置，包括[**安装开发工具**](installing_development-tools.md)。
 
 开发者教程将引导你完成从零开始构建Hyperledger Composer区块链解决方案所需的步骤。在一天左右的时间里，你应该能够从破坏性区块链创新的想法转变为在Hyperledger Fabric上运行的完整业务网络。
 
-[**开始开发者教程**](https://hyperledger.github.io/composer/tutorials/developer-tutorial.html)
+[**开始开发者教程**](tutorials/developer-tutorial.md)
 
 ## 查询教程
 
@@ -30,7 +30,7 @@ Playground教程通过使用Playground来追踪业务网络中商品的所有权
 
 在本教程中，将为Hyperledger Fabric运行的实例配置Hyperledger Composer，并使用该配置部署业务网络。
 
-[**启动单组织Hyperledger Fabric部署教程**](https://hyperledger.github.io/composer/tutorials/deploy-to-fabric-single-org.html)
+[**启动单组织Hyperledger Fabric部署教程**](tutorials_deploy-to-fabric-single-org.md)
 
 ## 部署到多组织Hyperledger Fabric
 
@@ -38,4 +38,4 @@ Playground教程通过使用Playground来追踪业务网络中商品的所有权
 
 在本教程中，两个组织管理员配置他们的Hyperledger Composer实例，以便与Hyperledger Fabric中的相同通道进行交互。
 
-[**启动多组织Hyperledger Fabric部署教程**](https://hyperledger.github.io/composer/tutorials/deploy-to-fabric-multi-org.html)
+[**启动多组织Hyperledger Fabric部署教程**](tutorials_deploy-to-fabric-multi-org.md)
