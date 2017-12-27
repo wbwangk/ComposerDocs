@@ -32,5 +32,5 @@
 
 ## 接下来是什么？
 
-- [订阅活动](https://hyperledger.github.io/composer/applications/subscribing-to-events.html)
-- [开发应用程序](https://hyperledger.github.io/composer/applications/applications-index.html)
+- [订阅事件](applications_subscribing-to-events.md)
+- [开发应用程序](applications_applications-index.md)
