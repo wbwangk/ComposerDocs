@@ -34,14 +34,14 @@ Hyperledger Composer JavaScript SDK是一组Node.js API，使开发人员能够�
 
 这些API分成两个npm模块：
 
-1. `composer-client` 用于向业务网络提交事务或对资产和参与者执行创建、读取、更新和删除操作
+1. `composer-client` 用于向业务网络提交交易或对资产和参与者执行创建、读取、更新和删除操作
 2. `composer-admin` 用于管理业务网络（部署、取消部署）
 
 所有API的细节都可以作为JSDocs（请参阅参考资料）。
 
 ### Composer客户端
 
-这个模块通常作为应用程序的本地依赖来安装。它提供了业务应用程序用来连接到业务网络以访问**资产**、**参与者**和提交**事务**的API 。在生产中，这是需要添加为应用程序的直接依赖的唯一模块。
+这个模块通常作为应用程序的本地依赖来安装。它提供了业务应用程序用来连接到业务网络以访问**资产**、**参与者**和提交**交易**的API 。在生产中，这是需要添加为应用程序的直接依赖的唯一模块。
 
 ### Composer管理员
 
@@ -53,7 +53,7 @@ Hyperledger Composer JavaScript SDK是一组Node.js API，使开发人员能够�
 
 ## REST服务器
 
-Hyperledger Composer REST服务器自动为业务网络生成Open API（Swagger）REST API。REST服务器（基于LoopBack技术）将业务网络的Composer模型转换为Open API定义，并在运行时实现对资产和参与者的创建、读取、更新和删除支持，并允许事务提交处理或获取。
+Hyperledger Composer REST服务器自动为业务网络生成Open API（Swagger）REST API。REST服务器（基于LoopBack技术）将业务网络的Composer模型转换为Open API定义，并在运行时实现对资产和参与者的创建、读取、更新和删除支持，并允许交易提交处理或获取。
 
 ## LoopBack连接器
 
