@@ -19,6 +19,7 @@ const BusinessNetworkConnection = require('composer-client').BusinessNetworkConn
 ## 连接到Hyperledger Composer运行时
 
 BusinessNetworkConnection实例已创建，然后被用于连接到运行时：
+
 ```
 this.bizNetworkConnection = new BusinessNetworkConnection();
 this.cardName = config.get('cardName');
@@ -26,6 +27,7 @@ this.businessNetworkIdentifier = config.get('businessNetworkIdentifier');
 ```
 
 我们要在这里创建的第一个Hyperledger Composer API调用是connect() API，用于建立与Hyperledger Fabric上的Hyperledger Composer运行时的连接。如果成功，此API将对BusinessNetworkDefinition返回一个Promise：
+
 ```
 this.bizNetworkConnection.connect(this.cardName)
 .then((result) => {
@@ -38,6 +40,7 @@ this.bizNetworkConnection.connect(this.cardName)
 ## 将资产添加到库
 
 Hyperledger Composer运行时将为每种建模资产创建一个默认库。所以在这个例子中，LandTitle（土地权证）库已经被创建了。我们在这里要做的是访问该库，然后添加一些资产。该`getAssetRegistry()`方法采用CTO模型文件中定义的全限定资产名称（即命名空间加上资产类型的名称）。它返回一个与资产库一起解决的承诺：
+
 ```
 this.bizNetworkConnection.getAssetRegistry('net.biz.digitalPropertyNetwork.LandTitle')
 .then((result) => {
@@ -48,6 +51,7 @@ this.bizNetworkConnection.getAssetRegistry('net.biz.digitalPropertyNetwork.LandT
 下一步是创建一些资产（在代码中查找方法`_bootstrapTitles`）
 
 工厂样式模式用于创建资产。从businessNetworkDefinition获取工厂，用于创建业务网络中定义的所有类型的实例。请注意使用命名空间和资产名称。然后我们可以设置这个资产的属性。这里的标识符（firstName lastName）与模型中定义的属性匹配。
+
 ```
 let factory = this.businessNetworkDefinition.getFactory();
 owner = factory.newResource('net.biz.digitalPropertyNetwork', 'Person', 'PID:1234567890');
@@ -56,6 +60,7 @@ owner.lastName = 'Bloggs';
 ```
 
 我们现在有一个人！现在我们需要一个土地权证。请注意业主是如何被指定为我们刚刚创建的人。（在实际的示例代码中，我们使用这个代码两次来创建landTitle1和landTitle2）。
+
 ```
 let landTitle2 = factory.newResource('net.biz.digitalPropertyNetwork', 'LandTitle', 'LID:6789');
 landTitle2.owner = owner;
@@ -63,11 +68,13 @@ landTitle2.information = 'A small flat in the city';
 ```
 
 我们现在已经创建了一个需要存储在库中的土地权证。
+
 ```
 this.titlesRegistry.addAll([landTitle1, landTitle2]);
 ```
 
 这是使用API来添加多个权证，这会返回一个在添加资产时解决的承诺。我们需要做的最后一件事是添加Person，Fred Bloggs。由于这是“参与者”，因此使用getParticipantRegistry API。
+
 ```
 this.bizNetworkConnection.getParticipantRegistry('net.biz.digitalPropertyNetwork.Person')
   .then((personRegistry) => {
@@ -78,6 +85,7 @@ this.bizNetworkConnection.getParticipantRegistry('net.biz.digitalPropertyNetwork
 ## 列出库中资产
 
 在示例应用程序中，这是以不同的方法处理的`list()`。与放置资产相同的设置是必需的，所以在我们需要获取资产库之前，我们称之为getAll() API。这将返回一个对象数组。
+
 ```
 this.bizNetworkConnection.getAssetRegistry('net.biz.digitalPropertyNetwork.LandTitle')
 .then((registry) => {
@@ -105,6 +113,7 @@ this.bizNetworkConnection.getAssetRegistry('net.biz.digitalPropertyNetwork.LandT
 ```
 
 其中大部分不是Hyperledger Composer API代码 - 但它显示了如何访问已返回的对象的详细信息。在这一点上，值得再看看这个模型。
+
 ```
 asset LandTitle identified by titleId {
   o String   titleId
@@ -125,6 +134,7 @@ participant Person identified by personId {
 ## 提交交易
 
 我们需要做的最后一件事是提交交易。这是模型文件中交易的定义：
+
 ```
 transaction RegisterPropertyForSale identified by transactionId{
   o String transactionId
@@ -133,6 +143,7 @@ transaction RegisterPropertyForSale identified by transactionId{
 ```
 
 交易在这里有两个字段，一个是trandsactionId，一个是应该提交出售的土地权证的引用。第一步是进入地产登记处，取回我们要提交出售的具体土地权证。
+
 ```
 this.bizNetworkConnection.getAssetRegistry('net.biz.digitalPropertyNetwork.LandTitle')
 .then((registry) => {
@@ -141,6 +152,7 @@ this.bizNetworkConnection.getAssetRegistry('net.biz.digitalPropertyNetwork.LandT
 ```
 
 getAssetRegistry调用现在应该看起来有点熟悉，get API用于获取特定的土地权证。下一步是创建我们想要提交的交易。
+
 ```
 let serializer = this.businessNetworkDefinition.getSerializer();
 
