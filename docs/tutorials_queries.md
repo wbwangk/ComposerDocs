@@ -152,9 +152,9 @@
 
 1、使用命令行，导航到`tutorial-network`目录。  
 2、运行以下命令：  
- ```bash
+```bash
    composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.1.bna
- ```
+```
 
 ### 第四步：部署更新的业务网络定义
 
