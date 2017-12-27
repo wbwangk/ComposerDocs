@@ -313,4 +313,6 @@ composer network ping -c admin@tutorial-network
 ### 结论
 在本教程中，你已经了解了如何配置Hyperledger Composer以及连接到Hyperledger Fabric网络所需的所有信息，以及如何将区块链业务网络部署到Hyperledger Fabric网络。
 
-如果你使用了开发环境中提供的简单Hyperledger Fabric网络，那么为什么不尝试按照Hyperledger Fabric文档构建自己的Hyperledger Fabric网络，并查看是否可以成功部署区块链业务网络？
+如果你使用了开发环境中提供的简单Hyperledger Fabric网络，那么为什么不尝试按照Hyperledger Fabric文档构建自己的Hyperledger Fabric网络，并查看是否可以成功部署区块链业务网络？  
+
+（说明：`hlfv11`目前没有正式发布，如果想测试正式版，全文替换成`hlfv1`，包括环境变量）
