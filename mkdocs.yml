@@ -9,6 +9,7 @@ copyright: wbwangk(wbwang@inspur.com)
 theme: readthedocs
 
 pages:
+    - 欢迎: index.md
     - 介绍: 
       - 介绍: introduction_introduction.md
       - 关键概念: introduction_key-concepts.md
