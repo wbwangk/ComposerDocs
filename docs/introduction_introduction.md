@@ -1,4 +1,4 @@
-# 欢迎来到Hyperledger作曲家
+# 欢迎来到Hyperledger Composer
 
 Hyperledger Composer是一个广泛的、开放的开发工具集和框架，使开发区块链应用程序更容易。我们的主要目标是加快实现价值的时间，并使区块链应用程序与现有业务系统的集成变得更加容易。你可以使用Composer快速开发用例，并在几周内部署区块链解决方案，而不是几个月。Composer允许你对业务网络进行建模，并将现有系统和数据与区块链应用程序集成。
 
@@ -23,5 +23,5 @@ Hyperledger Composer支持现有的[Hyperledger Fabric区块链](https://hyperle
 ## 我从哪里出发？
 
 - 要立即尝试Hyperledger Composer，请参阅[在线Playground](https://hyperledger.github.io/composer/installing/getting-started-with-playground.html)
-- 有关Composer组件和概念的介绍，请参阅[重要概念](https://hyperledger.github.io/composer/introduction/key-concepts.html)
-- 有关使用Composer构建的典型解决方案的架构概述，请参阅“ [典型解决方案架构”](https://hyperledger.github.io/composer/introduction/solution-architecture.html)
+- 有关Composer组件和概念的介绍，请参阅[重要概念](introduction_key-concepts.html)
+- 有关使用Composer构建的典型解决方案的架构概述，请参阅“ [典型解决方案架构”](introduction_solution-architecture.md)
