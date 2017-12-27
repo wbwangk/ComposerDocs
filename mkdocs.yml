@@ -16,6 +16,13 @@ pages:
     - 安装:
       - 本地安装Playground: installing_using-playground-locally.md
       - 安装开发环境: installing_development-tools.md
+    - 教程: 
+      - 教程: tutorials_tutorials.md
+      - Playground教程: tutorials_playground-tutorial.md
+      - 开发者教程: tutorials_developer-tutorial.md
+      - 查询教程: tutorials_queries.md
+      - 为单个组织部署Hyperledger Fabric: tutorials_deploy-to-fabric-single-org.md
+      - 为多个组织部署Hyperledger Fabric: tutorials_deploy-to-fabric-multi-org.md
     - 开发业务网络:
       - 开发业务网络: business-network_business-network-index.md
       - 业务网络定义: business-network_businessnetworkdefinition.md
@@ -32,13 +39,6 @@ pages:
       - 编写Node.js应用程序: applications_node.md
       - 编写Web或移动应用: applications_web.md
       - 订阅事件: applications_subscribing-to-events.md
-    - 教程: 
-      - 教程: tutorials_tutorials.md
-      - Playground教程: tutorials_playground-tutorial.md
-      - 开发者教程: tutorials_developer-tutorial.md
-      - 查询教程: tutorials_queries.md
-      - 为单个组织部署Hyperledger Fabric: tutorials_deploy-to-fabric-single-org.md
-      - 为多个组织部署Hyperledger Fabric: tutorials_deploy-to-fabric-multi-org.md
     - 集成现有系统: 
       - 集成现有系统: integrating_integrating-index.md
       - 生成REST API: integrating_getting-started-rest-api.md
