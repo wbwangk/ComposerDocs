@@ -399,15 +399,11 @@
 <p>在<a href="../installing_development-tools/">开发环境</a>中，为你创建了一个简单Hyperledger Fabric网络(<code>fabric-dev-servers</code>)，以及为部署区块链业务网络所需的所有Hyperledger Composer配置。</p>
 <p>本教程将演示为单个组织将区块链业务网络部署到的Hyperledger Fabric实例，管理员需要执行的步骤，包括如何生成必需的Hyperledger Composer配置。随后的教程将演示如何将区块链业务网络部署到多个组织的Hyperledger Fabric实例。</p>
 <h3 id="_1">先决条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<ol>
-<li>在你继续前，确保你已经完成了<a href="../installing_development-tools/">安装一个开发环境</a>中步骤。  </li>
-</ol>
+<p>1、在你继续前，确保你已经完成了<a href="../installing_development-tools/">安装一个开发环境</a>中步骤。  </p>
 <h3 id="hyperledger-fabric">步骤一：启动Hyperledger Fabric网络<a class="headerlink" href="#hyperledger-fabric" title="Permanent link">&para;</a></h3>
 <p>为了遵循本教程，必须必须启动Hyperledger Fabric网络。你可以使用开发环境中提供的简单Hyperledger Fabric网络，也可以使用你根据Hyperledger Fabric文档构建的自己的Hyperledger Fabric网络。</p>
 <p>本教程将假设你使用开发环境中提供的简单Hyperledger Fabric网络。如果你使用自己的Hyperledger Fabric网络，则必须在下面详细介绍的配置和你自己的配置之间进行映射。</p>
-<ol>
-<li>通过运行以下命令启动一个干净的Hyperledger Fabric：</li>
-</ol>
+<p>1、通过运行以下命令启动一个干净的Hyperledger Fabric：  </p>
 <pre><code class="bash">cd ~/fabric-tools
 ./stopFabric.sh
 ./teardownFabric.sh
@@ -416,9 +412,7 @@ export FABRIC_VERSION=hlfv11
 ./startFabric.sh
 </code></pre>
 
-<ol>
-<li>删除你的钱包中的所有业务网络卡片。忽略无法找到业务网络卡片的错误，这是安全的：</li>
-</ol>
+<p>2、删除你的钱包中的所有业务网络卡片。忽略无法找到业务网络卡片的错误，这是安全的：  </p>
 <pre><code>composer card delete -n PeerAdmin@fabric-network
 composer card delete -n admin@tutorial-network
 </code></pre>
@@ -461,14 +455,8 @@ composer card delete -n admin@tutorial-network
 <p>最后，创建了一个名为<code>channel</code>的信道。peer节点<code>peer0.org1.example.com</code>已加入此通道。你只能将Hyperledger Composer区块链业务网络部署到已存在的信道，但您可以按照Hyperledger Fabric文档创建其他信道。</p>
 <h3 id="_7">步骤三：建立连接配置文件<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>连接配置文件(profile)指定了定位和连接Hyperledger Fabric网络所需的所有信息，例如所有Hyperledger Fabric网络组件的主机名和端口。在此步骤中，你将为Hyperledger Composer创建一个连接配置文件，用于连接到Hyperledger Fabric网络。</p>
-<ol>
-<li>
-<p>创建一个名为的<code>connection.json</code>的连接配置文件。</p>
-</li>
-<li>
-<p>通过将以下三行添加到<code>connection.json</code>顶部来提供连接配置文件的<code>name</code>和<code>type</code>属性：</p>
-</li>
-</ol>
+<p>1、创建一个名为的<code>connection.json</code>的连接配置文件。</p>
+<p>2、通过将以下三行添加到<code>connection.json</code>顶部来提供连接配置文件的<code>name</code>和<code>type</code>属性：  </p>
 <pre><code class="json">{
   &quot;name&quot;: &quot;fabric-network&quot;,
   &quot;type&quot;: &quot;hlfv1&quot;,
@@ -476,14 +464,12 @@ composer card delete -n admin@tutorial-network
 
 <p>连接配置文件中的<code>name</code>属性给出Hyperledger Fabric网络的名称，所以稍后可以引用它。在刚创建的连接配置文件，名称是<code>fabric-network</code>。你可以使用喜欢的名字为Hyperledger Fabric网络命名。</p>
 <p>Hyperledger Composer被设计为兼容不同类型的区块链网络。目前，仅支持Hyperledger Fabric v1.0，但你必须指定要使用的区块链网络的类型。Hyperledger Fabric v1.0的类型是<code>hlfv1</code>。</p>
-<ol>
-<li>必须指定用于连接到Hyperledger Fabric网络的MSP的名称：</li>
-</ol>
+<p>3、必须指定用于连接到Hyperledger Fabric网络的MSP的名称：  </p>
 <pre><code class="json">&quot;mspID&quot;: &quot;Org1MSP&quot;,
 </code></pre>
 
 <p>我们正在以<code>Org1</code>连接，<code>Org1</code>的MSP被称为<code>Org1MSP</code>。</p>
-<p>我们必须指定要连接的Hyperledger Fabric网络中所有peer节点的主机名和端口。</p>
+<p>4、我们必须指定要连接的Hyperledger Fabric网络中所有peer节点的主机名和端口。  </p>
 <pre><code class="json">&quot;peers&quot;: [
     {
         &quot;requestURL&quot;: &quot;grpc://localhost:7051&quot;,
@@ -495,9 +481,7 @@ composer card delete -n admin@tutorial-network
 <p>在这里，我们已经指定了单个peer节点<code>peer0.org1.example.com</code>（使用主机名<code>localhost</code>），请求端口7051和事件hub端口7053。</p>
 <p><code>peers</code>数组可以包含多个peer节点。如果您有多个peer节点，则应将其全部添加到peers数组中，以便Hyperledger Composer可以与它们进行交互。</p>
 <p>区块链业务网络将部署到所有指定的peer节点。一旦区块链业务网络部署完毕，指定的peer节点将用于查询区块链业务网络、为交易背书和订阅事件。</p>
-<ol>
-<li>我们必须在Hyperledger Fabric网络中指定证书颁发机构（CA）的主机名和端口，用于登记现有用户和注册新用户。</li>
-</ol>
+<p>5、我们必须在Hyperledger Fabric网络中指定证书颁发机构（CA）的主机名和端口，用于登记现有用户和注册新用户。  </p>
 <pre><code class="json">&quot;ca&quot;: {
     &quot;url&quot;: &quot;http://localhost:7054&quot;,
     &quot;name&quot;: &quot;ca.org1.example.com&quot;
@@ -505,9 +489,7 @@ composer card delete -n admin@tutorial-network
 </code></pre>
 
 <p>这里我们指定了一个CA<code>ca.or1.example.com</code>（使用主机名<code>localhost</code>）和CA端口7054。</p>
-<ol>
-<li>我们必须指定要连接的Hyperledger Fabric中所有排序节点的主机名和端口。</li>
-</ol>
+<p>6、我们必须指定要连接的Hyperledger Fabric中所有排序节点的主机名和端口。  </p>
 <pre><code class="json">&quot;orderers&quot;: [
     {
         &quot;url&quot; : &quot;grpc://localhost:7050&quot;
@@ -517,23 +499,17 @@ composer card delete -n admin@tutorial-network
 
 <p>在这里，我们已经指定了一个排序节点<code>orderer.example.com</code>（使用主机名<code>localhost</code>）和排序端口7050。</p>
 <p>该<code>orderers</code>数组可以包含多个排序节点。如果你有多个排序节点，则应将其全部添加到<code>orderers</code>数组中，以便Hyperledger Composer可以与其进行交互。</p>
-<ol>
-<li>我们必须指定一个现有信道的名称。我们会把区块链业务网络部署到信道<code>composerchannel</code>中。</li>
-</ol>
+<p>7、我们必须指定一个现有信道的名称。我们会把区块链业务网络部署到信道<code>composerchannel</code>中。  </p>
 <pre><code class="json">&quot;channel&quot;: &quot;composerchannel&quot;,
 </code></pre>
 
-<ol>
-<li>最后，我们可以选择指定与区块链业务网络进行交互时，对交易背书的超时时间。</li>
-</ol>
+<p>8、最后，我们可以选择指定与区块链业务网络进行交互时，对交易背书的超时时间。  </p>
 <pre><code class="json">  &quot;timeout&quot;: 300
 }
 </code></pre>
 
 <p>在这里，我们已经指定了300秒的超时时间。如果一个交易需要超过300秒的时间来背书，那么将会抛出一个超时错误。</p>
-<ol>
-<li>保存你的更改到<code>connection.json</code>。完成的连接配置文件应该如下所示：</li>
-</ol>
+<p>9、保存你的更改到<code>connection.json</code>。完成的连接配置文件应该如下所示：  </p>
 <pre><code class="json">{
   &quot;name&quot;: &quot;fabric-network&quot;,
   &quot;type&quot;: &quot;hlfv1&quot;,

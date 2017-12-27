@@ -522,9 +522,10 @@
 <h3 id="_6">第三步：重新生成你的业务网络档案<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>在更改业务网络中的文件后，业务网络必须重新打包为业务网络档案（<code>.bna</code>），并重新部署到Hyperledger Fabric实例。</p>
 <p>1、使用命令行，导航到<code>tutorial-network</code>目录。<br />
-2、运行以下命令：<br />
-<code>bash
-   composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.1.bna</code></p>
+2、运行以下命令：  </p>
+<pre><code class="bash">   composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.1.bna
+</code></pre>
+
 <h3 id="_7">第四步：部署更新的业务网络定义<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>我们需要部署修改后的网络，成为区块链上的最新版本！我们正在使用新创建的业务网络档案文件来更新现有的已部署业务网络; 这是我们在开发者教程中使用的同一个业务网络名称。</p>
 <p>1、切换到终端，将目录切换到包含<code>tutorial-network.bna</code>的文件夹。<br />
