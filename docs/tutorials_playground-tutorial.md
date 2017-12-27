@@ -41,7 +41,7 @@
 2. 点击**模型文件**，然后点击**添加**。
 
 3. 删除模型文件中的代码行并用以下替换：
-   ```
+```
    /**
     * My commodity trading network
     */
@@ -62,7 +62,7 @@
        --> Commodity commodity
        --> Trader newOwner
    }
-   ```
+```
 
    这个领域模型定义了一个资产类型`Commodity`和单个参与者类型`Trader`以及一个用于修改商品所有者的交易类型`Trade`。
 
@@ -77,7 +77,7 @@
 2. 单击**脚本文件**，然后单击**添加**。
 
 3. 删除脚本文件中的代码行并替换为以下代码：
-   ```javascript
+```javascript
    /**
     * Track the trade of a commodity from one trader to another
     * @param {org.acme.mynetwork.Trade} trade - the trade to be processed
@@ -90,7 +90,7 @@
                return assetRegistry.update(trade.commodity);
            });
    }
-   ```
+```
 
 这个函数只是简单地改变一个商品的`owner`属性，根据一个传入的`Trade`交易的`newOwner`属性。然后它将修改后`Commodity`持久化到资产库中，用于存储`Commodity`实例。
 
@@ -125,26 +125,26 @@
 1. 确保左边选择了**交易者**选项卡，然后点击右上角的“ **创建新参与者** ”。
 
 2. 你可以看到*交易者*参与者的数据结构。我们需要一些容易识别的数据，所以删除那里的代码并粘贴下面的代码：
-   ```json
+```json
    {
      "$class": "org.acme.mynetwork.Trader",
      "tradeId": "TRADER1",
      "firstName": "Jenny",
      "lastName": "Jones"
    }
-   ```
+```
 
 3. 点击**新建**创建参与者。
 
 4. 你应该能够看到你创建的新*交易者*参与者。我们需要另一个*交易者*来测试我们的*Trade *交易，所以创建另一个*交易者*，但这次使用以下数据：
-   ```json
+```json
    {
      "$class": "org.acme.mynetwork.Trader",
      "tradeId": "TRADER2",
      "firstName": "Amy",
      "lastName": "Williams"
    }
-   ```
+```
 
 在继续之前，确保两个参与者都存在于*交易者*视图中！  
 
@@ -157,7 +157,7 @@
 1. 点击**资产**下的**商品**标签，然后点击**创建新资产**。********
 
 2. 删除资产数据并将其替换为以下内容：
-   ```json
+```json
    {
      "$class": "org.acme.mynetwork.Commodity",
      "tradingSymbol": "ABC",
@@ -166,7 +166,7 @@
      "quantity": 72.297,
      "owner": "resource:org.acme.mynetwork.Trader#TRADER1"
    }
-   ```
+```
 
 3. 创建此资产后，你应该能够在**商品**选项卡中看到它。  
 
@@ -185,13 +185,13 @@
 2. 确保交易类型是*Trade*。
 
 3. 将交易数据替换为以下内容，或者仅更改细节：
-   ```json
+```json
    {
      "$class": "org.acme.mynetwork.Trade",
      "commodity": "resource:org.acme.mynetwork.Commodity#ABC",
      "newOwner": "resource:org.acme.mynetwork.Trader#TRADER2"
    }
-   ```
+```
 
 4. 点击**提交**。
 
