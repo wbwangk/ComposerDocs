@@ -452,7 +452,7 @@ composer card delete -n admin@tutorial-network
 <p>你稍后将使用其中一些文件与Hyperledger Fabric网络进行交互。</p>
 <p>除了管理员之外，<code>Org1</code>的CA（证书颁发机构）使用一个默认用户进行配置。此默认用户登记ID是<code>admin</code>，登记密码是<code>adminpw</code>。但是，这个用户无权部署区块链业务网络。</p>
 <h4 id="_6">信道<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
-<p>最后，创建了一个名为<code>channel</code>的信道。peer节点<code>peer0.org1.example.com</code>已加入此通道。你只能将Hyperledger Composer区块链业务网络部署到已存在的信道，但您可以按照Hyperledger Fabric文档创建其他信道。</p>
+<p>最后，创建了一个名为<code>channel</code>的信道。peer节点<code>peer0.org1.example.com</code>已加入此通道。你只能将Hyperledger Composer区块链业务网络部署到已存在的信道，但你可以按照Hyperledger Fabric文档创建其他信道。</p>
 <h3 id="_7">步骤三：建立连接配置文件<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <p>连接配置文件(profile)指定了定位和连接Hyperledger Fabric网络所需的所有信息，例如所有Hyperledger Fabric网络组件的主机名和端口。在此步骤中，你将为Hyperledger Composer创建一个连接配置文件，用于连接到Hyperledger Fabric网络。</p>
 <p>1、创建一个名为的<code>connection.json</code>的连接配置文件。</p>
@@ -479,7 +479,7 @@ composer card delete -n admin@tutorial-network
 </code></pre>
 
 <p>在这里，我们已经指定了单个peer节点<code>peer0.org1.example.com</code>（使用主机名<code>localhost</code>），请求端口7051和事件hub端口7053。</p>
-<p><code>peers</code>数组可以包含多个peer节点。如果您有多个peer节点，则应将其全部添加到peers数组中，以便Hyperledger Composer可以与它们进行交互。</p>
+<p><code>peers</code>数组可以包含多个peer节点。如果你有多个peer节点，则应将其全部添加到peers数组中，以便Hyperledger Composer可以与它们进行交互。</p>
 <p>区块链业务网络将部署到所有指定的peer节点。一旦区块链业务网络部署完毕，指定的peer节点将用于查询区块链业务网络、为交易背书和订阅事件。</p>
 <p>5、我们必须在Hyperledger Fabric网络中指定证书颁发机构（CA）的主机名和端口，用于登记现有用户和注册新用户。  </p>
 <pre><code class="json">&quot;ca&quot;: {
@@ -557,7 +557,7 @@ XVMHPa0iyC497vdNURA=
 -----END CERTIFICATE-----
 </code></pre>
 
-<p>接下来，您必须找到该用户的私钥文件。私钥用于以这个身份对交易进行签名。私钥文件可以在<code>keystore</code>子目录中找到。私钥文件的名称是一个很长的十六进制字符串，后缀是<code>_sk</code>，例如<code>114aab0e76bf0c78308f89efc4b8c9423e31568da0c340ca187a9b17aa9a4457_sk</code>。每次生成配置文件名称都会更改。如果你看看这个文件的内容，那么你会发现一个PEM编码的私钥类似于以下内容：</p>
+<p>接下来，你必须找到该用户的私钥文件。私钥用于以这个身份对交易进行签名。私钥文件可以在<code>keystore</code>子目录中找到。私钥文件的名称是一个很长的十六进制字符串，后缀是<code>_sk</code>，例如<code>114aab0e76bf0c78308f89efc4b8c9423e31568da0c340ca187a9b17aa9a4457_sk</code>。每次生成配置文件名称都会更改。如果你看看这个文件的内容，那么你会发现一个PEM编码的私钥类似于以下内容：</p>
 <pre><code>-----BEGIN PRIVATE KEY-----
 MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg00IwLLBKoi/9ikb6
 ZOAV0S1XeNGWllvlFDeczRKQn2uhRANCAARrvCsQUNRpMUkzFaC7+zV4mClo+beg
@@ -595,7 +595,7 @@ ZOAV0S1XeNGWllvlFDeczRKQn2uhRANCAARrvCsQUNRpMUkzFaC7+zV4mClo+beg
 
 <p>在这里，我们指定用户拥有哪些角色。此信息是必需的，以便Hyperledger Composer知道哪些用户能够执行哪些操作。用户<code>Admin@org1.example.com</code>是Hyperledger Fabric网络的管理员，具有角色<code>PeerAdmin</code>（能够安装链码）和角色<code>ChannelAdmin</code>（能够实例化链码）。</p>
 <h3 id="hyperledger-fabric_4">步骤六：为Hyperledger Fabric管理员导入业务网络卡片<a class="headerlink" href="#hyperledger-fabric_4" title="Permanent link">&para;</a></h3>
-<p>Hyperledger Composer只能使用放置在钱包中的业务网络卡片。钱包是包含业务网络卡片的文件系统上的目录。在这一步中，你将将步骤五中创建的业务网络卡片导入到钱包中，以便你可以在后续步骤中使用这个业务网络卡片。</p>
+<p>Hyperledger Composer只能使用放置在钱包中的业务网络卡片。钱包是包含业务网络卡片的文件系统目录。在这一步中，你会将步骤五中创建的业务网络卡片导入到钱包中，以便你可以在后续步骤中使用这个业务网络卡片。</p>
 <p>运行<code>composer card import</code>命令将业务网络卡片导入钱包：</p>
 <pre><code class="bash">composer card import -f PeerAdmin@fabric-network.card
 </code></pre>
@@ -608,7 +608,7 @@ ZOAV0S1XeNGWllvlFDeczRKQn2uhRANCAARrvCsQUNRpMUkzFaC7+zV4mClo+beg
 <p>你现在可以通过引用名称<code>PeerAdmin@fabric-network</code>来使用此业务网络卡片。你现在已经准备好将区块链业务网络部署到Hyperledger Fabric网络。</p>
 <p>我们将部署区块链业务网络<code>tutorial-network</code>，这是按照<a href="../tutorials_developer-tutorial/">开发者教程</a>创建的。</p>
 <h3 id="hyperledger-composerhyperledger-fabric-peer">步骤七：将Hyperledger Composer运行时安装到Hyperledger Fabric peer节点上<a class="headerlink" href="#hyperledger-composerhyperledger-fabric-peer" title="Permanent link">&para;</a></h3>
-<p>Hyperledger Composer包含一个名为“Hyperledger Composer运行时”的组件，该组件提供用于托管和支持业务网络存档的所有功能，例如数据验证、错误处理、交易处理函数执行和访问控制。在Hyperledger Fabric术语中，Hyperledger Composer运行时是一个标准的链码。</p>
+<p>Hyperledger Composer包含一个名为“Hyperledger Composer运行时”的组件，该组件提供用于托管和支持业务网络档案的所有功能，例如数据验证、错误处理、交易处理函数执行和访问控制。在Hyperledger Fabric术语中，Hyperledger Composer运行时是一个标准的链码。</p>
 <p>在这一步中，你将在所有Hyperledger Fabric peer节点上安装Hyperledger Composer运行时。在Hyperledger Fabric中，这是一个链码安装操作。</p>
 <p>运行以下<code>composer runtime install</code>命令将Hyperledger Composer运行时安装到你在步骤三中创建的连接配置文件中指定的所有Hyperledger Fabric peer节点上：</p>
 <pre><code class="bash">composer runtime install -c PeerAdmin@fabric-network -n tutorial-network
@@ -660,7 +660,8 @@ ZOAV0S1XeNGWllvlFDeczRKQn2uhRANCAARrvCsQUNRpMUkzFaC7+zV4mClo+beg
 
 <h3 id="_11">结论<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>在本教程中，你已经了解了如何配置Hyperledger Composer以及连接到Hyperledger Fabric网络所需的所有信息，以及如何将区块链业务网络部署到Hyperledger Fabric网络。</p>
-<p>如果你使用了开发环境中提供的简单Hyperledger Fabric网络，那么为什么不尝试按照Hyperledger Fabric文档构建自己的Hyperledger Fabric网络，并查看是否可以成功部署区块链业务网络？</p>
+<p>如果你使用了开发环境中提供的简单Hyperledger Fabric网络，那么为什么不尝试按照Hyperledger Fabric文档构建自己的Hyperledger Fabric网络，并查看是否可以成功部署区块链业务网络？  </p>
+<p>（说明：<code>hlfv11</code>目前没有正式发布，如果想测试正式版，全文替换成<code>hlfv1</code>，包括环境变量）</p>
               
             </div>
           </div>
