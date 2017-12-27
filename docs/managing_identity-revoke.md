@@ -6,7 +6,7 @@
 
 ## 在你开始之前
 
-在执行这些步骤之前，您必须已经将参与者添加到参与者库中，并向该参与者发放或绑定了身份。您还必须在身份库中找到该身份的唯一标识符。有关查找身份的唯一标识符的更多信息，请查看[列出业务网络中的所有身份](https://hyperledger.github.io/composer/stable/managing/identity-list.html)。
+在执行这些步骤之前，您必须已经将参与者添加到参与者库中，并向该参与者发放或绑定了身份。您还必须在身份库中找到该身份的唯一标识符。有关查找身份的唯一标识符的更多信息，请查看[列出业务网络中的所有身份](managing_identity-list.md)。
 
 下面的过程显示了一个使用以下数字财产范例业务网络定义的参与者模型的示例：[digitalproperty-network](https://www.npmjs.com/package/digitalproperty-network)
 ```
