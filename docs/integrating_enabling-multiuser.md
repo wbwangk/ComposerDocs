@@ -9,7 +9,7 @@ composer-rest-server -c alice1@my-network
 
 REST服务器可以配置为多用户模式。多用户模式允许REST服务器的客户端为数字签名交易提供他们自己的区块链身份。这使业务网络能够区分REST服务器的不同客户端。
 
-多用户模式要求启用[REST API身份认证](https://hyperledger.github.io/composer/stable/integrating/enabling-rest-authentication.html)，并且如果未明确指定，将自动启用REST API身份认证。你必须选择并配置Passport策略才能对用户进行身份认证。REST API身份认证是必需的，以便可以识别客户端。
+多用户模式要求启用[REST API身份认证](integrating_enabling-rest-authentication.md)，并且如果未明确指定，将自动启用REST API身份认证。你必须选择并配置Passport策略才能对用户进行身份认证。REST API身份认证是必需的，以便可以识别客户端。
 
 一旦客户端已经对REST API进行了认证，该客户端就可以将区块链身份添加到钱包中。该钱包对于该客户端是私密的，并且不能被其他客户端访问。当客户端向REST服务器发出请求时，客户端钱包中的区块链身份用于对该客户端所做的所有交易进行数字签名。
 
@@ -17,7 +17,7 @@ REST服务器可以配置为多用户模式。多用户模式允许REST服务器
 
 ## 启动启用了多用户模式的REST服务器
 
-继续之前，你必须配置环境变量`COMPOSER_PROVIDERS`。有关如何执行此任务的说明，请在继续之前阅读以下主题:[启用REST服务器的身份认证](https://hyperledger.github.io/composer/stable/integrating/enabling-rest-authentication.html)
+继续之前，你必须配置环境变量`COMPOSER_PROVIDERS`。有关如何执行此任务的说明，请在继续之前阅读以下主题:[启用REST服务器的身份认证](integrating_enabling-rest-authentication.md)
 
 你可以使用`-m true`参数在启动启用了多用户模式的REST服务器。一旦启用了多用户模式，客户端在向业务网络发出任何请求之前都必须进行身份认证。
 
@@ -78,4 +78,4 @@ composer-rest-server -c admin@my-network -m true
 
 当REST服务器在启用多用户模式的情况下启动时，客户端所做的所有REST API请求都使用存储在客户端钱包中的区块链身份。启动时在命令行上指定的区块身份不用于处理任何请求; 它仅用于初始连接到业务网络并下载生成REST API所需的业务网络定义。因此，在命令行中指定的区块链身份只需要最小的权限即连接能力和下载业务网络定义的能力，而不需要任何资产、参与者或交易的许可。
 
-所有用户信息通过使用LoopBack连接器保留在LoopBack数据源中。默认情况下，REST服务器使用LoopBack“内存”连接器来保存用户信息，当REST服务器终止时会丢失这些信息。REST服务器应配置一个LoopBack连接器，用于将数据存储在高度可用的数据源（例如数据库）中。有关更多信息，请参阅[部署REST服务器](https://hyperledger.github.io/composer/stable/integrating/deploying-the-rest-server.html)。
+所有用户信息通过使用LoopBack连接器保留在LoopBack数据源中。默认情况下，REST服务器使用LoopBack“内存”连接器来保存用户信息，当REST服务器终止时会丢失这些信息。REST服务器应配置一个LoopBack连接器，用于将数据存储在高度可用的数据源（例如数据库）中。有关更多信息，请参阅[部署REST服务器](integrating_deploying-the-rest-server.md)。
