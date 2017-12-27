@@ -91,7 +91,7 @@ chmod u+x prereqs-ubuntu.sh
 
 ## 步骤2：启动Hyperledger Fabric
 
-如果你在[本地安装了Hyperledger Composer Playground](https://hyperledger.github.io/composer/installing/using-playground-locally.html)，则需要使用以下脚本关闭容器。
+如果你在[本地安装了Hyperledger Composer Playground](installing_using-playground-locally.md)，则需要使用以下脚本关闭容器。
 
 > *请注意：这些命令将终止并删除所有正在运行的容器，并应删除所有以前创建的Hyperledger Fabric链码镜像。*
 ```bash
@@ -163,5 +163,5 @@ docker rmi $(docker images dev-* -q)
 
 ## 接下来是什么？
 
-- 开始[**写一个业务网络的定义**](https://hyperledger.github.io/composer/business-network/business-network-index.html)。
-- 如果你正在查找使用开发人员工具的教程，请参阅[**开发人员指南**](https://hyperledger.github.io/composer/tutorials/developer-tutorial.html)以使用开发人员工具运行一个示例。
+- 开始[**写一个业务网络的定义**](business-network_business-network-index.md)。
+- 如果你正在查找使用开发人员工具的教程，请参阅[**开发人员指南**](tutorials_developer-tutorial.md)以使用开发人员工具运行一个示例。
