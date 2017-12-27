@@ -32,7 +32,7 @@
 
 **身份**：身份是与参与者相关联的唯一标识符。当加入业务网络时，一个身份被发放给参与者，用于与业务网络交互。身份文档通常在给定的时间后过期，但可以发布或撤销。Hyperledger Composer使用Hyperledger Fabric登记证书作为身份文档。
 
-**建模语言**：Hyperledger Composer建模语言用于业务网络定义来描述业务网络中的资产、参与者和交易。有关建模语言的更深入的解释，请参阅[建模语言文档](https://hyperledger.github.io/composer/reference/cto_language.html)。
+**建模语言**：Hyperledger Composer建模语言用于业务网络定义来描述业务网络中的资产、参与者和交易。有关建模语言的更深入的解释，请参阅[建模语言文档](reference_cto_language.md)。
 
 **参与者**：参与者代表参与数字业务网络的组织或人员。参与者在业务网络模型中定义。
 
