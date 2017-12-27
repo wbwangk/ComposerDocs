@@ -16,13 +16,17 @@
 4. 接下来我们必须选择一个我们基于的商业网络，因为我们要从头构建网络，点击**空白商业网络**。
 5. 现在我们的网络已经定义好了，点击**部署**。
 
+[视频](https://hyperledger.github.io/composer/assets/img/tutorials/playground/vs_code_1.mp4)
+
 ### 第三步：连接到商业网络
 
 现在我们已经创建并部署了商业网络，你应该会看到一个名为*admin*的新商业网络卡片，用于你的钱包中的商业网络* tutorial-network*。钱包可以包含商业网络卡片以连接到多个部署的商业网络。
 
 连接到外部区块链时，商业网络卡片代表连接到商业网络所需的一切。它们包括连接详细信息、身份认证材料和元数据。
 
-要连接到我们的商业网络，请点击我们商业网络卡下面的** 现在连接**。
+要连接到我们的商业网络，请点击我们商业网络卡下面的**现在连接**。
+
+[视频](https://hyperledger.github.io/composer/assets/img/tutorials/playground/vs_code_2.mp4)
 
 ### 第四步：添加一个模型文件
 
@@ -103,13 +107,16 @@
 现在我们有模型、脚本和访问控制文件，我们需要部署和测试我们的商业网络。
 
 点击**更新**将更新部署到我们的商业网络。  
-[视频]（https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/deploy_updates_render.mp4）  
+
+[视频](https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/deploy_updates_render.mp4)
+
 ### 第八步：测试商业网络的定义
 
 接下来，我们需要测试我们的商业网络，创建一些参与者（本例中是*交易者*）、创建了一个资产（一个*商品*），然后使用我们的*Trade*交易改变*商品*的所有权。
 
 点击**测试**标签开始。  
-[视频]（https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/test_tab_render.mp4)  
+
+[视频](https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/test_tab_render.mp4)
 
 ### 第九步：创建参与者
 
@@ -140,7 +147,8 @@
    ```
 
 在继续之前，确保两个参与者都存在于*交易者*视图中！  
-[视频]（https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/create_new_participant_render.mp4)  
+
+[视频](https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/create_new_participant_render.mp4)
 
 ### 第十步：创建一个资产
 
@@ -161,6 +169,7 @@
    ```
 
 3. 创建此资产后，你应该能够在**商品**选项卡中看到它。  
+
 [视频](https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/create_new_asset_render.mp4)  
 
 ### 第十一步：在参与者之间转移商品
@@ -189,7 +198,8 @@
 5. 通过展开资产数据部分，检查我们的资产已经改变所有权从`TRADER1`到`TRADER2`。你应该看到，所有者被列为`resource:org.acme.mynetwork.Trader#TRADER2`。
 
 6. 要查看我们商业网络的完整交易记录，请点击左侧的**所有交易**。这里是每个被提交的交易的清单。你可以看到，我们使用用户界面执行的某些操作，如创建*Trader*参与者和*商品*资产，被记录为交易，即使它们没有在我们的商业网络模型中定义为交易。这些交易被称为“系统交易”，对所有商业网络都是通用的，并在Hyperledger Composer运行时中定义。  
-[视频]（https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/submit_transaction_render.mp4）  
+
+[视频](https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/submit_transaction_render.mp4)  
 
 ### 注销商业网络
 
