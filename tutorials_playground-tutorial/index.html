@@ -427,33 +427,31 @@
 <p>点击<strong>模型文件</strong>，然后点击<strong>添加</strong>。</p>
 </li>
 <li>
-<p>删除模型文件中的代码行并用以下替换：
-   ```
-   /**</p>
-<ul>
-<li>My commodity trading network
-*/
-   namespace org.acme.mynetwork
-   asset Commodity identified by tradingSymbol {
-   o String tradingSymbol
-   o String description
-   o String mainExchange
-   o Double quantity
-   &ndash;&gt; Trader owner
-   }
-   participant Trader identified by tradeId {
-   o String tradeId
-   o String firstName
-   o String lastName
-   }
-   transaction Trade {
-   &ndash;&gt; Commodity commodity
-   &ndash;&gt; Trader newOwner
-   }
-   ```</li>
-</ul>
+<p>删除模型文件中的代码行并用以下替换：</p>
 </li>
 </ol>
+<pre><code>   /**
+    * My commodity trading network
+    */
+   namespace org.acme.mynetwork
+   asset Commodity identified by tradingSymbol {
+       o String tradingSymbol
+       o String description
+       o String mainExchange
+       o Double quantity
+       --&gt; Trader owner
+   }
+   participant Trader identified by tradeId {
+       o String tradeId
+       o String firstName
+       o String lastName
+   }
+   transaction Trade {
+       --&gt; Commodity commodity
+       --&gt; Trader newOwner
+   }
+</code></pre>
+
 <p>这个领域模型定义了一个资产类型<code>Commodity</code>和单个参与者类型<code>Trader</code>以及一个用于修改商品所有者的交易类型<code>Trade</code>。</p>
 <h3 id="_4">第五步：添加一个交易处理器脚本文件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>现在已经定义了领域模型，我们可以定义业务网络的交易逻辑。Composer使用JavaScript函数为一个业务网络表达逻辑。当一个交易提交处理时这些函数会自动执行。</p>
@@ -466,25 +464,23 @@
 <p>单击<strong>脚本文件</strong>，然后单击<strong>添加</strong>。</p>
 </li>
 <li>
-<p>删除脚本文件中的代码行并替换为以下代码：
-   ```javascript
-   /**</p>
-<ul>
-<li>Track the trade of a commodity from one trader to another</li>
-<li>@param {org.acme.mynetwork.Trade} trade - the trade to be processed</li>
-<li>@transaction
-*/
-   function tradeCommodity(trade) {
-   trade.commodity.owner = trade.newOwner;
-   return getAssetRegistry(&lsquo;org.acme.mynetwork.Commodity&rsquo;)
-       .then(function (assetRegistry) {
-           return assetRegistry.update(trade.commodity);
-       });
-   }
-   ```</li>
-</ul>
+<p>删除脚本文件中的代码行并替换为以下代码：</p>
 </li>
 </ol>
+<pre><code class="javascript">   /**
+    * Track the trade of a commodity from one trader to another
+    * @param {org.acme.mynetwork.Trade} trade - the trade to be processed
+    * @transaction
+    */
+   function tradeCommodity(trade) {
+       trade.commodity.owner = trade.newOwner;
+       return getAssetRegistry('org.acme.mynetwork.Commodity')
+           .then(function (assetRegistry) {
+               return assetRegistry.update(trade.commodity);
+           });
+   }
+</code></pre>
+
 <p>这个函数只是简单地改变一个商品的<code>owner</code>属性，根据一个传入的<code>Trade</code>交易的<code>newOwner</code>属性。然后它将修改后<code>Commodity</code>持久化到资产库中，用于存储<code>Commodity</code>实例。</p>
 <h3 id="_5">第六步：访问控制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>访问控制文件定义了业务网络的访问控制规则。我们的网络很简单，所以默认的访问控制文件不需要编辑。基本文件给予了当前参与者<code>networkAdmin</code>业务网络和系统级操作的完全访问权限。</p>
@@ -505,29 +501,33 @@
 <p>确保左边选择了<strong>交易者</strong>选项卡，然后点击右上角的“ <strong>创建新参与者</strong> ”。</p>
 </li>
 <li>
-<p>你可以看到<em>交易者</em>参与者的数据结构。我们需要一些容易识别的数据，所以删除那里的代码并粘贴下面的代码：
-   <code>json
-   {
-     "$class": "org.acme.mynetwork.Trader",
-     "tradeId": "TRADER1",
-     "firstName": "Jenny",
-     "lastName": "Jones"
-   }</code></p>
+<p>你可以看到<em>交易者</em>参与者的数据结构。我们需要一些容易识别的数据，所以删除那里的代码并粘贴下面的代码：</p>
 </li>
+</ol>
+<pre><code class="json">   {
+     &quot;$class&quot;: &quot;org.acme.mynetwork.Trader&quot;,
+     &quot;tradeId&quot;: &quot;TRADER1&quot;,
+     &quot;firstName&quot;: &quot;Jenny&quot;,
+     &quot;lastName&quot;: &quot;Jones&quot;
+   }
+</code></pre>
+
+<ol>
 <li>
 <p>点击<strong>新建</strong>创建参与者。</p>
 </li>
 <li>
-<p>你应该能够看到你创建的新<em>交易者</em>参与者。我们需要另一个<em>交易者</em>来测试我们的<em>Trade </em>交易，所以创建另一个<em>交易者</em>，但这次使用以下数据：
-   <code>json
-   {
-     "$class": "org.acme.mynetwork.Trader",
-     "tradeId": "TRADER2",
-     "firstName": "Amy",
-     "lastName": "Williams"
-   }</code></p>
+<p>你应该能够看到你创建的新<em>交易者</em>参与者。我们需要另一个<em>交易者</em>来测试我们的<em>Trade </em>交易，所以创建另一个<em>交易者</em>，但这次使用以下数据：</p>
 </li>
 </ol>
+<pre><code class="json">   {
+     &quot;$class&quot;: &quot;org.acme.mynetwork.Trader&quot;,
+     &quot;tradeId&quot;: &quot;TRADER2&quot;,
+     &quot;firstName&quot;: &quot;Amy&quot;,
+     &quot;lastName&quot;: &quot;Williams&quot;
+   }
+</code></pre>
+
 <p>在继续之前，确保两个参与者都存在于<em>交易者</em>视图中！  </p>
 <p><a href="https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/create_new_participant_render.mp4">视频</a></p>
 <h3 id="_9">第十步：创建一个资产<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
@@ -537,20 +537,21 @@
 <p>点击<strong>资产</strong>下的<strong>商品</strong>标签，然后点击<strong>创建新资产</strong>。<strong><em>*</em></strong>*</p>
 </li>
 <li>
-<p>删除资产数据并将其替换为以下内容：
-   <code>json
-   {
-     "$class": "org.acme.mynetwork.Commodity",
-     "tradingSymbol": "ABC",
-     "description": "Test commodity",
-     "mainExchange": "Euronext",
-     "quantity": 72.297,
-     "owner": "resource:org.acme.mynetwork.Trader#TRADER1"
-   }</code></p>
+<p>删除资产数据并将其替换为以下内容：</p>
 </li>
-<li>
-<p>创建此资产后，你应该能够在<strong>商品</strong>选项卡中看到它。  </p>
-</li>
+</ol>
+<pre><code class="json">   {
+     &quot;$class&quot;: &quot;org.acme.mynetwork.Commodity&quot;,
+     &quot;tradingSymbol&quot;: &quot;ABC&quot;,
+     &quot;description&quot;: &quot;Test commodity&quot;,
+     &quot;mainExchange&quot;: &quot;Euronext&quot;,
+     &quot;quantity&quot;: 72.297,
+     &quot;owner&quot;: &quot;resource:org.acme.mynetwork.Trader#TRADER1&quot;
+   }
+</code></pre>
+
+<ol>
+<li>创建此资产后，你应该能够在<strong>商品</strong>选项卡中看到它。  </li>
 </ol>
 <p><a href="https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/create_new_asset_render.mp4">视频</a>  </p>
 <h3 id="_10">第十一步：在参与者之间转移商品<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
@@ -565,14 +566,17 @@
 <p>确保交易类型是<em>Trade</em>。</p>
 </li>
 <li>
-<p>将交易数据替换为以下内容，或者仅更改细节：
-   <code>json
-   {
-     "$class": "org.acme.mynetwork.Trade",
-     "commodity": "resource:org.acme.mynetwork.Commodity#ABC",
-     "newOwner": "resource:org.acme.mynetwork.Trader#TRADER2"
-   }</code></p>
+<p>将交易数据替换为以下内容，或者仅更改细节：</p>
 </li>
+</ol>
+<pre><code class="json">   {
+     &quot;$class&quot;: &quot;org.acme.mynetwork.Trade&quot;,
+     &quot;commodity&quot;: &quot;resource:org.acme.mynetwork.Commodity#ABC&quot;,
+     &quot;newOwner&quot;: &quot;resource:org.acme.mynetwork.Trader#TRADER2&quot;
+   }
+</code></pre>
+
+<ol>
 <li>
 <p>点击<strong>提交</strong>。</p>
 </li>
