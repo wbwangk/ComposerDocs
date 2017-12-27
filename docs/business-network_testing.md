@@ -26,7 +26,7 @@ Hyperledger Composer支持三种类型的测试：交互式测试、自动化单
 
 对于单元测试，`embedded`运行时非常有用，因为它可以让你在一个模拟的Node.js区块链环境中快速测试业务逻辑，而不必启动一个Hyperledger Fabric。
 
-请参考示例网络中的单元测试示例。例如：[https](https://github.com/hyperledger/composer-sample-networks/blob/master/packages/bond-network/test/Bond.js)： [//github.com/hyperledger/composer-sample-networks/blob/master/packages/bond-network/test/Bond.js](https://github.com/hyperledger/composer-sample-networks/blob/master/packages/bond-network/test/Bond.js)
+请参考示例网络中的单元测试示例。例如：https://github.com/hyperledger/composer-sample-networks/blob/master/packages/bond-network/test/Bond.js
 
 ## 参考
 
