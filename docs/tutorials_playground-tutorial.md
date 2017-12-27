@@ -30,7 +30,7 @@
 
 当我们选择一个空的商业网络模板时，我们需要定义我们的商业网络文件。第一步是添加一个模型文件。模型文件定义了我们商业网络中的资产、参与者、交易和事件。
 
-有关我们建模语言的更多信息，请查看我们的[文档](https://hyperledger.github.io/composer/stable/reference/cto_language.html)。
+有关我们建模语言的更多信息，请查看我们的[文档](reference_cto_language.md)。
 
 1. 点击**添加一个文件**按钮。
 
@@ -66,7 +66,7 @@
 
 现在已经定义了领域模型，我们可以定义商业网络的交易逻辑。Composer使用JavaScript函数为一个商业网络表达逻辑。当一个交易提交处理时这些函数会自动执行。
 
-有关编写交易处理函数的更多信息，请查阅我们的[文档](https://hyperledger.github.io/composer/stable/reference/js_scripts.html)。
+有关编写交易处理函数的更多信息，请查阅我们的[文档](reference_js_scripts.md)。
 
 1. 点击**添加文件**按钮。
 
@@ -96,7 +96,7 @@
 
 虽然你可以有多个模型或脚本文件，但在任何商业网络中只能有一个访问控制文件。
 
-有关访问控制文件的更多信息，请查看我们的[文档](https://hyperledger.github.io/composer/stable/reference/acl_language.html)。
+有关访问控制文件的更多信息，请查看我们的[文档](reference_acl_language.md)。
 
 ### 第七步：部署更新后的商业网络
 
@@ -201,6 +201,6 @@
 
 你已完成最初的Hyperledger Composer Playground教程，你可能需要使用其他示例或模板开始构建自己的商业网络。
 
-你可能想要尝试[**开发者教程**](https://hyperledger.github.io/composer/stable/tutorials/developer-tutorial.html)，获取你的本地开发环境设置，生成REST API和框架Web应用程序。
+你可能想要尝试[**开发者教程**](tutorials_developer-tutorial.md)，获取你的本地开发环境设置，生成REST API和框架Web应用程序。
 
-或者，你可以[运行本地](https://hyperledger.github.io/composer/stable/installing/using-playground-locally.html)连接到Hyperledger Fabric的实例的Hyperledger [Composer Playground](https://hyperledger.github.io/composer/stable/installing/using-playground-locally.html)。
+或者，你可以[运行本地](installing_using-playground-locally.md)连接到Hyperledger Fabric的实例的Hyperledger [Composer Playground](installing_using-playground-locally.md)。
