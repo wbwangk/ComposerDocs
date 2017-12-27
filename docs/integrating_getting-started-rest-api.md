@@ -9,7 +9,7 @@ Hyperledger Composer REST服务器可以使用npm或Docker进行安装。
 npm install -g composer-rest-server
 ```
 
-要使用Docker安装REST服务器，请参阅[部署REST服务器](https://hyperledger.github.io/composer/stable/integrating/deploying-the-rest-server.html)。
+要使用Docker安装REST服务器，请参阅[部署REST服务器](integrating_deploying-the-rest-server.md)。
 
 ## 运行REST服务器
 
