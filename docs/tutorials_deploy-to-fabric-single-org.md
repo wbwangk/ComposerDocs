@@ -73,7 +73,7 @@ Hyperledger Fabric网络组件在Docker容器中运行。在Docker容器中运�
 除了管理员之外，`Org1`的CA（证书颁发机构）使用一个默认用户进行配置。此默认用户登记ID是`admin`，登记密码是`adminpw`。但是，这个用户无权部署区块链业务网络。
 
 #### 信道
-最后，创建了一个名为`channel`的信道。peer节点`peer0.org1.example.com`已加入此通道。你只能将Hyperledger Composer区块链业务网络部署到已存在的信道，但您可以按照Hyperledger Fabric文档创建其他信道。
+最后，创建了一个名为`channel`的信道。peer节点`peer0.org1.example.com`已加入此通道。你只能将Hyperledger Composer区块链业务网络部署到已存在的信道，但你可以按照Hyperledger Fabric文档创建其他信道。
 
 ### 步骤三：建立连接配置文件
 连接配置文件(profile)指定了定位和连接Hyperledger Fabric网络所需的所有信息，例如所有Hyperledger Fabric网络组件的主机名和端口。在此步骤中，你将为Hyperledger Composer创建一个连接配置文件，用于连接到Hyperledger Fabric网络。
@@ -107,7 +107,7 @@ Hyperledger Composer被设计为兼容不同类型的区块链网络。目前，
 ```
 在这里，我们已经指定了单个peer节点`peer0.org1.example.com`（使用主机名`localhost`），请求端口7051和事件hub端口7053。
 
-`peers`数组可以包含多个peer节点。如果您有多个peer节点，则应将其全部添加到peers数组中，以便Hyperledger Composer可以与它们进行交互。
+`peers`数组可以包含多个peer节点。如果你有多个peer节点，则应将其全部添加到peers数组中，以便Hyperledger Composer可以与它们进行交互。
 
 区块链业务网络将部署到所有指定的peer节点。一旦区块链业务网络部署完毕，指定的peer节点将用于查询区块链业务网络、为交易背书和订阅事件。
 
@@ -194,7 +194,7 @@ CEgqbTYe48az95W9/hnZ+7DI5eSnWUwV9vCd/gIgS5K6omNJydoFoEpaEIwM97uS
 XVMHPa0iyC497vdNURA=
 -----END CERTIFICATE-----
 ```
-接下来，您必须找到该用户的私钥文件。私钥用于以这个身份对交易进行签名。私钥文件可以在`keystore`子目录中找到。私钥文件的名称是一个很长的十六进制字符串，后缀是`_sk`，例如`114aab0e76bf0c78308f89efc4b8c9423e31568da0c340ca187a9b17aa9a4457_sk`。每次生成配置文件名称都会更改。如果你看看这个文件的内容，那么你会发现一个PEM编码的私钥类似于以下内容：
+接下来，你必须找到该用户的私钥文件。私钥用于以这个身份对交易进行签名。私钥文件可以在`keystore`子目录中找到。私钥文件的名称是一个很长的十六进制字符串，后缀是`_sk`，例如`114aab0e76bf0c78308f89efc4b8c9423e31568da0c340ca187a9b17aa9a4457_sk`。每次生成配置文件名称都会更改。如果你看看这个文件的内容，那么你会发现一个PEM编码的私钥类似于以下内容：
 ```
 -----BEGIN PRIVATE KEY-----
 MIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQg00IwLLBKoi/9ikb6
