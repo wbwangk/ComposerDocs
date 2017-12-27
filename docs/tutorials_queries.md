@@ -21,11 +21,10 @@
 
 模型文件必须更新以包含事件和新交易。
 
-1. 打开业务网络`tutorial-network`的模型（`.cto`）文件。
+1、打开业务网络`tutorial-network`的模型（`.cto`）文件。  
+2、将以下事件和交易添加到模型中：
 
-2. 将以下事件和交易添加到模型中：
-
-   ```
+```
    event TradeNotification {
        --> Commodity commodity
    }
@@ -36,18 +35,17 @@
    event RemoveNotification {
        --> Commodity commodity
    }
-   ```
+```
 
-3. 将更改保存到模型中。
+3、将更改保存到模型中。
 
 #### 更新交易逻辑以使用查询和事件
 
 现在，域模型已经更新，我们可以编写额外的业务逻辑，在提交交易处理时执行。在本教程中，我们将事件和查询添加到下面的业务逻辑中。
 
-1. 打开交易处理器函数文件`lib/logic.js`。
-
-2. 用下面的JavaScript替换交易逻辑：
-   ```javascript
+1、打开交易处理器函数文件`lib/logic.js`。  
+2、用下面的JavaScript替换交易逻辑：  
+```javascript
    /**
     * Track the trade of a commodity from one trader to another
     * @param {org.acme.biznet.Trade} trade - the trade to be processed
@@ -101,8 +99,8 @@
                        });
            });
    }
-   ```
-3. 保存你的更改到`logic.js`。
+```
+3、保存你的更改到`logic.js`。
 
 第一个函数`tradeCommodity`将在收到的Trade交易时更改商品（用一个新的拥有者参与者）的拥有者属性，并发出通知事件。然后，将修改后的商品(Commodity)保存回用于存储商品实例的资产库中。
 
@@ -112,10 +110,9 @@
 
 交易处理器逻辑使用的查询被定义在一个叫做`queries.qry`的文件中。每个查询条目定义执行查询的资源和条件。
 
-1. 在`tutorial-network`目录中，创建一个名为`queries.qry`的新文件。
-
-2. 将以下代码复制并粘贴到`queries.qry`：
-   ```javascript
+1、在`tutorial-network`目录中，创建一个名为`queries.qry`的新文件。  
+2、将以下代码复制并粘贴到`queries.qry`：  
+```javascript
    /** Sample queries for Commodity Trading business network
    */
 
@@ -145,57 +142,49 @@
          SELECT org.acme.biznet.Commodity
              WHERE (quantity > 60)
    }
-   ```
+```
 
-3. 保存你的更改到`queries.qry`。
+3、保存你的更改到`queries.qry`。
 
 ### 第三步：重新生成你的业务网络档案
 
 在更改业务网络中的文件后，业务网络必须重新打包为业务网络档案（`.bna`），并重新部署到Hyperledger Fabric实例。
 
-1. 使用命令行，导航到`tutorial-network`目录。
-
-2. 运行以下命令：
-   ```bash
+1、使用命令行，导航到`tutorial-network`目录。  
+2、运行以下命令：  
+ ```bash
    composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.1.bna
-   ```
+ ```
 
 ### 第四步：部署更新的业务网络定义
 
 我们需要部署修改后的网络，成为区块链上的最新版本！我们正在使用新创建的业务网络档案文件来更新现有的已部署业务网络; 这是我们在开发者教程中使用的同一个业务网络名称。
 
-1. 切换到终端，将目录切换到包含`tutorial-network.bna`的文件夹。
-
-2. 运行以下命令更新业务网络：
-   ```bash
+1、切换到终端，将目录切换到包含`tutorial-network.bna`的文件夹。  
+2、运行以下命令更新业务网络：  
+```bash
    composer network update -a tutorial-network@0.0.1.bna -c admin@tutorial-network
-   ```
+```
 
-3. 运行以下命令测试网络是否已部署：
-   ```bash
+3、运行以下命令测试网络是否已部署：  
+```bash
    composer network ping -c admin@tutorial-network
-   ```
+```
 
 ### 第五步：为更新后的业务网络重新生成REST API
 
 现在，我们把刚更新的业务网络与添加的查询集成在一起，并为这个业务网络暴露REST API。
 
-1. 使用命令行，导航到`tutorial-network`目录。
-
-2. 使用以下命令启动REST服务器：
-   ```bash
+1、使用命令行，导航到`tutorial-network`目录。  
+2、使用以下命令启动REST服务器：  
+```bash
    composer-rest-server
-   ```
-
-3. 输入`admin@tutorial-network`作为卡片名称。
-
-4. 当询问是否在生成的API中使用名称空间时，请选择**不使用名称空间**。
-
-5. 当询问是否保护生成的API时选择**否**。
-
-6. 当询问是否启用事件发布时，选择**是**。
-
-7. 当询问是否启用TLS安全时，请选择**否**。
+```
+3、输入`admin@tutorial-network`作为卡片名称。  
+4、当询问是否在生成的API中使用名称空间时，请选择**不使用名称空间**。  
+5、当询问是否保护生成的API时选择**否**。  
+6、当询问是否启用事件发布时，选择**是**。  
+7、当询问是否启用TLS安全时，请选择**否**。  
 
 ### 第六步：测试REST API并创建一些数据
 
@@ -207,41 +196,39 @@
 
 在开始之前，我们需要创建一些数据，以充分展示查询。使用提供的示例JSON数据，使用REST API创建3个交易者（参与者）和更多商品（资产）。
 
-1. 首先，在REST Explorer中点击'Trader'，然后点击/Trader上的'POST'方法，然后向下滚动到Parameter部分 - 依次创建下面的Trader实例：
-   ```json
+1、首先，在REST Explorer中点击'Trader'，然后点击/Trader上的'POST'方法，然后向下滚动到Parameter部分 - 依次创建下面的Trader实例：
+```json
    {
      "$class": "org.acme.biznet.Trader",
      "tradeId": "TRADER1",
      "firstName": "Jenny",
      "lastName": "Jones"
    }
-   ```
+```
 
-2. 点击“Try it out”来创建参与者。“Response Code”（向下滚动）应该是200（成功）
-
-3. 通过复制以下JSON创建另一个交易者：
-   ```json
+2、点击“Try it out”来创建参与者。“Response Code”（向下滚动）应该是200（成功）  
+3、通过复制以下JSON创建另一个交易者：  
+```json
    {
      "$class": "org.acme.biznet.Trader",
      "tradeId": "TRADER2",
      "firstName": "Jack",
      "lastName": "Sock"
    }
-   ```
+```
 
-4. 通过复制以下JSON创建第三个交易者：
-   ```json
+4、通过复制以下JSON创建第三个交易者：  
+```json
    {
      "$class": "org.acme.biznet.Trader",
      "tradeId": "TRADER3",
      "firstName": "Rainer",
      "lastName": "Valens"
    }
-   ```
+```
 
-5. 现在滚动到顶部，并在REST浏览器中点击“Commodity”对象。
-
-6. 点击POST操作，并向下滚动到Parameters 部分：以上述相同的方式，为拥有者TRADER1和TRADER2创建两个商品资产记录（见下文）：
+5、现在滚动到顶部，并在REST浏览器中点击“Commodity”对象。  
+6、点击POST操作，并向下滚动到Parameters 部分：以上述相同的方式，为拥有者TRADER1和TRADER2创建两个商品资产记录（见下文）：  
 ```json
 {
   "$class": "org.acme.biznet.Commodity",
@@ -279,8 +266,8 @@
 
 ![商品：REST端点](https://hyperledger.github.io/composer/assets/img/tutorials/query/commodity-rest-endpointhdr.png)
 
-1. 展开`selectCommodities`查询。
-2. 点击“Try it Out”按钮。
+1、展开`selectCommodities`查询。  
+2、点击“Try it Out”按钮。  
 
 ![设置REST查询：选择所有商品](https://hyperledger.github.io/composer/assets/img/tutorials/query/query-select-commodities.png)
 
@@ -292,9 +279,9 @@
 
 让我们通过他们的交易所选择商品 - 例如“EURONEXT”的主交易所。
 
-1. 展开查询端点“selectCommoditiesByExchange”并滚动到“Parameters”部分。
-2. 在“Exchange”参数中输入“EURONEXT”。
-3. 点击“Try it Out”。
+1、展开查询端点“selectCommoditiesByExchange”并滚动到“Parameters”部分。  
+2、在“Exchange”参数中输入“EURONEXT”。  
+3、点击“Try it Out”。  
 
 ![由Exchange安装REST查询](https://hyperledger.github.io/composer/assets/img/tutorials/query/query-selectby-exchange.png)
 
