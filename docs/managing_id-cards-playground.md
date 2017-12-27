@@ -70,7 +70,7 @@ Hyperledger Composer Playground中可以使用业务网络卡片来管理不同�
 
 ### 导出业务网络卡片
 
-1. 要导出业务网络卡片，请通过[使用业务网络](https://hyperledger.github.io/composer/stable/managing/id-cards-playground#creating-an-id-card-within-a-business-network)创建一个身份并将业务网络卡片添加到你的钱包。
+1. 要导出业务网络卡片，请通过[使用业务网络](managing_id-cards-playground.md#在业务网络中创建业务网络卡片)创建一个身份并将业务网络卡片添加到你的钱包。
 2. 在“ **我的钱包”**页面上，单击你想**导出**的业务网络卡片上的**导出**图标。业务网络卡片会作为`.card`文件下载。
 
 *请注意*：如果你导出一个从未使用过的业务网络卡片，例如发送给新的参与者，它将包含获取证书和公钥所需的登记ID和登记密钥，然后用它们来认证者。或者，如果你导出之前使用过的业务网络卡片，它将已经包含证书和公钥。
