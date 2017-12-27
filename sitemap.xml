@@ -2,14 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
-    <url>
-     <loc>https://wbwangk.github.io/ComposerDocs//</loc>
-     <lastmod>2017-12-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//introduction_introduction/</loc>
@@ -41,6 +33,46 @@
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//installing_development-tools/</loc>
+     <lastmod>2017-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_tutorials/</loc>
+     <lastmod>2017-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_playground-tutorial/</loc>
+     <lastmod>2017-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_developer-tutorial/</loc>
+     <lastmod>2017-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_queries/</loc>
+     <lastmod>2017-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_deploy-to-fabric-single-org/</loc>
+     <lastmod>2017-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_deploy-to-fabric-multi-org/</loc>
      <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
@@ -133,46 +165,6 @@
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//applications_subscribing-to-events/</loc>
-     <lastmod>2017-12-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_tutorials/</loc>
-     <lastmod>2017-12-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_playground-tutorial/</loc>
-     <lastmod>2017-12-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_developer-tutorial/</loc>
-     <lastmod>2017-12-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_queries/</loc>
-     <lastmod>2017-12-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_deploy-to-fabric-single-org/</loc>
-     <lastmod>2017-12-27</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://wbwangk.github.io/ComposerDocs//tutorials_deploy-to-fabric-multi-org/</loc>
      <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>

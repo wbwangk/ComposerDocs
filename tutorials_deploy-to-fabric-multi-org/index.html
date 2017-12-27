@@ -35,7 +35,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -46,11 +46,6 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
 	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">欢迎</a>
-	    </li>
           
             <li class="toctree-l1">
 		
@@ -82,6 +77,89 @@
                 <li class="">
                     
     <a class="" href="../installing_development-tools/">安装开发环境</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">为多个组织部署Hyperledger Fabric</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#hyperledger-composerfabric">部署Hyperledger Composer网络到多组织Fabric</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">准备================</a></li>
+        
+            <li><a class="toctree-l4" href="#hyperledger-fabric">步骤一：启动一个Hyperledger Fabric网络================</a></li>
+        
+            <li><a class="toctree-l4" href="#hyperledger-fabric_1">步骤二：探索Hyperledger Fabric网络================</a></li>
+        
+            <li><a class="toctree-l4" href="#org1-">步骤三：创建Org1的连接配置文件----------------</a></li>
+        
+            <li><a class="toctree-l4" href="#org2">步骤四：创建Org2的连接配置文件....................</a></li>
+        
+            <li><a class="toctree-l4" href="#org1hyperledger-fabric-">步骤五：定位Org1的Hyperledger Fabric管理员的证书和私钥----------------</a></li>
+        
+            <li><a class="toctree-l4" href="#org2hyperledger-fabric">步骤六：定位Org2的Hyperledger Fabric管理员的证书和私钥....................</a></li>
+        
+            <li><a class="toctree-l4" href="#org1hyperledger-fabric-_1">步骤七：为Org1的Hyperledger Fabric管理员生成业务网络卡片----------------</a></li>
+        
+            <li><a class="toctree-l4" href="#org2hyperledger-fabric_1">步骤八：为Org2的Hyperledger Fabric管理员创建业务网络卡片....................</a></li>
+        
+            <li><a class="toctree-l4" href="#org1hyperledger-fabric-_2">步骤九：为Org1的Hyperledger Fabric管理员导入业务网络卡片----------------</a></li>
+        
+            <li><a class="toctree-l4" href="#org2hyperledger-fabric_2">步骤十：为Org2的Hyperledger Fabric管理员导入业务网络卡片....................</a></li>
+        
+            <li><a class="toctree-l4" href="#org1hyperledger-fabric-peerhyperledger-composer-">步骤十一：为Org1的Hyperledger Fabric peer节点安装Hyperledger Composer运行时----------------</a></li>
+        
+            <li><a class="toctree-l4" href="#org2hyperledger-fabric-peerhyperledger-composer">步骤十二：为Org2的Hyperledger Fabric peer节点安装Hyperledger Composer运行时....................</a></li>
+        
+            <li><a class="toctree-l4" href="#_6">步骤十三：为业务网络定义背书策略================</a></li>
+        
+            <li><a class="toctree-l4" href="#_7">步骤十四：理解和选择业务网络管理员================</a></li>
+        
+            <li><a class="toctree-l4" href="#org1-_1">步骤十五：为Org1获取业务网络管理员证书----------------</a></li>
+        
+            <li><a class="toctree-l4" href="#org2_1">步骤十六：为Org2获取业务网络管理员证书....................</a></li>
+        
+            <li><a class="toctree-l4" href="#-">步骤十七：启动业务网络----------------</a></li>
+        
+            <li><a class="toctree-l4" href="#org1-_2">步骤十八：为了Org1访问业务网络而创建业务网络卡片----------------</a></li>
+        
+            <li><a class="toctree-l4" href="#org1">步骤十九：为了Org1访问业务网络而创建业务网络卡片....................</a></li>
+        
+            <li><a class="toctree-l4" href="#_8">结论================</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
     </ul>
 	    </li>
@@ -152,89 +230,6 @@
                 <li class="">
                     
     <a class="" href="../applications_subscribing-to-events/">订阅事件</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">教程</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../tutorials_tutorials/">教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_queries/">查询教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">为多个组织部署Hyperledger Fabric</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#hyperledger-composerfabric">部署Hyperledger Composer网络到多组织Fabric</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_1">准备================</a></li>
-        
-            <li><a class="toctree-l4" href="#hyperledger-fabric">步骤一：启动一个Hyperledger Fabric网络================</a></li>
-        
-            <li><a class="toctree-l4" href="#hyperledger-fabric_1">步骤二：探索Hyperledger Fabric网络================</a></li>
-        
-            <li><a class="toctree-l4" href="#org1profile-">步骤三：创建Org1的连接profile----------------</a></li>
-        
-            <li><a class="toctree-l4" href="#org2profile">步骤四：创建Org2的连接profile....................</a></li>
-        
-            <li><a class="toctree-l4" href="#org1hyperledger-fabric-">步骤五：定位Org1的Hyperledger Fabric管理员的证书和私钥----------------</a></li>
-        
-            <li><a class="toctree-l4" href="#org2hyperledger-fabric">步骤六：定位Org2的Hyperledger Fabric管理员的证书和私钥....................</a></li>
-        
-            <li><a class="toctree-l4" href="#org1hyperledger-fabric-_1">步骤七：为Org1的Hyperledger Fabric管理员生成商业网络卡片----------------</a></li>
-        
-            <li><a class="toctree-l4" href="#org2hyperledger-fabric_1">步骤八：为Org2的Hyperledger Fabric管理员创建商业网络卡片....................</a></li>
-        
-            <li><a class="toctree-l4" href="#org1hyperledger-fabric-_2">步骤九：为Org1的Hyperledger Fabric管理员导入商业网络卡片----------------</a></li>
-        
-            <li><a class="toctree-l4" href="#org2hyperledger-fabric_2">步骤十：为Org2的Hyperledger Fabric管理员导入商业网络卡片....................</a></li>
-        
-            <li><a class="toctree-l4" href="#org1hyperledger-fabric-peerhyperledger-composer-">步骤十一：为Org1的Hyperledger Fabric peer节点安装Hyperledger Composer运行时----------------</a></li>
-        
-            <li><a class="toctree-l4" href="#org2hyperledger-fabric-peerhyperledger-composer">步骤十二：为Org2的Hyperledger Fabric peer节点安装Hyperledger Composer运行时....................</a></li>
-        
-            <li><a class="toctree-l4" href="#_6">步骤十三：为商业网络定义背书策略================</a></li>
-        
-            <li><a class="toctree-l4" href="#_7">步骤十四：理解和选择商业网络管理员================</a></li>
-        
-            <li><a class="toctree-l4" href="#org1-">步骤十五：为Org1获取商业网络管理员证书----------------</a></li>
-        
-            <li><a class="toctree-l4" href="#org2">步骤十六：为Org2获取商业网络管理员证书....................</a></li>
-        
-            <li><a class="toctree-l4" href="#-">步骤十七：启动商业网络----------------</a></li>
-        
-            <li><a class="toctree-l4" href="#org1-_1">步骤十八：为了Org1访问商业网络而创建商业网络卡片----------------</a></li>
-        
-            <li><a class="toctree-l4" href="#org1">步骤十九：为了Org1访问商业网络而创建商业网络卡片....................</a></li>
-        
-            <li><a class="toctree-l4" href="#_8">结论================</a></li>
-        
-        </ul>
-    
-
-    </ul>
                 </li>
     </ul>
 	    </li>
@@ -383,7 +378,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Hyperledger Composer中文文档</a>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
       </nav>
 
       
@@ -391,7 +386,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
     
       
         
@@ -414,9 +409,9 @@
               
                 <h2 id="hyperledger-composerfabric">部署Hyperledger Composer网络到多组织Fabric<a class="headerlink" href="#hyperledger-composerfabric" title="Permanent link">&para;</a></h2>
 <p><a href="https://hyperledger.github.io/composer/unstable/tutorials/deploy-to-fabric-multi-org.html">原文：Deploying a Hyperledger Composer blockchain business network to Hyperledger Fabric (multiple organizations)</a>   </p>
-<p>这个教程示范了在多组织场景下的管理员部署一个区块链商业网络到某Hyperledger Fabric实例必须执行的几个步骤，包括怎样生成Hyperledger Composer配置。</p>
-<p>建议首先完成前面的教程，也就是示范怎样为单个组织将一个区块链商业网络部署到某Hyperledger Fabric实例，因为它更详细地解释了一些概念。</p>
-<p>这个教程将涵盖怎样部署一个区块链商业网络到某个跨越两个组织(<code>Org1</code>和<code>Org2</code>)的Hyperledger Fabric网络。这个教程会根据不同组织执行的步骤展现为不同的方式。</p>
+<p>这个教程示范了在多组织场景下的管理员部署一个区块链业务网络到某Hyperledger Fabric实例必须执行的几个步骤，包括怎样生成Hyperledger Composer配置。</p>
+<p>建议首先完成前面的教程，也就是示范怎样为单个组织将一个区块链业务网络部署到某Hyperledger Fabric实例，因为它更详细地解释了一些概念。</p>
+<p>这个教程将涵盖怎样部署一个区块链业务网络到某个跨越两个组织(<code>Org1</code>和<code>Org2</code>)的Hyperledger Fabric网络。这个教程会根据不同组织执行的步骤展现为不同的方式。</p>
 <p>首先是两个组织都要执行的步骤显示的样子：<br />
 <strong>示例步骤：一个Org1和Org2都执行的步骤================</strong>  </p>
 <p>表示组织<code>Org1</code>执行的步骤的样子:<br />
@@ -436,10 +431,10 @@
 <pre><code class="bash">git clone -b issue-6978 https://github.com/sstone1/fabric-samples.git
 </code></pre>
 
-<p>按照<a href="https://github.com/wbwangk/wbwangk.github.io/wiki/Hyperledger#toc7">建立你的首个网络</a>教程，确保你使用了上面步骤克隆的Github库。你不能克隆和使用Hyperledger Fabric版本的Github库，因为它当前没有更新到这个教程需要的内容。</p>
+<p>按照<a href="https://hyperledgercn.github.io/hyperledgerDocs/build_network_zh/">建立你的首个网络</a>教程，确保你使用了上面步骤克隆的Github库。你不能克隆和使用Hyperledger Fabric版本的Github库，因为它当前没有更新到这个教程需要的内容。</p>
 <h3 id="hyperledger-fabric">步骤一：启动一个Hyperledger Fabric网络================<a class="headerlink" href="#hyperledger-fabric" title="Permanent link">&para;</a></h3>
 <p>为了遵照这个教程，你必须启动一个Hyperledger Fabric网络。</p>
-<p>这个教程假定你使用了Hyperledger Fabric的<a href="https://github.com/wbwangk/wbwangk.github.io/wiki/Hyperledger#toc7">建立你的首个网络</a>教程中提供的 Hyperledger Fabric网络。我会称这个 Hyperledger Fabric网络为BYFN(Building Your First Network)网络。</p>
+<p>这个教程假定你使用了Hyperledger Fabric的<a href="https://hyperledgercn.github.io/hyperledgerDocs/build_network_zh/">建立你的首个网络</a>教程中提供的 Hyperledger Fabric网络。我会称这个 Hyperledger Fabric网络为BYFN(Building Your First Network)网络。</p>
 <p>你现在可以启动BYFN网络。你必须使用额外标志，这个标志在BYFN教程中并没有使用。这是因为我们想使用CouchDB作为世界状态数据库，并且我们想为每个组织启动一个CA(Certificate Authority)。</p>
 <pre><code class="bash">./byfn.sh -m generate
 ./byfn.sh -m up -s couchdb -a
@@ -456,7 +451,7 @@ _____   _   _   ____
 |_____| |_| \_| |____/
 </code></pre>
 
-<p>然后，删除存在于你钱包中的所有商业网络卡片。这是为了避免商业网络卡片没有找到的错误状态：</p>
+<p>然后，删除存在于你钱包中的所有业务网络卡片。这是为了避免业务网络卡片没有找到的错误状态：</p>
 <pre><code class="bash">composer card delete -n PeerAdmin@byfn-network-org1-only
 composer card delete -n PeerAdmin@byfn-network-org1
 composer card delete -n PeerAdmin@byfn-network-org2-only
@@ -470,7 +465,7 @@ composer card delete -n PeerAdmin@fabric-network
 <h3 id="hyperledger-fabric_1">步骤二：探索Hyperledger Fabric网络================<a class="headerlink" href="#hyperledger-fabric_1" title="Permanent link">&para;</a></h3>
 <p>这一步骤会探索BYFN网络配置和组件。为了完成后续步骤需要一些配置明细。</p>
 <h4 id="_2">组织<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
-<p>BYFN网络由两个组织组成：<code>Org1</code>和<code>Org2</code>。组织<code>Org1</code>使用域名<code>org1.example.com</code>。<code>Org1</code>的成员服务提供者(MSP)叫<code>Org1MSP</code>。组织<code>Org2</code>使用域名<code>org2.example.com</code>。<code>Org2</code>的MSP叫<code>Org2MSP</code>。在这个教程中，你会部署一个区块链商业网络，在里面组织<code>Org1</code>和<code>Org2</code>互相交互。</p>
+<p>BYFN网络由两个组织组成：<code>Org1</code>和<code>Org2</code>。组织<code>Org1</code>使用域名<code>org1.example.com</code>。<code>Org1</code>的成员服务提供者(MSP)叫<code>Org1MSP</code>。组织<code>Org2</code>使用域名<code>org2.example.com</code>。<code>Org2</code>的MSP叫<code>Org2MSP</code>。在这个教程中，你会部署一个区块链业务网络，在里面组织<code>Org1</code>和<code>Org2</code>互相交互。</p>
 <h4 id="_3">网络组件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>Hyperledger Fabric网络由下面几个组件组成：
  - Org1的两个peer节点，叫peer0.org1.example.com 和 peer1.org1.example.com<br />
@@ -517,12 +512,12 @@ composer card delete -n PeerAdmin@fabric-network
 </code></pre>
 
 <p>之后你会使用这些文件与Hyperledger Fabric网络交互。</p>
-<p>除了管理员，<code>Org1</code>和<code>Org2</code>的CA(Certificate Authority)还配置了一个默认用户。这个默认用户有一个叫<code>admin</code>的登记ID和为<code>adminpw</code>的登记密码。然而，这个用户没有部署区块链商业网络的权限。</p>
+<p>除了管理员，<code>Org1</code>和<code>Org2</code>的CA(Certificate Authority)还配置了一个默认用户。这个默认用户有一个叫<code>admin</code>的登记ID和为<code>adminpw</code>的登记密码。然而，这个用户没有部署区块链业务网络的权限。</p>
 <h4 id="_5">信道<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
 <p>创建了一个叫<code>mychannel</code>的信道。所有四个节点<code>peer0.org1.example.com</code>、<code>peer1.org1.example.com</code>、<code>peer0.org2.example.com</code>和<code>peer1.org2.example.com</code>已经加入了这个信道。</p>
-<h3 id="org1profile-">步骤三：创建Org1的连接profile----------------<a class="headerlink" href="#org1profile-" title="Permanent link">&para;</a></h3>
-<p><code>Org1</code>需要两个连接profile。一个连接profile仅包含属于<code>Org1</code>的peer节点，另一个连接profile包含属于<code>Org1</code>和<code>Org2</code>的peer节点。</p>
-<p>创建一个叫<code>connection-org1-only.json</code>的连接profile，包含下列内容并保存到磁盘。这个连接profile仅包含属于<code>Org1</code>的peer节点。你会在后续步骤中使用这个文件，所以记住存放位置！</p>
+<h3 id="org1-">步骤三：创建Org1的连接配置文件----------------<a class="headerlink" href="#org1-" title="Permanent link">&para;</a></h3>
+<p><code>Org1</code>需要两个连接配置文件。一个连接配置文件仅包含属于<code>Org1</code>的peer节点，另一个连接配置文件包含属于<code>Org1</code>和<code>Org2</code>的peer节点。</p>
+<p>创建一个叫<code>connection-org1-only.json</code>的连接配置文件，包含下列内容并保存到磁盘。这个连接配置文件仅包含属于<code>Org1</code>的peer节点。你会在后续步骤中使用这个文件，所以记住存放位置！</p>
 <pre><code class="json">{
     &quot;name&quot;: &quot;byfn-network-org1-only&quot;,
     &quot;type&quot;: &quot;hlfv1&quot;,
@@ -567,7 +562,7 @@ composer card delete -n PeerAdmin@fabric-network
 <pre><code>crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
 </code></pre>
 
-<p>创建一个叫<code>connection-org1.json</code>的连接profile，包含下列内容并保存到磁盘。这个连接profiled包含属于<code>Org1</code>和<code>Org2</code>的peer节点。你会在后续步骤中使用这个文件，所以记住存放位置！</p>
+<p>创建一个叫<code>connection-org1.json</code>的连接配置文件，包含下列内容并保存到磁盘。这个连接配置文件d包含属于<code>Org1</code>和<code>Org2</code>的peer节点。你会在后续步骤中使用这个文件，所以记住存放位置！</p>
 <pre><code class="json">{
     &quot;name&quot;: &quot;byfn-network-org1&quot;,
     &quot;type&quot;: &quot;hlfv1&quot;,
@@ -626,10 +621,10 @@ composer card delete -n PeerAdmin@fabric-network
 <pre><code>crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
 </code></pre>
 
-<p>注意，这个连接profile包含了<code>Org2</code>peer节点的明细，它仅包含了请求端口，而没有包含事件hub端口。这是因为一个组织不能访问另一个组织的事件hub端口。</p>
-<h3 id="org2profile">步骤四：创建Org2的连接profile....................<a class="headerlink" href="#org2profile" title="Permanent link">&para;</a></h3>
-<p><code>Org2</code>需要两个连接profile。一个连接profile仅包含属于<code>Org2</code>的peer节点，另一个连接profile包含属于<code>Org2</code>和<code>Org1</code>的peer节点。</p>
-<p>创建一个叫<code>connection-org2-only.json</code>的连接profile，包含下列内容并保存到磁盘。这个连接profile仅包含属于<code>Org2</code>的peer节点。你会在后续步骤中使用这个文件，所以记住存放位置！</p>
+<p>注意，这个连接配置文件包含了<code>Org2</code>peer节点的明细，它仅包含了请求端口，而没有包含事件hub端口。这是因为一个组织不能访问另一个组织的事件hub端口。</p>
+<h3 id="org2">步骤四：创建Org2的连接配置文件....................<a class="headerlink" href="#org2" title="Permanent link">&para;</a></h3>
+<p><code>Org2</code>需要两个连接配置文件。一个连接配置文件仅包含属于<code>Org2</code>的peer节点，另一个连接配置文件包含属于<code>Org2</code>和<code>Org1</code>的peer节点。</p>
+<p>创建一个叫<code>connection-org2-only.json</code>的连接配置文件，包含下列内容并保存到磁盘。这个连接配置文件仅包含属于<code>Org2</code>的peer节点。你会在后续步骤中使用这个文件，所以记住存放位置！</p>
 <pre><code class="json">{
     &quot;name&quot;: &quot;byfn-network-org2-only&quot;,
     &quot;type&quot;: &quot;hlfv1&quot;,
@@ -674,7 +669,7 @@ composer card delete -n PeerAdmin@fabric-network
 <pre><code>crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
 </code></pre>
 
-<p>创建一个叫<code>connection-org2.json</code>的连接profile，包含下列内容并保存到磁盘。这个连接profile包含属于<code>Org2</code>和<code>Org1</code>的peer节点。你会在后续步骤中使用这个文件，所以记住存放位置！</p>
+<p>创建一个叫<code>connection-org2.json</code>的连接配置文件，包含下列内容并保存到磁盘。这个连接配置文件包含属于<code>Org2</code>和<code>Org1</code>的peer节点。你会在后续步骤中使用这个文件，所以记住存放位置！</p>
 <pre><code class="json">{
     &quot;name&quot;: &quot;byfn-network-org2&quot;,
     &quot;type&quot;: &quot;hlfv1&quot;,
@@ -733,7 +728,7 @@ composer card delete -n PeerAdmin@fabric-network
 <pre><code>crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
 </code></pre>
 
-<p>注意，这个连接profile包含了<code>Org1</code>peer节点的明细，它仅包含了请求端口，而没有包含事件hub端口。这是因为一个组织不能访问另一个组织的事件hub端口。</p>
+<p>注意，这个连接配置文件包含了<code>Org1</code>peer节点的明细，它仅包含了请求端口，而没有包含事件hub端口。这是因为一个组织不能访问另一个组织的事件hub端口。</p>
 <h3 id="org1hyperledger-fabric-">步骤五：定位Org1的Hyperledger Fabric管理员的证书和私钥----------------<a class="headerlink" href="#org1hyperledger-fabric-" title="Permanent link">&para;</a></h3>
 <p>我们Hyperledger Fabric网络的管理员是一个叫<code>Admin@org1.example.com</code>的用户。这个用户的证书和私钥存放在这个目录：</p>
 <pre><code>crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
@@ -750,52 +745,52 @@ composer card delete -n PeerAdmin@fabric-network
 <p>你必须先为这个用户定位这个证书文件。证书是身份的公开部分。证书文件可以在子目录<code>signcerts</code>中找到，文件名是<code>Admin@org2.example.com-cert.pem</code>。</p>
 <p>然后，你为这个用户定位私钥文件。私钥用于以这个身份签署交易。私钥文件可以在子目录<code>keystore</code>中找到。私钥文件名是一个长十六进制字符串，后缀是<code>_sk</code>，例如<code>d4889cb2a32e167bf7aeced872a214673ee5976b63a94a6a4e61c135ca2f2dbb_sk</code>。每次配置生成时这个名字会改变。</p>
 <p>记住这些文件的路径，或者将它们复制到步骤四中创建的连接pfile文件<code>connection-org2.json</code>所在的目录。</p>
-<h3 id="org1hyperledger-fabric-_1">步骤七：为Org1的Hyperledger Fabric管理员生成商业网络卡片----------------<a class="headerlink" href="#org1hyperledger-fabric-_1" title="Permanent link">&para;</a></h3>
-<p>在这个步骤中你会为管理员创建商业网络卡片，用于将区块链商业网络部署到 Hyperledger Fabric网络。</p>
-<p>运行<code>composer card create</code>命令创建一个商业网络卡片，使用包含<code>Org1</code>peer的连接profile。你必须指定三个文件的路径，无论新建还是前面步骤定位的(注意：<em>sk</em>文件不同)。</p>
+<h3 id="org1hyperledger-fabric-_1">步骤七：为Org1的Hyperledger Fabric管理员生成业务网络卡片----------------<a class="headerlink" href="#org1hyperledger-fabric-_1" title="Permanent link">&para;</a></h3>
+<p>在这个步骤中你会为管理员创建业务网络卡片，用于将区块链业务网络部署到 Hyperledger Fabric网络。</p>
+<p>运行<code>composer card create</code>命令创建一个业务网络卡片，使用包含<code>Org1</code>peer的连接配置文件。你必须指定三个文件的路径，无论新建还是前面步骤定位的(注意：<em>sk</em>文件不同)。</p>
 <pre><code class="bash">composer card create -p connection-org1-only.json -u PeerAdmin -c Admin@org1.example.com-cert.pem -k 78f2139bfcfc0edc7ada0801650ed785a11cfcdef3f9c36f3c8ca2ebfa00a59c_sk -r PeerAdmin -r ChannelAdmin
 </code></pre>
 
-<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org1-only.card</code>的商业网络卡片会被写入到当前目录。</p>
-<p>运行<code>composer card create</code>命令创建一个商业网络卡片，使用包含<code>Org1</code>和<code>Org2</code>的连接profile。你必须指定三个文件的路径，无论新建还是前面步骤定位的：</p>
+<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org1-only.card</code>的业务网络卡片会被写入到当前目录。</p>
+<p>运行<code>composer card create</code>命令创建一个业务网络卡片，使用包含<code>Org1</code>和<code>Org2</code>的连接配置文件。你必须指定三个文件的路径，无论新建还是前面步骤定位的：</p>
 <pre><code class="bash">composer card create -p connection-org1.json -u PeerAdmin -c Admin@org1.example.com-cert.pem -k 78f2139bfcfc0edc7ada0801650ed785a11cfcdef3f9c36f3c8ca2ebfa00a59c_sk -r PeerAdmin -r ChannelAdmin
 </code></pre>
 
-<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org1.card</code>的商业网络卡片会被写入到当前目录。</p>
-<h3 id="org2hyperledger-fabric_1">步骤八：为Org2的Hyperledger Fabric管理员创建商业网络卡片....................<a class="headerlink" href="#org2hyperledger-fabric_1" title="Permanent link">&para;</a></h3>
-<p>在这个步骤中你会为管理员创建商业网络卡片，用于将区块链商业网络部署到 Hyperledger Fabric网络。</p>
-<p>运行<code>composer card create</code>命令创建一个商业网络卡片，使用包含<code>Org2</code>peer的连接profile。你必须指定三个文件的路径，无论新建还是前面步骤定位的(注意：<em>sk</em>文件不同)。</p>
+<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org1.card</code>的业务网络卡片会被写入到当前目录。</p>
+<h3 id="org2hyperledger-fabric_1">步骤八：为Org2的Hyperledger Fabric管理员创建业务网络卡片....................<a class="headerlink" href="#org2hyperledger-fabric_1" title="Permanent link">&para;</a></h3>
+<p>在这个步骤中你会为管理员创建业务网络卡片，用于将区块链业务网络部署到 Hyperledger Fabric网络。</p>
+<p>运行<code>composer card create</code>命令创建一个业务网络卡片，使用包含<code>Org2</code>peer的连接配置文件。你必须指定三个文件的路径，无论新建还是前面步骤定位的(注意：<em>sk</em>文件不同)。</p>
 <pre><code class="bash">composer card create -p connection-org2-only.json -u PeerAdmin -c Admin@org2.example.com-cert.pem -k d4889cb2a32e167bf7aeced872a214673ee5976b63a94a6a4e61c135ca2f2dbb_sk -r PeerAdmin -r ChannelAdmin
 </code></pre>
 
-<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org2-only.card</code>的商业网络卡片会被写入到当前目录。</p>
-<p>运行<code>composer card create</code>命令创建一个商业网络卡片，使用包含<code>Org2</code>和<code>Org1</code>的连接profile。你必须指定三个文件的路径，无论新建还是前面步骤定位的：</p>
+<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org2-only.card</code>的业务网络卡片会被写入到当前目录。</p>
+<p>运行<code>composer card create</code>命令创建一个业务网络卡片，使用包含<code>Org2</code>和<code>Org1</code>的连接配置文件。你必须指定三个文件的路径，无论新建还是前面步骤定位的：</p>
 <pre><code class="bash">composer card create -p connection-org2.json -u PeerAdmin -c Admin@org2.example.com-cert.pem -k d4889cb2a32e167bf7aeced872a214673ee5976b63a94a6a4e61c135ca2f2dbb_sk -r PeerAdmin -r ChannelAdmin
 </code></pre>
 
-<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org2.card</code>的商业网络卡片会被写入到当前目录。</p>
-<h3 id="org1hyperledger-fabric-_2">步骤九：为Org1的Hyperledger Fabric管理员导入商业网络卡片----------------<a class="headerlink" href="#org1hyperledger-fabric-_2" title="Permanent link">&para;</a></h3>
-<p>运行<code>composer card import</code>命令将包含<code>Org1</code>peer的商业网络卡片导入进钱包：</p>
+<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org2.card</code>的业务网络卡片会被写入到当前目录。</p>
+<h3 id="org1hyperledger-fabric-_2">步骤九：为Org1的Hyperledger Fabric管理员导入业务网络卡片----------------<a class="headerlink" href="#org1hyperledger-fabric-_2" title="Permanent link">&para;</a></h3>
+<p>运行<code>composer card import</code>命令将包含<code>Org1</code>peer的业务网络卡片导入进钱包：</p>
 <pre><code class="bash">composer card import -f PeerAdmin@byfn-network-org1-only.card
 </code></pre>
 
-<p>如果这个命令执行成功，一个叫<code>PeerAdmin@byfn-network-org1-only</code>的商业网络卡片会被导入进钱包。</p>
-<p>运行<code>composer card import</code>命令将包含<code>Org1</code>和<code>Org2</code>peer的商业网络卡片导入进钱包：</p>
+<p>如果这个命令执行成功，一个叫<code>PeerAdmin@byfn-network-org1-only</code>的业务网络卡片会被导入进钱包。</p>
+<p>运行<code>composer card import</code>命令将包含<code>Org1</code>和<code>Org2</code>peer的业务网络卡片导入进钱包：</p>
 <pre><code class="bash">composer card import -f PeerAdmin@byfn-network-org1.card
 </code></pre>
 
-<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org1</code>的商业网络卡片会被导入进钱包。</p>
-<h3 id="org2hyperledger-fabric_2">步骤十：为Org2的Hyperledger Fabric管理员导入商业网络卡片....................<a class="headerlink" href="#org2hyperledger-fabric_2" title="Permanent link">&para;</a></h3>
-<p>运行<code>composer card import</code>命令将包含<code>Org2</code>peer的商业网络卡片导入进钱包：</p>
+<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org1</code>的业务网络卡片会被导入进钱包。</p>
+<h3 id="org2hyperledger-fabric_2">步骤十：为Org2的Hyperledger Fabric管理员导入业务网络卡片....................<a class="headerlink" href="#org2hyperledger-fabric_2" title="Permanent link">&para;</a></h3>
+<p>运行<code>composer card import</code>命令将包含<code>Org2</code>peer的业务网络卡片导入进钱包：</p>
 <pre><code class="bash">composer card import -f PeerAdmin@byfn-network-org2-only.card
 </code></pre>
 
-<p>如果这个命令执行成功，一个叫<code>PeerAdmin@byfn-network-org2-only</code>的商业网络卡片会被导入进钱包。</p>
-<p>运行<code>composer card import</code>命令将包含<code>Org2</code>和<code>Org1</code>peer的商业网络卡片导入进钱包：</p>
+<p>如果这个命令执行成功，一个叫<code>PeerAdmin@byfn-network-org2-only</code>的业务网络卡片会被导入进钱包。</p>
+<p>运行<code>composer card import</code>命令将包含<code>Org2</code>和<code>Org1</code>peer的业务网络卡片导入进钱包：</p>
 <pre><code class="bash">composer card import -f PeerAdmin@byfn-network-org2.card
 </code></pre>
 
-<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org2</code>的商业网络卡片会被导入进钱包。</p>
+<p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org2</code>的业务网络卡片会被导入进钱包。</p>
 <h3 id="org1hyperledger-fabric-peerhyperledger-composer-">步骤十一：为Org1的Hyperledger Fabric peer节点安装Hyperledger Composer运行时----------------<a class="headerlink" href="#org1hyperledger-fabric-peerhyperledger-composer-" title="Permanent link">&para;</a></h3>
 <p>使用你在步骤三中创建的连接profle，运行<code>composer runtime install</code>命令为所有的<code>Org1</code>peer节点安装Hyperledger Composer运行时：</p>
 <pre><code class="bash">composer runtime install -c PeerAdmin@byfn-network-org1-only -n tutorial-network
@@ -806,11 +801,11 @@ composer card delete -n PeerAdmin@fabric-network
 <pre><code class="bash">composer runtime install -c PeerAdmin@byfn-network-org2-only -n tutorial-network
 </code></pre>
 
-<h3 id="_6">步骤十三：为商业网络定义背书策略================<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>一个运行中的商业网络具有一个背书策略，它定义交易在提交到区块链之前那些组织必须对交易进行背书的规则。默认情况下，商业网络部署的背书策略是，一个交易被提交到区块链之前只有一个组织背书即可。</p>
-<p>在现实世界的区块链商业网络中，多个组织会在交易提交到区块链之前对交易背书，所以默认背书策略不适合。相反，当启动一个商业网络时，你可以指定一个定制的背书策略。</p>
+<h3 id="_6">步骤十三：为业务网络定义背书策略================<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
+<p>一个运行中的业务网络具有一个背书策略，它定义交易在提交到区块链之前那些组织必须对交易进行背书的规则。默认情况下，业务网络部署的背书策略是，一个交易被提交到区块链之前只有一个组织背书即可。</p>
+<p>在现实世界的区块链业务网络中，多个组织会在交易提交到区块链之前对交易背书，所以默认背书策略不适合。相反，当启动一个业务网络时，你可以指定一个定制的背书策略。</p>
 <p>你可以在Hyperledger Fabric文档，<a href="https://hyperledgercn.github.io/hyperledgerDocs/endorsement-policies_zh/">背书策略</a>中，找到更多关于背书策略的信息。</p>
-<p><em>请注意，用于商业网络的背书策略必须是Hyperledger Fabric Node.js SDK使用的JSON格式。这是与Hyperledger Fabric CLI使用的简单背书策略不同的一种格式，你可以在Hyperledger Fabric文档中看到。</em></p>
+<p><em>请注意，用于业务网络的背书策略必须是Hyperledger Fabric Node.js SDK使用的JSON格式。这是与Hyperledger Fabric CLI使用的简单背书策略不同的一种格式，你可以在Hyperledger Fabric文档中看到。</em></p>
 <p>创建一个叫<code>endorsement-policy.json</code>的背书策略，包含下列内容并保存到磁盘。你会在后续步骤中使用这个文件，所以记住存放位置！</p>
 <pre><code class="json">{
     &quot;identities&quot;: [
@@ -840,62 +835,62 @@ composer card delete -n PeerAdmin@fabric-network
 }
 </code></pre>
 
-<p>你刚创建的背书策略指出，在商业网络中，交易在提交到区块链之前必须同时得到<code>Org1</code>和<code>Org2</code>的背书。如果<code>Org1</code>或<code>Org2</code>没有对交易背书，或不同意交易结果，那么交易会被商业网络拒绝。</p>
-<h3 id="_7">步骤十四：理解和选择商业网络管理员================<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>当一个商业网络启动时，商业网络必须配置一组初始参与者。这些参与者负责商业网络的引导和加载其他参与者进入商业网络。在Hyperledger Composer中，我们叫这些初始参与者为商业网络管理员。</p>
-<p>在我们的商业网络中，组织<code>Org1</code>和<code>Org2</code>具有相同权限。每个组织都为商业网络提供了一个商业网络管理员，这些商业网络管理员会加载他们组织中的其他参与者进入商业网络。<code>Org1</code>的商业网络管理员是Alice，而<code>Org2</code>的商业网络管理员是Bob。</p>
-<p>当商业网络启动时，所有商业网络管理员的证书(身份的公开部分)都必须传送到组织，来执行启动商业网络的命令。当商业网络启动后，所有的商业网络管理员可以使用他们的身份与商业网络进行交互。</p>
-<p>你可以在<a href="https://hyperledger.github.io/composer/unstable/business-network/bnd-deploy.html">部署商业网络</a>中找到更多关于商业网络管理员的信息。</p>
-<h3 id="org1-">步骤十五：为Org1获取商业网络管理员证书----------------<a class="headerlink" href="#org1-" title="Permanent link">&para;</a></h3>
-<p>运行<code>composer identity request</code>命令获取Alice的证书，以便<code>Org1</code>作为商业网络管理员使用：</p>
+<p>你刚创建的背书策略指出，在业务网络中，交易在提交到区块链之前必须同时得到<code>Org1</code>和<code>Org2</code>的背书。如果<code>Org1</code>或<code>Org2</code>没有对交易背书，或不同意交易结果，那么交易会被业务网络拒绝。</p>
+<h3 id="_7">步骤十四：理解和选择业务网络管理员================<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>当一个业务网络启动时，业务网络必须配置一组初始参与者。这些参与者负责业务网络的引导和加载其他参与者进入业务网络。在Hyperledger Composer中，我们叫这些初始参与者为业务网络管理员。</p>
+<p>在我们的业务网络中，组织<code>Org1</code>和<code>Org2</code>具有相同权限。每个组织都为业务网络提供了一个业务网络管理员，这些业务网络管理员会加载他们组织中的其他参与者进入业务网络。<code>Org1</code>的业务网络管理员是Alice，而<code>Org2</code>的业务网络管理员是Bob。</p>
+<p>当业务网络启动时，所有业务网络管理员的证书(身份的公开部分)都必须传送到组织，来执行启动业务网络的命令。当业务网络启动后，所有的业务网络管理员可以使用他们的身份与业务网络进行交互。</p>
+<p>你可以在<a href="../business-network_bnd-deploy/">部署业务网络</a>中找到更多关于业务网络管理员的信息。</p>
+<h3 id="org1-_1">步骤十五：为Org1获取业务网络管理员证书----------------<a class="headerlink" href="#org1-_1" title="Permanent link">&para;</a></h3>
+<p>运行<code>composer identity request</code>命令获取Alice的证书，以便<code>Org1</code>作为业务网络管理员使用：</p>
 <pre><code class="bash">composer identity request -c PeerAdmin@byfn-network-org1-only -u admin -s adminpw -d alice
 </code></pre>
 
 <p>这个命令的<code>-u admin</code>和<code>-s adminpw</code>选项需要与Hyperledger Fabric CA (Certificate Authority)注册的默认用户一致。</p>
 <p>这个证书会被保存到当前目录的<code>alice</code>子目录中。创建了三个证书文件，但只有两个重要。它们是<code>admin-pub.pem</code>，证书(包括公钥)，和<code>admin-priv.pem</code>，私钥。只有文件<code>admin-pub.pem</code>适合与其他组织共享。文件<code>admin-priv.pem</code>必须秘密保存，它可以代表组织签署交易。</p>
-<h3 id="org2">步骤十六：为Org2获取商业网络管理员证书....................<a class="headerlink" href="#org2" title="Permanent link">&para;</a></h3>
-<p>运行<code>composer identity request</code>命令获取Bob的证书，以便<code>Org2</code>作为商业网络管理员使用：</p>
+<h3 id="org2_1">步骤十六：为Org2获取业务网络管理员证书....................<a class="headerlink" href="#org2_1" title="Permanent link">&para;</a></h3>
+<p>运行<code>composer identity request</code>命令获取Bob的证书，以便<code>Org2</code>作为业务网络管理员使用：</p>
 <pre><code class="bash">composer identity request -c PeerAdmin@byfn-network-org2-only -u admin -s adminpw -d bob
 </code></pre>
 
 <p>这个命令的<code>-u admin</code>和<code>-s adminpw</code>选项需要与Hyperledger Fabric CA (Certificate Authority)注册的默认用户一致。</p>
 <p>这个证书会被保存到当前目录的<code>bob</code>子目录中。创建了三个证书文件，但只有两个重要。它们是<code>admin-pub.pem</code>，证书(包括公钥)，和<code>admin-priv.pem</code>，私钥。只有文件<code>admin-pub.pem</code>适合与其他组织共享。文件<code>admin-priv.pem</code>必须秘密保存，它可以代表组织签署交易。</p>
-<h3 id="-">步骤十七：启动商业网络----------------<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
-<p>运行<code>composer network start</code>命令启动商业网络。只有<code>Org</code>需要执行这个操作。这个命令使用步骤十三创建的<code>endorsement-policy.json</code>文件，以及步骤十五(Alice)和步骤十六(Bob)创建的<code>admin-pub.pem</code>文件，你必须确保这个命令能访问这些文件：</p>
+<h3 id="-">步骤十七：启动业务网络----------------<a class="headerlink" href="#-" title="Permanent link">&para;</a></h3>
+<p>运行<code>composer network start</code>命令启动业务网络。只有<code>Org</code>需要执行这个操作。这个命令使用步骤十三创建的<code>endorsement-policy.json</code>文件，以及步骤十五(Alice)和步骤十六(Bob)创建的<code>admin-pub.pem</code>文件，你必须确保这个命令能访问这些文件：</p>
 <pre><code class="bash">composer network start -c PeerAdmin@byfn-network-org1 -a tutorial-network@0.0.1.bna -o endorsementPolicyFile=endorsement-policy.json -A alice -C alice/admin-pub.pem -A bob -C bob/admin-pub.pem
 </code></pre>
 
-<p>当这个命令一结束，商业网络就启动了。Alice和Bob就可以访问商业网络，开始建立商业网络，并从各自的组织中加载其他参与者。然而，无论Alice还是Bob都必须先使用前面步骤创建的证书来创建商业网络卡片，之后才能访问商业网络。</p>
-<h3 id="org1-_1">步骤十八：为了Org1访问商业网络而创建商业网络卡片----------------<a class="headerlink" href="#org1-_1" title="Permanent link">&para;</a></h3>
-<p>为了<code>Org1</code>的商业网络管理员Alice访问商业网络，运行<code>composer card create</code>命令创建一个商业网络卡片：</p>
+<p>当这个命令一结束，业务网络就启动了。Alice和Bob就可以访问业务网络，开始建立业务网络，并从各自的组织中加载其他参与者。然而，无论Alice还是Bob都必须先使用前面步骤创建的证书来创建业务网络卡片，之后才能访问业务网络。</p>
+<h3 id="org1-_2">步骤十八：为了Org1访问业务网络而创建业务网络卡片----------------<a class="headerlink" href="#org1-_2" title="Permanent link">&para;</a></h3>
+<p>为了<code>Org1</code>的业务网络管理员Alice访问业务网络，运行<code>composer card create</code>命令创建一个业务网络卡片：</p>
 <pre><code class="bash">composer card create -p connection-org1.json -u alice -n tutorial-network -c alice/admin-pub.pem -k alice/admin-priv.pem
 </code></pre>
 
-<p>运行<code>composer card import</code>命令导入你刚创建的商业网络卡片：</p>
+<p>运行<code>composer card import</code>命令导入你刚创建的业务网络卡片：</p>
 <pre><code class="bash">composer card import -f alice@tutorial-network.card
 </code></pre>
 
-<p>运行<code>composer network ping</code>命令测试到区块链商业网络的连接：</p>
+<p>运行<code>composer network ping</code>命令测试到区块链业务网络的连接：</p>
 <pre><code class="bash">composer network ping -c alice@tutorial-network
 </code></pre>
 
-<p>如果名称执行成功，你可以在命令输出中看到完全限定参与者身份<code>org.hyperledger.composer.system.NetworkAdmin#alice</code>。你现在可以使用这个商业网络卡片去与区块链商业网络交互，并加载你组织中的其他参与者。</p>
-<h3 id="org1">步骤十九：为了Org1访问商业网络而创建商业网络卡片....................<a class="headerlink" href="#org1" title="Permanent link">&para;</a></h3>
-<p>为了<code>Org2</code>的商业网络管理员Bob访问商业网络，运行<code>composer card create</code>命令创建一个商业网络卡片：</p>
+<p>如果名称执行成功，你可以在命令输出中看到完全限定参与者身份<code>org.hyperledger.composer.system.NetworkAdmin#alice</code>。你现在可以使用这个业务网络卡片去与区块链业务网络交互，并加载你组织中的其他参与者。</p>
+<h3 id="org1">步骤十九：为了Org1访问业务网络而创建业务网络卡片....................<a class="headerlink" href="#org1" title="Permanent link">&para;</a></h3>
+<p>为了<code>Org2</code>的业务网络管理员Bob访问业务网络，运行<code>composer card create</code>命令创建一个业务网络卡片：</p>
 <pre><code class="bash">composer card create -p connection-org2.json -u bob -n tutorial-network -c bob/admin-pub.pem -k bob/admin-priv.pem
 </code></pre>
 
-<p>运行<code>composer card import</code>命令导入你刚创建的商业网络卡片：</p>
+<p>运行<code>composer card import</code>命令导入你刚创建的业务网络卡片：</p>
 <pre><code class="bash">composer card import -f bob@tutorial-network.card
 </code></pre>
 
-<p>运行<code>composer network ping</code>命令测试到区块链商业网络的连接：</p>
+<p>运行<code>composer network ping</code>命令测试到区块链业务网络的连接：</p>
 <pre><code class="bash">composer network ping -c bob@tutorial-network
 </code></pre>
 
-<p>如果名称执行成功，你可以在命令输出中看到完全限定参与者身份<code>org.hyperledger.composer.system.NetworkAdmin#bob</code>。你现在可以使用这个商业网络卡片去与区块链商业网络交互，并加载你组织中的其他参与者。</p>
+<p>如果名称执行成功，你可以在命令输出中看到完全限定参与者身份<code>org.hyperledger.composer.system.NetworkAdmin#bob</code>。你现在可以使用这个业务网络卡片去与区块链业务网络交互，并加载你组织中的其他参与者。</p>
 <h3 id="_8">结论================<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>在这个教程中你已经看到了怎样使用所有必要信息配置Hyperledger Composer去连接到跨组织的Hyperledger Fabric网络，以及在一个跨组织的Hyperledger Fabric网络中怎样部署一个区块链商业网络。</p>
+<p>在这个教程中你已经看到了怎样使用所有必要信息配置Hyperledger Composer去连接到跨组织的Hyperledger Fabric网络，以及在一个跨组织的Hyperledger Fabric网络中怎样部署一个区块链业务网络。</p>
               
             </div>
           </div>
@@ -903,7 +898,7 @@ composer card delete -n PeerAdmin@fabric-network
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../integrating_integrating-index/" class="btn btn-neutral float-right" title="集成现有系统">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../business-network_business-network-index/" class="btn btn-neutral float-right" title="开发业务网络">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../tutorials_deploy-to-fabric-single-org/" class="btn btn-neutral" title="为单个组织部署Hyperledger Fabric"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -939,7 +934,7 @@ composer card delete -n PeerAdmin@fabric-network
         <span><a href="../tutorials_deploy-to-fabric-single-org/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../integrating_integrating-index/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../business-network_business-network-index/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

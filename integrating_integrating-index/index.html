@@ -35,7 +35,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -46,11 +46,6 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
 	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">欢迎</a>
-	    </li>
           
             <li class="toctree-l1">
 		
@@ -82,6 +77,37 @@
                 <li class="">
                     
     <a class="" href="../installing_development-tools/">安装开发环境</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
                 </li>
     </ul>
 	    </li>
@@ -152,37 +178,6 @@
                 <li class="">
                     
     <a class="" href="../applications_subscribing-to-events/">订阅事件</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">教程</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../tutorials_tutorials/">教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_queries/">查询教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
                 </li>
     </ul>
 	    </li>
@@ -357,7 +352,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Hyperledger Composer中文文档</a>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
       </nav>
 
       
@@ -365,7 +360,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
     
       
         
@@ -389,22 +384,22 @@
                 <h1 id="_1">与现有系统集成<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>Hyperledger Composer可以通过使用Loopback API与现有系统集成。集成现有系统使你可以从现有业务系统中提取数据，并将其转换为Composer业务网络中的资产或参与者。</p>
 <h3 id="rest-api">生成一个REST API<a class="headerlink" href="#rest-api" title="Permanent link">&para;</a></h3>
-<p>Hyperledger Composer包含独立的<a href="https://hyperledger.github.io/composer/stable/integrating/getting-started-rest-api.html">将业务网络暴露为REST API的Node.js进程</a>。LoopBack框架用于生成由Swagger文档描述的Open API。</p>
+<p>Hyperledger Composer包含独立的<a href="../integrating_getting-started-rest-api/">将业务网络暴露为REST API的Node.js进程</a>。LoopBack框架用于生成由Swagger文档描述的Open API。</p>
 <h3 id="rest">从REST服务器发布事件<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h3>
-<p>REST服务器可以<a href="https://hyperledger.github.io/composer/stable/integrating/publishing-events.html"><strong>配置为订阅</strong></a>从已部署的业务网络发出的事件，并将这些事件发布到客户端应用程序。</p>
+<p>REST服务器可以<a href="../integrating_publishing-events/"><strong>配置为订阅</strong></a>从已部署的业务网络发出的事件，并将这些事件发布到客户端应用程序。</p>
 <h3 id="rest_1">为REST服务器启用身份验证<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h3>
-<p>REST服务器可以<a href="https://hyperledger.github.io/composer/stable/integrating/enabling-rest-authentication.html"><strong>配置为对客户端进行身份验证</strong></a>。启用此选项时，客户端必须在允许调用REST API之前向REST服务器进行身份认证。</p>
+<p>REST服务器可以<a href="../integrating_enabling-rest-authentication/"><strong>配置为对客户端进行身份验证</strong></a>。启用此选项时，客户端必须在允许调用REST API之前向REST服务器进行身份认证。</p>
 <h3 id="rest_2">为REST服务器启用多用户模式<a class="headerlink" href="#rest_2" title="Permanent link">&para;</a></h3>
-<p>REST服务器可以<a href="https://hyperledger.github.io/composer/stable/integrating/enabling-multiuser.html"><strong>配置为多用户模式</strong></a>。多用户模式要求REST服务器的客户端为了数字签名事务，提供他们自己的区块链身份。这使业务网络能够区分REST服务器的不同客户端。</p>
+<p>REST服务器可以<a href="../integrating_enabling-multiuser/"><strong>配置为多用户模式</strong></a>。多用户模式要求REST服务器的客户端为了数字签名事务，提供他们自己的区块链身份。这使业务网络能够区分REST服务器的不同客户端。</p>
 <h3 id="httpstlsrest">使用HTTPS和TLS来保护REST服务器<a class="headerlink" href="#httpstlsrest" title="Permanent link">&para;</a></h3>
-<p>在生产环境中部署Hyperledger Composer REST服务器时，应将REST服务器<a href="https://hyperledger.github.io/composer/stable/integrating/securing-the-rest-server.html"><strong>配置为使用HTTPS和TLS</strong></a>（传输层安全性）进行保护。一旦REST服务器配置了HTTPS和TLS，在REST服务器和所有REST客户端之间传输的所有数据都将被加密。</p>
+<p>在生产环境中部署Hyperledger Composer REST服务器时，应将REST服务器<a href="../integrating_securing-the-rest-server/"><strong>配置为使用HTTPS和TLS</strong></a>（传输层安全性）进行保护。一旦REST服务器配置了HTTPS和TLS，在REST服务器和所有REST客户端之间传输的所有数据都将被加密。</p>
 <h3 id="rest_3">为业务网络部署REST服务器<a class="headerlink" href="#rest_3" title="Permanent link">&para;</a></h3>
-<p>通过为业务网络部署REST服务器，你可以<a href="https://hyperledger.github.io/composer/stable/integrating/deploying-the-rest-server.html"><strong>将现有系统和数据与Hyperledger Composer业务网络集成</strong></a>，允许你创建、更新或删除资产和参与者，以及获取和提交交易。</p>
+<p>通过为业务网络部署REST服务器，你可以<a href="../integrating_deploying-the-rest-server/"><strong>将现有系统和数据与Hyperledger Composer业务网络集成</strong></a>，允许你创建、更新或删除资产和参与者，以及获取和提交交易。</p>
 <h3 id="node-red">与Node-RED集成<a class="headerlink" href="#node-red" title="Permanent link">&para;</a></h3>
-<p><a href="http://nodered.org/">Node-RED</a>包括许多<a href="https://hyperledger.github.io/composer/stable/integrating/node-red.html"><strong>Hyperledger Composer 节点，允许你提交事务，读取，更新和删除资产和参与者，以及订阅事件。</strong></a></p>
+<p><a href="http://nodered.org/">Node-RED</a>包括许多<a href="../integrating_node-red/"><strong>Hyperledger Composer 节点，允许你提交事务，读取，更新和删除资产和参与者，以及订阅事件。</strong></a></p>
 <h3 id="rest_4">调用外部REST服务<a class="headerlink" href="#rest_4" title="Permanent link">&para;</a></h3>
-<p><a href="https://hyperledger.github.io/composer/stable/integrating/call-out.html"><strong>事务处理器函数可以用来调用外部REST服务</strong></a>。这使你可以将区块链中的复杂计算移出。</p>
-<p>有关设置Loopback API的说明，请参阅<a href="https://hyperledger.github.io/composer/stable/integrating/getting-started-rest-api.html">生成REST API</a>。</p>
+<p><a href="../integrating_call-out/"><strong>事务处理器函数可以用来调用外部REST服务</strong></a>。这使你可以将区块链中的复杂计算移出。</p>
+<p>有关设置Loopback API的说明，请参阅<a href="../integrating_getting-started-rest-api/">生成REST API</a>。</p>
               
             </div>
           </div>
@@ -415,7 +410,7 @@
         <a href="../integrating_getting-started-rest-api/" class="btn btn-neutral float-right" title="生成REST API">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../tutorials_deploy-to-fabric-multi-org/" class="btn btn-neutral" title="为多个组织部署Hyperledger Fabric"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../applications_subscribing-to-events/" class="btn btn-neutral" title="订阅事件"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -445,7 +440,7 @@
           <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../tutorials_deploy-to-fabric-multi-org/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../applications_subscribing-to-events/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../integrating_getting-started-rest-api/" style="color: #fcfcfc">Next &raquo;</a></span>

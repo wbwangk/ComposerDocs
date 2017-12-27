@@ -35,7 +35,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -46,11 +46,6 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
 	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">欢迎</a>
-	    </li>
           
             <li class="toctree-l1">
 		
@@ -82,6 +77,37 @@
                 <li class="">
                     
     <a class="" href="../installing_development-tools/">安装开发环境</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
                 </li>
     </ul>
 	    </li>
@@ -152,37 +178,6 @@
                 <li class="">
                     
     <a class="" href="../applications_subscribing-to-events/">订阅事件</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">教程</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../tutorials_tutorials/">教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_queries/">查询教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
                 </li>
     </ul>
 	    </li>
@@ -351,7 +346,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Hyperledger Composer中文文档</a>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
       </nav>
 
       
@@ -359,7 +354,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
     
       
         
@@ -393,7 +388,7 @@
 <pre><code class="bash">npm install -g loopback-connector-mongodb
 </code></pre>
 
-<p>最后，你需要为REST服务器提供LoopBack连接器所需的连接信息。这个连接信息应该使用<code>COMPOSER_DATASOURCES</code>环境变量来提供。有关可用于配置REST服务器的环境变量的更多信息，请参阅参考文档：<a href="https://hyperledger.github.io/composer/stable/reference/rest-server.html">Hyperledger Composer REST服务器</a></p>
+<p>最后，你需要为REST服务器提供LoopBack连接器所需的连接信息。这个连接信息应该使用<code>COMPOSER_DATASOURCES</code>环境变量来提供。有关可用于配置REST服务器的环境变量的更多信息，请参阅参考文档：<a href="../reference_rest-server/">Hyperledger Composer REST服务器</a></p>
 <h2 id="nodejsrestdocker">用附加的Node.js模块扩展REST服务器的Docker镜像<a class="headerlink" href="#nodejsrestdocker" title="Permanent link">&para;</a></h2>
 <p>为了将REST服务器部署为具有附加LoopBack连接器和Passport策略的Docker容器，你必须扩展<code>hyperledger/composer-rest-server</code>Docker镜像。</p>
 <p>以下是一个Dockerfile示例，它将MongoDB的LoopBack连接器和GitHub的Passport策略添加到Docker镜像中：</p>
@@ -469,7 +464,7 @@ RUN npm install --production loopback-connector-mongodb passport-github &amp;&am
    <code>bash
    source envvars.txt</code></p>
 <p>如果你打开一个新的shell，例如一个新的终端窗口或标签，那么你必须再次运行相同的<code>source</code>命令，把环境变量加载到新的shell中。</p>
-<p>关于配置REST服务器的环境变量的更多信息，请参阅参考文档：<a href="https://hyperledger.github.io/composer/stable/reference/rest-server.html">Hyperledger Composer REST服务器</a></p>
+<p>关于配置REST服务器的环境变量的更多信息，请参阅参考文档：<a href="../reference_rest-server/">Hyperledger Composer REST服务器</a></p>
 <ol>
 <li>通过运行以下<code>docker run</code>命令，为步骤3中创建的REST服务器的扩展Docker镜像启动新实例：</li>
 </ol>
@@ -494,7 +489,7 @@ RUN npm install --production loopback-connector-mongodb passport-github &amp;&am
    <code>bash
    docker logs -f rest</code></p>
 <p>如果REST服务器已经成功启动，那么你将看到它输出的日志消息类似于<code>Browse your REST API at http://localhost:3000/explorer</code>。</p>
-<p>现在REST服务器已经成功启动，你可以使用以下URL访问运行在Docker容器内的REST服务器：[http://localhost:3000/explorer/(http://localhost:3000/explorer/)。</p>
+<p>现在REST服务器已经成功启动，你可以使用以下URL访问运行在Docker容器内的REST服务器：<a href="http://localhost:3000/explorer/">http://localhost:3000/explorer/</a>。</p>
 <h2 id="_2">最后的笔记<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>在本指南中，你已经看到了如何使用Docker启动REST服务器的单个实例，其中单个实例被配置为使用MongoDB作为持久数据存储。要获得真正高度可用的REST服务器的生产部署，你需要：</p>
 <ul>

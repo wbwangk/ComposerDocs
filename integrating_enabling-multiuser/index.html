@@ -35,7 +35,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -46,11 +46,6 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
 	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">欢迎</a>
-	    </li>
           
             <li class="toctree-l1">
 		
@@ -82,6 +77,37 @@
                 <li class="">
                     
     <a class="" href="../installing_development-tools/">安装开发环境</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
                 </li>
     </ul>
 	    </li>
@@ -152,37 +178,6 @@
                 <li class="">
                     
     <a class="" href="../applications_subscribing-to-events/">订阅事件</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">教程</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../tutorials_tutorials/">教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_queries/">查询教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
                 </li>
     </ul>
 	    </li>
@@ -347,7 +342,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Hyperledger Composer中文文档</a>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
       </nav>
 
       
@@ -355,7 +350,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
     
       
         
@@ -383,11 +378,11 @@
 
 <p>这意味着业务网络无法区分REST服务器的不同客户端。在某些使用情况下，这可能是可以接受的，例如，如果区块链身份只有只读访问权限，而REST服务器使用API管理网关进行安全保护。</p>
 <p>REST服务器可以配置为多用户模式。多用户模式允许REST服务器的客户端为数字签名交易提供他们自己的区块链身份。这使业务网络能够区分REST服务器的不同客户端。</p>
-<p>多用户模式要求启用<a href="https://hyperledger.github.io/composer/stable/integrating/enabling-rest-authentication.html">REST API身份认证</a>，并且如果未明确指定，将自动启用REST API身份认证。你必须选择并配置Passport策略才能对用户进行身份认证。REST API身份认证是必需的，以便可以识别客户端。</p>
+<p>多用户模式要求启用<a href="../integrating_enabling-rest-authentication/">REST API身份认证</a>，并且如果未明确指定，将自动启用REST API身份认证。你必须选择并配置Passport策略才能对用户进行身份认证。REST API身份认证是必需的，以便可以识别客户端。</p>
 <p>一旦客户端已经对REST API进行了认证，该客户端就可以将区块链身份添加到钱包中。该钱包对于该客户端是私密的，并且不能被其他客户端访问。当客户端向REST服务器发出请求时，客户端钱包中的区块链身份用于对该客户端所做的所有交易进行数字签名。</p>
 <p>请注意，此功能要求客户端信任REST服务器。此信任是必需的，因为此功能要求REST服务器存储客户端区块链身份（包括私钥）。因此，强烈建议客户端只使用由受信任方（例如其组织内的管理员）管理的REST服务器。</p>
 <h2 id="rest_1">启动启用了多用户模式的REST服务器<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h2>
-<p>继续之前，你必须配置环境变量<code>COMPOSER_PROVIDERS</code>。有关如何执行此任务的说明，请在继续之前阅读以下主题:<a href="https://hyperledger.github.io/composer/stable/integrating/enabling-rest-authentication.html">启用REST服务器的身份认证</a></p>
+<p>继续之前，你必须配置环境变量<code>COMPOSER_PROVIDERS</code>。有关如何执行此任务的说明，请在继续之前阅读以下主题:<a href="../integrating_enabling-rest-authentication/">启用REST服务器的身份认证</a></p>
 <p>你可以使用<code>-m true</code>参数在启动启用了多用户模式的REST服务器。一旦启用了多用户模式，客户端在向业务网络发出任何请求之前都必须进行身份认证。</p>
 <p>例如，以下是作为开发者教程一部分部署的业务网络的命令，但是你可能需要修改你的业务网络的命令:</p>
 <pre><code class="bash">composer-rest-server -c admin@my-network -m true
@@ -434,7 +429,7 @@
 
 <h2 id="_2">最后的笔记<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>当REST服务器在启用多用户模式的情况下启动时，客户端所做的所有REST API请求都使用存储在客户端钱包中的区块链身份。启动时在命令行上指定的区块身份不用于处理任何请求; 它仅用于初始连接到业务网络并下载生成REST API所需的业务网络定义。因此，在命令行中指定的区块链身份只需要最小的权限即连接能力和下载业务网络定义的能力，而不需要任何资产、参与者或交易的许可。</p>
-<p>所有用户信息通过使用LoopBack连接器保留在LoopBack数据源中。默认情况下，REST服务器使用LoopBack“内存”连接器来保存用户信息，当REST服务器终止时会丢失这些信息。REST服务器应配置一个LoopBack连接器，用于将数据存储在高度可用的数据源（例如数据库）中。有关更多信息，请参阅<a href="https://hyperledger.github.io/composer/stable/integrating/deploying-the-rest-server.html">部署REST服务器</a>。</p>
+<p>所有用户信息通过使用LoopBack连接器保留在LoopBack数据源中。默认情况下，REST服务器使用LoopBack“内存”连接器来保存用户信息，当REST服务器终止时会丢失这些信息。REST服务器应配置一个LoopBack连接器，用于将数据存储在高度可用的数据源（例如数据库）中。有关更多信息，请参阅<a href="../integrating_deploying-the-rest-server/">部署REST服务器</a>。</p>
               
             </div>
           </div>

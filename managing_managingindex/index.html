@@ -35,7 +35,7 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <a href="../introduction_introduction/" class="icon icon-home"> Hyperledger Composer中文文档</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -46,11 +46,6 @@
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
 	<ul class="current">
 	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="..">欢迎</a>
-	    </li>
           
             <li class="toctree-l1">
 		
@@ -82,6 +77,37 @@
                 <li class="">
                     
     <a class="" href="../installing_development-tools/">安装开发环境</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
                 </li>
     </ul>
 	    </li>
@@ -158,37 +184,6 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">教程</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../tutorials_tutorials/">教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_queries/">查询教程</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
     <span class="caption-text">集成现有系统</span>
     <ul class="subnav">
                 <li class="">
@@ -239,7 +234,7 @@
     <a class="current" href="./">管理已部署业务网络</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#_1">管理一个已部署的商业网络</a></li>
+    <li class="toctree-l3"><a href="#_1">管理一个已部署的业务网络</a></li>
     
         <ul>
         
@@ -249,13 +244,13 @@
         
             <li><a class="toctree-l4" href="#_4">添加参与者</a></li>
         
-            <li><a class="toctree-l4" href="#_5">创建、导出和导入商业网络卡片</a></li>
+            <li><a class="toctree-l4" href="#_5">创建、导出和导入业务网络卡片</a></li>
         
             <li><a class="toctree-l4" href="#_6">向参与者发放新的身份</a></li>
         
             <li><a class="toctree-l4" href="#_7">将现有身份绑定到参与者</a></li>
         
-            <li><a class="toctree-l4" href="#_8">列出商业网络中的所有身份</a></li>
+            <li><a class="toctree-l4" href="#_8">列出业务网络中的所有身份</a></li>
         
             <li><a class="toctree-l4" href="#_9">撤销参与者的身份</a></li>
         
@@ -361,7 +356,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Hyperledger Composer中文文档</a>
+        <a href="../introduction_introduction/">Hyperledger Composer中文文档</a>
       </nav>
 
       
@@ -369,7 +364,7 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
+    <li><a href="../introduction_introduction/">Docs</a> &raquo;</li>
     
       
         
@@ -390,28 +385,28 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="_1">管理一个已部署的商业网络<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+                <h1 id="_1">管理一个已部署的业务网络<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <h3 id="_2">连接器的具体信息<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <h3 id="_3">参与者和身份<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>参与者和身份是Hyperledger Composer的核心概念。参与者是商业网络的成员，可能代表个人或组织。参与者有身份文档可以证明自己的身份。欲了解更多信息，请参阅<a href="https://hyperledger.github.io/composer/stable/managing/participantsandidentities.html">参与者和身份</a>。</p>
+<p>参与者和身份是Hyperledger Composer的核心概念。参与者是业务网络的成员，可能代表个人或组织。参与者有身份文档可以证明自己的身份。欲了解更多信息，请参阅<a href="../managing_participantsandidentities/">参与者和身份</a>。</p>
 <h3 id="_4">添加参与者<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p><a href="https://hyperledger.github.io/composer/stable/managing/participant-add.html">参与者必须添加到商业网络</a>才能进行交易。参与者可以创建资产，并与其他参与者交换资产。参与者通过提交交易来处理资产。</p>
-<h3 id="_5">创建、导出和导入商业网络卡片<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>商业网络卡片由连接profile、身份和证书组成，在Hyperledger Composer Playground中通过它才允许连接到商业网络。可以从Hyperledger Composer Playground 的我的钱包页面<a href="https://hyperledger.github.io/composer/stable/managing/id-cards-playground.html">创建、导出和导入</a>商业网络卡片。</p>
+<p><a href="../managing_participant-add/">参与者必须添加到业务网络</a>才能进行交易。参与者可以创建资产，并与其他参与者交换资产。参与者通过提交交易来处理资产。</p>
+<h3 id="_5">创建、导出和导入业务网络卡片<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>业务网络卡片由连接profile、身份和证书组成，在Hyperledger Composer Playground中通过它才允许连接到业务网络。可以从Hyperledger Composer Playground 的我的钱包页面<a href="../managing_id-cards-playground/">创建、导出和导入</a>业务网络卡片。</p>
 <h3 id="_6">向参与者发放新的身份<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p><a href="https://hyperledger.github.io/composer/stable/managing/identity-issue.html">使用API或命令行向参与者发放新的身份</a>。一旦发放了新的身份，参与者就可以使用该身份在其上下文中与商业网络进行交互。</p>
+<p><a href="../managing_identity-issue/">使用API或命令行向参与者发放新的身份</a>。一旦发放了新的身份，参与者就可以使用该身份在其上下文中与业务网络进行交互。</p>
 <h3 id="_7">将现有身份绑定到参与者<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p><a href="https://hyperledger.github.io/composer/stable/managing/identity-issue.html">使用API或命令行可以将现有的身份绑定到参与者</a>。一旦已经存在的身份被绑定，参与者就可以使用该身份在其上下文中与商业网络进行交互。</p>
-<h3 id="_8">列出商业网络中的所有身份<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
-<p>为了在已部署的商业网络中执行身份管理操作，你可以<a href="https://hyperledger.github.io/composer/stable/managing/identity-list">通过API或命令行列出和查看身份库中的一组身份</a>。</p>
+<p><a href="../managing_identity-issue/">使用API或命令行可以将现有的身份绑定到参与者</a>。一旦已经存在的身份被绑定，参与者就可以使用该身份在其上下文中与业务网络进行交互。</p>
+<h3 id="_8">列出业务网络中的所有身份<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
+<p>为了在已部署的业务网络中执行身份管理操作，你可以<a href="../managing_identity-list/">通过API或命令行列出和查看身份库中的一组身份</a>。</p>
 <h3 id="_9">撤销参与者的身份<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
-<p><a href="https://hyperledger.github.io/composer/stable/managing/identity-revoke.html">可以使用API或命令行从参与者中撤销身份</a>。一旦身份被撤销，参与者就不能再使用该身份在其上下文中与商业网络进行交互。</p>
+<p><a href="../managing_identity-revoke/">可以使用API或命令行从参与者中撤销身份</a>。一旦身份被撤销，参与者就不能再使用该身份在其上下文中与业务网络进行交互。</p>
 <h3 id="hyperledger-composer">更新Hyperledger Composer运行时<a class="headerlink" href="#hyperledger-composer" title="Permanent link">&para;</a></h3>
-<p>要将<a href="https://hyperledger.github.io/composer/stable/managing/updating-composer.html">Hyperledger Composer更新</a>为新版本，必须使用npm卸载并重新安装Hyperledger Composer组件。</p>
+<p>要将<a href="../managing_updating-composer/">Hyperledger Composer更新</a>为新版本，必须使用npm卸载并重新安装Hyperledger Composer组件。</p>
 <h2 id="_10">接下来是什么？<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
 <ul>
-<li>你可能希望使用LoopBack将Hyperledger Composer  <a href="https://hyperledger.github.io/composer/stable/integrating/integrating-index.html">与现有系统集成</a>。</li>
-<li>从你的商业网络的消费数据的应用程序可以<a href="https://hyperledger.github.io/composer/stable/applications/subscribing-to-events.html">订阅事件</a>。</li>
+<li>你可能希望使用LoopBack将Hyperledger Composer  <a href="../integrating_integrating-index/">与现有系统集成</a>。</li>
+<li>从你的业务网络的消费数据的应用程序可以<a href="../applications_subscribing-to-events/">订阅事件</a>。</li>
 </ul>
               
             </div>
