@@ -236,7 +236,7 @@ composer card create -p connection.json -u PeerAdmin -c Admin@org1.example.com-c
 在这里，我们指定用户拥有哪些角色。此信息是必需的，以便Hyperledger Composer知道哪些用户能够执行哪些操作。用户`Admin@org1.example.com`是Hyperledger Fabric网络的管理员，具有角色`PeerAdmin`（能够安装链码）和角色`ChannelAdmin`（能够实例化链码）。
 
 ### 步骤六：为Hyperledger Fabric管理员导入业务网络卡片
-Hyperledger Composer只能使用放置在钱包中的业务网络卡片。钱包是包含业务网络卡片的文件系统目录。在这一步中，你将将步骤五中创建的业务网络卡片导入到钱包中，以便你可以在后续步骤中使用这个业务网络卡片。
+Hyperledger Composer只能使用放置在钱包中的业务网络卡片。钱包是包含业务网络卡片的文件系统目录。在这一步中，你会将步骤五中创建的业务网络卡片导入到钱包中，以便你可以在后续步骤中使用这个业务网络卡片。
 
 运行`composer card import`命令将业务网络卡片导入钱包：
 ```bash
@@ -253,7 +253,7 @@ composer card import -f PeerAdmin@fabric-network.card
 我们将部署区块链业务网络`tutorial-network`，这是按照[开发者教程](tutorials_developer-tutorial.md)创建的。
 
 ### 步骤七：将Hyperledger Composer运行时安装到Hyperledger Fabric peer节点上
-Hyperledger Composer包含一个名为“Hyperledger Composer运行时”的组件，该组件提供用于托管和支持业务网络存档的所有功能，例如数据验证、错误处理、交易处理函数执行和访问控制。在Hyperledger Fabric术语中，Hyperledger Composer运行时是一个标准的链码。
+Hyperledger Composer包含一个名为“Hyperledger Composer运行时”的组件，该组件提供用于托管和支持业务网络档案的所有功能，例如数据验证、错误处理、交易处理函数执行和访问控制。在Hyperledger Fabric术语中，Hyperledger Composer运行时是一个标准的链码。
 
 在这一步中，你将在所有Hyperledger Fabric peer节点上安装Hyperledger Composer运行时。在Hyperledger Fabric中，这是一个链码安装操作。
 
