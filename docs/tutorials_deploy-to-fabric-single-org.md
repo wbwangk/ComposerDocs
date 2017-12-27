@@ -6,14 +6,14 @@
 本教程将演示为单个组织将区块链业务网络部署到的Hyperledger Fabric实例，管理员需要执行的步骤，包括如何生成必需的Hyperledger Composer配置。随后的教程将演示如何将区块链业务网络部署到多个组织的Hyperledger Fabric实例。
 
 ### 先决条件
- 1. 在你继续前，确保你已经完成了[安装一个开发环境](installing_development-tools.md)中步骤。  
+1、在你继续前，确保你已经完成了[安装一个开发环境](installing_development-tools.md)中步骤。  
 
 ### 步骤一：启动Hyperledger Fabric网络
 为了遵循本教程，必须必须启动Hyperledger Fabric网络。你可以使用开发环境中提供的简单Hyperledger Fabric网络，也可以使用你根据Hyperledger Fabric文档构建的自己的Hyperledger Fabric网络。
 
 本教程将假设你使用开发环境中提供的简单Hyperledger Fabric网络。如果你使用自己的Hyperledger Fabric网络，则必须在下面详细介绍的配置和你自己的配置之间进行映射。
 
- 1. 通过运行以下命令启动一个干净的Hyperledger Fabric：
+1、通过运行以下命令启动一个干净的Hyperledger Fabric：  
 ```bash
 cd ~/fabric-tools
 ./stopFabric.sh
@@ -22,7 +22,7 @@ cd ~/fabric-tools
 export FABRIC_VERSION=hlfv11        
 ./startFabric.sh
 ```
- 2. 删除你的钱包中的所有业务网络卡片。忽略无法找到业务网络卡片的错误，这是安全的：
+2、删除你的钱包中的所有业务网络卡片。忽略无法找到业务网络卡片的错误，这是安全的：  
 ```
 composer card delete -n PeerAdmin@fabric-network
 composer card delete -n admin@tutorial-network
@@ -78,9 +78,9 @@ Hyperledger Fabric网络组件在Docker容器中运行。在Docker容器中运�
 ### 步骤三：建立连接配置文件
 连接配置文件(profile)指定了定位和连接Hyperledger Fabric网络所需的所有信息，例如所有Hyperledger Fabric网络组件的主机名和端口。在此步骤中，你将为Hyperledger Composer创建一个连接配置文件，用于连接到Hyperledger Fabric网络。
 
- 1. 创建一个名为的`connection.json`的连接配置文件。
+1、创建一个名为的`connection.json`的连接配置文件。
 
- 2. 通过将以下三行添加到`connection.json`顶部来提供连接配置文件的`name`和`type`属性：
+2、通过将以下三行添加到`connection.json`顶部来提供连接配置文件的`name`和`type`属性：  
 ```json
 {
   "name": "fabric-network",
@@ -90,13 +90,13 @@ Hyperledger Fabric网络组件在Docker容器中运行。在Docker容器中运�
 
 Hyperledger Composer被设计为兼容不同类型的区块链网络。目前，仅支持Hyperledger Fabric v1.0，但你必须指定要使用的区块链网络的类型。Hyperledger Fabric v1.0的类型是`hlfv1`。
 
- 3. 必须指定用于连接到Hyperledger Fabric网络的MSP的名称：
+3、必须指定用于连接到Hyperledger Fabric网络的MSP的名称：  
 ```json
 "mspID": "Org1MSP",
 ```
 我们正在以`Org1`连接，`Org1`的MSP被称为`Org1MSP`。
 
-我们必须指定要连接的Hyperledger Fabric网络中所有peer节点的主机名和端口。
+4、我们必须指定要连接的Hyperledger Fabric网络中所有peer节点的主机名和端口。  
 ```json
 "peers": [
     {
@@ -111,7 +111,7 @@ Hyperledger Composer被设计为兼容不同类型的区块链网络。目前，
 
 区块链业务网络将部署到所有指定的peer节点。一旦区块链业务网络部署完毕，指定的peer节点将用于查询区块链业务网络、为交易背书和订阅事件。
 
- 5. 我们必须在Hyperledger Fabric网络中指定证书颁发机构（CA）的主机名和端口，用于登记现有用户和注册新用户。
+5、我们必须在Hyperledger Fabric网络中指定证书颁发机构（CA）的主机名和端口，用于登记现有用户和注册新用户。  
 ```json
 "ca": {
     "url": "http://localhost:7054",
@@ -120,7 +120,7 @@ Hyperledger Composer被设计为兼容不同类型的区块链网络。目前，
 ```
 这里我们指定了一个CA`ca.or1.example.com`（使用主机名`localhost`）和CA端口7054。
 
- 6. 我们必须指定要连接的Hyperledger Fabric中所有排序节点的主机名和端口。
+6、我们必须指定要连接的Hyperledger Fabric中所有排序节点的主机名和端口。  
 ```json
 "orderers": [
     {
@@ -132,18 +132,18 @@ Hyperledger Composer被设计为兼容不同类型的区块链网络。目前，
 
 该`orderers`数组可以包含多个排序节点。如果你有多个排序节点，则应将其全部添加到`orderers`数组中，以便Hyperledger Composer可以与其进行交互。
 
- 7. 我们必须指定一个现有信道的名称。我们会把区块链业务网络部署到信道`composerchannel`中。
+7、我们必须指定一个现有信道的名称。我们会把区块链业务网络部署到信道`composerchannel`中。  
 ```json
 "channel": "composerchannel",
 ```
- 8. 最后，我们可以选择指定与区块链业务网络进行交互时，对交易背书的超时时间。
+8、最后，我们可以选择指定与区块链业务网络进行交互时，对交易背书的超时时间。  
 ```json
   "timeout": 300
 }
 ```
 在这里，我们已经指定了300秒的超时时间。如果一个交易需要超过300秒的时间来背书，那么将会抛出一个超时错误。
 
- 9. 保存你的更改到`connection.json`。完成的连接配置文件应该如下所示：
+9、保存你的更改到`connection.json`。完成的连接配置文件应该如下所示：  
 ```json
 {
   "name": "fabric-network",
