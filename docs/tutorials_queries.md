@@ -1,10 +1,10 @@
 ## 使用Composer查询语言和REST API的查询教程
 
-在本教程中，我们将在[开发者教程](https://hyperledger.github.io/composer/tutorials/developer-tutorial.html)的基础上进行扩展，以展示查询。原生查询语言可以使用条件过滤返回的结果，并可以在交易中被调用以执行操作，例如更新或删除结果集上的资产。
+在本教程中，我们将在[开发者教程](tutorials_developer-tutorial.md)的基础上进行扩展，以展示查询。原生查询语言可以使用条件过滤返回的结果，并可以在交易中被调用以执行操作，例如更新或删除结果集上的资产。
 
-查询在查询文件（`.qry`）中定义，文件位于商业网络定义的父目录中的。查询包含一个WHERE子句，它定义了选择资产或参与者的过滤条件。
+查询在查询文件（`.qry`）中定义，文件位于业务网络定义的父目录中的。查询包含一个WHERE子句，它定义了选择资产或参与者的过滤条件。
 
-本教程使用`tutorial-network`商业网络，该网络[开发者教程](https://hyperledger.github.io/composer/tutorials/developer-tutorial.html)中被开发和部署。
+本教程使用`tutorial-network`业务网络，该网络[开发者教程](tutorials_developer-tutorial.md)中被开发和部署。
 
 ### 先决条件
 
@@ -13,15 +13,15 @@
 - 完成[开发环境的安装](installing_development-tools.md)。
 - 完成[开发者教程](tutorials_developer-tutorial.md)。
 
-### 第一步：更新商业网络
+### 第一步：更新业务网络
 
-开发者教程中创建的商业网络必须更新。更新的商业网络包含两个事件和一个额外的交易。
+开发者教程中创建的业务网络必须更新。更新的业务网络包含两个事件和一个额外的交易。
 
 #### 更新模型文件
 
 模型文件必须更新以包含事件和新交易。
 
-1. 打开商业网络`tutorial-network`的模型（`.cto`）文件。
+1. 打开业务网络`tutorial-network`的模型（`.cto`）文件。
 
 2. 将以下事件和交易添加到模型中：
 
@@ -149,9 +149,9 @@
 
 3. 保存你的更改到`queries.qry`。
 
-### 第三步：重新生成你的商业网络档案
+### 第三步：重新生成你的业务网络档案
 
-在更改商业网络中的文件后，商业网络必须重新打包为商业网络档案（`.bna`），并重新部署到Hyperledger Fabric实例。
+在更改业务网络中的文件后，业务网络必须重新打包为业务网络档案（`.bna`），并重新部署到Hyperledger Fabric实例。
 
 1. 使用命令行，导航到`tutorial-network`目录。
 
@@ -160,13 +160,13 @@
    composer archive create --sourceType dir --sourceName . -a tutorial-network@0.0.1.bna
    ```
 
-### 第四步：部署更新的商业网络定义
+### 第四步：部署更新的业务网络定义
 
-我们需要部署修改后的网络，成为区块链上的最新版本！我们正在使用新创建的商业网络档案文件来更新现有的已部署商业网络; 这是我们在开发者教程中使用的同一个商业网络名称。
+我们需要部署修改后的网络，成为区块链上的最新版本！我们正在使用新创建的业务网络档案文件来更新现有的已部署业务网络; 这是我们在开发者教程中使用的同一个业务网络名称。
 
 1. 切换到终端，将目录切换到包含`tutorial-network.bna`的文件夹。
 
-2. 运行以下命令更新商业网络：
+2. 运行以下命令更新业务网络：
    ```bash
    composer network update -a tutorial-network@0.0.1.bna -c admin@tutorial-network
    ```
@@ -176,9 +176,9 @@
    composer network ping -c admin@tutorial-network
    ```
 
-### 第五步：为更新后的商业网络重新生成REST API
+### 第五步：为更新后的业务网络重新生成REST API
 
-现在，我们把刚更新的商业网络与添加的查询集成在一起，并为这个商业网络暴露REST API。
+现在，我们把刚更新的业务网络与添加的查询集成在一起，并为这个业务网络暴露REST API。
 
 1. 使用命令行，导航到`tutorial-network`目录。
 
@@ -201,7 +201,7 @@
 
 打开Web浏览器并导航到[http：//localhost:3000/explorer](http://localhost:3000/explorer)。你应该看到LoopBack API浏览器，允许你查看和测试生成的REST API。
 
-我们应该能够看到被添加了名为“Query”的REST端点，并且在展开时显示了商业网络 `tutorial-network`中定义的REST查询操作列表
+我们应该能够看到被添加了名为“Query”的REST端点，并且在展开时显示了业务网络 `tutorial-network`中定义的REST查询操作列表
 
 ![作为REST端点公开的查询](https://hyperledger.github.io/composer/assets/img/tutorials/query/rest-explorer-discover.png)
 
@@ -342,4 +342,4 @@
 
 ### 恭喜！
 
-干得好，现在你已经完成了这个教程，我们希望你现在对Composer中查询的能力有了更好的理解。你可以开始创建/构建你自己的查询（或修改现有查询并将相关数据添加到此商业网络 - 请注意：任何查询更改都需要重新部署）才能试用！
+干得好，现在你已经完成了这个教程，我们希望你现在对Composer中查询的能力有了更好的理解。你可以开始创建/构建你自己的查询（或修改现有查询并将相关数据添加到此业务网络 - 请注意：任何查询更改都需要重新部署）才能试用！
