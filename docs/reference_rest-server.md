@@ -33,7 +33,7 @@ Hyperledger Composer REST服务器，即`composer-rest-server`，可用于从已
    COMPOSER_AUTHENTICATION=true
    ```
 
-   有关更多信息，请参阅[启用REST服务器的身份验证](https://hyperledger.github.io/composer/integrating/enabling-rest-authentication.html)。
+   有关更多信息，请参阅[启用REST服务器的身份验证](integrating_enabling-rest-authentication.md)。
 
 4. `COMPOSER_MULTIUSER`
 
@@ -44,7 +44,7 @@ Hyperledger Composer REST服务器，即`composer-rest-server`，可用于从已
    COMPOSER_MULTIUSER=true
    ```
 
-   有关更多信息，请参阅[为REST服务器启用多用户模式](https://hyperledger.github.io/composer/integrating/enabling-multiuser.html)。
+   有关更多信息，请参阅[为REST服务器启用多用户模式](integrating_enabling-multiuser.md)。
 
 5. `COMPOSER_PROVIDERS`
 
@@ -90,7 +90,7 @@ Hyperledger Composer REST服务器，即`composer-rest-server`，可用于从已
    COMPOSER_TLS=true
    ```
 
-   有关更多信息，请参阅[使用HTTPS和TLS保护REST服务器](https://hyperledger.github.io/composer/integrating/securing-the-rest-server.html)。
+   有关更多信息，请参阅[使用HTTPS和TLS保护REST服务器](integrating_securing-the-rest-server.md)。
 
 8. `COMPOSER_TLS_CERTIFICATE`
 
