@@ -10,8 +10,8 @@
 
 开始本教程之前：
 
-- 完成[开发环境的安装](https://hyperledger.github.io/composer/installing/development-tools.html)。
-- 完成[开发者教程](https://hyperledger.github.io/composer/tutorials/developer-tutorial.html)。
+- 完成[开发环境的安装](installing_development-tools.md)。
+- 完成[开发者教程](tutorials_developer-tutorial.md)。
 
 ### 第一步：更新商业网络
 
