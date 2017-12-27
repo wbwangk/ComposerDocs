@@ -1,6 +1,6 @@
 # Hyperledger Composer的关键概念
 
-Hyperledger Composer是一种编程模型，包含建模语言和一组API，可快速定义和部署业务网络和应用程序，允许**参与者**发送交换**资产的****交易**。
+Hyperledger Composer是一种编程模型，包含建模语言和一组API，可快速定义和部署业务网络和应用程序，允许**参与者**发出**交易**来交换**资产的**。
 
 ## Hyperledger Composer组件
 
@@ -18,7 +18,7 @@ Hyperledger Composer是一种编程模型，包含建模语言和一组API，可
 
 ### 连接配置文件
 
-Hyperledger Composer使用*连接配置文件*连接到运行时。连接配置文件是一个JSON文档，位于用户的主目录（或可能来自环境变量），并在使用Composer API或命令行工具时用名称引用。使用连接配置文件可确保代码和脚本轻松地从一个运行时实例移植到另一个实例。你可以在参考部分阅读更多关于连接配置文件的文档。
+Hyperledger Composer使用*连接配置文件*连接到运行时。连接配置文件是一个JSON文档，位于用户的主目录（或可能来自环境变量），并在使用Composer API或命令行工具时用名称引用。使用连接配置文件可确保代码和脚本轻松地从一个运行时实例移植到另一个实例。你可以在参考部分阅读更多关于[连接配置文件](reference_connectionprofile.md)的文档。
 
 ### 资产
 
