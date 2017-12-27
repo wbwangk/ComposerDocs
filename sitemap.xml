@@ -2,22 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     
+    <url>
+     <loc>https://wbwangk.github.io/ComposerDocs//</loc>
+     <lastmod>2017-12-27</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+    
+
+    
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//introduction_introduction/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//introduction_key-concepts/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//introduction_solution-architecture/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -27,13 +35,13 @@
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//installing_using-playground-locally/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//installing_development-tools/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -43,61 +51,61 @@
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//business-network_business-network-index/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//business-network_businessnetworkdefinition/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//business-network_bnd-create/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//business-network_bnd-deploy/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//business-network_publishing-events/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//business-network_testing/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//business-network_bnd-publish/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//business-network_query/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//business-network_programmatic-access-control/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//business-network_historian/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -107,25 +115,25 @@
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//applications_applications-index/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//applications_node/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//applications_web/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//applications_subscribing-to-events/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -135,37 +143,37 @@
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//tutorials_tutorials/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//tutorials_playground-tutorial/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//tutorials_developer-tutorial/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//tutorials_queries/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//tutorials_deploy-to-fabric-single-org/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//tutorials_deploy-to-fabric-multi-org/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -175,55 +183,55 @@
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//integrating_integrating-index/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//integrating_getting-started-rest-api/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//integrating_publishing-events/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//integrating_enabling-rest-authentication/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//integrating_enabling-multiuser/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//integrating_securing-the-rest-server/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//integrating_deploying-the-rest-server/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//integrating_node-red/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//integrating_call-out/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -233,55 +241,55 @@
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//managing_managingindex/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//managing_participantsandidentities/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//managing_participant-add/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//managing_id-cards-playground/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//managing_identity-issue/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//managing_identity-bind/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//managing_identity-list/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//managing_identity-revoke/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//managing_updating-composer/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -290,7 +298,7 @@
     
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//problems_diagnostics/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -299,55 +307,55 @@
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//reference-index/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//reference_cto_language/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//reference_acl_language/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//reference_query-language/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//reference_connectionprofile/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//reference_js_scripts/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//reference_commands/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//reference_rest-server/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>https://wbwangk.github.io/ComposerDocs//reference_glossary/</loc>
-     <lastmod>2017-12-26</lastmod>
+     <lastmod>2017-12-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
