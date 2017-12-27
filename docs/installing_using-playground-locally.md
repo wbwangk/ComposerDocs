@@ -31,4 +31,4 @@ docker images -aq | xargs docker rmi -f
 
 ## 下一步是什么？
 
-- 寻找使用Playground的教程，请尝试[我们的Playground教程](https://hyperledger.github.io/composer/tutorials/playground-tutorial.html)。
+- 寻找使用Playground的教程，请尝试[我们的Playground教程](tutorials_playground-tutorial.md)。
