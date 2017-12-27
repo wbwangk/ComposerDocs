@@ -21,7 +21,7 @@ REST服务器使用在启动期间指定的业务网络卡片来连接并发现�
 npm install -g loopback-connector-mongodb
 ```
 
-最后，你需要为REST服务器提供LoopBack连接器所需的连接信息。这个连接信息应该使用`COMPOSER_DATASOURCES`环境变量来提供。有关可用于配置REST服务器的环境变量的更多信息，请参阅参考文档：[Hyperledger Composer REST服务器](https://hyperledger.github.io/composer/stable/reference/rest-server.html)
+最后，你需要为REST服务器提供LoopBack连接器所需的连接信息。这个连接信息应该使用`COMPOSER_DATASOURCES`环境变量来提供。有关可用于配置REST服务器的环境变量的更多信息，请参阅参考文档：[Hyperledger Composer REST服务器](reference_rest-server.md)
 
 ## 用附加的Node.js模块扩展REST服务器的Docker镜像
 
@@ -118,7 +118,7 @@ docker build -t myorg/my-composer-rest-server .
 
    如果你打开一个新的shell，例如一个新的终端窗口或标签，那么你必须再次运行相同的`source`命令，把环境变量加载到新的shell中。
 
-   关于配置REST服务器的环境变量的更多信息，请参阅参考文档：[Hyperledger Composer REST服务器](https://hyperledger.github.io/composer/stable/reference/rest-server.html)
+   关于配置REST服务器的环境变量的更多信息，请参阅参考文档：[Hyperledger Composer REST服务器](reference_rest-server.md)
 
 5. 通过运行以下`docker run`命令，为步骤3中创建的REST服务器的扩展Docker镜像启动新实例：
 
@@ -151,7 +151,7 @@ docker build -t myorg/my-composer-rest-server .
 
    如果REST服务器已经成功启动，那么你将看到它输出的日志消息类似于`Browse your REST API at http://localhost:3000/explorer`。
 
-现在REST服务器已经成功启动，你可以使用以下URL访问运行在Docker容器内的REST服务器：[http://localhost:3000/explorer/(http://localhost:3000/explorer/)。
+现在REST服务器已经成功启动，你可以使用以下URL访问运行在Docker容器内的REST服务器：[http://localhost:3000/explorer/](http://localhost:3000/explorer/)。
 
 ## 最后的笔记
 
