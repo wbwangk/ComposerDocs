@@ -433,7 +433,7 @@ composer card import -f PeerAdmin@byfn-network-org2.card
 
 ### ①步骤十一：为Org1的Hyperledger Fabric peer节点安装Hyperledger Composer运行时
 
-使用你在步骤三中创建的连接profle，运行`composer runtime install`命令为所有的`Org1`peer节点安装Hyperledger Composer运行时：
+使用你在步骤三中创建的连接配置文件，运行`composer runtime install`命令为所有的`Org1`peer节点安装Hyperledger Composer运行时：
 ```bash
 composer runtime install -c PeerAdmin@byfn-network-org1-only -n tutorial-network
 ```
