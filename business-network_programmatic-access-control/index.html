@@ -396,7 +396,7 @@ participant PrivilegedPerson extends Person {
 <ol>
 <li>在你的交易处理器函数中，使用以下<code>getCurrentParticipant</code>功能验证当前参与者的类型是否符合要求：</li>
 </ol>
-<pre><code>   function onPrivilegedTransaction(privilegedTransaction) {
+<pre><code class="javascript">   function onPrivilegedTransaction(privilegedTransaction) {
        var currentParticipant = getCurrentParticipant();
        if (currentParticipant.getFullyQualifiedType() !== 'net.biz.digitalPropertyNetwork.PrivilegedPerson') {
            throw new Error('Transaction can only be submitted by a privileged person');
@@ -408,7 +408,7 @@ participant PrivilegedPerson extends Person {
 <ol>
 <li>在你的交易处理器函数中，使用以下<code>getCurrentParticipant</code>函数验证当前参与者的参与者ID ：</li>
 </ol>
-<pre><code>   function onPrivilegedTransaction(privilegedTransaction) {
+<pre><code class="javascript">   function onPrivilegedTransaction(privilegedTransaction) {
        var currentParticipant = getCurrentParticipant();
        if (currentParticipant.getFullyQualifiedIdentifier() !== 'net.biz.digitalPropertyNetwork.Person#PERSON_1') {
            throw new Error('Transaction can only be submitted by person 1');
@@ -418,7 +418,7 @@ participant PrivilegedPerson extends Person {
 </code></pre>
 
 <p>可以将当前参与者的参与者ID与（通过关联）链接到资产的参与者进行比较，以验证当前参与者是否有权访问或修改某资产：</p>
-<pre><code>   function onPrivilegedTransaction(privilegedTransaction) {
+<pre><code class="javascript">   function onPrivilegedTransaction(privilegedTransaction) {
        // Get the owner of the asset in the transaction.
        var assetOwner = privilegedTransaction.asset.owner;
        var currentParticipant = getCurrentParticipant();

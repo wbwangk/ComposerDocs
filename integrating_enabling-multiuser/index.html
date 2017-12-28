@@ -216,7 +216,7 @@
     
         <ul>
         
-            <li><a class="toctree-l4" href="#rest_1">启动启用了多用户模式的REST服务器</a></li>
+            <li><a class="toctree-l4" href="#rest_1">启用了多用户模式的REST服务器</a></li>
         
             <li><a class="toctree-l4" href="#_1">将业务网络卡片添加到钱包</a></li>
         
@@ -386,7 +386,7 @@
 <p>多用户模式要求启用<a href="../integrating_enabling-rest-authentication/">REST API身份认证</a>，并且如果未明确指定，将自动启用REST API身份认证。你必须选择并配置Passport策略才能对用户进行身份认证。REST API身份认证是必需的，以便可以识别客户端。</p>
 <p>一旦客户端已经对REST API进行了认证，该客户端就可以将区块链身份添加到钱包中。该钱包对于该客户端是私密的，并且不能被其他客户端访问。当客户端向REST服务器发出请求时，客户端钱包中的区块链身份用于对该客户端所做的所有交易进行数字签名。</p>
 <p>请注意，此功能要求客户端信任REST服务器。此信任是必需的，因为此功能要求REST服务器存储客户端区块链身份（包括私钥）。因此，强烈建议客户端只使用由受信任方（例如其组织内的管理员）管理的REST服务器。</p>
-<h2 id="rest_1">启动启用了多用户模式的REST服务器<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h2>
+<h2 id="rest_1">启用了多用户模式的REST服务器<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h2>
 <p>继续之前，你必须配置环境变量<code>COMPOSER_PROVIDERS</code>。有关如何执行此任务的说明，请在继续之前阅读以下主题:<a href="../integrating_enabling-rest-authentication/">启用REST服务器的身份认证</a></p>
 <p>你可以使用<code>-m true</code>参数在启动启用了多用户模式的REST服务器。一旦启用了多用户模式，客户端在向业务网络发出任何请求之前都必须进行身份认证。</p>
 <p>例如，以下是作为开发者教程一部分部署的业务网络的命令，但是你可能需要修改你的业务网络的命令:</p>
@@ -404,29 +404,34 @@
 <p>导航到<a href="http://localhost:3000/explorer/">http://localhost:3000/explorer/</a>上的REST API浏览器，然后通过展开<strong>钱包</strong>类别导航到钱包API 。</p>
 </li>
 <li>
-<p>通过调用<code>GET/wallet</code>操作检查钱包是否包含任何业务网络卡片。操作的回应应该是:
-   <code>[]</code></p>
-</li>
-<li>
-<p>通过调用<code>POST /wallet/import</code>操作将业务网络卡片导入钱包。你必须通过单击<strong>选择文件</strong>按钮来指定业务网络卡片文件<code>alice1@my-network.card</code>。操作的回应应该是:
-   <code>no content</code></p>
+<p>通过调用<code>GET/wallet</code>操作检查钱包是否包含任何业务网络卡片。操作的回应应该是:</p>
 </li>
 </ol>
+<pre><code>   []
+</code></pre>
+
+<ol>
+<li>通过调用<code>POST /wallet/import</code>操作将业务网络卡片导入钱包。你必须通过单击<strong>选择文件</strong>按钮来指定业务网络卡片文件<code>alice1@my-network.card</code>。操作的回应应该是:</li>
+</ol>
+<pre><code>   no content
+</code></pre>
+
 <p>业务网络卡片<code>alice1@my-network</code>现在已经被导入到钱包中。</p>
 <ol>
-<li>通过调用<code>GET /wallet</code>操作检查钱包是否包含业务网络卡片<code>alice1@my-network</code>。操作的回应应该是:
-   <code>json
-   [
-       {
-           "name": "alice1@my-network",
-           "default": true
-       }
-   ]</code></li>
+<li>通过调用<code>GET /wallet</code>操作检查钱包是否包含业务网络卡片<code>alice1@my-network</code>。操作的回应应该是:</li>
 </ol>
+<pre><code class="json">   [
+       {
+           &quot;name&quot;: &quot;alice1@my-network&quot;,
+           &quot;default&quot;: true
+       }
+   ]
+</code></pre>
+
 <p>业务网络卡片<code>alice1@my-network</code>被显示出来。<code>default</code>属性的值是<code>true</code>，这意味着当与业务网络交互时，该业务网络卡片将被默认使用。</p>
 <p>现在，导航到<a href="http://localhost:3000/explorer/">http://localhost:3000/explorer/</a>上的REST API浏览器。尝试再次使用REST API浏览器调用其中一个业务网络REST API操作。这一次，调用应该成功。</p>
 <p>你可以通过调用<code>GET /system/ping</code>操作来测试区块链身份。此操作将返回区块链身份发给的参与者的完全限定标识符:</p>
-<pre><code>{
+<pre><code class="json">{
   &quot;version&quot;: &quot;0.8.0&quot;,
   &quot;participant&quot;: &quot;org.acme.mynetwork.Trader#alice@email.com&quot;
 }

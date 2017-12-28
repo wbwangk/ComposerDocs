@@ -381,7 +381,7 @@
             <div class="section">
               
                 <h1 id="_1">部署业务网络<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>在部署业务网络定义之前，必须将其打包到<em>业务网络档案</em>（.bna）文件中。<code>composer archive create</code>命令用于从磁盘上的业务网络定义文件夹创建业务网络档案文件。</p>
+<p>在部署业务网络定义之前，必须将其打包到<strong>业务网络档案</strong>（.bna）文件中。<code>composer archive create</code>命令用于从磁盘上的业务网络定义文件夹创建业务网络档案文件。</p>
 <p>一旦创建了业务网络档案文件，就可以使用<a href="https://hyperledger.github.io/composer/reference/composer.runtime.install.html"><code>composer runtime install</code></a>命令和<a href="https://hyperledger.github.io/composer/reference/composer.network.start.html"><code>composer network start</code></a>命令将其部署到运行时。</p>
 <p>例如：</p>
 <pre><code class="bash">composer runtime install -n tutorial-network -c PeerAdmin@fabric-network
@@ -414,7 +414,7 @@ rule NetworkAdminSystem {
 
 <p>默认情况下，Hyperledger Composer将在部署期间自动创建一个业务网络管理员参与者。用于部署业务网络的身份也将绑定到该业务网络管理员参与者，以便在部署之后可以使用身份与业务网络进行交互。</p>
 <p>Hyperledger Fabric peer管理员可能没有权限使用Hyperledger Fabric证书颁发机构（CA）颁发新身份。这可能会限制业务网络管理员加入其他组织的其他参与者的能力。因此，最好创建一个业务网络管理员，让该管理员具有使用Hyperledger Fabric Certificate Authority（CA）颁发新身份的权限。</p>
-<p>你可以使用其他选项来<a href="https://hyperledger.github.io/composer/reference/composer.network.start.html"><code>composer network start</code></a>指定在部署业务网络期间应创建的业务网络管理员。</p>
+<p>你可以向<a href="https://hyperledger.github.io/composer/reference/composer.network.start.html"><code>composer network start</code></a>命令添加选项来指定在部署业务网络期间应创建的业务网络管理员。</p>
 <p>如果业务网络管理员具有登记ID和登记密码，则可以使用<code>-A</code>（业务网络管理员）和<code>-S</code>（业务网络管理员用的登记密码）标志。例如，以下命令将为现有<code>admin</code>登记ID 创建一个业务网络管理员：</p>
 <pre><code class="bash">composer network start -c PeerAdmin@fabric-network -A admin -S
 </code></pre>

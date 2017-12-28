@@ -388,7 +388,7 @@
 <p>业务网络卡片包含一个连接配置文件，用于描述如何连接到正在运行的已部署业务网络的Hyperledger Fabric网络。请注意，连接配置文件必须在用于REST服务器的Docker镜像中有效，并且主机名必须正确且可由此Docker镜像访问。</p>
 <h2 id="rest_1">使用持久数据存储配置REST服务器<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h2>
 <p>有关已认证用户及其钱包（多用户模式启用时包含多个用户的业务网络卡片）的所有信息将通过LoopBack连接器持久化在LoopBack数据源中。默认情况下，REST服务器使用LoopBack“内存”连接器来持久化用户信息，当REST服务器终止时会丢失这些信息。REST服务器应配置一个LoopBack连接器，用于将数据存储在高度可用的数据源（例如数据库）中。</p>
-<p>你应该能够使用任何LoopBack连接器，但是我们建议你为NoSQL数据库使用LoopBack连接器。例如，MongoDB或Apache CouchDB。</p>
+<p>你可以使用任何LoopBack连接器，但是我们建议你使用NoSQL数据库(作为源的)LoopBack连接器。例如，MongoDB或Apache CouchDB。</p>
 <p>需要安装LoopBack连接器才能让REST服务器找到并使用它。你可以使用<code>npm</code>安装附加LoopBack连接器，例如：</p>
 <pre><code class="bash">npm install -g loopback-connector-mongodb
 </code></pre>

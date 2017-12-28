@@ -380,76 +380,101 @@
 <li><code>COMPOSER_CARD</code></li>
 </ol>
 <p>你可以使用<code>COMPOSER_CARD</code>环境变量来指定发现业务网络卡片的名称，REST服务器用它来连接到业务网络的。</p>
-<p>例如：
-   <code>COMPOSER_CARD=admin@my-network</code></p>
+<p>例如：</p>
+<pre><code>COMPOSER_CARD=admin@my-network
+</code></pre>
+
 <ol>
 <li><code>COMPOSER_NAMESPACES</code></li>
 </ol>
 <p>你可以使用<code>COMPOSER_NAMESPACES</code>环境变量来指定REST服务器是否应使用命名空间生成REST API。有效值是<code>always</code>，<code>required</code>和<code>never</code>。</p>
-<p>例如：
-   <code>COMPOSER_NAMESPACES=never</code></p>
+<p>例如：</p>
+<pre><code>COMPOSER_NAMESPACES=never
+</code></pre>
+
 <ol>
 <li><code>COMPOSER_AUTHENTICATION</code></li>
 </ol>
 <p>你可以使用<code>COMPOSER_AUTHENTICATION</code>环境变量来指定REST服务器是否应启用REST API身份验证。有效值是<code>true</code>和<code>false</code>。</p>
-<p>例如：
-   <code>COMPOSER_AUTHENTICATION=true</code></p>
+<p>例如：</p>
+<pre><code>COMPOSER_AUTHENTICATION=true
+</code></pre>
+
 <p>有关更多信息，请参阅<a href="../integrating_enabling-rest-authentication/">启用REST服务器的身份验证</a>。</p>
 <ol>
 <li><code>COMPOSER_MULTIUSER</code></li>
 </ol>
 <p>你可以使用<code>COMPOSER_MULTIUSER</code>环境变量来指定REST服务器是否应启用多用户模式。有效值是<code>true</code>和<code>false</code>。</p>
-<p>例如：
-   <code>COMPOSER_MULTIUSER=true</code></p>
-<p>有关更多信息，请参阅<a href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>。</p>
-<ol>
-<li><code>COMPOSER_PROVIDERS</code></li>
-</ol>
-<p>你可以使用<code>COMPOSER_PROVIDERS</code>环境变量来指定REST服务器应用来验证REST API的客户端的Passport策略。</p>
-<p>例如：
-   <code>COMPOSER_PROVIDERS='{
-     "github": {
-       "provider": "github",
-       "module": "passport-github",
-       "clientID": "REPLACE_WITH_CLIENT_ID",
-       "clientSecret": "REPLACE_WITH_CLIENT_SECRET",
-       "authPath": "/auth/github",
-       "callbackURL": "/auth/github/callback",
-       "successRedirect": "/",
-       "failureRedirect": "/"
+<p>例如：</p>
+<pre><code>COMPOSER_MULTIUSER=true
+``
+
+有关更多信息，请参阅[为REST服务器启用多用户模式](integrating_enabling-multiuser.md)。
+
+5. `COMPOSER_PROVIDERS`
+
+你可以使用`COMPOSER_PROVIDERS`环境变量来指定REST服务器应用来验证REST API的客户端的Passport策略。
+
+例如：
+</code></pre>
+
+<p>COMPOSER_PROVIDERS=&rsquo;{
+     &ldquo;github&rdquo;: {
+       &ldquo;provider&rdquo;: &ldquo;github&rdquo;,
+       &ldquo;module&rdquo;: &ldquo;passport-github&rdquo;,
+       &ldquo;clientID&rdquo;: &ldquo;REPLACE_WITH_CLIENT_ID&rdquo;,
+       &ldquo;clientSecret&rdquo;: &ldquo;REPLACE_WITH_CLIENT_SECRET&rdquo;,
+       &ldquo;authPath&rdquo;: &ldquo;/auth/github&rdquo;,
+       &ldquo;callbackURL&rdquo;: &ldquo;/auth/github/callback&rdquo;,
+       &ldquo;successRedirect&rdquo;: &ldquo;/&rdquo;,
+       &ldquo;failureRedirect&rdquo;: &ldquo;/&rdquo;
      }
-   }'</code></p>
-<ol>
-<li><code>COMPOSER_DATASOURCES</code></li>
-</ol>
-<p>你可以使用<code>COMPOSER_DATASOURCES</code>环境变量来指定所选LoopBack连接器所需的LoopBack数据源和连接信息。</p>
-<p>例如：
-   <code>COMPOSER_DATASOURCES='{
-     "db": {
-       "name": "db",
-       "connector": "mongodb",
-       "host": "mongo"
+   }&rsquo;</p>
+<pre><code>
+6. `COMPOSER_DATASOURCES`
+
+你可以使用`COMPOSER_DATASOURCES`环境变量来指定所选LoopBack连接器所需的LoopBack数据源和连接信息。
+
+例如：
+</code></pre>
+
+<p>COMPOSER_DATASOURCES=&rsquo;{
+     &ldquo;db&rdquo;: {
+       &ldquo;name&rdquo;: &ldquo;db&rdquo;,
+       &ldquo;connector&rdquo;: &ldquo;mongodb&rdquo;,
+       &ldquo;host&rdquo;: &ldquo;mongo&rdquo;
      }
-   }'</code></p>
-<ol>
-<li><code>COMPOSER_TLS</code></li>
-</ol>
-<p>你可以使用<code>COMPOSER_TLS</code>环境变量来指定REST服务器是否应启用HTTPS和TLS。有效值是<code>true</code>和<code>false</code>。</p>
-<p>例如：
-   <code>COMPOSER_TLS=true</code></p>
-<p>有关更多信息，请参阅<a href="../integrating_securing-the-rest-server/">使用HTTPS和TLS保护REST服务器</a>。</p>
-<ol>
-<li><code>COMPOSER_TLS_CERTIFICATE</code></li>
-</ol>
-<p>你可以使用<code>COMPOSER_TLS_CERTIFICATE</code>环境变量来指定启用HTTPS和TLS时REST服务器应使用的证书文件。</p>
-<p>例如：
-   <code>COMPOSER_TLS_CERTIFICATE=/tmp/cert.pem</code></p>
-<ol>
-<li><code>COMPOSER_TLS_KEY</code></li>
-</ol>
-<p>你可以使用<code>COMPOSER_TLS_KEY</code>环境变量来指定在启用HTTPS和TLS时REST服务器应使用的私钥文件。</p>
-<p>例如：
-   <code>COMPOSER_TLS_KEY=/tmp/key.pem</code></p>
+   }&rsquo;</p>
+<pre><code>
+7. `COMPOSER_TLS`
+
+你可以使用`COMPOSER_TLS`环境变量来指定REST服务器是否应启用HTTPS和TLS。有效值是`true`和`false`。
+
+例如：
+</code></pre>
+
+<p>COMPOSER_TLS=true</p>
+<pre><code>
+有关更多信息，请参阅[使用HTTPS和TLS保护REST服务器](integrating_securing-the-rest-server.md)。
+
+8. `COMPOSER_TLS_CERTIFICATE`
+
+你可以使用`COMPOSER_TLS_CERTIFICATE`环境变量来指定启用HTTPS和TLS时REST服务器应使用的证书文件。
+
+例如：
+</code></pre>
+
+<p>COMPOSER_TLS_CERTIFICATE=/tmp/cert.pem</p>
+<pre><code>
+9. `COMPOSER_TLS_KEY`
+
+你可以使用`COMPOSER_TLS_KEY`环境变量来指定在启用HTTPS和TLS时REST服务器应使用的私钥文件。
+
+例如：
+</code></pre>
+
+<p>COMPOSER_TLS_KEY=/tmp/key.pem
+```</p>
               
             </div>
           </div>
