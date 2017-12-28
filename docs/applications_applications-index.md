@@ -19,4 +19,4 @@ Node.js应用程序可以使用API`composer-client.BusinessNetworkConnection.on`
 ## 参考
 
 - [**Yeoman代码生成器**](http://yeoman.io/)
-- [**角度框架**](https://angular.io/)
+- [**Angular框架**](https://angular.io/)
