@@ -440,7 +440,7 @@ composer runtime install -c PeerAdmin@byfn-network-org1-only -n tutorial-network
 
 ### ②步骤十二：为Org2的Hyperledger Fabric peer节点安装Hyperledger Composer运行时
 
-使用你在步骤四中创建的连接profle，运行`composer runtime install`命令为所有的`Org2`peer节点安装Hyperledger Composer运行时：
+使用你在步骤四中创建的连接配置文件，运行`composer runtime install`命令为所有的`Org2`peer节点安装Hyperledger Composer运行时：
 ```bash
 composer runtime install -c PeerAdmin@byfn-network-org2-only -n tutorial-network
 ```
