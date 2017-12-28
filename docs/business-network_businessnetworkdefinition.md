@@ -10,9 +10,9 @@
 - 一组JavaScript文件
 - 一个访问控制文件
 
-模型文件定义了业务网络的业务领域，而JavaScript文件包含事务处理器函数。事务处理器函数在Hyperledger Fabric上运行，并可访问存储在Hyperledger Fabric区块链全局状态中的资产库。
+模型文件定义了业务网络的业务领域，而JavaScript文件包含交易处理器函数。交易处理器函数在Hyperledger Fabric上运行，并可访问存储在Hyperledger Fabric区块链全局状态中的资产库。
 
-模型文件通常由业务分析师创建，因为它们定义了模型元素之间的结构和关联：资产、参与者和事务。
+模型文件通常由业务分析师创建，因为它们定义了模型元素之间的结构和关联：资产、参与者和交易。
 
 JavaScript文件通常由正在实现业务分析师提供的业务需求的开发人员创建。
 
@@ -24,4 +24,4 @@ JavaScript文件通常由正在实现业务分析师提供的业务需求的开�
 
 - [**建模语言**](reference_cto_language.md)
 - [**访问控制语言**](reference_acl_language.md)
-- [**交易处理器功能**](reference_js_scripts.md)
+- [**交易处理器函数**](reference_js_scripts.md)
