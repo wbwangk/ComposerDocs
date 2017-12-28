@@ -41,33 +41,33 @@ composer-rest-server -c admin@my-network -m true
 1. 导航到[http://localhost:3000/explorer/](http://localhost:3000/explorer/)上的REST API浏览器，然后通过展开**钱包**类别导航到钱包API 。
 
 2. 通过调用`GET/wallet`操作检查钱包是否包含任何业务网络卡片。操作的回应应该是:
-   ```
+```
    []
-   ```
+```
 
 3. 通过调用`POST /wallet/import`操作将业务网络卡片导入钱包。你必须通过单击**选择文件**按钮来指定业务网络卡片文件`alice1@my-network.card`。操作的回应应该是:
-   ```
+```
    no content
-   ```
+```
 
    业务网络卡片`alice1@my-network`现在已经被导入到钱包中。
 
 4. 通过调用`GET /wallet`操作检查钱包是否包含业务网络卡片`alice1@my-network`。操作的回应应该是:
-   ```json
+```json
    [
        {
            "name": "alice1@my-network",
            "default": true
        }
    ]
-   ```
+```
 
    业务网络卡片`alice1@my-network`被显示出来。`default`属性的值是`true`，这意味着当与业务网络交互时，该业务网络卡片将被默认使用。
 
 现在，导航到[http://localhost:3000/explorer/](http://localhost:3000/explorer/)上的REST API浏览器。尝试再次使用REST API浏览器调用其中一个业务网络REST API操作。这一次，调用应该成功。
 
 你可以通过调用`GET /system/ping`操作来测试区块链身份。此操作将返回区块链身份发给的参与者的完全限定标识符:
-```
+```json
 {
   "version": "0.8.0",
   "participant": "org.acme.mynetwork.Trader#alice@email.com"
