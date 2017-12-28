@@ -24,7 +24,7 @@ participant Person identified by personId {
 
 ## 过程
 
-1. 连接到业务网络并将现有身份绑定到参与者
+1.连接到业务网络并将现有身份绑定到参与者
    - JavaScript API
 ```javascript
   const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
@@ -56,11 +56,11 @@ participant Person identified by personId {
 ```
 
 - 命令行
-  ```bash
-  composer identity bind -c admin@digitalPropertyNetwork -a "resource:net.biz.digitalPropertyNetwork.Person#mae@biznet.org"
-  ```
+```bash
+composer identity bind -c admin@digitalPropertyNetwork -a "resource:net.biz.digitalPropertyNetwork.Person#mae@biznet.org"
+```
 
-1. 作为参与者，测试与业务网络的连接
+2.作为参与者，测试与业务网络的连接
    - JavaScript API
 ```javascript
   const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
@@ -80,8 +80,8 @@ participant Person identified by personId {
 ```
 
 - 命令行
-  ```bash
-  composer network ping -c admin@digitalPropertyNetwork
-  ```
+```bash
+composer network ping -c admin@digitalPropertyNetwork
+```
 
 参与者ID将被打印到控制台，并且应该与`composer identity bind`命令中指定的参与者ID匹配。
