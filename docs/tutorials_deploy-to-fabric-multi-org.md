@@ -43,8 +43,6 @@ git clone -b issue-6978 https://github.com/sstone1/fabric-samples.git
 ./byfn.sh -m generate
 ./byfn.sh -m up -s couchdb -a
 ```
-(估计作者用的BYFN版本旧，现在的1.1.0版BYFN默认启动couchdb，但不启动CA容器)  
-
 如果你的命令执行成功，BYFN网络被启动，你会看到下面的输出：
 ```
 ========= All GOOD, BYFN execution completed ===========
