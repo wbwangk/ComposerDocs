@@ -30,7 +30,7 @@ A `Participant`是业务网络中的行为人(actor)。参与者可能是一个�
 
 在Hyperledger Composer中，参与者的结构在模型文件中建模。该结构可以包括关于参与者的各种信息，例如参与者姓名、地址、电子邮件地址、出生日期等。该被建模参与者的新实例然后会被创建和添加到参与者库中。
 
-Hyperledger Composer需要使用区块链身份作为身份文档（存放）的方式。例如，在将业务网络部署到Hyperledger Fabric时，将使用登记证书作为身份文档的格式。这些登记证书用于数字签名提交到已部署业务网络的交易。
+Hyperledger Composer需要使用区块链身份作为身份文档（存放）的方式。例如，在将业务网络部署到Hyperledger Fabric时，将使用登记证书作为身份文档的格式。这些登记证书用于对提交到已部署业务网络的交易进行数字签名。
 
 已部署的业务网络在身份库（`Identity Registry`）中维护一组身份映射到参与者。当一个身份被颁发（`Issued`）或绑定（`Bound`）某参与者，一个新的映射被添加到身份库中。当该参与者使用该身份将交易提交到已部署的业务网络时，Composer运行时会在身份库中查找该身份的有效映射。这种查找是使用公钥签名或指纹完成的，指纹本质上是证书内容（对证书和身份是唯一的）的散列。
 
@@ -42,11 +42,11 @@ Hyperledger Composer需要使用区块链身份作为身份文档（存放）的
 
 ## Hyperledger Composer Playground中的身份和ID
 
-在Hyperledger Composer Playground中，有一个包含本地存储的身份卡片（身份证）的钱包。身份卡片是企业网络的访问卡片，包括身份数据，连接配置文件以及用于业务网络访问的正确证书。可以导出身份卡片以允许将身份分配给他人。
+在Hyperledger Composer Playground中，有一个包含本地存储的身份卡片的钱包。身份卡片是企业网络的访问卡片，包括身份数据，连接配置文件以及用于业务网络访问的正确证书。可以导出身份卡片以允许将身份分配给他人。
 
 ## 在Hyperledger Composer中执行身份管理任务
 
-Hyperledger Composer Node.js客户端API、REST API和命令行界面都可以用来执行身份管理操作。例如，以下身份管理操作可通过所有Hyperledger Composer界面使用：
+Hyperledger Composer Node.js客户端API、REST API和命令行接口都可以用来执行身份管理操作。例如，以下身份管理操作可通过所有(三种)Hyperledger Composer接口使用：
 
 - 将新参与者添加到参与者库
 - 向参与者颁发新的身份
@@ -58,7 +58,7 @@ Hyperledger Composer Node.js客户端API、REST API和命令行界面都可以�
 
 ## 相关的概念
 
-[业务网络](https://hyperledger.github.io/composer/stable/business-network/business-network-index.html)
+[业务网络](business-network_business-network-index.html)
 
 ## 相关任务
 
