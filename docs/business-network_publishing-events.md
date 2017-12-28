@@ -9,13 +9,13 @@
 ## 过程
 
 1. 事件在业务网络定义的模型文件（`.cto`）中定义，与资产和参与者相同。事件使用以下格式：
-   ```
+```
    event BasicEvent {
    }
-   ```
+```
 
 2. 为了事件被发布，创建事件的交易必须调用三个函数，第一个是`getFactory`函数。`getFactory`允许事件作为交易的一部分而被创建。接下来，必须使用`factory.newEvent('org.namespace', 'BasicEvent')`创建一个事件。这将在指定的命名空间中创建一个`BasicEvent`事件。然后必须设置事件所需的属性。最后，事件必须通过使用`emit(BasicEvent)`发送。调用这个事件的简单交易将如下所示：
-   ```javascript
+```javascript
    /**
     * @param {org.namespace.BasicEventTransaction} basicEventTransaction
     * @transaction
@@ -26,7 +26,7 @@
        var basicEvent = factory.newEvent('org.namespace', 'BasicEvent');
        emit(basicEvent);
    }
-   ```
+```
 
 此交易创建并发出在业务网络模型文件中定义的`BasicEvent`类型的事件。有关getFactory函数的更多信息，请参阅[Composer API文档](https://hyperledger.github.io/composer/jsdoc/module-composer-runtime.html#getFactory)。
 
