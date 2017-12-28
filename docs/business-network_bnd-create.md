@@ -81,4 +81,4 @@ Welcome to the business network skeleton generator
 
 - [**建模语言**](reference_cto_language.md)
 - [**访问控制语言**](reference_acl_language.md)
-- [**交易处理器功能**](reference_js_scripts.md)
+- [**交易处理器函数**](reference_js_scripts.md)
