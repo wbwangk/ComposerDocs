@@ -4,9 +4,9 @@ Hyperledger Composer包含一个面向对象的建模语言，用于定义业务
 
 Hyperledger Composer CTO文件由以下元素组成：
 
-1. 一个单一的命名空间。文件中的所有资源声明都隐含在这个命名空间中。
-2. 一组资源定义，包括资产、交易、参与者和事件。
-3. 从其他命名空间导入资源的可选导入声明。
+1. 一个单一的命名空间。文件中的所有资源声明都隐含在这个命名空间中。  
+2. 一组资源定义，包括资产、交易、参与者和事件。  
+3. 从其他命名空间导入资源的可选导入声明。  
 
 ## 组织和Hyperledger Composer系统命名空间
 
@@ -32,20 +32,19 @@ Hyperledger Composer中的类被称为资源定义，因此一个资产实例具
 
 资源定义具有以下属性：
 
-1. 由其父文件的命名空间定义的命名空间。`.cto`文件的命名空间隐式应用于其中创建的所有资源。
-
+1. 由其父文件的命名空间定义的命名空间。`.cto`文件的命名空间隐式应用于其中创建的所有资源。  
 2. 一个名称（例如`Vehicle`）和一个id字段（例如`vin`）。如果资源是资产或参与者，则名称后跟识id字段，如果资源是事件或交易，则自动生成id字段。在这个例子中，资产名称是`Vehicle`，而id字段是`vin`。
-   ```
+```
    /**
     * A vehicle asset.
     */
    asset Vehicle identified by vin {
      o String vin
    }
-   ```
+```
 
 3. 一个可选超类，是资源定义扩展。该资源将具有超类所定义的所有属性和字段，并从自己的定义中添加附加属性或字段。
-   ```
+```
    /**
     * A car asset. A car is related to a list of parts
     */
@@ -53,25 +52,30 @@ Hyperledger Composer中的类被称为资源定义，因此一个资产实例具
      o String model
      --> Part[] Parts
    }
-   ```
+```
 
 4. 一个可选的“抽象”声明，表示不能创建这种类型。抽象资源可以作为其他类的基础来扩展。抽象类的扩展不会继承抽象类的状态。例如，上面定义的`Vehicle`资产不应该创建，因为应该定义更多的特定资产类来扩展它。
-   ```
+```
    /**
    * An abstract Vehicle asset.
    */
    abstract asset Vehicle identified by vin {
      o String vin
    }
-   ```
+```
 
-5. 一组命名的属性。属性必须被命名，并且用原始数据类型定义。属性及其数据由每个资源拥有，例如，`Car`资产具有`vin`和`model`属性，两者都是字符串。
+5. 一组命名的属性。属性必须被命名，并且用原始数据类型定义。属性及其数据由每个资源拥有，例如，`Car`资产具有`vin`和`model`属性，两者都是字符串。  
 
-6. 与其他Composer类的一组关联，这些类不属于资源，但可以从资源引用。关联是单向的。
-
-   / **
-
-   - 现场资产。字段与动物列表相关* /资产由fieldId标识的字段{o String StringId o字符串名称 - > Animal [] animals}
+6. 与其他Composer类的一组关联，这些类不属于资源，但可以从资源引用。关联是单向的。  
+```
+/**
+* A Field asset. A Field is related to a list of animals 
+*/ 
+asset Field identified by fieldId {
+  o String fieldId o String name 
+  --> Animal[] animals 
+}
+```
 
 ### 枚举类型的声明
 
@@ -116,12 +120,12 @@ concept UnitedStatesAddress extends Address {
 
 Composer资源是根据以下原始类型定义的：
 
-1. 字符串：一个UTF8编码的字符串。
-2. Double：双精度64位数值。
-3. 整数：一个32位有符号整数。
-4. 长：64位有符号整数。
-5. DateTime：与ISO-8601兼容的时间实例，具有可选的时区和UTZ偏移量。
-6. Boolean：布尔值，true或false。
+1. 字符串：一个UTF8编码的字符串。  
+2. Double：双精度64位数值。  
+3. 整数：一个32位有符号整数。  
+4. 长：64位有符号整数。  
+5. DateTime：与ISO-8601兼容的时间实例，具有可选的时区和UTZ偏移量。  
+6. Boolean：布尔值，true或false。  
 
 ### 数组
 
