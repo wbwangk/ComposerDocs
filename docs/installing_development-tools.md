@@ -43,28 +43,28 @@ chmod u+x prereqs-ubuntu.sh
 
 你将需要的开发工具都可以用`npm install -g`安装（作为非特权用户，例如非root用户）。
 
-1. 要安装`composer-cli`运行以下命令：
+1.要安装`composer-cli`运行以下命令：
 ```bash
 npm install -g composer-cli
 ```
 
 `composer-cli`包含了用于开发业务网络的所有命令行操作。
 
-2. 要安装`generator-hyperledger-composer`运行以下命令：
+2.要安装`generator-hyperledger-composer`运行以下命令：
 ```bash
 npm install -g generator-hyperledger-composer
 ```
 
 这`generator-hyperledger-composer`是一个Yeoman插件，为你的业务网络创建定制的应用程序。
 
-3. 要安装`composer-rest-server`运行以下命令：
+3.要安装`composer-rest-server`运行以下命令：
 ```bash
 npm install -g composer-rest-server
 ```
 
    在`composer-rest-server`使用Hyperledger Composer LoopBack连接器连接到一个业务网络，提取模型，然后呈现一个页面，页面包含了按模型生成的REST API。
 
-4. 要安装`Yeoman`运行以下命令：
+4.要安装`Yeoman`运行以下命令：
 ```bash
 npm install -g yo
 ```
@@ -73,9 +73,9 @@ npm install -g yo
 
 ### 可选的开发工具
 
-1. 如果你使用VSCode，请从VSCode市场安装Hyperledger Composer VSCode插件。
+1.如果你使用VSCode，请从VSCode市场安装Hyperledger Composer VSCode插件。
 
-2. 如果要在本地使用Playground运行连接到业务网络，使用以下命令安装`composer-playground`。
+2.如果要在本地使用Playground运行连接到业务网络，使用以下命令安装`composer-playground`。
 
 ```bash
 npm install -g composer-playground
@@ -100,7 +100,7 @@ docker rm $(docker ps -aq)
 docker rmi $(docker images dev-* -q)
 ```
 
-1. 在你选择的目录中（假设`~/fabric-tools`）获得包含安装Hyperledger Fabric v1.0的工具的zip文件。
+1.在你选择的目录中（假设`~/fabric-tools`）获得包含安装Hyperledger Fabric v1.0的工具的zip文件。
 ```bash
 mkdir ~/fabric-tools && cd ~/fabric-tools
 curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.zip
@@ -114,7 +114,7 @@ curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/pack
 tar xvzf fabric-dev-servers.tar.gz
 ```
 
-2. 如果这是第一次，则需要先下载fabric运行时。如果你已经下载了它，请启动fabric环境，并创建一个Hyperledger Composer profile（配置文件）。之后，你可以选择停止该fabric，然后再次启动。你也可以彻底清理Hyperledger Fabric和Hyperledger Composer配置文件。
+2.如果这是第一次，则需要先下载fabric运行时。如果你已经下载了它，请启动fabric环境，并创建一个Hyperledger Composer profile（配置文件）。之后，你可以选择停止该fabric，然后再次启动。你也可以彻底清理Hyperledger Fabric和Hyperledger Composer配置文件。
 
    所有脚本将在目录`~/fabric-tools` 中。使用Hyperledger Composer的典型顺序是
 ```bash
