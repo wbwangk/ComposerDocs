@@ -4,19 +4,19 @@
 
 ## 过程
 
-1. 使用以下命令卸载Hyperledger Composer组件：
-   ```bash
+1.使用以下命令卸载Hyperledger Composer组件：
+```bash
    npm uninstall -g composer-cli
    npm uninstall -g composer-rest-server
    npm uninstall -g generator-hyperledger-composer
-   ```
+```
 
-2. 使用以下命令安装最新版本的Hyperledger Composer组件：
-   ```bash
+2.使用以下命令安装最新版本的Hyperledger Composer组件：
+```bash
    npm install -g composer-cli
    npm install -g composer-rest-server
    npm install -g generator-hyperledger-composer
-   ```
+```
 
 ## 接下来是什么？
 
