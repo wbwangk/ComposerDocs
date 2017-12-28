@@ -14,7 +14,7 @@ REST服务器使用在启动期间指定的业务网络卡片来连接并发现�
 
 有关已认证用户及其钱包（多用户模式启用时包含多个用户的业务网络卡片）的所有信息将通过LoopBack连接器持久化在LoopBack数据源中。默认情况下，REST服务器使用LoopBack“内存”连接器来持久化用户信息，当REST服务器终止时会丢失这些信息。REST服务器应配置一个LoopBack连接器，用于将数据存储在高度可用的数据源（例如数据库）中。
 
-你应该能够使用任何LoopBack连接器，但是我们建议你为NoSQL数据库使用LoopBack连接器。例如，MongoDB或Apache CouchDB。
+你可以使用任何LoopBack连接器，但是我们建议你使用NoSQL数据库(作为源的)LoopBack连接器。例如，MongoDB或Apache CouchDB。
 
 需要安装LoopBack连接器才能让REST服务器找到并使用它。你可以使用`npm`安装附加LoopBack连接器，例如：
 ```bash
