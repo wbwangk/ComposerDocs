@@ -25,10 +25,10 @@ participant Person identified by personId {
 
 ## 过程
 
-1. 连接到业务网络并撤消参与者的现有身份
+1.连接到业务网络并撤消参与者的现有身份
 
    - JavaScript API
-   ```javascript
+```javascript
    const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
    let businessNetworkConnection = new BusinessNetworkConnection();
    return businessNetworkConnection.connect('admin@digitalPropertyNetwork')
@@ -42,9 +42,9 @@ participant Person identified by personId {
            console.error(error);
            process.exit(1);
        });
-   ```
+```
 
 - 命令行
-  ```bash
-  composer identity revoke -c admin@digitalPropertyNetwork -u f1c5b9fe136d7f2d31b927e0dcb745499aa039b201f83fe34e243f36e1984862
-  ```
+```bash
+composer identity revoke -c admin@digitalPropertyNetwork -u f1c5b9fe136d7f2d31b927e0dcb745499aa039b201f83fe34e243f36e1984862
+```
