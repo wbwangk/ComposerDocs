@@ -157,7 +157,7 @@
         
             <li><a class="toctree-l4" href="#1org1_2">①步骤十八：为了Org1访问业务网络而创建业务网络卡片</a></li>
         
-            <li><a class="toctree-l4" href="#2org1">②步骤十九：为了Org1访问业务网络而创建业务网络卡片</a></li>
+            <li><a class="toctree-l4" href="#2org2_2">②步骤十九：为了Org2访问业务网络而创建业务网络卡片</a></li>
         
             <li><a class="toctree-l4" href="#_8">◎结论</a></li>
         
@@ -796,12 +796,12 @@ composer card delete -n PeerAdmin@fabric-network
 
 <p>如果命令执行成功，一个叫<code>PeerAdmin@byfn-network-org2</code>的业务网络卡片会被导入进钱包。</p>
 <h3 id="1org1hyperledger-fabric-peerhyperledger-composer">①步骤十一：为Org1的Hyperledger Fabric peer节点安装Hyperledger Composer运行时<a class="headerlink" href="#1org1hyperledger-fabric-peerhyperledger-composer" title="Permanent link">&para;</a></h3>
-<p>使用你在步骤三中创建的连接profle，运行<code>composer runtime install</code>命令为所有的<code>Org1</code>peer节点安装Hyperledger Composer运行时：</p>
+<p>使用你在步骤三中创建的连接配置文件，运行<code>composer runtime install</code>命令为所有的<code>Org1</code>peer节点安装Hyperledger Composer运行时：</p>
 <pre><code class="bash">composer runtime install -c PeerAdmin@byfn-network-org1-only -n tutorial-network
 </code></pre>
 
 <h3 id="2org2hyperledger-fabric-peerhyperledger-composer">②步骤十二：为Org2的Hyperledger Fabric peer节点安装Hyperledger Composer运行时<a class="headerlink" href="#2org2hyperledger-fabric-peerhyperledger-composer" title="Permanent link">&para;</a></h3>
-<p>使用你在步骤四中创建的连接profle，运行<code>composer runtime install</code>命令为所有的<code>Org2</code>peer节点安装Hyperledger Composer运行时：</p>
+<p>使用你在步骤四中创建的连接配置文件，运行<code>composer runtime install</code>命令为所有的<code>Org2</code>peer节点安装Hyperledger Composer运行时：</p>
 <pre><code class="bash">composer runtime install -c PeerAdmin@byfn-network-org2-only -n tutorial-network
 </code></pre>
 
@@ -879,7 +879,7 @@ composer card delete -n PeerAdmin@fabric-network
 </code></pre>
 
 <p>如果名称执行成功，你可以在命令输出中看到完全限定参与者身份<code>org.hyperledger.composer.system.NetworkAdmin#alice</code>。你现在可以使用这个业务网络卡片去与区块链业务网络交互，并加载你组织中的其他参与者。</p>
-<h3 id="2org1">②步骤十九：为了Org1访问业务网络而创建业务网络卡片<a class="headerlink" href="#2org1" title="Permanent link">&para;</a></h3>
+<h3 id="2org2_2">②步骤十九：为了Org2访问业务网络而创建业务网络卡片<a class="headerlink" href="#2org2_2" title="Permanent link">&para;</a></h3>
 <p>为了<code>Org2</code>的业务网络管理员Bob访问业务网络，运行<code>composer card create</code>命令创建一个业务网络卡片：</p>
 <pre><code class="bash">composer card create -p connection-org2.json -u bob -n tutorial-network -c bob/admin-pub.pem -k bob/admin-priv.pem
 </code></pre>
