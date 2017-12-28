@@ -21,10 +21,10 @@ participant Person identified by personId {
 
 ## 过程
 
-1. 将参与者添加到参与者库
+1.将参与者添加到参与者库
 
    - JavaScript API
-   ```javascript
+```javascript
    const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
    let businessNetworkConnection = new BusinessNetworkConnection();
    return businessNetworkConnection.connect('admin@digitalPropertyNetwork')
@@ -45,7 +45,7 @@ participant Person identified by personId {
            console.error(error);
            process.exit(1);
        });
-   ```
+```
 
 - 命令行
   ```bash
