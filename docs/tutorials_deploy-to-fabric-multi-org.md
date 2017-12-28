@@ -540,7 +540,7 @@ composer network ping -c alice@tutorial-network
 ```
 如果名称执行成功，你可以在命令输出中看到完全限定参与者身份`org.hyperledger.composer.system.NetworkAdmin#alice`。你现在可以使用这个业务网络卡片去与区块链业务网络交互，并加载你组织中的其他参与者。
 
-### ②步骤十九：为了Org1访问业务网络而创建业务网络卡片
+### ②步骤十九：为了Org2访问业务网络而创建业务网络卡片
 
 为了`Org2`的业务网络管理员Bob访问业务网络，运行`composer card create`命令创建一个业务网络卡片：
 ```bash
