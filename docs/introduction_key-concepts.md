@@ -57,5 +57,8 @@ Hyperledger Composer使用*连接配置文件*连接到运行时。连接配置�
 ## 我从哪里出发？
 
 - 要立即尝试Hyperledger Composer，请参阅[在线Playground](https://hyperledger.github.io/composer/installing/getting-started-with-playground.html)
+
 - 有关使用Composer构建的典型解决方案的架构概述，请参阅“ [典型解决方案架构”](introduction_solution-architecture.md)
+
 - 要安装开发工具，请参阅[使用开发工具进行安装](installing_development-tools.md)
+
