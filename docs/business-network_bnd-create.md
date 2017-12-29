@@ -46,6 +46,7 @@ README.md (optional)
 ## 生成
 
 1. `yo hyperledger-composer`
+
 ```
 Welcome to the Hyperledger Composer Skeleton Application Generator
 ? Please select the type of Application: (Use arrow keys)
@@ -56,6 +57,7 @@ Welcome to the Hyperledger Composer Skeleton Application Generator
 并选择 `Skeleton Business Netork`
 
 2. 回答所有的问题
+
 ```
 ? Please select the type of Application: Skeleton Business Network
 You can run this generator using: 'yo hyperledger-composer:businessnetwork'
