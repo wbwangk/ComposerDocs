@@ -49,7 +49,9 @@ Hyperledger Composer Playground中可以使用业务网络卡片来管理不同�
 业务网络卡片是包含三个元素的复合文件：
 
 - 连接配置文件。（`connection.json`）
+
 - 包含用于连接到业务网络的身份数据的元数据文件。（`metadata.json`）
+
 - 一个可选的`credentials`目录，包含身份的一个证书（文件名`certificate`）和一个私钥（文件名`privateKey`）。
 
 *请注意*：如果没有`credentials`目录，则元数据文件的*enrollmentSecret*属性必须包含用于获取凭据的*登记密码*。如果指定了*enrollmentSecret*，并且业务网络卡片用于连接到业务网络，则一个包含证书的credentials(凭据)目录会被自动创建和填充（如果业务网络卡片已导出）。
