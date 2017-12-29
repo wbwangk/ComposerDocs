@@ -9,7 +9,6 @@
 在执行这些步骤之前，您必须已将参与者添加到参与者库。您必须拥有PEM格式的现有证书才能绑定到参与者。现有身份（无论是使用命令行还是使用下面的JavaScript API）的**绑定者**必须具有ACL，允许他们绑定Hyperledger Composer中的身份（与参与者关联）。
 
 下面的过程显示了一个使用以下数字财产范例业务网络定义的参与者模型的示例：[digitalproperty-network](https://www.npmjs.com/package/digitalproperty-network)
-
 ```
 namespace net.biz.digitalPropertyNetwork
 
@@ -25,7 +24,8 @@ participant Person identified by personId {
 ## 过程
 
 1.连接到业务网络并将现有身份绑定到参与者
-   - JavaScript API
+
+JavaScript API:
 ```javascript
   const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
   let businessNetworkConnection = new BusinessNetworkConnection();
@@ -55,13 +55,14 @@ participant Person identified by personId {
       });
 ```
 
-- 命令行
+命令行:
 ```bash
 composer identity bind -c admin@digitalPropertyNetwork -a "resource:net.biz.digitalPropertyNetwork.Person#mae@biznet.org"
 ```
 
 2.作为参与者，测试与业务网络的连接
-   - JavaScript API
+
+JavaScript API:
 ```javascript
   const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
   let businessNetworkConnection = new BusinessNetworkConnection();
@@ -79,7 +80,7 @@ composer identity bind -c admin@digitalPropertyNetwork -a "resource:net.biz.digi
       });
 ```
 
-- 命令行
+命令行:
 ```bash
 composer network ping -c admin@digitalPropertyNetwork
 ```
