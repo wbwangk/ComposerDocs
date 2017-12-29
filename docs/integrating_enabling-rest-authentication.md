@@ -17,27 +17,27 @@ npm install -g passport-github
 
 为了配置`passport-github`策略，我们需要在GitHub上注册一个OAuth应用程序，并获取客户端ID和客户端密码。按照以下步骤在GitHub上注册OAuth应用程序:
 
-1. 导航到[GitHub](https://github.com/)并使用你的用户名和密码登录。
+1.导航到[GitHub](https://github.com/)并使用你的用户名和密码登录。
 
-2. 点击右上角的个人资料图片，然后从下拉菜单中点击**设置**。
+2.点击右上角的个人资料图片，然后从下拉菜单中点击**设置**。
 
-3. 点击左侧栏的**开发人员设置**下的**OAuth应用程序**。
+3.点击左侧栏的**开发人员设置**下的**OAuth应用程序**。
 
-4. 点击**注册一个新的应用程序**。
+4.点击**注册一个新的应用程序**。
 
-5. 指定以下设置:
+5.指定以下设置:
 
-   - 应用程序名称:Composer
+  - 应用程序名称:Composer
 
-   - 主页:[http://localhost:3000/](http://localhost:3000/)
+  - 主页:[http://localhost:3000/](http://localhost:3000/)
    
-   - 应用程序描述:Composer的OAuth应用程序
+  - 应用程序描述:Composer的OAuth应用程序
    
-   - 授权回调URL:[http://localhost:3000/auth/github/callback](http://localhost:3000/auth/github/callback)
+  - 授权回调URL:[http://localhost:3000/auth/github/callback](http://localhost:3000/auth/github/callback)
 
-6. 点击**注册申请**。
+6.点击**注册申请**。
 
-7. 记下**客户端ID**和**客户端密钥**的值。
+7.记下**客户端ID**和**客户端密钥**的值。
 
 使用环境变量`COMPOSER_PROVIDERS`来指定REST服务器的配置。要配置REST服务器，需要用步骤7中获取的值替换`REPLACE_WITH_CLIENT_ID`和`REPLACE_WITH_CLIENT_SECRET`，然后执行以下命令:
 ```bash
