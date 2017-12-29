@@ -143,8 +143,11 @@ rule SampleConditionalRuleWithTransaction {
 资源示例：
 
 - 命名空间：`org.example.*`
+
 - 命名空间（递归）：`org.example.**`
+
 - 命名空间中的类：`org.example.Car`
+
 - 类的实例：`org.example.Car#ABC123`
 
 **操作**标识规则管理的操作。支持四种操作：CREATE、READ、UPDATE和DELETE。你可以使用ALL指定规则管理所有支持的操作。或者，可以使用逗号分隔列表来指定规则管理一组支持的操作。
