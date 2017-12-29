@@ -4,7 +4,7 @@ Hyperledger Composer使用连接配置文件连接到运行时。
 
 ## 创建连接配置文件
 
-1. 创建一个名为`connection.json`的新文件，其中包含Hyperledger Fabric v1.0的以下信息。}
+1.创建一个名为`connection.json`的新文件，其中包含Hyperledger Fabric v1.0的以下信息。}
 
 为Hyperledger Fabric v1.0创建连接配置文件，使用以下格式：
 ```json
