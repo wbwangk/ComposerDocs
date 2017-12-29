@@ -24,6 +24,8 @@ pages:
       - 查询教程: tutorials_queries.md
       - 为单个组织部署Hyperledger Fabric: tutorials_deploy-to-fabric-single-org.md
       - 为多个组织部署Hyperledger Fabric: tutorials_deploy-to-fabric-multi-org.md
+    - 使用Playground
+      - 使用Playground: playground_playground-index.md
     - 开发业务网络:
       - 开发业务网络: business-network_business-network-index.md
       - 业务网络定义: business-network_businessnetworkdefinition.md
