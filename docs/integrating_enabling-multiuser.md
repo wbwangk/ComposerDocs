@@ -38,21 +38,21 @@ composer-rest-server -c admin@my-network -m true
 
 请按照以下步骤将业务网络卡片添加到钱包:
 
-1. 导航到[http://localhost:3000/explorer/](http://localhost:3000/explorer/)上的REST API浏览器，然后通过展开**钱包**类别导航到钱包API 。
+1.导航到[http://localhost:3000/explorer/](http://localhost:3000/explorer/)上的REST API浏览器，然后通过展开**钱包**类别导航到钱包API 。
 
-2. 通过调用`GET/wallet`操作检查钱包是否包含任何业务网络卡片。操作的回应应该是:
+2.通过调用`GET/wallet`操作检查钱包是否包含任何业务网络卡片。操作的回应应该是:
 ```
-   []
+[]
 ```
 
-3. 通过调用`POST /wallet/import`操作将业务网络卡片导入钱包。你必须通过单击**选择文件**按钮来指定业务网络卡片文件`alice1@my-network.card`。操作的回应应该是:
+3.通过调用`POST /wallet/import`操作将业务网络卡片导入钱包。你必须通过单击**选择文件**按钮来指定业务网络卡片文件`alice1@my-network.card`。操作的回应应该是:
 ```
-   no content
+no content
 ```
 
    业务网络卡片`alice1@my-network`现在已经被导入到钱包中。
 
-4. 通过调用`GET /wallet`操作检查钱包是否包含业务网络卡片`alice1@my-network`。操作的回应应该是:
+4.通过调用`GET /wallet`操作检查钱包是否包含业务网络卡片`alice1@my-network`。操作的回应应该是:
 ```json
    [
        {
