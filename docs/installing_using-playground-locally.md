@@ -9,7 +9,9 @@ Hyperledger Composer Playground还可以在“仅浏览器”模式下使用，�
 为了安装Hyperledger Composer Playground，你需要安装以下软件：
 
 - 操作系统：Ubuntu Linux 14.04 / 16.04 LTS（均为64位）或Mac OS 10.12
+
 - Docker引擎17.03或更高
+
 - Docker Compose 1.8或更高版本
 
 *请注意：*如果你以前曾经在本地使用Hyperledger Composer Playground或Hyperledger Fabric并希望清除所有内容并重新开始，则以下命令将删除所有正在运行的容器并删除所有下载的图像，（如果在你的机器上要使用其他Docker映像请小心）：
@@ -22,12 +24,12 @@ docker images -aq | xargs docker rmi -f
 
 ## 在本地创建容器并安装Playground
 
-1. 选择要安装的目录，然后运行以下命令下载并启动Hyperledger Fabric实例和Hyperledger Composer Playground：
+1.选择要安装的目录，然后运行以下命令下载并启动Hyperledger Fabric实例和Hyperledger Composer Playground：
    ```bash
    curl -sSL https://hyperledger.github.io/composer/install-hlfv1.sh | bash
    ```
 
-2. 点击以下链接访问你当地的Hyperledger Composer Playground：[http://localhost:8080](http://localhost:8080/)。*请注意*：在本地运行Playground时，不支持私密浏览。
+2.点击以下链接访问你当地的Hyperledger Composer Playground：[http://localhost:8080](http://localhost:8080/)。*请注意*：在本地运行Playground时，不支持私密浏览。
 
 ## 下一步是什么？
 
