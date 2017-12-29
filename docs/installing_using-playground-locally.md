@@ -25,9 +25,9 @@ docker images -aq | xargs docker rmi -f
 ## 在本地创建容器并安装Playground
 
 1.选择要安装的目录，然后运行以下命令下载并启动Hyperledger Fabric实例和Hyperledger Composer Playground：
-   ```bash
-   curl -sSL https://hyperledger.github.io/composer/install-hlfv1.sh | bash
-   ```
+```bash
+curl -sSL https://hyperledger.github.io/composer/install-hlfv1.sh | bash
+```
 
 2.点击以下链接访问你当地的Hyperledger Composer Playground：[http://localhost:8080](http://localhost:8080/)。*请注意*：在本地运行Playground时，不支持私密浏览。
 
