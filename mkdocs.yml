@@ -26,6 +26,7 @@ pages:
       - 为多个组织部署Hyperledger Fabric: tutorials_deploy-to-fabric-multi-org.md
     - 使用Playground
       - 使用Playground: playground_playground-index.md
+      - 业务网络卡片: playground_id-cards-playground.md
     - 开发业务网络:
       - 开发业务网络: business-network_business-network-index.md
       - 业务网络定义: business-network_businessnetworkdefinition.md
