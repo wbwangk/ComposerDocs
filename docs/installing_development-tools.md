@@ -9,21 +9,33 @@
 以下是安装所需开发工具的先决条件：
 
 - 操作系统：Ubuntu Linux 14.04 / 16.04 LTS（均为64位）或Mac OS 10.12
+
 - Docker引擎：版本17.03或更高
+
 - Docker-Compose：版本1.8或更高
+
 - Node：8.9或更高（注意版本9不支持）
+
 - npm：v5.x
+
 - git：2.9.x或更高版本
+
 - Python：2.7.x
+
 - 你选择的代码编辑器，我们推荐VSCode。
 
 **如果使用Linux安装Hyperledger Composer，请注意以下建议：**
 
 - 以普通用户身份登录，而不是root用户。
+
 - 不要`su`到root。
+
 - 安装先决条件时，使用curl，然后使用sudo进行解压缩。
+
 - 以普通用户身份运行prereqs-ubuntu.sh。它可能会提示输入root密码，因为它的某些操作需要以root身份运行。
+
 - 不要 `sudo`使用npm或`su`root来使用它。
+
 - 避免以root身份全局安装node。
 
 如果你在Ubuntu上运行，则可以使用以下命令下载先决条件：
@@ -81,7 +93,7 @@ npm install -g yo
 npm install -g composer-playground
 ```
 
-3. 要在本地运行Playground，请运行以下命令：
+3.要在本地运行Playground，请运行以下命令：
 
 ```bash
 composer-playground
