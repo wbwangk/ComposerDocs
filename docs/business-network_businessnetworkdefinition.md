@@ -7,7 +7,9 @@
 业务网络定义由以下部分组成：
 
 - 一组模型文件
+
 - 一组JavaScript文件
+
 - 一个访问控制文件
 
 模型文件定义了业务网络的业务领域，而JavaScript文件包含交易处理器函数。交易处理器函数在Hyperledger Fabric上运行，并可访问存储在Hyperledger Fabric区块链全局状态中的资产库。
