@@ -11,6 +11,7 @@
 开始本教程之前：
 
 - 完成[开发环境的安装](installing_development-tools.md)。
+
 - 完成[开发者教程](tutorials_developer-tutorial.md)。
 
 ### 第一步：更新业务网络
