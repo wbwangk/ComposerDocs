@@ -25,6 +25,7 @@ participant PrivilegedPerson extends Person {
 ## 过程
 
 1. 在你的交易处理器函数中，使用以下`getCurrentParticipant`功能验证当前参与者的类型是否符合要求：
+
 ```javascript
    function onPrivilegedTransaction(privilegedTransaction) {
        var currentParticipant = getCurrentParticipant();
@@ -36,6 +37,7 @@ participant PrivilegedPerson extends Person {
 ```
 
 2. 在你的交易处理器函数中，使用以下`getCurrentParticipant`函数验证当前参与者的参与者ID ：
+
 ```javascript
    function onPrivilegedTransaction(privilegedTransaction) {
        var currentParticipant = getCurrentParticipant();
