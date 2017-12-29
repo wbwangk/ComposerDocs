@@ -10,8 +10,9 @@
 
 ## 过程
 
-1. 连接到业务网络并在身份库中列出身份
-   - JavaScript API
+1.连接到业务网络并在身份库中列出身份
+
+JavaScript API:
 ```javascript
   const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
   let businessNetworkConnection = new BusinessNetworkConnection();
@@ -34,7 +35,7 @@
       });
 ```
 
-- 命令行
-  ```bash
-  composer identity list -c admin@digitalPropertyNetwork
-  ```
+命令行:
+```bash
+composer identity list -c admin@digitalPropertyNetwork
+```
