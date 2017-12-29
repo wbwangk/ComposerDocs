@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -391,19 +406,27 @@
 <h2 id="rest_1">配置REST服务器以使用认证策略<a class="headerlink" href="#rest_1" title="Permanent link">&para;</a></h2>
 <p>在启用REST API身份认证之前，必须为REST服务器配置一个要使用的Passport策略列表。该配置包括要使用的策略的名称以及每个策略的单独配置。</p>
 <p>为了配置<code>passport-github</code>策略，我们需要在GitHub上注册一个OAuth应用程序，并获取客户端ID和客户端密码。按照以下步骤在GitHub上注册OAuth应用程序:</p>
-<ol>
-<li>导航到<a href="https://github.com/">GitHub</a>并使用你的用户名和密码登录。</li>
-<li>点击右上角的个人资料图片，然后从下拉菜单中点击<strong>设置</strong>。</li>
-<li>点击左侧栏的<strong>开发人员设置</strong>下的<strong>OAuth应用程序</strong>。</li>
-<li>点击<strong>注册一个新的应用程序</strong>。</li>
-<li>指定以下设置:</li>
-<li>应用程序名称:Composer</li>
-<li>主页:<a href="http://localhost:3000/">http://localhost:3000/</a></li>
-<li>应用程序描述:Composer的OAuth应用程序</li>
-<li>授权回调URL:<a href="http://localhost:3000/auth/github/callback">http://localhost:3000/auth/github/callback</a></li>
-<li>点击<strong>注册申请</strong>。</li>
-<li>记下<strong>客户端ID</strong>和<strong>客户端密钥</strong>的值。</li>
-</ol>
+<p>1.导航到<a href="https://github.com/">GitHub</a>并使用你的用户名和密码登录。</p>
+<p>2.点击右上角的个人资料图片，然后从下拉菜单中点击<strong>设置</strong>。</p>
+<p>3.点击左侧栏的<strong>开发人员设置</strong>下的<strong>OAuth应用程序</strong>。</p>
+<p>4.点击<strong>注册一个新的应用程序</strong>。</p>
+<p>5.指定以下设置:</p>
+<ul>
+<li>
+<p>应用程序名称:Composer</p>
+</li>
+<li>
+<p>主页:<a href="http://localhost:3000/">http://localhost:3000/</a></p>
+</li>
+<li>
+<p>应用程序描述:Composer的OAuth应用程序</p>
+</li>
+<li>
+<p>授权回调URL:<a href="http://localhost:3000/auth/github/callback">http://localhost:3000/auth/github/callback</a></p>
+</li>
+</ul>
+<p>6.点击<strong>注册申请</strong>。</p>
+<p>7.记下<strong>客户端ID</strong>和<strong>客户端密钥</strong>的值。</p>
 <p>使用环境变量<code>COMPOSER_PROVIDERS</code>来指定REST服务器的配置。要配置REST服务器，需要用步骤7中获取的值替换<code>REPLACE_WITH_CLIENT_ID</code>和<code>REPLACE_WITH_CLIENT_SECRET</code>，然后执行以下命令:</p>
 <pre><code class="bash">export COMPOSER_PROVIDERS='{
   &quot;github&quot;: {
@@ -429,9 +452,15 @@
 <h2 id="webrest">使用Web浏览器向REST服务器认证<a class="headerlink" href="#webrest" title="Permanent link">&para;</a></h2>
 <p>此步骤取决于REST服务器正在使用的Passport策略的配置和行为。</p>
 <ol>
-<li>（Web浏览器）通过导航到环境变量<code>COMPOSER_PROVIDERS</code>中定义的属性<code>authPath</code>的值，来向到REST服务器认证。在上面的例子中，这是<a href="http://localhost:3000/auth/github">http://localhost:3000/auth/github</a>。</li>
-<li>REST服务器会将身份认证重定向到GitHub以执行OAuth Web服务器身份认证流程。GitHub会询问身份认证是否要授权Composer应用程序访问身份认证的帐户。点击<strong>授权</strong>按钮。</li>
-<li>如果成功，GitHub会将身份认证重定向到REST服务器。</li>
+<li>
+<p>（Web浏览器）通过导航到环境变量<code>COMPOSER_PROVIDERS</code>中定义的属性<code>authPath</code>的值，来向到REST服务器认证。在上面的例子中，这是<a href="http://localhost:3000/auth/github">http://localhost:3000/auth/github</a>。</p>
+</li>
+<li>
+<p>REST服务器会将身份认证重定向到GitHub以执行OAuth Web服务器身份认证流程。GitHub会询问身份认证是否要授权Composer应用程序访问身份认证的帐户。点击<strong>授权</strong>按钮。</p>
+</li>
+<li>
+<p>如果成功，GitHub会将身份认证重定向到REST服务器。</p>
+</li>
 </ol>
 <p>现在，导航到<a href="http://localhost:3000/explorer/">http://localhost:3000/explorer/</a>上的REST API浏览器。尝试再次使用REST API浏览器调用其中一个业务网络REST API操作。这一次，调用应该能成功。</p>
 <h2 id="httprestrest">使用HTTP或REST客户端向REST服务器认证<a class="headerlink" href="#httprestrest" title="Permanent link">&para;</a></h2>

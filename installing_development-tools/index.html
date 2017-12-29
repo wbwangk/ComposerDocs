@@ -139,6 +139,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -386,23 +401,51 @@
 <p>要运行Hyperledger Composer和Hyperledger Fabric，我们建议你至少拥有4Gb的内存。</p>
 <p>以下是安装所需开发工具的先决条件：</p>
 <ul>
-<li>操作系统：Ubuntu Linux 14.04 / 16.04 LTS（均为64位）或Mac OS 10.12</li>
-<li>Docker引擎：版本17.03或更高</li>
-<li>Docker-Compose：版本1.8或更高</li>
-<li>Node：8.9或更高（注意版本9不支持）</li>
-<li>npm：v5.x</li>
-<li>git：2.9.x或更高版本</li>
-<li>Python：2.7.x</li>
-<li>你选择的代码编辑器，我们推荐VSCode。</li>
+<li>
+<p>操作系统：Ubuntu Linux 14.04 / 16.04 LTS（均为64位）或Mac OS 10.12</p>
+</li>
+<li>
+<p>Docker引擎：版本17.03或更高</p>
+</li>
+<li>
+<p>Docker-Compose：版本1.8或更高</p>
+</li>
+<li>
+<p>Node：8.9或更高（注意版本9不支持）</p>
+</li>
+<li>
+<p>npm：v5.x</p>
+</li>
+<li>
+<p>git：2.9.x或更高版本</p>
+</li>
+<li>
+<p>Python：2.7.x</p>
+</li>
+<li>
+<p>你选择的代码编辑器，我们推荐VSCode。</p>
+</li>
 </ul>
 <p><strong>如果使用Linux安装Hyperledger Composer，请注意以下建议：</strong></p>
 <ul>
-<li>以普通用户身份登录，而不是root用户。</li>
-<li>不要<code>su</code>到root。</li>
-<li>安装先决条件时，使用curl，然后使用sudo进行解压缩。</li>
-<li>以普通用户身份运行prereqs-ubuntu.sh。它可能会提示输入root密码，因为它的某些操作需要以root身份运行。</li>
-<li>不要 <code>sudo</code>使用npm或<code>su</code>root来使用它。</li>
-<li>避免以root身份全局安装node。</li>
+<li>
+<p>以普通用户身份登录，而不是root用户。</p>
+</li>
+<li>
+<p>不要<code>su</code>到root。</p>
+</li>
+<li>
+<p>安装先决条件时，使用curl，然后使用sudo进行解压缩。</p>
+</li>
+<li>
+<p>以普通用户身份运行prereqs-ubuntu.sh。它可能会提示输入root密码，因为它的某些操作需要以root身份运行。</p>
+</li>
+<li>
+<p>不要 <code>sudo</code>使用npm或<code>su</code>root来使用它。</p>
+</li>
+<li>
+<p>避免以root身份全局安装node。</p>
+</li>
 </ul>
 <p>如果你在Ubuntu上运行，则可以使用以下命令下载先决条件：</p>
 <pre><code class="bash">curl -O https://hyperledger.github.io/composer/prereqs-ubuntu.sh
@@ -416,49 +459,33 @@ chmod u+x prereqs-ubuntu.sh
 <p>如果你正在运行Mac OS X，则可以按照<a href="https://hyperledger.github.io/composer/installing/prereqs-mac.html">Mac OS X先决条件</a>的<a href="https://hyperledger.github.io/composer/installing/prereqs-mac.html">安装指南进行操作</a>。</p>
 <h2 id="1hyperledger-composer">步骤1：安装Hyperledger Composer开发工具<a class="headerlink" href="#1hyperledger-composer" title="Permanent link">&para;</a></h2>
 <p>你将需要的开发工具都可以用<code>npm install -g</code>安装（作为非特权用户，例如非root用户）。</p>
-<ol>
-<li>要安装<code>composer-cli</code>运行以下命令：</li>
-</ol>
+<p>1.要安装<code>composer-cli</code>运行以下命令：</p>
 <pre><code class="bash">npm install -g composer-cli
 </code></pre>
 
 <p><code>composer-cli</code>包含了用于开发业务网络的所有命令行操作。</p>
-<ol>
-<li>要安装<code>generator-hyperledger-composer</code>运行以下命令：</li>
-</ol>
+<p>2.要安装<code>generator-hyperledger-composer</code>运行以下命令：</p>
 <pre><code class="bash">npm install -g generator-hyperledger-composer
 </code></pre>
 
 <p>这<code>generator-hyperledger-composer</code>是一个Yeoman插件，为你的业务网络创建定制的应用程序。</p>
-<ol>
-<li>要安装<code>composer-rest-server</code>运行以下命令：</li>
-</ol>
+<p>3.要安装<code>composer-rest-server</code>运行以下命令：</p>
 <pre><code class="bash">npm install -g composer-rest-server
 </code></pre>
 
 <p>在<code>composer-rest-server</code>使用Hyperledger Composer LoopBack连接器连接到一个业务网络，提取模型，然后呈现一个页面，页面包含了按模型生成的REST API。</p>
-<ol>
-<li>要安装<code>Yeoman</code>运行以下命令：</li>
-</ol>
+<p>4.要安装<code>Yeoman</code>运行以下命令：</p>
 <pre><code class="bash">npm install -g yo
 </code></pre>
 
 <p>Yeoman是一个生成应用程序的工具。与<code>generator-hyperledger-composer</code>组件结合使用时，它可以解释业务网络并基于它们生成应用程序。</p>
 <h3 id="_2">可选的开发工具<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>如果你使用VSCode，请从VSCode市场安装Hyperledger Composer VSCode插件。</p>
-</li>
-<li>
-<p>如果要在本地使用Playground运行连接到业务网络，使用以下命令安装<code>composer-playground</code>。</p>
-</li>
-</ol>
+<p>1.如果你使用VSCode，请从VSCode市场安装Hyperledger Composer VSCode插件。</p>
+<p>2.如果要在本地使用Playground运行连接到业务网络，使用以下命令安装<code>composer-playground</code>。</p>
 <pre><code class="bash">npm install -g composer-playground
 </code></pre>
 
-<ol>
-<li>要在本地运行Playground，请运行以下命令：</li>
-</ol>
+<p>3.要在本地运行Playground，请运行以下命令：</p>
 <pre><code class="bash">composer-playground
 </code></pre>
 
@@ -473,9 +500,7 @@ docker rm $(docker ps -aq)
 docker rmi $(docker images dev-* -q)
 </code></pre>
 
-<ol>
-<li>在你选择的目录中（假设<code>~/fabric-tools</code>）获得包含安装Hyperledger Fabric v1.0的工具的zip文件。</li>
-</ol>
+<p>1.在你选择的目录中（假设<code>~/fabric-tools</code>）获得包含安装Hyperledger Fabric v1.0的工具的zip文件。</p>
 <pre><code class="bash">mkdir ~/fabric-tools &amp;&amp; cd ~/fabric-tools
 curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/packages/fabric-dev-servers/fabric-dev-servers.zip
 unzip fabric-dev-servers.zip
@@ -487,9 +512,7 @@ curl -O https://raw.githubusercontent.com/hyperledger/composer-tools/master/pack
 tar xvzf fabric-dev-servers.tar.gz
 </code></pre>
 
-<ol>
-<li>如果这是第一次，则需要先下载fabric运行时。如果你已经下载了它，请启动fabric环境，并创建一个Hyperledger Composer profile（配置文件）。之后，你可以选择停止该fabric，然后再次启动。你也可以彻底清理Hyperledger Fabric和Hyperledger Composer配置文件。</li>
-</ol>
+<p>2.如果这是第一次，则需要先下载fabric运行时。如果你已经下载了它，请启动fabric环境，并创建一个Hyperledger Composer profile（配置文件）。之后，你可以选择停止该fabric，然后再次启动。你也可以彻底清理Hyperledger Fabric和Hyperledger Composer配置文件。</p>
 <p>所有脚本将在目录<code>~/fabric-tools</code> 中。使用Hyperledger Composer的典型顺序是</p>
 <pre><code class="bash">cd ~/fabric-tools
 ./downloadFabric.sh

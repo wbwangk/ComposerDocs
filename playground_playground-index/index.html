@@ -8,7 +8,7 @@
   
   <meta name="author" content="wbwangk">
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>开发者教程 - Hyperledger Composer中文文档</title>
+  <title>使用Playground - Hyperledger Composer中文文档</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "\u5f00\u53d1\u8005\u6559\u7a0b";
-    var mkdocs_page_input_path = "tutorials_developer-tutorial.md";
-    var mkdocs_page_url = "/tutorials_developer-tutorial/";
+    var mkdocs_page_name = "\u4f7f\u7528Playground";
+    var mkdocs_page_input_path = "playground_playground-index.md";
+    var mkdocs_page_url = "/playground_playground-index/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -98,31 +98,9 @@
                     
     <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
                 </li>
-                <li class=" current">
+                <li class="">
                     
-    <a class="current" href="./">开发者教程</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l3"><a href="#hyperledger-composer">创建一个Hyperledger Composer解决方案的开发者教程</a></li>
-    
-        <ul>
-        
-            <li><a class="toctree-l4" href="#_1">先决条件</a></li>
-        
-            <li><a class="toctree-l4" href="#_2">第一步：创建一个业务网络结构</a></li>
-        
-            <li><a class="toctree-l4" href="#_3">第二步：定义一个业务网络</a></li>
-        
-            <li><a class="toctree-l4" href="#_6">第三步：生成一个业务网络档案</a></li>
-        
-            <li><a class="toctree-l4" href="#_7">第四步：部署业务网络</a></li>
-        
-            <li><a class="toctree-l4" href="#rest">第五步：生成一个REST服务器</a></li>
-        
-        </ul>
-    
-
-    </ul>
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
                 </li>
                 <li class="">
                     
@@ -143,9 +121,39 @@
 		
     <span class="caption-text">使用Playground</span>
     <ul class="subnav">
-                <li class="">
+                <li class=" current">
                     
-    <a class="" href="../playground_playground-index/">使用Playground</a>
+    <a class="current" href="./">使用Playground</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#playground">使用Playground</a></li>
+    
+
+    <li class="toctree-l3"><a href="#playground_1">导航Playground</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_1">业务网络页面</a></li>
+        
+            <li><a class="toctree-l4" href="#_2">业务网络选项</a></li>
+        
+            <li><a class="toctree-l4" href="#_3">定义选项卡</a></li>
+        
+            <li><a class="toctree-l4" href="#_4">测试选项卡</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l3"><a href="#playground_2">Playground任务</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#_5">业务网络卡片</a></li>
+        
+        </ul>
+    
+
+    </ul>
                 </li>
                 <li class="">
                     
@@ -380,14 +388,14 @@
     
       
         
-          <li>教程 &raquo;</li>
+          <li>使用Playground &raquo;</li>
         
       
     
-    <li>开发者教程</li>
+    <li>使用Playground</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/tutorials_developer-tutorial.md"
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/playground_playground-index.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -397,150 +405,67 @@
           <div role="main">
             <div class="section">
               
-                <h2 id="hyperledger-composer">创建一个Hyperledger Composer解决方案的开发者教程<a class="headerlink" href="#hyperledger-composer" title="Permanent link">&para;</a></h2>
-<p>本教程将引导你从头开始构建Hyperledger Composer区块链解决方案。在几个小时的时间里，你将能够从破坏性区块链创新的想法转变为针对真正的Hyperledger Fabric区块链网络执行交易，并生成/运行与区块链网络交互的示例Angular 2应用程序。</p>
-<p>本教程给出了对该技术的概述，以及可用于你自己用例的可用资源。</p>
-<p>注意：本教程是针对在Ubuntu Linux上构建的最新的Hyperledger Composer编写的，它与Hyperledger Fabric v1.0运行在一起，也针对Mac环境进行了测试。</p>
-<h3 id="_1">先决条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>开始本教程之前：</p>
+                <h1 id="playground">使用Playground<a class="headerlink" href="#playground" title="Permanent link">&para;</a></h1>
+<p>Hyperledger Composer Playground为业务网络的配置、部署和测试提供了一个用户界面。高级Playground功能允许用户管理业务网络的安全性，邀请参与者到业务网络并连接到多个区块链业务网络。</p>
+<p>如果你对Playground不熟悉，建议你遵循 <a href="https://hyperledger.github.io/composer/tutorials/playground-tutorial.html">Playground教程</a>，该教程将指导你完成创建、部署和测试新区块链业务网络的过程，然后再开始与业务网络卡片交互。</p>
+<p><strong>请注意</strong>：如果两个或更多用户使用Hyperledger Composer Playground连接到Hyperledger Fabric的同一实例，请确保某用户更改业务网络定义后，其他用户及时刷新浏览器。刷新浏览器能接受其他用户对业务网络定义的更改。如果业务网络改变而不接受其他用户的更改，则更改将会丢失。</p>
+<h1 id="playground_1">导航Playground<a class="headerlink" href="#playground_1" title="Permanent link">&para;</a></h1>
+<h2 id="_1">业务网络页面<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>“ <strong>业务网络”</strong> 页面是默认的Playground登录页面。在这里你可以看到所有可用的业务网络卡片。每个业务网络卡片都提供了连接区块链业务网络所需的全部信息。只有通过使用有效的业务网络卡片才能访问区块链业务网络。连接到已部署业务网络后，你将进入“ <strong>定义”</strong>页面。</p>
+<p><img alt="钱包页" src="https://hyperledger.github.io/composer/playground/images/wallet-page.png" /></p>
+<p>从这个页面你可以：</p>
 <ul>
 <li>
-<p><a href="../installing_development-tools/">建立你的开发环境</a></p>
+<p>连接到业务网络。如果你已经为其创建了已部署业务网络和业务网络卡片，则可以单击立即<strong>连接</strong>来连接到该业务网络。</p>
 </li>
 <li>
-<p>安装一个编辑器，例如VSCode或Atom</p>
+<p>部署新的业务网络。如果这是你第一次使用Playground，或者你希望开始一个新的网络，那么部署你自己的网络是一个很好的开始。创建新的业务网络时，你可以选择将你的业务网络定义基于示例网络，也可以从头创建自己的网络。</p>
+</li>
+<li>
+<p>与业务网络卡片进行交互。业务网络卡片用于连接已经存在的业务网络，并且是连接配置文件和身份的组合。该卡片提供选项来删除身份/卡片，导出卡片，并连接到相应的业务网络。</p>
+</li>
+<li>
+<p>导入业务网络卡片。从计算机导入现有<code>.card</code>文件是将业务网络卡片添加到“业务网络”页面的最简单方法。</p>
+</li>
+<li>
+<p>使用用户ID和用户密码进行连接。如果你的网络管理员提供了用户ID和用户密码，请单击<strong>使用凭据连接</strong>以输入密码并生成业务网络卡片。</p>
+</li>
+<li>
+<p>运行Playground教程。如果你不知道从哪里开始，则Playground教程将从头开始创建一个业务网络，并执行一些基本操作。</p>
 </li>
 </ul>
-<h3 id="_2">第一步：创建一个业务网络结构<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>关键概念是<strong>业务网络定义(BND)</strong> 。它为你的区块链解决方案定义了数据模型、交易逻辑和访问控制规则。要创建一个BND，我们需要在磁盘上创建一个合适的项目结构。</p>
-<p>最简单的方法就是使用Yeoman生成器创建骨架业务网络。这将创建一个包含业务网络的所有组件的目录。  </p>
-<p>1、使用Yeoman创建一个骨架业务网络。此命令将需要一个业务网络名称、说明、作者姓名、作者电子邮件地址、许可证选择和命名空间。</p>
-<pre><code class="bash">yo hyperledger-composer:businessnetwork
-</code></pre>
-
-<p>2、输入<code>tutorial-network</code>网络名称，以及描述，作者姓名和作者电子邮件的所需信息。<br />
-3、选择<code>Apache-2.0</code>作为许可证。<br />
-4、选择<code>org.acme.biznet</code>作为命名空间。</p>
-<h3 id="_3">第二步：定义一个业务网络<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>业务网络由资产、参与者、交易、访问控制规则以及可选的事件和查询组成。在前面步骤中创建的骨架业务网络中，有一个模型(<code>.cto</code>)文件，其中将包含业务网络中所有资产、参与者和交易的类定义。骨架业务网络还包含了一个具有基本访问控制规则的访问控制（<code>permissions.acl</code>）文档，一个含有交易处理器函数的脚本（<code>logic.js</code>）文件以及一个包含业务网络元数据的<code>package.json</code>文件。</p>
-<h4 id="_4">对资产、参与者和交易建模<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>第一个要更新的文档是模型l（<code>.cto</code>）文件。该文件使用Hyperledger Composer建模语言编写。这个模型文件包含资产、交易、参与者和事件的每个类别的定义。它隐含地扩展了建模语言文档中描述的Hyperledger Composer系统模型。</p>
-<p>1、打开<code>org.acme.biznet.cto</code>模型文件。<br />
-2、替换为以下内容：</p>
-<pre><code>/**
- * My commodity trading network
- */
-namespace org.acme.biznet
-asset Commodity identified by tradingSymbol {
-    o String tradingSymbol
-    o String description
-    o String mainExchange
-    o Double quantity
-    --&gt; Trader owner
-}
-participant Trader identified by tradeId {
-    o String tradeId
-    o String firstName
-    o String lastName
-}
-transaction Trade {
-    --&gt; Commodity commodity
-    --&gt; Trader newOwner
-}
-</code></pre>
-
-<p>3、保存你的更改到<code>org.acme.biznet.cto</code>。</p>
-<h4 id="javascript">添加JavaScript交易逻辑<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h4>
-<p>在模型文件中，定义了一个<code>Trade</code>交易，指定了一个到资产的关联和一个到参与者的关联。交易处理器函数文件包含执行模型文件中定义的交易的JavaScript逻辑。</p>
-<p>这个<code>Trade</code>交易被设定为简单地接收要交易的类型为<code>Commodity</code>的资产，以及类型为<code>Trader</code>的参与者作为新的拥有者。</p>
-<p>1、打开<code>logic.js</code>脚本文件。<br />
- 2、替换为以下内容：</p>
-<pre><code>/**
- * Track the trade of a commodity from one trader to another
- * @param {org.acme.biznet.Trade} trade - the trade to be processed
- * @transaction
- */
-function tradeCommodity(trade) {
-    trade.commodity.owner = trade.newOwner;
-    return getAssetRegistry('org.acme.biznet.Commodity')
-        .then(function (assetRegistry) {
-            return assetRegistry.update(trade.commodity);
-        });
-}
-</code></pre>
-
-<p>保存你的更改到<code>logic.js</code>。</p>
-<h4 id="_5">添加访问控制<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
-<p>1、在<code>tutorial-network</code>目录中创建一个<code>permissions.acl</code>文件。  
-2、将以下访问控制规则添加到<code>permissions.acl</code>：</p>
-<pre><code>/**
- * Access control rules for tutorial-network
- */
-rule Default {
-    description: &quot;Allow all participants access to all resources&quot;
-    participant: &quot;ANY&quot;
-    operation: ALL
-    resource: &quot;org.acme.biznet.*&quot;
-    action: ALLOW
-}
-
-rule SystemACL {
-  description:  &quot;System ACL to permit all access&quot;
-  participant: &quot;ANY&quot;
-  operation: ALL
-  resource: &quot;org.hyperledger.composer.system.**&quot;
-  action: ALLOW
-}
-</code></pre>
-
-<p>保存你的更改到<code>permissions.acl</code>。</p>
-<h3 id="_6">第三步：生成一个业务网络档案<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
-<p>现在已经定义了业务网络，它必须打包到可部署的业务网络档案（.bna）文件中。</p>
-<p>1、使用命令行，导航到<code>tutorial-network</code>目录。  
-2、从<code>tutorial-network</code>目录中运行以下命令：</p>
-<pre><code class="bash">composer archive create -t dir -n .
-</code></pre>
-
-<p>在命令运行之后，一个叫<code>tutorial-network@0.0.1.bna</code>的业务网络存档文件在<code>tutorial-network</code>目录中被创建。</p>
-<h3 id="_7">第四步：部署业务网络<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
-<p>创建<code>.bna</code>文件后，业务网络就可以部署到Hyperledger Fabric实例。通常情况下，为了创建一个<code>PeerAdmin</code>身份，需要来自Fabric管理员的信息，还需要有将链码部署到peer的权限。但是，作为开发环境安装的一部分，已经创建了一个<code>PeerAdmin</code>身份。</p>
-<p>在运行时被安装后，就可以将一个业务网络部署到peer。根据最佳实践，应该创建一个新的身份来管理部署后的业务网络。这个身份被称为网络管理员。</p>
-<h4 id="_8">获取正确的凭据<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
-<p>一个有正确凭据的<code>PeerAdmin</code>业务网络卡片已作为开发环境安装的一部分而创建。</p>
-<h4 id="_9">部署业务网络<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
-<p>为了将业务网络部署到Hyperledger Fabric，需要在peer上安装Hyperledger Composer链码，然后必须将业务网络档案（<code>.bna</code>）发送给peer，并且必须创建一个新的参与者（由卡片标识和关联）作为网络管理员。最后，必须导入网络管理员业务网络卡片，才能ping通网络，查看是否有响应。</p>
-<p>1、要安装Composer运行时，请运行以下命令：</p>
-<pre><code class="bash">composer runtime install --card PeerAdmin@hlfv1 --businessNetworkName tutorial-network
-</code></pre>
-
-<p>该<code>composer runtime install</code>命令需要一个<code>PeerAdmin</code>业务网络卡片（在这案例中已经预先创建和导入了一个）以及业务网络的名称。</p>
-<p>2、为了部署业务网络，要从目录<code>tutorial-network</code>中运行以下命令：</p>
-<pre><code class="bash">composer network start --card PeerAdmin@hlfv1 --networkAdmin admin --networkAdminEnrollSecret adminpw --archiveFile tutorial-network@0.0.1.bna --file networkadmin.card
-</code></pre>
-
-<p>该<code>composer network start</code>命令需要一个业务网络卡片，以及业务网络的管理员身份名称、<code>.bna</code>文件路径和要创建的文件的名称（即准备导入的业务网络卡片）。</p>
-<p>3、要将网络管理员身份导入为可用的业务网络卡片，请运行以下命令：</p>
-<pre><code class="bash">composer card import --file networkadmin.card
-</code></pre>
-
-<p>该<code>composer card import</code>命令需要指定一个文件名，就是在<code>composer network start</code>命令创建卡片时指定的。</p>
-<p>4、要检查业务网络是否已成功部署，请运行以下命令来ping网络：</p>
-<pre><code class="bash">composer network ping --card admin@tutorial-network
-</code></pre>
-
-<p>该<code>composer network ping</code>命令需要一张业务网络卡片来认证要ping的网络。</p>
-<h3 id="rest">第五步：生成一个REST服务器<a class="headerlink" href="#rest" title="Permanent link">&para;</a></h3>
-<p>Hyperledger Composer可以基于业务网络生成定制的REST API。为了开发Web应用程序，REST API提供了一个与语言无关的有用抽象层。</p>
-<p>1、要创建REST API，请导航到<code>tutorial-network目</code>录并运行以下命令：</p>
-<pre><code class="bash">composer-rest-server
-</code></pre>
-
-<p>2、输入<code>admin@tutorial-network</code>作为卡片名称。<br />
-3、当询问是否在生成的API中使用名称空间时，请选择<strong>不使用名n称空间</strong>。<br />
-4、当询问是否保护生成的API时选择<strong>否</strong>。  
-5、当询问是否启用事件发布时，选择<strong>是</strong>。<br />
-6、当询问是否启用TLS安全时，请选择<strong>否</strong>。  </p>
-<p>生成的API连接到部署的区块链和业务网络。</p>
+<h2 id="_2">业务网络选项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>使用业务网络卡片连接到业务网络后，无论你是在“ <strong>定义”</strong>选项卡还是“ <strong>测试”</strong>选项卡，都可以使用多种选项。</p>
+<p><img alt="编辑头" src="https://hyperledger.github.io/composer/playground/images/editor-header.png" /></p>
+<ul>
+<li>
+<p>左上角是你正在使用的连接配置文件的名称以及你所连接的业务网络。在上面的示例中，连接配置文件称为<em>Web</em>，业务网络名称为<em>basic-sample-network</em>。</p>
+</li>
+<li>
+<p>链接到<strong>定义</strong>和<strong>测试</strong>选项卡。在“ <strong>定义”</strong>选项卡中，你可以添加、修改和删除业务网络的内容。在“ <strong>测试”</strong>选项卡中，你可以创建“ <strong>定义”</strong>选项卡中定义的资产和参与者，并测试业务网络的功能。</p>
+</li>
+<li>
+<p>右上角是一个下拉菜单，显示用于连接到业务网络的身份。该下拉菜单包含一个指向<strong>身份注册</strong>的链接，以及注销业务网络的能力，返回到<strong>业务网络</strong>页面。</p>
+</li>
+</ul>
+<h2 id="_3">定义选项卡<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>“定义”选项卡用于创建、编辑和更新你的业务网络。</p>
+<p><img alt="编辑 - 定义页面" src="https://hyperledger.github.io/composer/playground/images/editor-define.png" /></p>
+<p>在“ <strong>定义”</strong>选项卡的左侧，你可以看到当前业务网络定义中的所有文件的列表。要检查一个文件的内容，点击它，它会出现在编辑器视图中。可以使用“ <strong>添加文件”</strong>按钮将新文件添加到你的业务网络。模型文件、脚本文件、访问控制文件和查询文件可以添加到你的业务网络。</p>
+<p>一旦添加并修改了业务网络定义的文件，就可以使用“ <strong>更新”</strong>按钮将更改部署到网络中。点击<strong>更新</strong>后，你可以在“ <strong>测试”</strong>选项卡中试验你的更改。“ <strong>导入/替换”</strong>按钮允许你从自己的计算机导入业务网络，或者从样例中导入业务网络。相反，<strong>导出</strong>按钮将当前的业务网络下载为<code>.bna</code>文件。</p>
+<p><strong>请注意</strong>：如果两个或更多用户使用Hyperledger Composer Playground连接到Hyperledger Fabric的同一实例，请确保每个用户在其他用户修改业务网络定义刷新其浏览器。刷新浏览器接受其他用户对业务网络定义的更改。如果业务网络改变而不接受其他用户的更改，则更改将会丢失。</p>
+<h2 id="_4">测试选项卡<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>“ <strong>测试”</strong>选项卡用于通过使用在“ <strong>定义”</strong>选项卡中定义的资产类型、参与者类型和交易来测试已部署业务网络。</p>
+<p><img alt="编辑测试页面" src="https://hyperledger.github.io/composer/playground/images/editor-test.png" /></p>
+<p>在“ <strong>测试”</strong>选项卡的左侧，列出了每个参与者类型和资产类型。单击参与者类型、资产类型或<strong>所有交易</strong>将显示一个库(清单)，显示该类型的所有活动实例。例如，通过单击<strong>SampleParticipant</strong>，你可以看到一个库，显示已创建的所有<em>SampleParticipants</em>。如果这是你第一次查看“ <strong>测试”</strong>选项卡，你的库将是空的！</p>
+<p>从每个库中，你可以创建相应的资产、参与者或提交相应的交易。</p>
+<p>在“ <strong>所有交易”</strong>库（也称为历史库）中，你可以查看业务网络中发生的每项交易的记录，包括由系统事件（如创建参与者或资产）导致的一些交易记录。在交易库中，你可以提交交易，然后通过检查已更改的资源来检查发生的效果。</p>
+<h1 id="playground_2">Playground任务<a class="headerlink" href="#playground_2" title="Permanent link">&para;</a></h1>
+<h3 id="_5">业务网络卡片<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="../playground_id-cards-playground/#使用业务网络卡片对业务网络提供访问权限">使用业务网络卡片对业务网络提供访问权限</a></li>
+<li><a href="../playground_id-cards-playground/#获得业务网络的访问权限">通过业务网络卡片获得访问业务网络权限</a></li>
+</ul>
               
             </div>
           </div>
@@ -548,10 +473,10 @@ rule SystemACL {
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../tutorials_queries/" class="btn btn-neutral float-right" title="查询教程">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../playground_id-cards-playground/" class="btn btn-neutral float-right" title="业务网络卡片">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../tutorials_playground-tutorial/" class="btn btn-neutral" title="Playground教程"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../tutorials_deploy-to-fabric-multi-org/" class="btn btn-neutral" title="为多个组织部署Hyperledger Fabric"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -581,10 +506,10 @@ rule SystemACL {
           <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../tutorials_playground-tutorial/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../tutorials_deploy-to-fabric-multi-org/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../tutorials_queries/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../playground_id-cards-playground/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -391,10 +406,8 @@ participant Person identified by personId {
 
 <p>该示例假定该<code>net.biz.digitalPropertyNetwork#mae@biznet.org</code>参与者的实例已经被创建并被放入参与者库中。</p>
 <h2 id="_3">过程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ol>
-<li>连接到业务网络并将现有身份绑定到参与者</li>
-<li>JavaScript API</li>
-</ol>
+<p>1.连接到业务网络并将现有身份绑定到参与者</p>
+<p>JavaScript API:</p>
 <pre><code class="javascript">  const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
   let businessNetworkConnection = new BusinessNetworkConnection();
   let certificate = `-----BEGIN CERTIFICATE-----
@@ -423,17 +436,12 @@ participant Person identified by personId {
       });
 </code></pre>
 
-<ul>
-<li>
-<p>命令行
-  <code>bash
-  composer identity bind -c admin@digitalPropertyNetwork -a "resource:net.biz.digitalPropertyNetwork.Person#mae@biznet.org"</code></p>
-</li>
-<li>
-<p>作为参与者，测试与业务网络的连接</p>
-</li>
-<li>JavaScript API</li>
-</ul>
+<p>命令行:</p>
+<pre><code class="bash">composer identity bind -c admin@digitalPropertyNetwork -a &quot;resource:net.biz.digitalPropertyNetwork.Person#mae@biznet.org&quot;
+</code></pre>
+
+<p>2.作为参与者，测试与业务网络的连接</p>
+<p>JavaScript API:</p>
 <pre><code class="javascript">  const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
   let businessNetworkConnection = new BusinessNetworkConnection();
   return businessNetworkConnection.connect('admin@digitalPropertyNetwork')
@@ -450,11 +458,10 @@ participant Person identified by personId {
       });
 </code></pre>
 
-<ul>
-<li>命令行
-  <code>bash
-  composer network ping -c admin@digitalPropertyNetwork</code></li>
-</ul>
+<p>命令行:</p>
+<pre><code class="bash">composer network ping -c admin@digitalPropertyNetwork
+</code></pre>
+
 <p>参与者ID将被打印到控制台，并且应该与<code>composer identity bind</code>命令中指定的参与者ID匹配。</p>
               
             </div>

@@ -145,6 +145,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -391,14 +406,30 @@
 <p><img alt="典型的Hyperledger Composer体系结构图" src="https://hyperledger.github.io/composer/assets/img/ComposerArchitecture.svg" /></p>
 <p>Hyperledger Composer由以下高级组件组成：</p>
 <ul>
-<li>执行运行时（目前支持四个！）</li>
-<li>JavaScript SDK</li>
-<li>命令行接口</li>
-<li>REST服务器</li>
-<li>LoopBack连接器</li>
-<li>PlaygroundWeb用户界面</li>
-<li>Yeoman代码生成器</li>
-<li>VSCode和Atom编辑器插件</li>
+<li>
+<p>执行运行时（目前支持四个！）</p>
+</li>
+<li>
+<p>JavaScript SDK</p>
+</li>
+<li>
+<p>命令行接口</p>
+</li>
+<li>
+<p>REST服务器</p>
+</li>
+<li>
+<p>LoopBack连接器</p>
+</li>
+<li>
+<p>PlaygroundWeb用户界面</p>
+</li>
+<li>
+<p>Yeoman代码生成器</p>
+</li>
+<li>
+<p>VSCode和Atom编辑器插件</p>
+</li>
 </ul>
 <h2 id="_1">执行运行时<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>Hyperledger Composer被设计为支持不同的可插入运行时，目前有三个运行时实现：
@@ -412,8 +443,12 @@
 <p>Hyperledger Composer JavaScript SDK是一组Node.js API，使开发人员能够创建应用程序来管理和与已部署业务网络进行交互。</p>
 <p>这些API分成两个npm模块：</p>
 <ol>
-<li><code>composer-client</code> 用于向业务网络提交交易或对资产和参与者执行创建、读取、更新和删除操作</li>
-<li><code>composer-admin</code> 用于管理业务网络（部署、取消部署）</li>
+<li>
+<p><code>composer-client</code> 用于向业务网络提交交易或对资产和参与者执行创建、读取、更新和删除操作</p>
+</li>
+<li>
+<p><code>composer-admin</code> 用于管理业务网络（部署、取消部署）</p>
+</li>
 </ol>
 <p>所有API的细节都可以作为JSDocs（请参阅参考资料）。</p>
 <h3 id="composer">Composer客户端<a class="headerlink" href="#composer" title="Permanent link">&para;</a></h3>
@@ -431,9 +466,15 @@
 <h2 id="yeoman">Yeoman代码生成器<a class="headerlink" href="#yeoman" title="Permanent link">&para;</a></h2>
 <p>Hyperledger Composer使用Open Source Yeoman代码生成器框架来创建框架项目：</p>
 <ul>
-<li>Angular Web应用程序</li>
-<li>Node.js应用程序</li>
-<li>骨架的业务网络</li>
+<li>
+<p>Angular Web应用程序</p>
+</li>
+<li>
+<p>Node.js应用程序</p>
+</li>
+<li>
+<p>骨架的业务网络</p>
+</li>
 </ul>
 <h2 id="vscodeatom">VSCode和Atom编辑器扩展<a class="headerlink" href="#vscodeatom" title="Permanent link">&para;</a></h2>
 <p>Hyperledger Composer为VSCode和Atom提供了社区贡献的编辑器扩展。VSCode扩展非常强大，验证了Composer模型和ACL文件，提供语法高亮显示、错误检测和片段支持。Atom插件要简单得多，只有基本的语法高亮。</p>

@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -475,10 +490,18 @@
 <p><strong>资源</strong>定义了ACL规则适用的东西。这可以是一个类、一个命名空间中的所有类、或者一个命名空间下的所有类。它也可以是一个类的实例。</p>
 <p>资源示例：</p>
 <ul>
-<li>命名空间：<code>org.example.*</code></li>
-<li>命名空间（递归）：<code>org.example.**</code></li>
-<li>命名空间中的类：<code>org.example.Car</code></li>
-<li>类的实例：<code>org.example.Car#ABC123</code></li>
+<li>
+<p>命名空间：<code>org.example.*</code></p>
+</li>
+<li>
+<p>命名空间（递归）：<code>org.example.**</code></p>
+</li>
+<li>
+<p>命名空间中的类：<code>org.example.Car</code></p>
+</li>
+<li>
+<p>类的实例：<code>org.example.Car#ABC123</code></p>
+</li>
 </ul>
 <p><strong>操作</strong>标识规则管理的操作。支持四种操作：CREATE、READ、UPDATE和DELETE。你可以使用ALL指定规则管理所有支持的操作。或者，可以使用逗号分隔列表来指定规则管理一组支持的操作。</p>
 <p><strong>参与者</strong>定义已提交交易进行处理的个人或实体。如果指定了参与者，他们必须存在于参与者库中。PARTICIPANT可以选择性地绑定到一个变量，用于PREDICATE。特殊值“ANY”可以用来表示参与者类型检查不被强制执行。</p>

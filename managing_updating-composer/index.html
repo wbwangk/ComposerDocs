@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -377,22 +392,18 @@
                 <h1 id="hyperledger-composer">更新Hyperledger Composer运行时<a class="headerlink" href="#hyperledger-composer" title="Permanent link">&para;</a></h1>
 <p>部署Hyperledger Composer后，您可能希望升级到新版本。要更新已安装的Hyperledger Composer版本，必须卸载客户端、管理员和运行时CLI组件，并使用npm重新安装它们。</p>
 <h2 id="_1">过程<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>使用以下命令卸载Hyperledger Composer组件：
-   <code>bash
-   npm uninstall -g composer-cli
+<p>1.使用以下命令卸载Hyperledger Composer组件：</p>
+<pre><code class="bash">   npm uninstall -g composer-cli
    npm uninstall -g composer-rest-server
-   npm uninstall -g generator-hyperledger-composer</code></p>
-</li>
-<li>
-<p>使用以下命令安装最新版本的Hyperledger Composer组件：
-   <code>bash
-   npm install -g composer-cli
+   npm uninstall -g generator-hyperledger-composer
+</code></pre>
+
+<p>2.使用以下命令安装最新版本的Hyperledger Composer组件：</p>
+<pre><code class="bash">   npm install -g composer-cli
    npm install -g composer-rest-server
-   npm install -g generator-hyperledger-composer</code></p>
-</li>
-</ol>
+   npm install -g generator-hyperledger-composer
+</code></pre>
+
 <h2 id="_2">接下来是什么？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="../business-network_bnd-create/">定义一个商业网络</a></li>

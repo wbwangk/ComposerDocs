@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -393,26 +408,44 @@
 </blockquote>
 <p>有两个容器与日志相关：</p>
 <ul>
-<li>运行应用程序的容器</li>
-<li>执行交易函数的链码容器。</li>
+<li>
+<p>运行应用程序的容器</p>
+</li>
+<li>
+<p>执行交易函数的链码容器。</p>
+</li>
 </ul>
 <h2 id="_3">应用<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>在内部，默认情况下，Hyperledger Composer使用<a href="https://github.com/winstonjs/winston">Winston</a> node.js日志包，初始级别为日志点和目标。</p>
 <h2 id="_4">默认配置<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>该框架将记录这些级别的信息。</p>
 <ul>
-<li>错误</li>
-<li>警告</li>
-<li>信息</li>
-<li>详细</li>
-<li>调试</li>
+<li>
+<p>错误</p>
+</li>
+<li>
+<p>警告</p>
+</li>
+<li>
+<p>信息</p>
+</li>
+<li>
+<p>详细</p>
+</li>
+<li>
+<p>调试</p>
+</li>
 </ul>
 <p>“Silly”级别没有被使用。</p>
 <h2 id="_5">信息的位置<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>默认情况下，有两个数据位置：</p>
 <ul>
-<li>一个文本文件，位于<code>${CurrentWorkingDir}/logs/trace_&lt;processid&gt;.trc</code></li>
-<li>另一个是<code>stdout</code>。默认情况下，<code>stdout</code>只显示任何以“错误”级别记录的数据，文件将显示“信息”或以上（即信息，警告和错误）日志数据。</li>
+<li>
+<p>一个文本文件，位于<code>${CurrentWorkingDir}/logs/trace_&lt;processid&gt;.trc</code></p>
+</li>
+<li>
+<p>另一个是<code>stdout</code>。默认情况下，<code>stdout</code>只显示任何以“错误”级别记录的数据，文件将显示“信息”或以上（即信息，警告和错误）日志数据。</p>
+</li>
 </ul>
 <h2 id="_6">控制生成什么<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <p>配置模块用于定位信息以控制如何生成日志。</p>
@@ -447,8 +480,12 @@
 
 <p>第一部分针对Getting Started应用程序，第二个<code>ComposerConfig</code>部分针对Hyperledger Composer。</p>
 <ul>
-<li><code>logger</code>用于指定实际记录日志的模块。默认是暗示这是winston框架</li>
-<li><code>config</code>传递给日志记录器来控制它做什么。所以这部分是特定于使用的记录器。</li>
+<li>
+<p><code>logger</code>用于指定实际记录日志的模块。默认是暗示这是winston框架</p>
+</li>
+<li>
+<p><code>config</code>传递给日志记录器来控制它做什么。所以这部分是特定于使用的记录器。</p>
+</li>
 </ul>
 <h2 id="_7">启用更多信息<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
 <p>调试node.js应用程序的标准方法是使用<code>DEBUG</code>环境变量。所以呢</p>

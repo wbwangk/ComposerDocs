@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -381,16 +396,12 @@
 <h2 id="_2">在你开始之前<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>在开始将事件添加到您的业务网络之前，您应该对业务网络的建模语言以及构成完整的业务网络定义的内容有深入的了解。</p>
 <h2 id="_3">过程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ol>
-<li>事件在业务网络定义的模型文件（<code>.cto</code>）中定义，与资产和参与者相同。事件使用以下格式：</li>
-</ol>
+<p>1.事件在业务网络定义的模型文件（<code>.cto</code>）中定义，与资产和参与者相同。事件使用以下格式：</p>
 <pre><code>   event BasicEvent {
    }
 </code></pre>
 
-<ol>
-<li>为了事件被发布，创建事件的交易必须调用三个函数，第一个是<code>getFactory</code>函数。<code>getFactory</code>允许事件作为交易的一部分而被创建。接下来，必须使用<code>factory.newEvent('org.namespace', 'BasicEvent')</code>创建一个事件。这将在指定的命名空间中创建一个<code>BasicEvent</code>事件。然后必须设置事件所需的属性。最后，事件必须通过使用<code>emit(BasicEvent)</code>发送。调用这个事件的简单交易将如下所示：</li>
-</ol>
+<p>2.为了事件被发布，创建事件的交易必须调用三个函数，第一个是<code>getFactory</code>函数。<code>getFactory</code>允许事件作为交易的一部分而被创建。接下来，必须使用<code>factory.newEvent('org.namespace', 'BasicEvent')</code>创建一个事件。这将在指定的命名空间中创建一个<code>BasicEvent</code>事件。然后必须设置事件所需的属性。最后，事件必须通过使用<code>emit(BasicEvent)</code>发送。调用这个事件的简单交易将如下所示：</p>
 <pre><code class="javascript">   /**
     * @param {org.namespace.BasicEventTransaction} basicEventTransaction
     * @transaction

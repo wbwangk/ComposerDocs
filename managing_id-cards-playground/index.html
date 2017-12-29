@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -375,30 +390,52 @@
             <div class="section">
               
                 <h1 id="_1">创建、导出和导入业务网络卡片<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>业务网络卡片由几个<code>.card</code>文件组成，包括一个<code>metadata.JSON</code>文件，一个连接配置文件和可选的证书文件。</p>
+<p>业务网络卡片表现为<code>.card</code>文件，包含一个<code>metadata.JSON</code>文件，一个连接配置文件和可选的证书文件。</p>
 <p>Hyperledger Composer Playground中可以使用业务网络卡片来管理不同业务网络和连接配置文件的身份。</p>
 <h2 id="_2">创建业务网络卡片<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>业务网络卡片可以在钱包屏幕中创建，可以从组件文件创建，也可以在业务网络中创建。</p>
 <p><em>请注意</em>：如果卡片从钱包屏幕创建，或者从组件文件创建，则必须在业务网络中创建相应的身份。</p>
 <h3 id="_3">在业务网络中创建业务网络卡片<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
 <ol>
-<li>从 <strong>我的钱包</strong>屏幕中，选择一个用于连接到你的业务网络的身份。点击<strong>立即连接</strong>。<em>请注意：</em>你使用的身份必须具有创建新身份的权限。</li>
-<li><em>可选</em>：要创建关联到身份的参与者，请单击<strong>测试</strong>选项卡，然后单击<strong>创建新参与者</strong>。</li>
-<li>点击右上方你的身份名称，然后点击<strong>ID库</strong>。</li>
-<li>点击<strong>发行新的ID</strong>。</li>
-<li>选择一个<strong>ID名称</strong>，然后选择一个<strong>参与者</strong>将新的身份与之关联。</li>
-<li>点击<strong>新建</strong>。</li>
-<li>点击<strong>添加到我的钱包</strong>。将业务网络卡片添加到钱包，将允许你使用它连接到业务网络，或将其导出供其他人使用。</li>
+<li>
+<p>从 <strong>我的钱包</strong>屏幕中，选择一个用于连接到你的业务网络的身份。点击<strong>立即连接</strong>。<em>请注意：</em>你使用的身份必须具有创建新身份的权限。</p>
+</li>
+<li>
+<p><em>可选</em>：要创建关联到身份的参与者，请单击<strong>测试</strong>选项卡，然后单击<strong>创建新参与者</strong>。</p>
+</li>
+<li>
+<p>点击右上方你的身份名称，然后点击<strong>ID库</strong>。</p>
+</li>
+<li>
+<p>点击<strong>颁发新的ID</strong>。</p>
+</li>
+<li>
+<p>选择一个<strong>ID名称</strong>，然后选择一个<strong>参与者</strong>将新的身份与之关联。</p>
+</li>
+<li>
+<p>点击<strong>新建</strong>。</p>
+</li>
+<li>
+<p>点击<strong>添加到我的钱包</strong>。将业务网络卡片添加到钱包，将允许你使用它连接到业务网络，或将其导出供其他人使用。</p>
+</li>
 </ol>
 <p>在<strong>我的钱包</strong>屏幕现在应该显示新的业务网络卡片。</p>
 <h3 id="_4">使用钱包创建业务网络卡片<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>可以从“ <strong>我的钱包”</strong>页面创建业务网络卡片，但是，业务网络中必须已经创建了相应的身份。从 <strong>我的钱包</strong>页面创建业务网络卡片，需要使用与在业务网络内创建身份时相同的<em>用户ID</em>、<em>用户密码</em>和正确的<em>业务网络名称</em>凭证。</p>
+<p>可以从“ <strong>我的钱包”</strong>页面创建业务网络卡片，但是，业务网络中必须已经创建了相应的身份。从 <strong>我的钱包</strong>页面创建业务网络卡片，需要使用与在业务网络内创建身份时的<em>用户ID</em>、<em>用户密码</em>和正确的<em>业务网络名称</em>。</p>
 <p>从“ <strong>我的钱包”</strong>页面创建业务网络卡：</p>
 <ol>
-<li>收到有效的<em>用户ID</em>和<em>用户密码</em>后，点击<strong>我的钱包</strong>页面右上角的<strong>创建业务网络卡片</strong>按钮。</li>
-<li>选择一个连接配置文件，然后单击<strong>下一步</strong>。</li>
-<li>输入创建身份时生成的<em>用户ID</em>和<em>用户密码</em>。</li>
-<li>输入正确的<em>业务网络名称</em>，然后点击<strong>创建</strong>。</li>
+<li>
+<p>收到有效的<em>用户ID</em>和<em>用户密码</em>后，点击<strong>我的钱包</strong>页面右上角的<strong>创建业务网络卡片</strong>按钮。</p>
+</li>
+<li>
+<p>选择一个连接配置文件，然后单击<strong>下一步</strong>。</p>
+</li>
+<li>
+<p>输入创建身份时生成的<em>用户ID</em>和<em>用户密码</em>。</p>
+</li>
+<li>
+<p>输入正确的<em>业务网络名称</em>，然后点击<strong>创建</strong>。</p>
+</li>
 </ol>
 <p>业务网络卡片现在应显示在“ <strong>我的钱包”</strong>页面中。</p>
 <h3 id="_5">从组件文件创建一个业务网络卡片<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
@@ -408,7 +445,7 @@
 <li>包含用于连接到业务网络的身份数据的元数据文件。（<code>metadata.json</code>）</li>
 <li>一个可选的<code>credentials</code>目录，包含身份的一个证书（文件名<code>certificate</code>）和一个私钥（文件名<code>privateKey</code>）。</li>
 </ul>
-<p><em>请注意</em>：如果没有<code>credentials</code>目录，则元数据文件的<em>enrollmentSecret</em>属性必须包含用于获取凭据的<em>登记密码</em>。如果指定了<em>enrollmentSecret</em>，并且业务网络卡片用于连接到业务网络，则一个包含证书的凭据目录会被自动创建和填充（如果业务网络卡片已导出）。</p>
+<p><em>请注意</em>：如果没有<code>credentials</code>目录，则元数据文件的<em>enrollmentSecret</em>属性必须包含用于获取凭据的<em>登记密码</em>。如果指定了<em>enrollmentSecret</em>，并且业务网络卡片用于连接到业务网络，则一个包含证书的credentials(凭据)目录会被自动创建和填充（如果业务网络卡片已导出）。</p>
 <p>元数据文件应采用以下格式：</p>
 <pre><code class="json">{
     &quot;version&quot;: 1,
@@ -428,16 +465,24 @@
 <p>导入和导出业务网络卡片是允许其他用户访问Playground中业务网络的最简单方式。有效的业务网络卡片必须使用上述方法之一创建，但可以导出并发送给其他用户。</p>
 <h3 id="_7">导出业务网络卡片<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 <ol>
-<li>要导出业务网络卡片，请通过<a href="./#在业务网络中创建业务网络卡片">使用业务网络</a>创建一个身份并将业务网络卡片添加到你的钱包。</li>
-<li>在“ <strong>我的钱包”</strong>页面上，单击你想<strong>导出</strong>的业务网络卡片上的<strong>导出</strong>图标。业务网络卡片会作为<code>.card</code>文件下载。</li>
+<li>
+<p>要导出业务网络卡片，请通过<a href="./#在业务网络中创建业务网络卡片">使用业务网络</a>创建一个身份并将业务网络卡片添加到你的钱包。</p>
+</li>
+<li>
+<p>在“ <strong>我的钱包”</strong>页面上，单击你想<strong>导出</strong>的业务网络卡片上的<strong>导出</strong>图标。业务网络卡片会作为<code>.card</code>文件下载。</p>
+</li>
 </ol>
 <p><em>请注意</em>：如果你导出一个从未使用过的业务网络卡片，例如发送给新的参与者，它将包含获取证书和公钥所需的登记ID和登记密钥，然后用它们来认证者。或者，如果你导出之前使用过的业务网络卡片，它将已经包含证书和公钥。</p>
 <p><strong>重要</strong>：导出的身份卡片应小心处理，因为它们包含不受保护的证书。例如，你绝不应通过电子邮件或其他未加密的通讯方式发送身份卡片。</p>
 <h3 id="_8">导入业务网络卡片<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>导入业务网络卡片允许你连接到业务网络，而无需创建连接配置文件，身份和证书。业务网络的成员可以创建业务网络卡片并将其导出，以便其他人访问业务网络。</p>
 <ol>
-<li>在“ <strong>我的钱包”</strong>屏幕上，单击右上角的<strong>导入业务网络卡片</strong>。</li>
-<li>拖放或浏览以选择要导入的业务网络卡片（<code>.card</code>）文件。点击<strong>导入</strong>。</li>
+<li>
+<p>在“ <strong>我的钱包”</strong>屏幕上，单击右上角的<strong>导入业务网络卡片</strong>。</p>
+</li>
+<li>
+<p>拖放或浏览以选择要导入的业务网络卡片（<code>.card</code>）文件。点击<strong>导入</strong>。</p>
+</li>
 </ol>
 <p>业务网络卡片现在应该可以在钱包中看到。</p>
               

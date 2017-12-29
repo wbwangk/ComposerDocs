@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -375,9 +390,7 @@
                 <h1 id="_1">连接配置文件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>Hyperledger Composer使用连接配置文件连接到运行时。</p>
 <h2 id="_2">创建连接配置文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ol>
-<li>创建一个名为<code>connection.json</code>的新文件，其中包含Hyperledger Fabric v1.0的以下信息。}</li>
-</ol>
+<p>1.创建一个名为<code>connection.json</code>的新文件，其中包含Hyperledger Fabric v1.0的以下信息。}</p>
 <p>为Hyperledger Fabric v1.0创建连接配置文件，使用以下格式：</p>
 <pre><code class="json">    {
         &quot;type&quot;: &quot;hlfv1&quot;,
@@ -448,9 +461,13 @@ _Please note: The simplified version of the connection profile will only work if
 <p><code>hostnameOverride</code> 仅在测试环境中使用，当服务器证书的主机名与运行服务器进程的实际主机端点不匹配时，应用程序可以通过将此属性设置为服务器证书主机名的值来解决客户端TLS验证失败的问题。</p>
 </li>
 <li>
-<p>每个<code>cert</code>属性的实例都应该是包含PEM格式的TLS证书字符串。可以在每个<code>cert</code>属性中放置多个证书。
-  <code>-----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----</code></p>
+<p>每个<code>cert</code>属性的实例都应该是包含PEM格式的TLS证书字符串。可以在每个<code>cert</code>属性中放置多个证书。</p>
 </li>
+</ul>
+<pre><code>-----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----
+</code></pre>
+
+<ul>
 <li>
 <p><code>mspid</code>是您的组织的成员服务提供商ID。它与你将用于与业务网络进行交互的登记ID相关联。</p>
 </li>

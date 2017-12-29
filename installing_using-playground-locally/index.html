@@ -135,6 +135,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -382,9 +397,15 @@
 <h2 id="_1">在你开始之前<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>为了安装Hyperledger Composer Playground，你需要安装以下软件：</p>
 <ul>
-<li>操作系统：Ubuntu Linux 14.04 / 16.04 LTS（均为64位）或Mac OS 10.12</li>
-<li>Docker引擎17.03或更高</li>
-<li>Docker Compose 1.8或更高版本</li>
+<li>
+<p>操作系统：Ubuntu Linux 14.04 / 16.04 LTS（均为64位）或Mac OS 10.12</p>
+</li>
+<li>
+<p>Docker引擎17.03或更高</p>
+</li>
+<li>
+<p>Docker Compose 1.8或更高版本</p>
+</li>
 </ul>
 <p><em>请注意：</em>如果你以前曾经在本地使用Hyperledger Composer Playground或Hyperledger Fabric并希望清除所有内容并重新开始，则以下命令将删除所有正在运行的容器并删除所有下载的图像，（如果在你的机器上要使用其他Docker映像请小心）：</p>
 <pre><code class="bash">docker ps -aq | xargs docker rm -f
@@ -393,16 +414,10 @@ docker images -aq | xargs docker rmi -f
 
 <p>要运行Hyperledger Composer和Hyperledger Fabric，我们建议你至少拥有4Gb的内存。</p>
 <h2 id="playground">在本地创建容器并安装Playground<a class="headerlink" href="#playground" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>选择要安装的目录，然后运行以下命令下载并启动Hyperledger Fabric实例和Hyperledger Composer Playground：
+<p>1.选择要安装的目录，然后运行以下命令下载并启动Hyperledger Fabric实例和Hyperledger Composer Playground：
    <code>bash
    curl -sSL https://hyperledger.github.io/composer/install-hlfv1.sh | bash</code></p>
-</li>
-<li>
-<p>点击以下链接访问你当地的Hyperledger Composer Playground：<a href="http://localhost:8080/">http://localhost:8080</a>。<em>请注意</em>：在本地运行Playground时，不支持私密浏览。</p>
-</li>
-</ol>
+<p>2.点击以下链接访问你当地的Hyperledger Composer Playground：<a href="http://localhost:8080/">http://localhost:8080</a>。<em>请注意</em>：在本地运行Playground时，不支持私密浏览。</p>
 <h2 id="_2">下一步是什么？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <ul>
 <li>寻找使用Playground的教程，请尝试<a href="../tutorials_playground-tutorial/">我们的Playground教程</a>。</li>

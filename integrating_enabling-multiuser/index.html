@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -399,27 +414,17 @@
 <h2 id="_1">将业务网络卡片添加到钱包<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>首先，你必须向业务网络中的参与者发放区块链身份。这个例子将假设你已经向<code>alice1</code>参与者发放了区块链身份<code>org.acme.mynetwork.Trader#alice@email.com</code>，并且你为这个区块链身份创建了一个业务网络卡片，卡片存储在文件<code>alice1@my-network.card</code>中。</p>
 <p>请按照以下步骤将业务网络卡片添加到钱包:</p>
-<ol>
-<li>
-<p>导航到<a href="http://localhost:3000/explorer/">http://localhost:3000/explorer/</a>上的REST API浏览器，然后通过展开<strong>钱包</strong>类别导航到钱包API 。</p>
-</li>
-<li>
-<p>通过调用<code>GET/wallet</code>操作检查钱包是否包含任何业务网络卡片。操作的回应应该是:</p>
-</li>
-</ol>
-<pre><code>   []
+<p>1.导航到<a href="http://localhost:3000/explorer/">http://localhost:3000/explorer/</a>上的REST API浏览器，然后通过展开<strong>钱包</strong>类别导航到钱包API 。</p>
+<p>2.通过调用<code>GET/wallet</code>操作检查钱包是否包含任何业务网络卡片。操作的回应应该是:</p>
+<pre><code>[]
 </code></pre>
 
-<ol>
-<li>通过调用<code>POST /wallet/import</code>操作将业务网络卡片导入钱包。你必须通过单击<strong>选择文件</strong>按钮来指定业务网络卡片文件<code>alice1@my-network.card</code>。操作的回应应该是:</li>
-</ol>
-<pre><code>   no content
+<p>3.通过调用<code>POST /wallet/import</code>操作将业务网络卡片导入钱包。你必须通过单击<strong>选择文件</strong>按钮来指定业务网络卡片文件<code>alice1@my-network.card</code>。操作的回应应该是:</p>
+<pre><code>no content
 </code></pre>
 
 <p>业务网络卡片<code>alice1@my-network</code>现在已经被导入到钱包中。</p>
-<ol>
-<li>通过调用<code>GET /wallet</code>操作检查钱包是否包含业务网络卡片<code>alice1@my-network</code>。操作的回应应该是:</li>
-</ol>
+<p>4.通过调用<code>GET /wallet</code>操作检查钱包是否包含业务网络卡片<code>alice1@my-network</code>。操作的回应应该是:</p>
 <pre><code class="json">   [
        {
            &quot;name&quot;: &quot;alice1@my-network&quot;,

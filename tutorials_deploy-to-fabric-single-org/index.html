@@ -153,6 +153,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -433,14 +448,24 @@ composer card delete -n admin@tutorial-network
 <h4 id="_3">组织<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
 <p>简单的Hyperledger Fabric网络由一个叫做<code>Org1</code>的组织构成。该组织使用域名<code>org1.example.com</code>。此外，该组织的成员服务提供商(MSP)被称为<code>Org1MSP</code>。在本教程中，你将部署只有组织<code>Org1</code>才能与之交互的区块链业务网络。</p>
 <h4 id="_4">网络组件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
-<p>Hyperledger Fabric网络由多个组件组成：<br />
-- 一个Org1的peer节点，名叫peer0.org1.example.com<br />
-  - 请求端口是7051<br />
-  - 事件hub端口是7053<br />
-- 一个Org1的CA(Certificate Authority)，名叫ca.org1.example.com<br />
-  - CA端口是7054<br />
-- 一个排序节点，名叫orderer.example.com<br />
-  - 排序端口是7050  </p>
+<p>Hyperledger Fabric网络由多个组件组成：  </p>
+<ul>
+<li>一个Org1的peer节点，名叫peer0.org1.example.com  </li>
+<li>请求端口是7051  </li>
+<li>
+<p>事件hub端口是7053  </p>
+</li>
+<li>
+<p>一个Org1的CA(Certificate Authority)，名叫ca.org1.example.com  </p>
+</li>
+<li>
+<p>CA端口是7054  </p>
+</li>
+<li>
+<p>一个排序节点，名叫orderer.example.com  </p>
+</li>
+<li>排序端口是7050  </li>
+</ul>
 <p>Hyperledger Fabric网络组件在Docker容器中运行。在Docker容器中运行Hyperledger Composer时，可以使用上面的名称（例如，<code>peer0.org1.example.com</code>）与Hyperledger Fabric网络进行交互。</p>
 <p>本教程将在Docker主机上运行Hyperledger Composer命令，而不是在Docker网络内运行。这意味着Hyperledger Composer命令必须使用<code>localhost</code>主机名和暴露的容器端口与Hyperledger Fabric网络进行交互。</p>
 <h4 id="_5">用户<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>

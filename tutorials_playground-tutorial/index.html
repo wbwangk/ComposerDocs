@@ -155,6 +155,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -403,11 +418,21 @@
 <h3 id="_1">第二步：创建一个新的业务网络<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>接下来，我们要从头开始创建一个新的业务网络。一个业务网络有几个定义的属性; 一个名字和一个可选的描述。你也可以选择在现有模板上建立新的业务网络，或导入自己的模板。</p>
 <ol>
-<li>点击在Web浏览器标题下<strong>部署一个新的业务网络</strong>开始。</li>
-<li>新的业务网络需要一个名字，让我们叫它<code>tutorial-network</code>。</li>
-<li>你也可以选择输入业务网络的说明。</li>
-<li>接下来我们必须选择一个我们基于的业务网络，因为我们要从头构建网络，点击<strong>空白业务网络</strong>。</li>
-<li>现在我们的网络已经定义好了，点击<strong>部署</strong>。</li>
+<li>
+<p>点击在Web浏览器标题下<strong>部署一个新的业务网络</strong>开始。</p>
+</li>
+<li>
+<p>新的业务网络需要一个名字，让我们叫它<code>tutorial-network</code>。</p>
+</li>
+<li>
+<p>你也可以选择输入业务网络的说明。</p>
+</li>
+<li>
+<p>接下来我们必须选择一个我们基于的业务网络，因为我们要从头构建网络，点击<strong>空白业务网络</strong>。</p>
+</li>
+<li>
+<p>现在我们的网络已经定义好了，点击<strong>部署</strong>。</p>
+</li>
 </ol>
 <p><a href="https://hyperledger.github.io/composer/assets/img/tutorials/playground/vs_code_1.mp4">视频</a></p>
 <h3 id="_2">第三步：连接到业务网络<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
@@ -496,14 +521,8 @@
 <p><a href="https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/test_tab_render.mp4">视频</a></p>
 <h3 id="_8">第九步：创建参与者<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>我们应该添加到业务网络的第一件事是两个参与者。</p>
-<ol>
-<li>
-<p>确保左边选择了<strong>交易者</strong>选项卡，然后点击右上角的“ <strong>创建新参与者</strong> ”。</p>
-</li>
-<li>
-<p>你可以看到<em>交易者</em>参与者的数据结构。我们需要一些容易识别的数据，所以删除那里的代码并粘贴下面的代码：</p>
-</li>
-</ol>
+<p>1.确保左边选择了<strong>交易者</strong>选项卡，然后点击右上角的“ <strong>创建新参与者</strong> ”。</p>
+<p>2.你可以看到<em>交易者</em>参与者的数据结构。我们需要一些容易识别的数据，所以删除那里的代码并粘贴下面的代码：</p>
 <pre><code class="json">   {
      &quot;$class&quot;: &quot;org.acme.mynetwork.Trader&quot;,
      &quot;tradeId&quot;: &quot;TRADER1&quot;,
@@ -512,14 +531,8 @@
    }
 </code></pre>
 
-<ol>
-<li>
-<p>点击<strong>新建</strong>创建参与者。</p>
-</li>
-<li>
-<p>你应该能够看到你创建的新<em>交易者</em>参与者。我们需要另一个<em>交易者</em>来测试我们的<em>Trade </em>交易，所以创建另一个<em>交易者</em>，但这次使用以下数据：</p>
-</li>
-</ol>
+<p>3.点击<strong>新建</strong>创建参与者。</p>
+<p>4.你应该能够看到你创建的新<em>交易者</em>参与者。我们需要另一个<em>交易者</em>来测试我们的<em>Trade </em>交易，所以创建另一个<em>交易者</em>，但这次使用以下数据：</p>
 <pre><code class="json">   {
      &quot;$class&quot;: &quot;org.acme.mynetwork.Trader&quot;,
      &quot;tradeId&quot;: &quot;TRADER2&quot;,
@@ -532,14 +545,8 @@
 <p><a href="https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/create_new_participant_render.mp4">视频</a></p>
 <h3 id="_9">第十步：创建一个资产<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h3>
 <p>现在我们有两个<em>交易者</em>参与者，我们需要一些交易。创建资产与创建参与者非常相似。我们正在创建的<em>商品</em>我有一个<em>所有者</em>属性，表明它属于<em>tradeId</em>为<code>TRADER1</code>的<em>交易者</em>。</p>
-<ol>
-<li>
-<p>点击<strong>资产</strong>下的<strong>商品</strong>标签，然后点击<strong>创建新资产</strong>。<strong><em>*</em></strong>*</p>
-</li>
-<li>
-<p>删除资产数据并将其替换为以下内容：</p>
-</li>
-</ol>
+<p>1.点击<strong>资产</strong>下的<strong>商品</strong>标签，然后点击<strong>创建新资产</strong>。<strong><em>*</em></strong>*</p>
+<p>2.删除资产数据并将其替换为以下内容：  </p>
 <pre><code class="json">   {
      &quot;$class&quot;: &quot;org.acme.mynetwork.Commodity&quot;,
      &quot;tradingSymbol&quot;: &quot;ABC&quot;,
@@ -550,25 +557,15 @@
    }
 </code></pre>
 
-<ol>
-<li>创建此资产后，你应该能够在<strong>商品</strong>选项卡中看到它。  </li>
-</ol>
+<p>3.创建此资产后，你应该能够在<strong>商品</strong>选项卡中看到它。  </p>
 <p><a href="https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/create_new_asset_render.mp4">视频</a>  </p>
 <h3 id="_10">第十一步：在参与者之间转移商品<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
 <p>现在，我们有两个<em>交易者</em>和一个用于交易的<em>商品</em>，我们可以测试我们的<em>Trade</em>交易。</p>
 <p>交易是Hyperledger Composer业务网络中所有变化的基础，如果你想在本教程后践行自己的尝试，请尝试从<strong>我的业务网络</strong>屏幕创建另一个业务网络，并使用更高级的业务网络模板。</p>
 <p>测试<em>Trade</em>交易：</p>
-<ol>
-<li>
-<p>点击左侧的<strong>提交交易</strong>按钮。</p>
-</li>
-<li>
-<p>确保交易类型是<em>Trade</em>。</p>
-</li>
-<li>
-<p>将交易数据替换为以下内容，或者仅更改细节：</p>
-</li>
-</ol>
+<p>1.点击左侧的<strong>提交交易</strong>按钮。</p>
+<p>2.确保交易类型是<em>Trade</em>。</p>
+<p>3.将交易数据替换为以下内容，或者仅更改细节：</p>
 <pre><code class="json">   {
      &quot;$class&quot;: &quot;org.acme.mynetwork.Trade&quot;,
      &quot;commodity&quot;: &quot;resource:org.acme.mynetwork.Commodity#ABC&quot;,
@@ -576,23 +573,15 @@
    }
 </code></pre>
 
-<ol>
-<li>
-<p>点击<strong>提交</strong>。</p>
-</li>
-<li>
-<p>通过展开资产数据部分，检查我们的资产已经改变所有权从<code>TRADER1</code>到<code>TRADER2</code>。你应该看到，所有者被列为<code>resource:org.acme.mynetwork.Trader#TRADER2</code>。</p>
-</li>
-<li>
-<p>要查看我们业务网络的完整交易记录，请点击左侧的<strong>所有交易</strong>。这里是每个被提交的交易的清单。你可以看到，我们使用用户界面执行的某些操作，如创建<em>Trader</em>参与者和<em>商品</em>资产，被记录为交易，即使它们没有在我们的业务网络模型中定义为交易。这些交易被称为“系统交易”，对所有业务网络都是通用的，并在Hyperledger Composer运行时中定义。  </p>
-</li>
-</ol>
+<p>4.点击<strong>提交</strong>。</p>
+<p>5.通过展开资产数据部分，检查我们的资产已经改变所有权从<code>TRADER1</code>到<code>TRADER2</code>。你应该看到，所有者被列为<code>resource:org.acme.mynetwork.Trader#TRADER2</code>。</p>
+<p>6.要查看我们业务网络的完整交易记录，请点击左侧的<strong>所有交易</strong>。这里是每个被提交的交易的清单。你可以看到，我们使用用户界面执行的某些操作，如创建<em>Trader</em>参与者和<em>商品</em>资产，被记录为交易，即使它们没有在我们的业务网络模型中定义为交易。这些交易被称为“系统交易”，对所有业务网络都是通用的，并在Hyperledger Composer运行时中定义。  </p>
 <p><a href="https://hyperledger.github.io/composer/stable/assets/img/tutorials/playground/submit_transaction_render.mp4">视频</a>  </p>
 <h3 id="_11">注销业务网络<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h3>
 <p>现在交易已经成功运行，我们应该退出业务网络，在一开始的<strong>我的业务网络</strong>屏幕上退出。</p>
-<ol>
-<li>在屏幕的右上方是一个标有<strong>admin</strong>的按钮。这将列出你的当前身份，去登出，单击<strong>admin</strong>打开下拉菜单，然后单击<strong>我的业务网络</strong>。</li>
-</ol>
+<blockquote>
+<p>在屏幕的右上方是一个标有<strong>admin</strong>的按钮。这将列出你的当前身份，去登出，单击<strong>admin</strong>打开下拉菜单，然后单击<strong>我的业务网络</strong>。</p>
+</blockquote>
 <h3 id="_12">接下来是什么？<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h3>
 <p>你已完成最初的Hyperledger Composer Playground教程，你可能需要使用其他示例或模板开始构建自己的业务网络。</p>
 <p>你可能想要尝试<a href="../tutorials_developer-tutorial/"><strong>开发者教程</strong></a>，获取你的本地开发环境设置，生成REST API和框架Web应用程序。</p>

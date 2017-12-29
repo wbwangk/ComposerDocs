@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -386,9 +401,15 @@
 <p>Hyperledger Composer包含一个面向对象的建模语言，用于定义业务网络定义的领域模型。</p>
 <p>Hyperledger Composer CTO文件由以下元素组成：</p>
 <ol>
-<li>一个单一的命名空间。文件中的所有资源声明都隐含在这个命名空间中。  </li>
-<li>一组资源定义，包括资产、交易、参与者和事件。  </li>
-<li>从其他命名空间导入资源的可选导入声明。  </li>
+<li>
+<p>一个单一的命名空间。文件中的所有资源声明都隐含在这个命名空间中。  </p>
+</li>
+<li>
+<p>一组资源定义，包括资产、交易、参与者和事件。  </p>
+</li>
+<li>
+<p>从其他命名空间导入资源的可选导入声明。  </p>
+</li>
 </ol>
 <h2 id="hyperledger-composer_1">组织和Hyperledger Composer系统命名空间<a class="headerlink" href="#hyperledger-composer_1" title="Permanent link">&para;</a></h2>
 <p>你的组织命名空间是在你的model（<code>.cto</code>）文件的命名空间行中定义的，并且所有创建的资源隐式地都是该命名空间的一部分。</p>
@@ -407,10 +428,8 @@
 <p>资产、参与者和交易是类定义。资产、参与者和交易的概念可以认为是类的不同模板。</p>
 <p>Hyperledger Composer中的类被称为资源定义，因此一个资产实例具有一个资产定义。</p>
 <p>资源定义具有以下属性：</p>
-<ol>
-<li>由其父文件的命名空间定义的命名空间。<code>.cto</code>文件的命名空间隐式应用于其中创建的所有资源。  </li>
-<li>一个名称（例如<code>Vehicle</code>）和一个id字段（例如<code>vin</code>）。如果资源是资产或参与者，则名称后跟识id字段，如果资源是事件或交易，则自动生成id字段。在这个例子中，资产名称是<code>Vehicle</code>，而id字段是<code>vin</code>。</li>
-</ol>
+<p>1.由其父文件的命名空间定义的命名空间。<code>.cto</code>文件的命名空间隐式应用于其中创建的所有资源。<br />
+2.一个名称（例如<code>Vehicle</code>）和一个id字段（例如<code>vin</code>）。如果资源是资产或参与者，则名称后跟识id字段，如果资源是事件或交易，则自动生成id字段。在这个例子中，资产名称是<code>Vehicle</code>，而id字段是<code>vin</code>。</p>
 <pre><code>   /**
     * A vehicle asset.
     */
@@ -419,9 +438,7 @@
    }
 </code></pre>
 
-<ol>
-<li>一个可选超类，是资源定义扩展。该资源将具有超类所定义的所有属性和字段，并从自己的定义中添加附加属性或字段。</li>
-</ol>
+<p>3.一个可选超类，是资源定义扩展。该资源将具有超类所定义的所有属性和字段，并从自己的定义中添加附加属性或字段。</p>
 <pre><code>   /**
     * A car asset. A car is related to a list of parts
     */
@@ -431,9 +448,7 @@
    }
 </code></pre>
 
-<ol>
-<li>一个可选的“抽象”声明，表示不能创建这种类型。抽象资源可以作为其他类的基础来扩展。抽象类的扩展不会继承抽象类的状态。例如，上面定义的<code>Vehicle</code>资产不应该创建，因为应该定义更多的特定资产类来扩展它。</li>
-</ol>
+<p>4.一个可选的“抽象”声明，表示不能创建这种类型。抽象资源可以作为其他类的基础来扩展。抽象类的扩展不会继承抽象类的状态。例如，上面定义的<code>Vehicle</code>资产不应该创建，因为应该定义更多的特定资产类来扩展它。</p>
 <pre><code>   /**
    * An abstract Vehicle asset.
    */
@@ -442,14 +457,8 @@
    }
 </code></pre>
 
-<ol>
-<li>
-<p>一组命名的属性。属性必须被命名，并且用原始数据类型定义。属性及其数据由每个资源拥有，例如，<code>Car</code>资产具有<code>vin</code>和<code>model</code>属性，两者都是字符串。  </p>
-</li>
-<li>
-<p>与其他Composer类的一组关联，这些类不属于资源，但可以从资源引用。关联是单向的。  </p>
-</li>
-</ol>
+<p>5.一组命名的属性。属性必须被命名，并且用原始数据类型定义。属性及其数据由每个资源拥有，例如，<code>Car</code>资产具有<code>vin</code>和<code>model</code>属性，两者都是字符串。  </p>
+<p>6.与其他Composer类的一组关联，这些类不属于资源，但可以从资源引用。关联是单向的。  </p>
 <pre><code>/**
 * A Field asset. A Field is related to a list of animals 
 */ 
@@ -495,12 +504,24 @@ concept UnitedStatesAddress extends Address {
 <h3 id="_4">原始类型<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>Composer资源是根据以下原始类型定义的：</p>
 <ol>
-<li>字符串：一个UTF8编码的字符串。  </li>
-<li>Double：双精度64位数值。  </li>
-<li>整数：一个32位有符号整数。  </li>
-<li>长：64位有符号整数。  </li>
-<li>DateTime：与ISO-8601兼容的时间实例，具有可选的时区和UTZ偏移量。  </li>
-<li>Boolean：布尔值，true或false。  </li>
+<li>
+<p>字符串：一个UTF8编码的字符串。</p>
+</li>
+<li>
+<p>Double：双精度64位数值。</p>
+</li>
+<li>
+<p>整数：一个32位有符号整数。</p>
+</li>
+<li>
+<p>长：64位有符号整数。</p>
+</li>
+<li>
+<p>DateTime：与ISO-8601兼容的时间实例，具有可选的时区和UTZ偏移量。</p>
+</li>
+<li>
+<p>Boolean：布尔值，true或false。</p>
+</li>
 </ol>
 <h3 id="_5">数组<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>Composer中的所有类型都可以使用[]符号声明为数组。</p>
@@ -515,9 +536,15 @@ concept UnitedStatesAddress extends Address {
 <h3 id="_6">关联<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>Composer语言中的关联是由以下组成的元组：</p>
 <ol>
-<li>被引用类型的命名空间</li>
-<li>被引用类型的类型名称</li>
-<li>被引用的实例的标识符(id)</li>
+<li>
+<p>被引用类型的命名空间</p>
+</li>
+<li>
+<p>被引用类型的类型名称</p>
+</li>
+<li>
+<p>被引用的实例的标识符(id)</p>
+</li>
 </ol>
 <p>因此，一个关联可能是：org.example.Vehicle＃123456</p>
 <p>这是一个到Vehicle类型的关联，它在org.example命名空间声明，具有123456的id。</p>

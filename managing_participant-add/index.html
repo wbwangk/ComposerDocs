@@ -119,6 +119,21 @@
           
             <li class="toctree-l1">
 		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <span class="caption-text">开发业务网络</span>
     <ul class="subnav">
                 <li class="">
@@ -390,14 +405,9 @@ participant Person identified by personId {
 </code></pre>
 
 <h2 id="_3">过程<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ol>
-<li>
-<p>将参与者添加到参与者库</p>
-</li>
-<li>
-<p>JavaScript API
-   <code>javascript
-   const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
+<p>1.将参与者添加到参与者库</p>
+<p>JavaScript API:</p>
+<pre><code class="javascript">   const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
    let businessNetworkConnection = new BusinessNetworkConnection();
    return businessNetworkConnection.connect('admin@digitalPropertyNetwork')
        .then(() =&gt; {
@@ -416,14 +426,12 @@ participant Person identified by personId {
        .catch((error) =&gt; {
            console.error(error);
            process.exit(1);
-       });</code></p>
-</li>
-<li>
-<p>命令行
-  <code>bash
-  composer participant add -c admin@network -d '{"$class":"net.biz.digitalPropertyNetwork.Person","personId":"mae@biznet.org","firstName":"Mae","lastName":"Smith"}'</code></p>
-</li>
-</ol>
+       });
+</code></pre>
+
+<p>命令行:</p>
+<pre><code class="bash">composer participant add -c admin@network -d '{&quot;$class&quot;:&quot;net.biz.digitalPropertyNetwork.Person&quot;,&quot;personId&quot;:&quot;mae@biznet.org&quot;,&quot;firstName&quot;:&quot;Mae&quot;,&quot;lastName&quot;:&quot;Smith&quot;}'
+</code></pre>
               
             </div>
           </div>
