@@ -23,9 +23,9 @@ participant Person identified by personId {
 
 ## 过程
 
-1. 连接到业务网络并向参与者颁发新的身份
-   - JavaScript API
+1.连接到业务网络并向参与者颁发新的身份
 
+JavaScript API:
 ```javascript
   const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
   let businessNetworkConnection = new BusinessNetworkConnection();
@@ -45,13 +45,14 @@ participant Person identified by personId {
 
 ```
 
-- 命令行
+命令行:
 ```bash
   composer identity issue -c admin@network -f maeid1.card -u maeid1 -a "resource:net.biz.digitalPropertyNetwork.Person#mae@biznet.org"
 ```
 
-1. 作为参与者，测试与业务网络的连接
-   - JavaScript API
+1.作为参与者，测试与业务网络的连接
+
+JavaScript API:
 ```javascript
   const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
   let businessNetworkConnection = new BusinessNetworkConnection();
@@ -68,7 +69,7 @@ participant Person identified by personId {
           process.exit(1);
       });
 ```
-- 命令行
+命令行:
 ```bash
   composer network ping -c maeid1@network
 ```
