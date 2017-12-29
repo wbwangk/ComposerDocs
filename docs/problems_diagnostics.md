@@ -15,6 +15,7 @@ Composer默认使用Winston日志记录模块，并使用Config模块查找任�
 有两个容器与日志相关：
 
 - 运行应用程序的容器
+
 - 执行交易函数的链码容器。
 
 ## 应用
@@ -26,9 +27,13 @@ Composer默认使用Winston日志记录模块，并使用Config模块查找任�
 该框架将记录这些级别的信息。
 
 - 错误
+
 - 警告
+
 - 信息
+
 - 详细
+
 - 调试
 
 “Silly”级别没有被使用。
@@ -38,6 +43,7 @@ Composer默认使用Winston日志记录模块，并使用Config模块查找任�
 默认情况下，有两个数据位置：
 
 - 一个文本文件，位于`${CurrentWorkingDir}/logs/trace_<processid>.trc`
+
 - 另一个是`stdout`。默认情况下，`stdout`只显示任何以“错误”级别记录的数据，文件将显示“信息”或以上（即信息，警告和错误）日志数据。
 
 ## 控制生成什么
@@ -77,6 +83,7 @@ Composer默认使用Winston日志记录模块，并使用Config模块查找任�
 第一部分针对Getting Started应用程序，第二个`ComposerConfig`部分针对Hyperledger Composer。
 
 - `logger`用于指定实际记录日志的模块。默认是暗示这是winston框架
+
 - `config`传递给日志记录器来控制它做什么。所以这部分是特定于使用的记录器。
 
 ## 启用更多信息
