@@ -36,8 +36,11 @@ asset HistorianRecord identified by transactionId {
 Hyperledger Composer运行时所做的几个操作被归类为交易。这些“系统交易”是在Hyperledger Composer系统模型中定义的。以下将添加`HistorianRecord`资产：
 
 - 添加、删除和更新资产
+
 - 添加、删除和更新参与者
+
 - 签发、绑定、激活和撤销身份
+
 - 更新业务网络定义
 
 ## 保护历史库数据
