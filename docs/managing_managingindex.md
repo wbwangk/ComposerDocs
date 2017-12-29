@@ -36,4 +36,6 @@
 ## 接下来是什么？
 
 - 你可能希望使用LoopBack将Hyperledger Composer  [与现有系统集成](integrating_integrating-index.md)。
+
 - 从你的业务网络的消费数据的应用程序可以[订阅事件](applications_subscribing-to-events.md)。
+
