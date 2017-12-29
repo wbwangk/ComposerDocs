@@ -15,7 +15,9 @@
 ## 处理结果
 
 该`post`方法返回一个`Promise`JS对象，该对象包含远程服务器返回的结果。JS对象具有以下属性：
+
 - statusCode：HTTP状态码  
+
 - body：HTTP响应正文  
 
 请注意，从200到300的HTTP响应码将作为已解决的Promise返回，而其他任何响应码都会导致Promise被拒绝。被拒绝的Promise可以使用`.catch`Promise处理程序处理。
