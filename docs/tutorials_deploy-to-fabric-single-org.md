@@ -49,11 +49,14 @@ composer card delete -n admin@tutorial-network
 
 #### 网络组件
 Hyperledger Fabric网络由多个组件组成：  
+
 - 一个Org1的peer节点，名叫peer0.org1.example.com  
   - 请求端口是7051  
   - 事件hub端口是7053  
+  
 - 一个Org1的CA(Certificate Authority)，名叫ca.org1.example.com  
   - CA端口是7054  
+
 - 一个排序节点，名叫orderer.example.com  
   - 排序端口是7050  
 
