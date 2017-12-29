@@ -7,8 +7,11 @@ Node-RED通常用于快速建立物联网样式应用的原型，或将现有的
 您可以使用Hyperledger Composer Node-RED来：
 
 - 提交交易
+
 - 读取和更新资产和参与者
+
 - 订阅时间
+
 - 删除资产和参与者
 
 Hyperledger Composer Node-RED节点作为一个独立的npm包发布，发布在这里： - <https://www.npmjs.com/package/node-red-contrib-composer>
