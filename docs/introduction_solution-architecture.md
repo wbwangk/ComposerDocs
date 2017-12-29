@@ -7,12 +7,19 @@ Hyperledger Composer使架构师和开发人员能够快速创建“全堆栈”
 Hyperledger Composer由以下高级组件组成：
 
 - 执行运行时（目前支持四个！）
+
 - JavaScript SDK
+
 - 命令行接口
+
 - REST服务器
+
 - LoopBack连接器
+
 - PlaygroundWeb用户界面
+
 - Yeoman代码生成器
+
 - VSCode和Atom编辑器插件
 
 ## 执行运行时
@@ -35,6 +42,7 @@ Hyperledger Composer JavaScript SDK是一组Node.js API，使开发人员能够�
 这些API分成两个npm模块：
 
 1. `composer-client` 用于向业务网络提交交易或对资产和参与者执行创建、读取、更新和删除操作
+
 2. `composer-admin` 用于管理业务网络（部署、取消部署）
 
 所有API的细节都可以作为JSDocs（请参阅参考资料）。
@@ -68,7 +76,9 @@ Hyperledger Composer Playground是定义和测试业务网络的Web用户界面�
 Hyperledger Composer使用Open Source Yeoman代码生成器框架来创建框架项目：
 
 - Angular Web应用程序
+
 - Node.js应用程序
+
 - 骨架的业务网络
 
 ## VSCode和Atom编辑器扩展
