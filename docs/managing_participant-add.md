@@ -23,7 +23,7 @@ participant Person identified by personId {
 
 1.将参与者添加到参与者库
 
-   - JavaScript API
+JavaScript API:
 ```javascript
    const BusinessNetworkConnection = require('composer-client').BusinessNetworkConnection;
    let businessNetworkConnection = new BusinessNetworkConnection();
@@ -47,7 +47,7 @@ participant Person identified by personId {
        });
 ```
 
-- 命令行
-  ```bash
-  composer participant add -c admin@network -d '{"$class":"net.biz.digitalPropertyNetwork.Person","personId":"mae@biznet.org","firstName":"Mae","lastName":"Smith"}'
-  ```
+命令行:
+```bash
+composer participant add -c admin@network -d '{"$class":"net.biz.digitalPropertyNetwork.Person","personId":"mae@biznet.org","firstName":"Mae","lastName":"Smith"}'
+```
