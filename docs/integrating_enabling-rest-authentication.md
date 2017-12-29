@@ -18,15 +18,25 @@ npm install -g passport-github
 为了配置`passport-github`策略，我们需要在GitHub上注册一个OAuth应用程序，并获取客户端ID和客户端密码。按照以下步骤在GitHub上注册OAuth应用程序:
 
 1. 导航到[GitHub](https://github.com/)并使用你的用户名和密码登录。
+
 2. 点击右上角的个人资料图片，然后从下拉菜单中点击**设置**。
+
 3. 点击左侧栏的**开发人员设置**下的**OAuth应用程序**。
+
 4. 点击**注册一个新的应用程序**。
+
 5. 指定以下设置:
+
    - 应用程序名称:Composer
+
    - 主页:[http://localhost:3000/](http://localhost:3000/)
+   
    - 应用程序描述:Composer的OAuth应用程序
+   
    - 授权回调URL:[http://localhost:3000/auth/github/callback](http://localhost:3000/auth/github/callback)
+
 6. 点击**注册申请**。
+
 7. 记下**客户端ID**和**客户端密钥**的值。
 
 使用环境变量`COMPOSER_PROVIDERS`来指定REST服务器的配置。要配置REST服务器，需要用步骤7中获取的值替换`REPLACE_WITH_CLIENT_ID`和`REPLACE_WITH_CLIENT_SECRET`，然后执行以下命令:
@@ -61,7 +71,9 @@ composer-rest-server -c admin@my-network -a true
 此步骤取决于REST服务器正在使用的Passport策略的配置和行为。
 
 1. （Web浏览器）通过导航到环境变量`COMPOSER_PROVIDERS`中定义的属性`authPath`的值，来向到REST服务器认证。在上面的例子中，这是[http://localhost:3000/auth/github](http://localhost:3000/auth/github)。
+
 2. REST服务器会将身份认证重定向到GitHub以执行OAuth Web服务器身份认证流程。GitHub会询问身份认证是否要授权Composer应用程序访问身份认证的帐户。点击**授权**按钮。
+
 3. 如果成功，GitHub会将身份认证重定向到REST服务器。
 
 现在，导航到[http://localhost:3000/explorer/](http://localhost:3000/explorer/)上的REST API浏览器。尝试再次使用REST API浏览器调用其中一个业务网络REST API操作。这一次，调用应该能成功。
