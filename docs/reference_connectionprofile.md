@@ -69,9 +69,9 @@ _Please note: The simplified version of the connection profile will only work if
 - `hostnameOverride` 仅在测试环境中使用，当服务器证书的主机名与运行服务器进程的实际主机端点不匹配时，应用程序可以通过将此属性设置为服务器证书主机名的值来解决客户端TLS验证失败的问题。
 
 - 每个`cert`属性的实例都应该是包含PEM格式的TLS证书字符串。可以在每个`cert`属性中放置多个证书。
-  ```
-  -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----
-  ```
+```
+-----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----
+```
 
 - `mspid`是您的组织的成员服务提供商ID。它与你将用于与业务网络进行交互的登记ID相关联。
 
