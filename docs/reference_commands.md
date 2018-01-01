@@ -22,71 +22,71 @@ Hyperledger Composer命令行应用程序可以使用npm进行安装：
 
 `composer card create`
 
-从连接配置文件、业务网络名称和证书创建业务网络卡片：[composer card create](https://hyperledger.github.io/composer/reference/composer.card.create.html)
+从连接配置文件、业务网络名称和证书创建业务网络卡片：[composer card create](reference/composer.card.create.md)
 
 `composer card delete`
 
-删除本地导入的业务网络卡片：[compser card delete](https://hyperledger.github.io/composer/reference/composer.card.delete.html)
+删除本地导入的业务网络卡片：[compser card delete](reference/composer.card.delete.md)
 
 `composer card import`
 
-将创建的卡导入你的本地钱包：[composer card import](https://hyperledger.github.io/composer/reference/composer.card.import.html)
+将创建的卡导入你的本地钱包：[composer card import](reference/composer.card.import.md)
 
 `composer card export`
 
-从你的钱包中导出和打包一张卡片：[composer card export](https://hyperledger.github.io/composer/reference/composer.card.export.html)
+从你的钱包中导出和打包一张卡片：[composer card export](reference/composer.card.export.md)
 
 `composer card list`
 
-列出当前在钱包中的所有卡片：[composer card list](https://hyperledger.github.io/composer/reference/composer.card.list.html)
+列出当前在钱包中的所有卡片：[composer card list](reference/composer.card.list.md)
 
 ## 业务网络管理
 
 `composer network deploy`
 
-部署一个业务网络定义：[composer network deploy](https://hyperledger.github.io/composer/reference/composer.network.deploy.html)
+部署一个业务网络定义：[composer network deploy](reference/composer.network.deploy.md)
 
 `composer network undeploy`
 
-永久禁用一个业务网络定义：[composer network undeploy](https://hyperledger.github.io/composer/reference/composer.network.undeploy.html)
+永久禁用一个业务网络定义：[composer network undeploy](reference/composer.network.undeploy.md)
 
 `composer network list`
 
-列出已部署的业务网络：[composer network list](https://hyperledger.github.io/composer/reference/composer.network.list.html)
+列出已部署的业务网络：[composer network list](reference/composer.network.list.md)
 
 `composer network loglevel`
 
-返回或更新composer运行时的日志级别： [composer network loglevel](https://hyperledger.github.io/composer/reference/composer.network.logLevel.html)
+返回或更新composer运行时的日志级别： [composer network loglevel](reference/composer.network.logLevel.md)
 
 `composer network ping`
 
-测试连接一个已部署的业务网络连接：[composer network ping](https://hyperledger.github.io/composer/reference/composer.network.ping.html)
+测试连接一个已部署的业务网络连接：[composer network ping](reference/composer.network.ping.md)
 
 `composer network update`
 
-更新已部署的业务网络：[composer network update](https://hyperledger.github.io/composer/reference/composer.network.update.html)
+更新已部署的业务网络：[composer network update](reference/composer.network.update.md)
 
 `composer network upgrade`
 
-升级一个已部署业务网络的Hyperledger Composer运行时：[composer network upgrade](https://hyperledger.github.io/composer/reference/composer.network.upgrade.html)
+升级一个已部署业务网络的Hyperledger Composer运行时：[composer network upgrade](reference/composer.network.upgrade.md)
 
 `composer network start`
 
-将业务网络档案部署到一个已安装Hyperledger Composer运行时的Hyperledger Fabric peer：[composer network start](https://hyperledger.github.io/composer/reference/composer.network.start.html)
+将业务网络档案部署到一个已安装Hyperledger Composer运行时的Hyperledger Fabric peer：[composer network start](reference/composer.network.start.md)
 
 `composer runtime install`
 
-将Hyperledger Composer运行时安装到Hyperledger Fabric peer：[composer runtime install](https://hyperledger.github.io/composer/reference/composer.runtime.install.html)
+将Hyperledger Composer运行时安装到Hyperledger Fabric peer：[composer runtime install](reference/composer.runtime.install.md)
 
 `composer network upgrade`
 
-升级特定已部署业务网络的Hyperledger Composer运行时：[composer network upgrade](https://hyperledger.github.io/composer/reference/composer.network.upgrade.html)
+升级特定已部署业务网络的Hyperledger Composer运行时：[composer network upgrade](reference/composer.network.upgrade.md)
 
 ## 参与者和身份管理
 
 `composer participant add`
 
-将参与者添加到参与者库：[composer participant add](https://hyperledger.github.io/composer/reference/composer.participant.add.html)
+将参与者添加到参与者库：[composer participant add](reference/composer.participant.add.md)
 
 `composer identity issue`
 
