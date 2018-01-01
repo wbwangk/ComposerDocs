@@ -90,22 +90,22 @@ Hyperledger Composer命令行应用程序可以使用npm进行安装：
 
 `composer identity issue`
 
-向参与者发放新的身份：[composer identity issue](https://hyperledger.github.io/composer/reference/composer.identity.issue.html)
+向参与者发放新的身份：[composer identity issue](reference/composer.identity.issue.md)
 
 `composer identity bind`
 
-将现有身份绑定到参与者：[composer identity bind](https://hyperledger.github.io/composer/reference/composer.identity.bind.html)
+将现有身份绑定到参与者：[composer identity bind](reference/composer.identity.bind.md)
 
 `composer identity list`
 
-列出业务网络中的所有身份：[composer identity list](https://hyperledger.github.io/composer/reference/composer.identity.list.html)
+列出业务网络中的所有身份：[composer identity list](reference/composer.identity.list.md)
 
 `composer identity revoke`
 
-撤销参与者的身份：[composer identity revoke](https://hyperledger.github.io/composer/reference/composer.identity.revoke.html)
+撤销参与者的身份：[composer identity revoke](reference/composer.identity.revoke.md)
 
 ## 交易执行
 
 `composer transaction submit`
 
-提交交易去执行：[composer transaction submit](https://hyperledger.github.io/composer/reference/composer.transaction.submit.html)
+提交交易去执行：[composer transaction submit](reference/composer.transaction.submit.md)
