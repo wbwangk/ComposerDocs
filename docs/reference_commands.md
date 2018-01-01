@@ -12,11 +12,11 @@ Hyperledger Composer命令行应用程序可以使用npm进行安装：
 
 `composer archive create`
 
-从磁盘上的一个目录创建业务网络档案：[composer archive create](https://hyperledger.github.io/composer/reference/composer.archive.create.html)
+从磁盘上的一个目录创建业务网络档案：[composer archive create](reference/composer.archive.create.md)
 
 `composer archive list`
 
-验证磁盘上业务网络档案的内容：[composer archive list](https://hyperledger.github.io/composer/reference/composer.archive.list.html)
+验证磁盘上业务网络档案的内容：[composer archive list](reference/composer.archive.list.md)
 
 ## 业务网络卡片管理
 
