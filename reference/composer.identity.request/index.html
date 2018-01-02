@@ -8,7 +8,7 @@
   
   <meta name="author" content="wbwangk">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-  <title>Hyperledger Composer存档创建 - Hyperledger Composer中文文档</title>
+  <title>Composer身份请求 - Hyperledger Composer中文文档</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Hyperledger Composer\u5b58\u6863\u521b\u5efa";
-    var mkdocs_page_input_path = "reference/composer.archive.create.md";
-    var mkdocs_page_url = "/reference/composer.archive.create/";
+    var mkdocs_page_name = "Composer\u8eab\u4efd\u8bf7\u6c42";
+    var mkdocs_page_input_path = "reference/composer.identity.request.md";
+    var mkdocs_page_url = "/reference/composer.identity.request/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -337,63 +337,65 @@
                     
     <a class="" href="../../reference_commands/">Hyperledger Composer命令行</a>
                 </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.archive.create/">Hyperledger Composer存档创建</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.archive.list/">Hyperledger Composer档案列表</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.card.create/">Composer卡片创建</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.card.delete/">Composer卡片删除</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.card.export/">Composer卡片导出</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.card.import/">Composer卡片导入</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.card.list/">Composer卡片列表</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.identity.bind/">Composer身份绑定</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.identity.issue/">Composer身份颁发</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.identity.list/">Composer身份列表</a>
+                </li>
                 <li class="toctree-l3 current">
                     
-    <a class="current" href="./">Hyperledger Composer存档创建</a>
+    <a class="current" href="./">Composer身份请求</a>
     <ul class="subnav">
             
-    <li class="toctree-l4"><a href="#hyperledger-composer">Hyperledger Composer存档创建</a></li>
+    <li class="toctree-l4"><a href="#composer">Composer身份请求</a></li>
     
         <ul>
         
-            <li><a class="toctree-l5" href="#_1">选项</a></li>
+            <li><a class="toctree-l5" href="#_1">句法</a></li>
         
-            <li><a class="toctree-l5" href="#_2">命令和输出的示例</a></li>
+            <li><a class="toctree-l5" href="#_2">选项</a></li>
+        
+            <li><a class="toctree-l5" href="#_3">例子</a></li>
         
         </ul>
     
 
     </ul>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../composer.archive.list/">Composer.archive.list</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../composer.card.create/">Composer.card.create</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../composer.card.delete/">Composer.card.delete</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../composer.card.export/">Composer.card.export</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../composer.card.import/">Composer.card.import</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../composer.card.list/">Composer.card.list</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../composer.identity.bind/">Composer.identity.bind</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../composer.identity.issue/">Composer.identity.issue</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../composer.identity.list/">Composer.identity.list</a>
-                </li>
-                <li class="toctree-l3">
-                    
-    <a class="" href="../composer.identity.request/">Composer.identity.request</a>
                 </li>
                 <li class="toctree-l3">
                     
@@ -497,10 +499,10 @@
         
       
     
-    <li>Hyperledger Composer存档创建</li>
+    <li>Composer身份请求</li>
     <li class="wy-breadcrumbs-aside">
       
-        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/reference/composer.archive.create.md"
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/reference/composer.identity.request.md"
           class="icon icon-github"> Edit on GitHub</a>
       
     </li>
@@ -510,45 +512,38 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="hyperledger-composer">Hyperledger Composer存档创建<a class="headerlink" href="#hyperledger-composer" title="Permanent link">&para;</a></h1>
-<p><code>composer archive create</code>实用程序用于从目录的内容创建业务网络档案。</p>
-<p>要从当前“工作”目录中的源文件（即业务网络定义项目文件）创建档案：</p>
-<pre><code class="bash">composer archive create -a &lt;business-network-archive&gt;
-</code></pre>
-
-<p>或者</p>
-<p>指定路径（到源业务网络定义和目标档案文件（.bna文件）的目录）：</p>
-<pre><code class="bash">composer archive create --sourceType dir --sourceName &lt;dirpath&gt; -a digitalproperty-network.bna
-</code></pre>
-
-<h3 id="_1">选项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<pre><code class="bash">composer archive create --archiveFile digitialPropertyNetwork.zip --sourceType module --sourceName digitalproperty-network
+                <h1 id="composer">Composer身份请求<a class="headerlink" href="#composer" title="Permanent link">&para;</a></h1>
+<p><code>composer identity request</code>用于请求一个身份的证书和私钥。</p>
+<h2 id="_1">句法<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<pre><code class="bash">composer identity request
 
 Options:
-  --help             Show help  [boolean]
-  -v, --version      Show version number  [boolean]
-  --archiveFile, -a  Business network archive file name. Default is based on the Identifier of the BusinessNetwork  [string]
-  --sourceType, -t   The type of the input containg the files used to create the archive [ module | dir ]  [required]
-  --sourceName, -n   The Location to create the archive from e.g. NPM module directory or Name of the npm module to use  [required]
-Only one of either inputDir or moduleName must be specified.
+  --help              Show help  [boolean]
+  -v, --version       Show version number  [boolean]
+  --card, -c          Name of the network card to use  [string] [required]
+  --user, -u          The name of the identity for the card (if different from the card)  [string]
+  --enrollSecret, -s  The enrollment secret of the user (if different from the card)  [string]
+  --path, -d          path where to store the certificates and key  [string]
 </code></pre>
 
-<h2 id="_2">命令和输出的示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<pre><code class="bash">$ pwd
-/Users/dselman/dev/temp
-
-composer archive create --sourceType dir --sourceName . -a dist/digitalproperty-network.bna
-
-Creating Business Network Archive
-Looking for package.json of Business Network Definition in /Users/dselman/dev/temp/dist
-
-Description:Digital Property Network
-Name:digitalproperty-network
-Identifier:digitalproperty-network@0.0.1
-
-Written Business Network Definition Archive file to digitalproperty-network@0.0.1.bna
-Command completed successfully.
+<p>注意：当加上<code>-u</code>参数后，会覆盖卡片中的身份定义，这意味着仅适用了卡片中的连接配置文件。</p>
+<h2 id="_2">选项<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p><code>--card, -c</code></p>
+<p>指定连接到Comopser使用的业务网络卡片。</p>
+<p><code>--user, -u</code>
+业务网络卡片中含有身份和连接配置文件，如果想获取其他身份的证书和私钥（仅使用连接配置文件），就是使用这个参数。</p>
+<p><code>--enrollSecret, -s</code>
+与<code>-u</code>参数配合使用，表示身份的登记密码。</p>
+<p><code>--path, -d</code>
+是一个目录。获取的证书和私钥会保存到这个目录。</p>
+<h2 id="_3">例子<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>这个例子来自<a href="../../orials_deploy-to-fabric-multi-org/#1org1_1">为多个组织部署Hyperledger Fabric</a></p>
+<p>运行<code>composer identity request</code>命令获取Alice的证书，以便组织<code>Org1</code>作为业务网络管理员使用：</p>
+<pre><code class="bash">composer identity request -c PeerAdmin@byfn-network-org1-only -u admin -s adminpw -d alice
 </code></pre>
+
+<p>这个命令的<code>-u admin</code>和<code>-s adminpw</code>选项需要与Hyperledger Fabric CA (Certificate Authority)注册的默认用户一致。</p>
+<p>这个证书会被保存到当前目录的<code>alice</code>子目录中。创建了三个证书文件，但只有两个重要。它们是<code>admin-pub.pem</code>，证书(包括公钥)，和<code>admin-priv.pem</code>，私钥。只有文件<code>admin-pub.pem</code>适合与其他组织共享。文件<code>admin-priv.pem</code>必须秘密保存，它可以代表组织签署交易。</p>
               
             </div>
           </div>
@@ -556,10 +551,10 @@ Command completed successfully.
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../composer.archive.list/" class="btn btn-neutral float-right" title="Composer.archive.list">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../composer.identity.revoke/" class="btn btn-neutral float-right" title="Composer.identity.revoke">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../reference_commands/" class="btn btn-neutral" title="Hyperledger Composer命令行"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../composer.identity.list/" class="btn btn-neutral" title="Composer身份列表"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -589,10 +584,10 @@ Command completed successfully.
           <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../reference_commands/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../composer.identity.list/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../composer.archive.list/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../composer.identity.revoke/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
