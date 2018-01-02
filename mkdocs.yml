@@ -85,6 +85,7 @@ pages:
         - reference/composer.identity.bind.md
         - reference/composer.identity.issue.md
         - reference/composer.identity.list.md
+        - reference/composer.identity.request.md
         - reference/composer.identity.revoke.md
         - reference/composer.network.deploy.md
         - reference/composer.network.list.md
