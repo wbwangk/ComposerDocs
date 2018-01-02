@@ -1,6 +1,6 @@
 # Composer身份撤销
 
-`composer identity revoke`命令撤销参与者库中参与者的现有身份。请参阅[从参与者撤销身份](managing_identity-revoke.md)的任务以体会此命令或API。
+`composer identity revoke`命令撤销参与者库中参与者的现有身份。请参阅[从参与者撤销身份](../managing_identity-revoke.md)的任务以体会此命令或API。
 
 ## 句法
 ```bash
