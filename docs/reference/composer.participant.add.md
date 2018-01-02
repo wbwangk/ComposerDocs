@@ -1,6 +1,6 @@
 # Composer参与者添加
 
-`composer participant add`命令将参与者的新实例添加到参与者库中。查看“ [添加参与者](managing_participant-add.md) ”任务，了解使用此命令或API的演练。
+`composer participant add`命令将参与者的新实例添加到参与者库中。查看“ [添加参与者](../managing_participant-add.md) ”任务，了解使用此命令或API的演练。
 
 `data`选项必须包含一个代表要添加的参与者的序列化JSON串，并且必须用单引号包裹。
 
