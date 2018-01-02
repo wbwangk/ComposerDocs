@@ -1,6 +1,6 @@
 # Hyperledger Composer网络启动
 
-`composer network start`实用程序用于将业务网络档案从本地磁盘部署到Hyperledger Fabric v1.0网络。在使用此命令之前，请阅读[部署和更新业务网络](business-network_bnd-deploy.md)主题。
+`composer network start`实用程序用于将业务网络档案从本地磁盘部署到Hyperledger Fabric v1.0网络。在使用此命令之前，请阅读[部署和更新业务网络](../business-network_bnd-deploy.md)主题。
 
 *请注意*：你**必须**先使用`composer runtime install`命令将Hyperledger Composer运行时安装到Hyperledger Fabric peer节点。`composer runtime install`命令中指定的业务网络名称必须与`composer network start`命令中指定的业务网络名称相同。
 
