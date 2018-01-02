@@ -1,6 +1,6 @@
 # Composer身份颁发
 
-`composer identity issue`命令向参与者库（关联到某个业务网络）中的一个参与者颁发一个新的身份。通过查看任务[为参与者颁发新身份](managing_identity-issue.md)，漫游此命令或API。
+`composer identity issue`命令向参与者库（关联到某个业务网络）中的一个参与者颁发一个新的身份。通过查看任务[为参与者颁发新身份](../managing_identity-issue.md)，漫游此命令或API。
 
 ## 句法
 ```bash
