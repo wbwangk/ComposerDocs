@@ -1,6 +1,6 @@
 # Composer身份绑定
 
-`composer identity bind`命令将现有身份绑定到参与者库中的参与者。查看任务[将现有身份绑定到参与者](managing/identity-bind.md) 以便体会此命令或API。
+`composer identity bind`命令将现有身份绑定到参与者库中的参与者。查看任务[将现有身份绑定到参与者](../managing/identity-bind.md) 以便体会此命令或API。
 
 ## 句法
 
