@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+  <title>Hyperledger Composer网络部署 - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Hyperledger Composer\u7f51\u7edc\u90e8\u7f72";
+    var mkdocs_page_input_path = "reference/composer.network.deploy.md";
+    var mkdocs_page_url = "/reference/composer.network.deploy/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../..">欢迎</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">介绍</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../introduction_introduction/">介绍</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../introduction_key-concepts/">关键概念</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../introduction_solution-architecture/">典型解决方案架构</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">安装</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../installing_using-playground-locally/">本地安装Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../installing_development-tools/">安装开发环境</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../tutorials_tutorials/">教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">开发业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../business-network_business-network-index/">开发业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../business-network_businessnetworkdefinition/">业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../business-network_bnd-create/">创建一个业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../business-network_bnd-deploy/">部署业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../business-network_publishing-events/">发送事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../business-network_testing/">测试业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../business-network_bnd-publish/">发布模型或业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../business-network_query/">查询和过滤业务网络数据</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../business-network_programmatic-access-control/">可编程访问控制</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../business-network_historian/">Hyperledger Composer历史库</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">开发应用程序</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../applications_applications-index/">开发应用程序</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications_node/">编写Node.js应用程序</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications_web/">编写Web或移动应用</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../applications_subscribing-to-events/">订阅事件</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../integrating_integrating-index/">集成现有系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../managing_managingindex/">管理已部署业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../reference-index/">参考</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference_MeetTheModules/">Hyperledger Composer npm模块</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference_acl_language/">访问控制语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference_model-compatibility/">模型兼容性</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class=" current">
+                    
+    <span class="caption-text">Hyperledger Composer命令行</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../../reference_commands/">Hyperledger Composer命令行</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.archive.create/">Hyperledger Composer存档创建</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.archive.list/">Hyperledger Composer档案列表</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.card.create/">Composer卡片创建</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.card.delete/">Composer卡片删除</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.card.export/">Composer卡片导出</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.card.import/">Composer卡片导入</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.card.list/">Composer卡片列表</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.identity.bind/">Composer身份绑定</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.identity.issue/">Composer身份颁发</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.identity.list/">Composer身份列表</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.identity.revoke/">Composer身份撤销</a>
+                </li>
+                <li class="toctree-l3 current">
+                    
+    <a class="current" href="./">Hyperledger Composer网络部署</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l4"><a href="#hyperledger-composer">Hyperledger Composer网络部署</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l5" href="#_1">选项</a></li>
+        
+            <li><a class="toctree-l5" href="#_2">输出示例</a></li>
+        
+            <li><a class="toctree-l5" href="#hyperledger-fabric">Hyperledger Fabric背书策略</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.network.list/">Composer.network.list</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.network.logLevel/">composer.network.logLevel</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.network.ping/">Composer.network.ping</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.network.start/">Composer.network.start</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.network.undeploy/">Composer.network.undeploy</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.network.update/">Composer.network.update</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.network.upgrade/">Composer.network.upgrade</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.participant.add/">Composer.participant.add</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.runtime.install/">Composer.runtime.install</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../composer.transaction.submit/">Composer.transaction.submit</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../../api/api-doc-index/">API参考</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>参考 &raquo;</li>
+        
+      
+        
+          <li>Hyperledger Composer命令行 &raquo;</li>
+        
+      
+    
+    <li>Hyperledger Composer网络部署</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/reference/composer.network.deploy.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hyperledger-composer">Hyperledger Composer网络部署<a class="headerlink" href="#hyperledger-composer" title="Permanent link">&para;</a></h1>
+<p><code>composer network deploy</code>实用程序用于将业务网络档案从本地磁盘部署到Hyperledger Fabric v1.0网络。在使用此命令之前，请阅读<a href="../business-network_bnd-deploy.html">部署和更新业务网络</a>文档。</p>
+<pre><code class="bash">composer network deploy -a digitalPropertyNetwork.bna -A admin -S -c PeerAdmin@hlfv1 -f admincard
+</code></pre>
+
+<h3 id="_1">选项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<pre><code class="bash">composer network deploy [options]
+
+Options:
+  --help                             Show help  [boolean]
+  -v, --version                      Show version number  [boolean]
+  --archiveFile, -a                  The business network archive file name  [string] [required]
+  --loglevel, -l                     The initial loglevel to set  [choices: &quot;INFO&quot;, &quot;WARNING&quot;, &quot;ERROR&quot;, &quot;DEBUG&quot;]
+  --option, -o                       Options that are specific specific to connection. Multiple options are specified by repeating this option  [string]
+  --optionsFile, -O                  A file containing options that are specific to connection  [string]
+  --networkAdmin, -A                 The identity name of the business network administrator  [string]
+  --networkAdminCertificateFile, -C  The certificate of the business network administrator  [string]
+  --networkAdminEnrollSecret, -S     Use enrollment secret for the business network administrator  [boolean]
+  --card, -c                         The cardname to use to deploy the network  [string]
+  --file, -f                         File name of the card to be created  [string]
+</code></pre>
+
+<h2 id="_2">输出示例<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<pre><code class="bash">composer network deploy -a digitalPropertyNetwork.bna -A admin -S -c PeerAdmin@hlfv1 -f admincard
+
+Deploying business network from archive digitalPropertyNetwork.bna
+Business network definition:
+    Identifier: digitalproperty-network@0.0.1
+    Description: Digital Property Network
+Deploying business network definition. This may take a minute...
+Command completed successfully.
+</code></pre>
+
+<h2 id="hyperledger-fabric">Hyperledger Fabric背书策略<a class="headerlink" href="#hyperledger-fabric" title="Permanent link">&para;</a></h2>
+<p><code>--option, -o</code>选项和<code>--optionsFile, -O</code>选项允许发送特定于连接的信息。Hyperledger Fabric v1.0背书策略可以通过几种方式使用<code>-o</code>和<code>-O</code>选项发送。</p>
+<ul>
+<li>使用该<code>-o</code>选项，背书策略可以作为单行JSON字符串发送，如下所示：</li>
+</ul>
+<pre><code class="bash">composer network deploy -o endorsementPolicy='{&quot;identities&quot;: [.... }'
+</code></pre>
+
+<ul>
+<li>使用<code>-o</code>选项，背书策略可以作为文件路径发送，如下所示：</li>
+</ul>
+<pre><code class="bash">composer network deploy -o endorsementPolicyFile=/path/to/file/endorsementPolicy.json
+</code></pre>
+
+<p>在这种情况下，背书策略文件应该遵循以下格式：</p>
+<pre><code class="json">{&quot;identities&quot;:[...],
+    &quot;policy&quot;: {...}}
+</code></pre>
+
+<ul>
+<li>使用该<code>-O</code>选项，背书策略可以作为文件路径发送，如下所示：</li>
+</ul>
+<pre><code class="bash">composer network deploy -O /path/to/file/options.json
+</code></pre>
+
+<p>在这种情况下，选项文件应该遵循以下格式：</p>
+<pre><code class="json">        {&quot;endorsementPolicy&quot;: {&quot;Identities&quot;: [...].
+            &quot;policy: {...}&quot;
+          },
+          &quot;someOtherOption&quot;: &quot;A Value&quot;
+        }
+</code></pre>
+
+<p>有关编写Hyperledger Fabric背书策略的更多信息，请参阅<a href="https://fabric-sdk-node.github.io/global.html#Policy">Hyperledger结构Node.js SDK文档</a>。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../composer.network.list/" class="btn btn-neutral float-right" title="Composer.network.list">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../composer.identity.revoke/" class="btn btn-neutral" title="Composer身份撤销"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../composer.identity.revoke/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../composer.network.list/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/require.js"></script>
+      <script src="../../search/search.js"></script>
+
+</body>
+</html>

@@ -319,6 +319,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../reference_MeetTheModules/">Hyperledger Composer npm模块</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../reference_cto_language/">建模语言</a>
                 </li>
                 <li class="">
@@ -331,6 +335,10 @@
                 </li>
                 <li class="">
                     
+    <a class="" href="../reference_model-compatibility/">模型兼容性</a>
+                </li>
+                <li class="">
+                    
     <a class="" href="../reference_connectionprofile/">连接配置文件</a>
                 </li>
                 <li class="">
@@ -339,7 +347,101 @@
                 </li>
                 <li class="">
                     
-    <a class="" href="../reference_commands/">Hyperledger Composer命令行</a>
+    <span class="caption-text">Hyperledger Composer命令行</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference_commands/">Reference commands</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.archive.create/">Composer.archive.create</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.archive.list/">Composer.archive.list</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.card.create/">Composer.card.create</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.card.delete/">Composer.card.delete</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.card.export/">Composer.card.export</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.card.import/">Composer.card.import</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.card.list/">Composer.card.list</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.identity.bind/">Composer.identity.bind</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.identity.issue/">Composer.identity.issue</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.identity.list/">Composer.identity.list</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.identity.revoke/">Composer.identity.revoke</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.deploy/">Composer.network.deploy</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.list/">Composer.network.list</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.logLevel/">composer.network.logLevel</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.ping/">Composer.network.ping</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.start/">Composer.network.start</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.undeploy/">Composer.network.undeploy</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.update/">Composer.network.update</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.upgrade/">Composer.network.upgrade</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.participant.add/">Composer.participant.add</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.runtime.install/">Composer.runtime.install</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.transaction.submit/">Composer.transaction.submit</a>
+                </li>
+    </ul>
                 </li>
                 <li class="">
                     
@@ -348,6 +450,17 @@
                 <li class="">
                     
     <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../api/api-doc-index/">API参考</a>
                 </li>
     </ul>
 	    </li>
@@ -429,43 +542,21 @@
 <p>业务网络中必须存在一个参与者，以绑定创建业务网络卡片所需的身份。</p>
 <p>当在Playground中颁发身份时，可以选择保存身份以用于“业务网络”页面。通过选择此选项，将为当前业务网络的颁发身份创建业务网络卡片。一旦你退出当前业务网络，业务网络卡片将出现在你的业务网络页面上，而且该业务网络卡片可以从该位置导出并与其他用户共享。</p>
 <h3 id="_3">创建业务网络卡片<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>从“ <strong>业务网络”</strong>页面中，选择一个用于连接到你的业务网络的身份。点击<strong>立即连接</strong>。<em>请注意：</em>你必须使用有权创建新身份的身份。</p>
-</li>
-<li>
-<p>如果需要，请创建你要为其分配身份的参与者：</p>
-</li>
-<li>
-<p>单击<strong>测试</strong>选项卡，然后单击<strong>创建新参与者</strong>。</p>
-</li>
-<li>
-<p>完成参与者定义并单击<strong>新建</strong>。
+<p>1.从“ <strong>业务网络”</strong>页面中，选择一个用于连接到你的业务网络的身份。点击<strong>立即连接</strong>。<em>请注意：</em>你必须使用有权创建新身份的身份。</p>
+<p>2.如果需要，请创建你要为其分配身份的参与者：<br />
+   - 单击<strong>测试</strong>选项卡，然后单击<strong>创建新参与者</strong>。<br />
+   - 完成参与者定义并单击<strong>新建</strong>。<br />
 <a href="https://hyperledger.github.io/composer/assets/img/tutorials/playground/vs_code_11.mp4">视频</a></p>
-</li>
-<li>
-<p>点击右上方你的身份名称，然后在下拉菜单中点击<strong>ID Registry</strong>。</p>
-</li>
-<li>
-<p>点击<strong>+颁发新的ID</strong>。</p>
-</li>
-<li>
-<p>选择一个<strong>ID名称</strong>，并输入一个现有的<strong>参与者</strong>关联新的身份。这里提供了一个预见性服务来自动完成已知的参与者。</p>
-</li>
-<li>
-<p>点击<strong>新建</strong>。</p>
-</li>
-<li>
-<p>点击<strong>添加到我的钱包</strong>。将业务网络卡片添加到你的“业务网络”页面可让你使用它连接到业务网络，或将其导出供其他人使用。</p>
-</li>
-</ol>
+<p>3.点击右上方你的身份名称，然后在下拉菜单中点击<strong>ID Registry</strong>。</p>
+<p>4.点击<strong>+颁发新的ID</strong>。</p>
+<p>5.选择一个<strong>ID名称</strong>，并输入一个现有的<strong>参与者</strong>关联新的身份。这里提供了一个预见性服务来自动完成已知的参与者。</p>
+<p>6.点击<strong>新建</strong>。</p>
+<p>7.点击<strong>添加到我的钱包</strong>。将业务网络卡片添加到你的“业务网络”页面可让你使用它连接到业务网络，或将其导出供其他人使用。</p>
 <p>该<strong>业务网络</strong>页面现在应该显示新的业务网络卡片。
 <a href="https://hyperledger.github.io/composer/assets/img/tutorials/playground/vs_code_22.mp4">视频</a></p>
 <h3 id="_4">导出业务网络卡片<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>业务网络卡片从Playground的<strong>业务网络</strong>页面导出，与希望导出的业务网络卡片进行交互，这个过程只有一步。</p>
-<ul>
-<li>在“ <strong>业务网络”</strong>页面上，单击你想要导出的业务网络卡上的<strong>导出</strong>图标。业务网络卡片会作为<code>.card</code>文件下载。</li>
-</ul>
+<p>-在“ <strong>业务网络”</strong>页面上，单击你想要导出的业务网络卡上的<strong>导出</strong>图标。业务网络卡片会作为<code>.card</code>文件下载。</p>
 <p><em>请注意</em>：如果你导出一张从未用过的业务网络卡片，例如发给新的参与者的，它将包含获取证书和私钥所需的登记ID和登记密码，证书和私钥用于识别参与者。或者，如果你导出了之前使用过的业务网络卡片，它将已经包含了证书和私钥。有关参与者和身份的更多信息，请参阅我们的<a href="../managing_participantsandidentities/">主要文档</a>。</p>
 <p><strong>重要</strong>：导出的身份卡片应该小心处理，因为它们包含不受保护的证书。我们建议你只发送已加密的身份卡片。</p>
 <h2 id="_5">获得业务网络的访问权限<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
