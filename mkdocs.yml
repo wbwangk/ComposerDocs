@@ -73,7 +73,8 @@ pages:
       - 模型兼容性: reference_model-compatibility.md
       - 连接配置文件: reference_connectionprofile.md
       - 交易处理器函数: reference_js_scripts.md
-      - Hyperledger Composer命令行: reference_commands.md
+      - Hyperledger Composer命令行: 
+        - reference_commands.md
         - reference/composer.archive.create.md
         - reference/composer.archive.list.md
         - reference/composer.card.create.md
