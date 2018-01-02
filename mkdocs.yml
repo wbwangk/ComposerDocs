@@ -76,6 +76,8 @@ pages:
       - Hyperledger Composer命令行: reference_commands.md
       - Hyperledger Composer REST服务器: reference_rest-server.md
       - Hyperledger Composer术语: reference_glossary.md
+    - API参考:
+      - API参考: api/api-doc-index.md
 
 markdown_extensions:
   - extra
