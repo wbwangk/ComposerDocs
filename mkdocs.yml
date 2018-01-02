@@ -74,6 +74,28 @@ pages:
       - 连接配置文件: reference_connectionprofile.md
       - 交易处理器函数: reference_js_scripts.md
       - Hyperledger Composer命令行: reference_commands.md
+        - reference/composer.archive.create.md
+        - reference/composer.archive.list.md
+        - reference/composer.card.create.md
+        - reference/composer.card.delete.md
+        - reference/composer.card.export.md
+        - reference/composer.card.import.md
+        - reference/composer.card.list.md
+        - reference/composer.identity.bind.md
+        - reference/composer.identity.issue.md
+        - reference/composer.identity.list.md
+        - reference/composer.identity.revoke.md
+        - reference/composer.network.deploy.md
+        - reference/composer.network.list.md
+        - reference/composer.network.logLevel.md
+        - reference/composer.network.ping.md
+        - reference/composer.network.start.md
+        - reference/composer.network.undeploy.md
+        - reference/composer.network.update.md
+        - reference/composer.network.upgrade.md
+        - reference/composer.participant.add.md
+        - reference/composer.runtime.install.md
+        - reference/composer.transaction.submit.md
       - Hyperledger Composer REST服务器: reference_rest-server.md
       - Hyperledger Composer术语: reference_glossary.md
     - API参考:
