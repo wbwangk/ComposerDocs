@@ -1,6 +1,6 @@
 # Composer身份列表
 
-`composer identity list`命令列出了业务网络中的所有身份。查看任务[列出业务网络中的所有身份](managing_identity-list.md) ，以便体会此命令或API。
+`composer identity list`命令列出了业务网络中的所有身份。查看任务[列出业务网络中的所有身份](../managing_identity-list.md) ，以便体会此命令或API。
 
 ## 句法
 
