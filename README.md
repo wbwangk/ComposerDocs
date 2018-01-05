@@ -1,6 +1,6 @@
 ### 安装mkdocs
-本地环境是ubuntu16，已经预装了python2.7，但需要自己装pip。  
-pip的安装参考[这个文档](http://pip.readthedocs.io/en/latest/installing/)。  
+本地环境是vagrant管理下的ubuntu16，已经预装了python2.7，但需要自己装pip。  
+pip的安装参考[这个文档](http://pip.readthedocs.io/en/latest/installing/)。  
 用pip安装mkdocs并安装必要依赖：
 ```
 pip install mkdocs  
