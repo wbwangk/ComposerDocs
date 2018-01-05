@@ -46,3 +46,4 @@ cd ComposerDocs
 mkdocs build
 mkdocs gh-deploy
 ```
+`mkdocs gh-deploy`会提示输入github账号和口令。（fork到自己github账号下再运行上述脚本）
