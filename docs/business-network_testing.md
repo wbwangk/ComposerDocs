@@ -31,7 +31,12 @@ Hyperledger Composer支持三种类型的测试：交互式测试、自动化单
 ## 参考
 
 - [**Composer CLI命令**](reference_commands.md)
+
 - [**Mocha**](https://mochajs.org/)
+
 - [**Chai**](http://chaijs.com/)
+
 - [**Sinon**](http://sinonjs.org/)
+
 - [**Istambul**](https://istanbul.js.org/)
+
