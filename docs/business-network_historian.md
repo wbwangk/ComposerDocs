@@ -110,5 +110,8 @@ rule historianAccess{
 ## 接下来是什么？
 
 - [将查询应用到业务网络。](business-network_query.md)
+
 - [从交易中发送事件。](business-network_publishing-events.md)
+
 - [Hyperledger Composer API文档。](api/api-doc-index.md)
+
