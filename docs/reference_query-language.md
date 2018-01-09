@@ -63,4 +63,4 @@ query Q17 {
 
 - [将查询应用到业务网络。](business-network_query.md)
 - [从交易中发出事件。](business-network_publishing-events.md)
-- [Hyperledger Composer API文档。](https://hyperledger.github.io/composer/api/api-doc-index.html)
+- [Hyperledger Composer API文档。](api/api-doc-index.md)
