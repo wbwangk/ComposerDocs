@@ -169,4 +169,5 @@ return this.bizNetworkConnection.submitTransaction(resource);
 ## 参考
 
 - [**JavaScript API文档**](api/api-doc-index.md)
+
 - [**承诺教程**](https://scotch.io/tutorials/understanding-javascript-promises-pt-i-background-basics)
