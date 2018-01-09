@@ -25,5 +25,8 @@ Hyperledger Composer支持现有的[Hyperledger Fabric区块链](https://hyperle
 ## 我从哪里出发？
 
 - 要立即尝试Hyperledger Composer，请参阅[在线Playground](https://hyperledger.github.io/composer/installing/getting-started-with-playground.html)
+
 - 有关Composer组件和概念的介绍，请参阅[重要概念](introduction_key-concepts.html)
+
 - 有关使用Composer构建的典型解决方案的架构概述，请参阅“ [典型解决方案架构”](introduction_solution-architecture.md)
+
