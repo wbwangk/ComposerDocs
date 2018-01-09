@@ -2,14 +2,14 @@
 
 在部署业务网络定义之前，必须将其打包到**业务网络档案**（.bna）文件中。`composer archive create`命令用于从磁盘上的业务网络定义文件夹创建业务网络档案文件。
 
-一旦创建了业务网络档案文件，就可以使用[`composer runtime install`](https://hyperledger.github.io/composer/reference/composer.runtime.install.html)命令和[`composer network start`](https://hyperledger.github.io/composer/reference/composer.network.start.html)命令将其部署到运行时。
+一旦创建了业务网络档案文件，就可以使用[`composer runtime install`](reference/composer.runtime.install.md)命令和[`composer network start`](reference/composer.network.start.md)命令将其部署到运行时。
 
 例如：
 ```bash
 composer runtime install -n tutorial-network -c PeerAdmin@fabric-network
 ```
 
-要更新已部署业务网络的业务网络定义，请使用[`composer network update`](https://hyperledger.github.io/composer/reference/composer.network.update.html)CLI命令。
+要更新已部署业务网络的业务网络定义，请使用[`composer network update`](reference/composer.network.update.md)CLI命令。
 
 ## 将业务网络部署到Hyperledger Fabric v1.0
 
@@ -46,7 +46,7 @@ rule NetworkAdminSystem {
 
 Hyperledger Fabric peer管理员可能没有权限使用Hyperledger Fabric证书颁发机构（CA）颁发新身份。这可能会限制业务网络管理员加入其他组织的其他参与者的能力。因此，最好创建一个业务网络管理员，让该管理员具有使用Hyperledger Fabric Certificate Authority（CA）颁发新身份的权限。
 
-你可以向[`composer network start`](https://hyperledger.github.io/composer/reference/composer.network.start.html)命令添加选项来指定在部署业务网络期间应创建的业务网络管理员。
+你可以向[`composer network start`](reference/composer.network.start.md)命令添加选项来指定在部署业务网络期间应创建的业务网络管理员。
 
 如果业务网络管理员具有登记ID和登记密码，则可以使用`-A`（业务网络管理员）和`-S`（业务网络管理员用的登记密码）标志。例如，以下命令将为现有`admin`登记ID 创建一个业务网络管理员：
 ```bash
