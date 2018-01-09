@@ -13,4 +13,6 @@ Hyperledger Composer可以选择使用`npm`包管理器来发布业务网络和�
 ## 参考
 
 - [**业务网络示例发布到NPM**](https://www.npmjs.com/package/perishable-network)
+
 - [**发布到npm的示例模型**](https://www.npmjs.com/package/animaltracking-model)
+
