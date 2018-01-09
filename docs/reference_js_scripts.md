@@ -250,4 +250,6 @@ function sampleTransaction(tx) {
 交易处理函数也可以用来：
 
 - [**定义查询**](business-network_query.md)以从couchDB数据库获取有关区块链世界状态的信息。
+
 - [**定义**](business-network_publishing-events.md)将事件数据发送给应用程序的事件。
+
