@@ -2,7 +2,7 @@
 
 Hyperledger Composer Playground为业务网络的配置、部署和测试提供了一个用户界面。高级Playground功能允许用户管理业务网络的安全性，邀请参与者到业务网络并连接到多个区块链业务网络。
 
-如果你对Playground不熟悉，建议你遵循 [Playground教程](https://hyperledger.github.io/composer/tutorials/playground-tutorial.html)，该教程将指导你完成创建、部署和测试新区块链业务网络的过程，然后再开始与业务网络卡片交互。
+如果你对Playground不熟悉，建议你遵循 [Playground教程](tutorials_playground-tutorial.md)，该教程将指导你完成创建、部署和测试新区块链业务网络的过程，然后再开始与业务网络卡片交互。
 
 **请注意**：如果两个或更多用户使用Hyperledger Composer Playground连接到Hyperledger Fabric的同一实例，请确保某用户更改业务网络定义后，其他用户及时刷新浏览器。刷新浏览器能接受其他用户对业务网络定义的更改。如果业务网络改变而不接受其他用户的更改，则更改将会丢失。
 
