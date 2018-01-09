@@ -8,7 +8,7 @@ Hyperledger Composer Historian提供了一个库，其中包含历史交易的�
 
 ### Hyperledger Composer npm模块
 
-[**Hyperledger Composer包含许多npm模块**](https://hyperledger.github.io/composer/reference/MeetTheModules.html)，提供使用Hyperledger Composer开发解决方案所必需的API和命令行工具。
+[**Hyperledger Composer包含许多npm模块**](reference_MeetTheModules.md)，提供使用Hyperledger Composer开发解决方案所必需的API和命令行工具。
 
 ### 建模语言
 
