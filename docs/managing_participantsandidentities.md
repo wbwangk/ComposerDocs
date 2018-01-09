@@ -79,9 +79,9 @@ Hyperledger Composer Node.js客户端API、REST API和命令行接口都可以�
 
 ## 相关参考
 
-[composer参与者添加](https://hyperledger.github.io/composer/stable/reference/composer.participant.add.html)  
-[composer身份颁发](https://hyperledger.github.io/composer/stable/reference/composer.identity.issue.html)  
-[composer身份绑定](https://hyperledger.github.io/composer/stable/reference/composer.identity.bind.html)  
-[composer身份撤销](https://hyperledger.github.io/composer/stable/reference/composer.identity.revoke.html)  
-[composer身份列表](https://hyperledger.github.io/composer/stable/reference/composer.identity.list.html)  
+[composer参与者添加](reference/composer.participant.add.md)  
+[composer身份颁发](reference/composer.identity.issue.md)  
+[composer身份绑定](reference/composer.identity.bind.md)  
+[composer身份撤销](reference/composer.identity.revoke.md)  
+[composer身份列表](reference/composer.identity.list.md)  
  
