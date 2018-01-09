@@ -53,7 +53,7 @@ query Q18 {
 
 查询可以通过调用*buildQuery*或*query * API 来调用。*BuildQuery* API需要在API输入中指定整个查询字符串。*query* API需要你指定要运行的查询的名称。
 
-有关查询API的更多信息，请参阅[API文档](https://hyperledger.github.io/composer/api/api-doc-index.html)。
+有关查询API的更多信息，请参阅[API文档](api/api-doc-index.md)。
 
 ### 查询访问控制
 
