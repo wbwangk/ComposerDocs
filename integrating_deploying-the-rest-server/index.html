@@ -620,9 +620,15 @@ RUN npm install --production loopback-connector-mongodb passport-github &amp;&am
 <h2 id="_2">最后的笔记<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>在本指南中，你已经看到了如何使用Docker启动REST服务器的单个实例，其中单个实例被配置为使用MongoDB作为持久数据存储。要获得真正高度可用的REST服务器的生产部署，你需要：</p>
 <ul>
-<li>配置持久数据存储的高可用性实例，例如MongoDB副本集。</li>
-<li>运行REST服务器Docker镜像的多个实例。通过使用<code>--name</code>参数更改Docker容器的名称以及使用参数<code>-p 3000:3000</code>更新或删除后续REST服务器实例的主机端口映射。</li>
-<li>部署负载均衡器（例如Nginx），以便将客户端的REST请求分发到REST服务器的所有实例。</li>
+<li>
+<p>配置持久数据存储的高可用性实例，例如MongoDB副本集。</p>
+</li>
+<li>
+<p>运行REST服务器Docker镜像的多个实例。通过使用<code>--name</code>参数更改Docker容器的名称以及使用参数<code>-p 3000:3000</code>更新或删除后续REST服务器实例的主机端口映射。</p>
+</li>
+<li>
+<p>部署负载均衡器（例如Nginx），以便将客户端的REST请求分发到REST服务器的所有实例。</p>
+</li>
 </ul>
 <p>完成这三项任务后，你应能够停止、重新启动或删除任何REST服务器实例（但不是全部！），而不会丢失通过REST访问已部署的业务网络的访问。</p>
               
