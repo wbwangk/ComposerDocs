@@ -1,5 +1,5 @@
 ## 部署Hyperledger Composer网络到多组织Fabric
-[原文：Deploying a Hyperledger Composer blockchain business network to Hyperledger Fabric (multiple organizations)](https://hyperledger.github.io/composer/unstable/tutorials/deploy-to-fabric-multi-org.html)   
+[原文：Deploying a Hyperledger Composer blockchain business network to Hyperledger Fabric (multiple organizations)](https://hyperledger.github.io/composer/tutorials/deploy-to-fabric-multi-org.html)   
 
 这个教程示范了在多组织场景下的管理员部署一个区块链业务网络到某Hyperledger Fabric实例必须执行的几个步骤，包括怎样生成Hyperledger Composer配置。
 
