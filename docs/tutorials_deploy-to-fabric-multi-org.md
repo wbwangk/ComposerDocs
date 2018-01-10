@@ -72,22 +72,27 @@ BYFN网络由两个组织组成：`Org1`和`Org2`。组织`Org1`使用域名`org
 
 #### 网络组件
 Hyperledger Fabric网络由下面几个组件组成：
- - Org1的两个peer节点，叫peer0.org1.example.com 和 peer1.org1.example.com  
-   - peer0的请求端口是7051  
-   - peer0的事件hub端口是7053  
-   - peer1的请求端口是8051  
-   - peer1的事件hub端口是8053  
+ - Org1的两个peer节点，叫peer0.org1.example.com 和 peer1.org1.example.com   
+  peer0的请求端口是7051   
+
+ - peer0的事件hub端口是7053  
+  peer1的请求端口是8051  
+  peer1的事件hub端口是8053  
+  
  - 一个Org1的CA(Certificate Authority)，叫 ca.org1.example.com  
-   - CA端口是7054  
+  CA端口是7054  
+  
  - Org2的两个peer节点，叫peer0.org2.example.com 和 peer1.org2.example.com  
-   - peer0的请求端口是9051  
-   - peer0的事件hub端口是9053  
-   - peer1的请求端口是10051  
-   - peer1的事件hub端口是10053  
+  peer0的请求端口是9051  
+  peer0的事件hub端口是9053  
+  peer1的请求端口是10051  
+  peer1的事件hub端口是10053  
+
  - 一个Org1的CA(Certificate Authority)，叫 ca.org1.example.com  
-   - CA端口是7054  
+  CA端口是7054  
+
  - 一个排序节点，叫orderer.example.com  
-   - 排序端口是7050  
+  排序端口是7050  
 
 这些组件运行在Docker容器中。当在一个Docker容器中运行Hyperledger Composer，与Hyperledger Fabric网络交互可以使用上面的名字(如`peer0.org1.example.com`)。
 
