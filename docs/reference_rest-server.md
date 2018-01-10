@@ -42,7 +42,7 @@ COMPOSER_AUTHENTICATION=true
 例如：
 ```
 COMPOSER_MULTIUSER=true
-``
+```
 
 有关更多信息，请参阅[为REST服务器启用多用户模式](integrating_enabling-multiuser.md)。
 
