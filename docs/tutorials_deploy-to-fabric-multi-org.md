@@ -131,8 +131,8 @@ crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/ms
 
 除了管理员，`Org1`和`Org2`的CA(Certificate Authority)还配置了一个默认用户。这个默认用户有一个叫`admin`的登记ID和为`adminpw`的登记密码。然而，这个用户没有部署区块链业务网络的权限。
 
-#### 信道
-创建了一个叫`mychannel`的信道。所有四个节点`peer0.org1.example.com`、`peer1.org1.example.com`、`peer0.org2.example.com`和`peer1.org2.example.com`已经加入了这个信道。
+#### 通道
+创建了一个叫`mychannel`的通道。所有四个节点`peer0.org1.example.com`、`peer1.org1.example.com`、`peer0.org2.example.com`和`peer1.org2.example.com`已经加入了这个通道。
 
 ### ①步骤三：创建Org1的连接配置文件
 `Org1`需要两个连接配置文件。一个连接配置文件仅包含属于`Org1`的peer节点，另一个连接配置文件包含属于`Org1`和`Org2`的peer节点。
