@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="wbwangk">
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>为多个组织部署Hyperledger Fabric(v0.17) - Hyperledger Composer中文文档</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "\u4e3a\u591a\u4e2a\u7ec4\u7ec7\u90e8\u7f72Hyperledger Fabric(v0.17)";
+    var mkdocs_page_input_path = "tutorials_deploy-to-fabric-multi-org-v0.17.md";
+    var mkdocs_page_url = "/tutorials_deploy-to-fabric-multi-org-v0.17/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Hyperledger Composer中文文档</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">欢迎</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">介绍</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../introduction_introduction/">介绍</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../introduction_key-concepts/">关键概念</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../introduction_solution-architecture/">典型解决方案架构</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">安装</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../installing_using-playground-locally/">本地安装Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../installing_development-tools/">安装开发环境</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">教程</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../tutorials_tutorials/">教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_playground-tutorial/">Playground教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_developer-tutorial/">开发者教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_queries/">查询教程</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-single-org/">为单个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../tutorials_deploy-to-fabric-multi-org/">为多个组织部署Hyperledger Fabric</a>
+                </li>
+                <li class=" current">
+                    
+    <a class="current" href="./">为多个组织部署Hyperledger Fabric(v0.17)</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#hyperledger-composerhyperledger-fabric">将Hyperledger Composer区块链业务网络部署到Hyperledger Fabric（多个组织）</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#org1org2">(灰)示例步骤：遵循Org1和Org2的步骤</a></li>
+        
+            <li><a class="toctree-l4" href="#org1">(绿)示例步骤：遵循Org1的步骤</a></li>
+        
+            <li><a class="toctree-l4" href="#org2">(紫)示例步骤：Org2遵循的步骤</a></li>
+        
+            <li><a class="toctree-l4" href="#_1">先决条件</a></li>
+        
+            <li><a class="toctree-l4" href="#hyperledger-fabric">(灰)第一步：启动Hyperledger Fabric网络</a></li>
+        
+            <li><a class="toctree-l4" href="#hyperledger-fabric_1">(灰)第二步：探索Hyperledger Fabric网络</a></li>
+        
+            <li><a class="toctree-l4" href="#org1_1">(绿)第三步：自定义Org1的连接配置文件</a></li>
+        
+            <li><a class="toctree-l4" href="#org2_1">(紫)第四步：构建Org2的连接配置文件</a></li>
+        
+            <li><a class="toctree-l4" href="#org1hyperledger-fabric">(绿)第五步：找到Org1的Hyperledger Fabric管理员的证书和私钥</a></li>
+        
+            <li><a class="toctree-l4" href="#org2hyperledger-fabric">(紫)第六步：找到Org2的Hyperledger Fabric管理员的证书和私钥</a></li>
+        
+            <li><a class="toctree-l4" href="#org1hyperledger-fabric_1">(绿)第七步：为Org1的Hyperledger Fabric管理员创建业务网络卡片</a></li>
+        
+            <li><a class="toctree-l4" href="#org2hyperledger-fabric_1">(紫)第八步：为Org2的Hyperledger Fabric管理员创建业务网络卡片</a></li>
+        
+            <li><a class="toctree-l4" href="#org1hyperledger-fabric_2">(绿)第九步：为Org1的Hyperledger Fabric管理员导入商业网卡</a></li>
+        
+            <li><a class="toctree-l4" href="#org2hyperledger-fabric_2">(紫) 第十步：导入Org2的Hyperledger Fabric管理员的业务网络卡片</a></li>
+        
+            <li><a class="toctree-l4" href="#hyperledger-composerorg1hyperledger-fabric-peer">(绿)步骤十一：将Hyperledger Composer运行时安装到Org1的Hyperledger Fabric peer节点上</a></li>
+        
+            <li><a class="toctree-l4" href="#hyperledger-composerorg2hyperledger-fabric-peer">(紫)第十二步：将Hyperledger Composer运行时安装到Org2的Hyperledger Fabric peer节点上</a></li>
+        
+            <li><a class="toctree-l4" href="#_7">(灰)第十三步：确定业务网络的背书策略</a></li>
+        
+            <li><a class="toctree-l4" href="#_8">(灰)步骤十四：了解并选择业务网络管理员</a></li>
+        
+            <li><a class="toctree-l4" href="#org1_2">(绿)第十五步：获取Org1的业务网络管理员证书</a></li>
+        
+            <li><a class="toctree-l4" href="#org2_2">(紫)第十六步：检索Org2的业务网络管理员证书</a></li>
+        
+            <li><a class="toctree-l4" href="#_9">(绿)第十七步：启动业务网络</a></li>
+        
+            <li><a class="toctree-l4" href="#org1_3">(绿)步骤十八：创建一个业务网络卡片作为Org1访问业务网络</a></li>
+        
+            <li><a class="toctree-l4" href="#org2_3">(紫)第十九步：创建一个商业网卡作为Org2访问业务网络</a></li>
+        
+            <li><a class="toctree-l4" href="#_10">(灰)结论</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">使用Playground</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../playground_playground-index/">使用Playground</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../playground_id-cards-playground/">业务网络卡片</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">开发业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../business-network_business-network-index/">开发业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_businessnetworkdefinition/">业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-create/">创建一个业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-deploy/">部署业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_publishing-events/">发送事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_testing/">测试业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_bnd-publish/">发布模型或业务网络定义</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_query/">查询和过滤业务网络数据</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_programmatic-access-control/">可编程访问控制</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../business-network_historian/">Hyperledger Composer历史库</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">开发应用程序</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../applications_applications-index/">开发应用程序</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_node/">编写Node.js应用程序</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_web/">编写Web或移动应用</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../applications_subscribing-to-events/">订阅事件</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">集成现有系统</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../integrating_integrating-index/">集成现有系统</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_getting-started-rest-api/">生成REST API</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_publishing-events/">从REST服务器发布事件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-rest-authentication/">为REST服务器启用身份认证</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_enabling-multiuser/">为REST服务器启用多用户模式</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_securing-the-rest-server/">使用HTTPS和TLS来保护REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_deploying-the-rest-server/">为业务网络部署REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_node-red/">与Node-RED集成</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../integrating_call-out/">调用外部REST服务</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">管理已部署业务网络</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../managing_managingindex/">管理已部署业务网络</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participantsandidentities/">参与者和身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_participant-add/">增加参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_id-cards-playground/">创建、导出和导入业务网络卡片</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-issue/">向参与者发放新的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-bind/">将现有身份绑定到参与者</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-list/">列出业务网络中的所有身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_identity-revoke/">撤销参与者的身份</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../managing_updating-composer/">更新Hyperledger Composer运行时</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../problems_diagnostics/">诊断问题</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../reference-index/">参考</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_MeetTheModules/">Hyperledger Composer npm模块</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_cto_language/">建模语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_acl_language/">访问控制语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_query-language/">查询语言</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_model-compatibility/">模型兼容性</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_connectionprofile/">连接配置文件</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_js_scripts/">交易处理器函数</a>
+                </li>
+                <li class="">
+                    
+    <span class="caption-text">Hyperledger Composer命令行</span>
+    <ul class="subnav">
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference_commands/">Reference commands</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.archive.create/">Composer.archive.create</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.archive.list/">Composer.archive.list</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.card.create/">Composer.card.create</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.card.delete/">Composer.card.delete</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.card.export/">Composer.card.export</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.card.import/">Composer.card.import</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.card.list/">Composer.card.list</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.identity.bind/">Composer.identity.bind</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.identity.issue/">Composer.identity.issue</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.identity.list/">Composer.identity.list</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.identity.request/">Composer.identity.request</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.identity.revoke/">Composer.identity.revoke</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.deploy/">Composer.network.deploy</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.list/">Composer.network.list</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.logLevel/">composer.network.logLevel</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.ping/">Composer.network.ping</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.start/">Composer.network.start</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.undeploy/">Composer.network.undeploy</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.update/">Composer.network.update</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.network.upgrade/">Composer.network.upgrade</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.participant.add/">Composer.participant.add</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.runtime.install/">Composer.runtime.install</a>
+                </li>
+                <li class="toctree-l3">
+                    
+    <a class="" href="../reference/composer.transaction.submit/">Composer.transaction.submit</a>
+                </li>
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_rest-server/">Hyperledger Composer REST服务器</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../reference_glossary/">Hyperledger Composer术语</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API参考</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../api/api-doc-index/">API参考</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Hyperledger Composer中文文档</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>教程 &raquo;</li>
+        
+      
+    
+    <li>为多个组织部署Hyperledger Fabric(v0.17)</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/wbwangk/ComposerDocs/edit/master/docs/tutorials_deploy-to-fabric-multi-org-v0.17.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="hyperledger-composerhyperledger-fabric">将Hyperledger Composer区块链业务网络部署到Hyperledger Fabric（多个组织）<a class="headerlink" href="#hyperledger-composerhyperledger-fabric" title="Permanent link">&para;</a></h1>
+<p>本教程将演示多个组织方案中的管理员必须采取的步骤将区块链业务网络部署到Hyperledger Fabric实例，包括如何生成Hyperledger Composer配置。</p>
+<p>建议您首先阅读前面的教程，演示如何将区块链业务网络部署到单个组织的Hyperledger Fabric实例，因为它将更详细地解释一些概念。</p>
+<p>本教程将介绍如何部署区块链业务网络向Hyperledger Fabric网络跨越两个组织，<code>Org1</code>和<code>Org2</code>。本教程将以不同类型的步骤进行介绍，具体取决于哪个组织应遵循该步骤。</p>
+<p>第一步是两个组织遵循：</p>
+<h2 id="org1org2">(灰)示例步骤：遵循Org1和Org2的步骤<a class="headerlink" href="#org1org2" title="Permanent link">&para;</a></h2>
+<p>组织<code>Org1</code>由Alice代表，绿色：</p>
+<h2 id="org1">(绿)示例步骤：遵循Org1的步骤<a class="headerlink" href="#org1" title="Permanent link">&para;</a></h2>
+<p>组织<code>Org2</code>由Bob代表，紫色：</p>
+<h2 id="org2">(紫)示例步骤：Org2遵循的步骤<a class="headerlink" href="#org2" title="Permanent link">&para;</a></h2>
+<p>您可以自行执行这些步骤，或与朋友或同事配合，一起按照步骤操作。</p>
+<p>让我们开始吧！</p>
+<h2 id="_1">先决条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>如果您安装了开发环境，则需要先停止开发环境提供的Hyperledger Fabric：</p>
+<pre><code class="bash">cd ~/fabric-tools
+./stopFabric.sh
+./teardownFabric.sh
+</code></pre>
+
+<p>克隆下面的GitHub仓库：</p>
+<pre><code class="bash">git clone -b issue-6978 https://github.com/sstone1/fabric-samples.git
+</code></pre>
+
+<p>按照<a href="http://hyperledger-fabric.readthedocs.io/en/latest/build_network.html">构建您的第一个网络教程</a>，确保您使用上一步中克隆的GitHub存储库。您不能克隆和使用GitHub存储库的Hyperledger Fabric版本，因为它当前缺少本教程所需的更改。<strong>重要事项</strong>确保您使用的网址中有<code>latest</code>，以确保您使用Hyperledger Fabric1.1的预览</p>
+<h2 id="hyperledger-fabric">(灰)第一步：启动Hyperledger Fabric网络<a class="headerlink" href="#hyperledger-fabric" title="Permanent link">&para;</a></h2>
+<p>为了遵循本教程，您必须启动Hyperledger Fabric网络。</p>
+<p>本教程将假设您使用“Hyperledger Fabric <a href="http://hyperledger-fabric.readthedocs.io/en/latest/build_network.html">构建您的第一个网络”教程</a>中提供的Hyperledger Fabric网络。我们将把这个Hyperledger Fabric网络称为BYFN（建立你的第一个网络）网络。</p>
+<p>您现在可以启动BYFN网络。您必须指定在“构建您的第一个网络”教程中未指定的其他标志。这是因为我们希望将CouchDB用作世界状态数据库，并且我们希望为每个组织启动证书颁发机构（CA）。</p>
+<pre><code>./byfn.sh -m generate
+./byfn.sh -m up -s couchdb -a
+</code></pre>
+
+<p>如果命令成功，BYFN网络启动，您将看到以下输出：</p>
+<pre><code>========= All GOOD, BYFN execution completed ===========
+
+
+_____   _   _   ____
+| ____| | \ | | |  _ \
+|  _|   |  \| | | | | |
+| |___  | |\  | | |_| |
+|_____| |_| \_| |____/
+</code></pre>
+
+<p>接下来，删除您的钱包中可能存在的任何业务网络卡片。忽略任何表示无法找到业务网络卡片的错误是安全的：</p>
+<pre><code>composer card delete -n PeerAdmin@byfn-network-org1
+composer card delete -n PeerAdmin@byfn-network-org2
+composer card delete -n alice@tutorial-network
+composer card delete -n bob@tutorial-network
+composer card delete -n admin@tutorial-network
+composer card delete -n PeerAdmin@fabric-network
+</code></pre>
+
+<p>然而，任何其他类型的故障都可能表明您的卡存储中有来自旧版本的Hyperledger Composer的卡，您将不得不删除文件系统卡存储，如下所示</p>
+<pre><code>rm -fr ~/.composer
+</code></pre>
+
+<h2 id="hyperledger-fabric_1">(灰)第二步：探索Hyperledger Fabric网络<a class="headerlink" href="#hyperledger-fabric_1" title="Permanent link">&para;</a></h2>
+<p>这一步将探索BFYN网络配置和组件。需要配置详细信息才能完成后续步骤。</p>
+<h4 id="_2">组织<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>该BYFN网络由两个组织：<code>Org1</code>和<code>Org2</code>。组织<code>Org1</code>使用域名<code>org1.example.com</code>。 <code>Org1</code>的成员服务提供商（MSP）称为<code>Org1MSP</code>。组织<code>Org2</code>使用域名<code>org2.example.com</code>。<code>Org2</code>的MSP称为 <code>Org2MSP</code>。在本教程中，您将部署一个可以与组织<code>Org1</code>和<code>Org2</code>交互的区块链业务网络。</p>
+<h4 id="_3">网络组件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h4>
+<p>Hyperledger Fabric网络由多个组件组成：</p>
+<ul>
+<li>
+<p><code>Org1</code>的两个peer节点，名为<code>peer0.org1.example.com</code> 和<code>peer1.org1.example.com</code>  。
+  请求端口为<code>peer0</code>7051。<br />
+  事件集线器端口为<code>peer0</code>7053。
+  请求端口为<code>peer1</code>8051。
+  事件集线器端口为<code>peer1</code>8053。</p>
+</li>
+<li>
+<p>一个<code>Org1</code>的CA（证书颁发机构），名为<code>ca.org1.example.com</code>。
+  CA端口是7054。</p>
+</li>
+<li>
+<p>&lsquo;Org2<code>的两个peer节点</code> peer0.org2.example.com<code>和</code> peer1.org2.example.com<code>。
+  请求端口为</code>peer0<code>9051。
+  事件中心端口为</code>peer0<code>9053。
+  请求端口为</code>peer1<code>10051。
+  事件中心端口为</code>peer1`10053。</p>
+</li>
+<li>
+<p>一个<code>Org2</code>的CA（证书颁发机构），名为<code>ca.org2.example.com</code> 。
+  CA端口是8054。</p>
+</li>
+<li>
+<p>单个排序节点，名为<code>orderer.example.com</code> 。
+  排序端口是7050。</p>
+</li>
+</ul>
+<p>这些组件在Docker容器中运行。在Docker容器中运行Hyperledger Composer时，上面的名称（例如，<code>peer0.org1.example.com</code>）可用于与Hyperledger Fabric网络进行交互。</p>
+<p>本教程将在Docker主机上运行Hyperledger Composer命令，而不是从Docker网络内运行。这意味着Hyperledger Composer命令必须使用<code>localhost</code>主机名和暴露的容器端口与Hyperledger Fabric网络进行交互。</p>
+<p>所有网络组件都使用TLS来加密通信。您将需要所有网络组件的证书颁发机构（CA）证书才能连接到这些网络组件。CA证书可以在包含byfn.sh脚本的目录中找到。</p>
+<p>排序节点的CA证书：</p>
+<pre><code>crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt
+</code></pre>
+
+<p><code>Org1</code>的CA证书：</p>
+<pre><code>crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt
+</code></pre>
+
+<p><code>Org2</code>的CA证书：</p>
+<pre><code>crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt
+</code></pre>
+
+<p>稍后您将使用这些文件与Hyperledger Fabric网络进行交互。</p>
+<h4 id="_4">用户<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>组织<code>Org1</code>配置了一个名为的用户<code>Admin@org1.example.com</code>。此用户是管理员。</p>
+<p>用户<code>Admin@org1.example.com</code>有一组存储在目录中的证书和私钥文件：</p>
+<pre><code>crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+</code></pre>
+
+<p>组织<code>Org2</code>配置了一个名为的用户<code>Admin@org2.example.com</code>。此用户是管理员。</p>
+<p>用户<code>Admin@org2.example.com</code>有一组存储在目录中的证书和私钥文件：</p>
+<pre><code>crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+</code></pre>
+
+<p>稍后您将使用其中一些文件与Hyperledger Fabric网络进行交互。</p>
+<p>除了管理员，<code>Org1</code>和<code>Org2</code>的CA（证书颁发机构）的已经配置了默认用户。此默认用户的登记ID为 <code>admin</code>和登记密码为<code>adminpw</code>。但是，此用户无权部署区块链业务网络。</p>
+<h4 id="_5">通道<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>已经创建了一个名为<code>mychannel</code>的通道。这四个peer节点- ，<code>peer0.org1.example.com</code>，<code>peer1.org1.example.com</code>，<code>peer0.org2.example.com</code>和<code>peer1.org2.example.com</code>已经加入到这个通道。</p>
+<h4 id="_6">连接配置文件<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h4>
+<p>我们需要一个基础连接配置文件来描述这个结构网络，然后可以将它们给<code>alice</code>和<code>bob</code>，用来为其组织定制。</p>
+<pre><code class="json">{
+    &quot;name&quot;: &quot;hlfv1&quot;,
+    &quot;x-type&quot;: &quot;hlfv1&quot;,
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;channels&quot;: {
+        &quot;mychannel&quot;: {
+            &quot;orderers&quot;: [
+                &quot;orderer.example.com&quot;
+            ],
+            &quot;peers&quot;: {
+                &quot;peer0.org1.example.com&quot;: {
+                    &quot;endorsingPeer&quot;: true,
+                    &quot;chaincodeQuery&quot;: true,
+                    &quot;eventSource&quot;: true
+                },
+                &quot;peer1.org1.example.com&quot;: {
+                    &quot;endorsingPeer&quot;: true,
+                    &quot;chaincodeQuery&quot;: true,
+                    &quot;eventSource&quot;: true
+                },
+                &quot;peer0.org2.example.com&quot;: {
+                    &quot;endorsingPeer&quot;: true,
+                    &quot;chaincodeQuery&quot;: true,
+                    &quot;eventSource&quot;: true
+                },
+                &quot;peer0.org2.example.com&quot;: {
+                    &quot;endorsingPeer&quot;: true,
+                    &quot;chaincodeQuery&quot;: true,
+                    &quot;eventSource&quot;: true
+                }
+            }
+        }
+    },
+    &quot;organizations&quot;: {
+        &quot;Org1&quot;: {
+            &quot;mspid&quot;: &quot;Org1MSP&quot;,
+            &quot;peers&quot;: [
+                &quot;peer0.org1.example.com&quot;,
+                &quot;peer1.org1.example.com&quot;
+            ],
+            &quot;certificateAuthorities&quot;: [
+                &quot;ca.org1.example.com&quot;
+            ]
+        },
+        &quot;Org2&quot;: {
+            &quot;mspid&quot;: &quot;Org2MSP&quot;,
+            &quot;peers&quot;: [
+                &quot;peer0.org2.example.com&quot;,
+                &quot;peer1.org2.example.com&quot;
+            ],
+            &quot;certificateAuthorities&quot;: [
+                &quot;ca.org2.example.com&quot;
+            ]
+        }
+    },
+    &quot;orderers&quot;: {
+        &quot;orderer.example.com&quot;: {
+            &quot;url&quot;: &quot;grpcs://localhost:7050&quot;,
+            &quot;grpcOptions&quot;: {
+                &quot;ssl-target-name-override&quot;: &quot;orderer.example.com&quot;
+            },
+            &quot;tlsCACerts&quot;: {
+                &quot;pem&quot;: &quot;INSERT_ORDERER_CA_CERT&quot;
+            }
+        }
+    },
+    &quot;peers&quot;: {
+        &quot;peer0.org1.example.com&quot;: {
+            &quot;url&quot;: &quot;grpcs://localhost:7051&quot;,
+            &quot;eventUrl&quot;: &quot;grpcs://localhost:7053&quot;,
+            &quot;grpcOptions&quot;: {
+                &quot;ssl-target-name-override&quot;: &quot;peer0.org1.example.com&quot;
+            },
+            &quot;tlsCACerts&quot;: {
+                &quot;pem&quot;: &quot;INSERT_ORG1_CA_CERT&quot;
+            }
+        },
+        &quot;peer1.org1.example.com&quot;: {
+            &quot;url&quot;: &quot;grpcs://localhost:8051&quot;,
+            &quot;eventUrl&quot;: &quot;grpcs://localhost:8053&quot;,
+            &quot;grpcOptions&quot;: {
+                &quot;ssl-target-name-override&quot;: &quot;peer1.org1.example.com&quot;
+            },
+            &quot;tlsCACerts&quot;: {
+                &quot;pem&quot;: &quot;INSERT_ORG1_CA_CERT&quot;
+            }
+        },
+        &quot;peer0.org2.example.com&quot;: {
+            &quot;url&quot;: &quot;grpcs://localhost:9051&quot;,
+            &quot;eventUrl&quot;: &quot;grpcs://localhost:9053&quot;,
+            &quot;grpcOptions&quot;: {
+                &quot;ssl-target-name-override&quot;: &quot;peer0.org2.example.com&quot;
+            },
+            &quot;tlsCACerts&quot;: {
+                &quot;pem&quot;: &quot;INSERT_ORG2_CA_CERT&quot;
+            }
+        },
+        &quot;peer0.org1.example.com&quot;: {
+            &quot;url&quot;: &quot;grpcs://localhost:10051&quot;,
+            &quot;eventUrl&quot;: &quot;grpcs://localhost:10053&quot;,
+            &quot;grpcOptions&quot;: {
+                &quot;ssl-target-name-override&quot;: &quot;peer1.org2.example.com&quot;
+            },
+            &quot;tlsCACerts&quot;: {
+                &quot;pem&quot;: &quot;INSERT_ORG2_CA_CERT&quot;
+            }
+        }
+    },
+    &quot;certificateAuthorities&quot;: {
+        &quot;ca.org1.example.com&quot;: {
+            &quot;url&quot;: &quot;https://localhost:7054&quot;,
+            &quot;caName&quot;: &quot;ca-org1&quot;
+        },
+        &quot;ca.org2.example.com&quot;: {
+            &quot;url&quot;: &quot;https://localhost:8054&quot;,
+            &quot;caName&quot;: &quot;ca-org2&quot;
+        }
+    }
+}
+
+</code></pre>
+
+<p>在使用证书时，建议创建一个临时工作目录来创建Composer连接配置文件：</p>
+<pre><code>mkdir -p /tmp/composer/org1
+mkdir -p /tmp/composer/org2
+</code></pre>
+
+<p>您需要将文本的所有<code>INSERT_ORG1_CA_CERT</code>实例替换为peer节点的CA证书，以便<code>Org1</code>：使用以下命令将pem文件转换为可以嵌入上述连接配置文件中的文件。</p>
+<pre><code>awk 'NF {sub(/\r/, &quot;&quot;); printf &quot;%s\\n&quot;,$0;}' crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt &gt; /tmp/composer/org1/ca-org1.txt
+</code></pre>
+
+<p>复制文件<code>/tmp/ca-org1.txt</code>的内容并替换文本<code>INSERT_ORG1_CA_CERT</code>。现在应该看起来像这样</p>
+<pre><code>&quot;pem&quot;: &quot;-----BEGIN CERTIFICATE-----\nMIICNTCCAdygAwIBAgIRAMNvmQpnXi7uM19BLdha3MwwCgYIKoZIzj0EAwIwbDEL\nMAkGA1UEBhMCVVMxEzARBgNVBAgTCkNhbGlmb3JuaWExFjAUBgNVBAcTDVNhbiBG\ncmFuY2lzY28xFDASBgNVBAoTC2V4YW1wbGUuY29tMRowGAYDVQQDExF0bHNjYS5l\neGFtcGxlLmNvbTAeFw0xNzA2MjYxMjQ5MjZaFw0yNzA2MjQxMjQ5MjZaMGwxCzAJ\nBgNVBAYTAlVTMRMwEQYDVQQIEwpDYWxpZm9ybmlhMRYwFAYDVQQHEw1TYW4gRnJh\nbmNpc2NvMRQwEgYDVQQKEwtleGFtcGxlLmNvbTEaMBgGA1UEAxMRdGxzY2EuZXhh\nbXBsZS5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASJn3QUVcKCp+s6lSPE\nP5KlWmE9rEG0kpECsAfW28vZQSIg2Ez+Tp1alA9SYN/5BtL1N6lUUoVhG3lz8uvi\n8zhro18wXTAOBgNVHQ8BAf8EBAMCAaYwDwYDVR0lBAgwBgYEVR0lADAPBgNVHRMB\nAf8EBTADAQH/MCkGA1UdDgQiBCB7ULYTq3+BQqnzwae1RsnwQgJv/HQ5+je2xcDr\nka4MHTAKBggqhkjOPQQDAgNHADBEAiB2hLiS8B1g4J5Qbxu15dVWAZTAXX9xPAvm\n4l25e1oS+gIgBiU/aBwSxY0uambwMB6xtQz0ZE/D4lyTZZcW9SODlOE=\n-----END CERTIFICATE-----\n&quot;
+</code></pre>
+
+<p>您需要将文本的所有实例替换<code>INSERT_ORG2_CA_CERT</code>为peer节点的CA证书，以便<code>Org2</code>：使用以下命令将pem文件转换为可以嵌入上述连接配置文件中的文件。</p>
+<pre><code>awk 'NF {sub(/\r/, &quot;&quot;); printf &quot;%s\\n&quot;,$0;}' crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt &gt; /tmp/composer/org2/ca-org2.txt
+</code></pre>
+
+<p>复制文件<code>/tmp/ca-org2.txt</code>的内容并替换文本<code>INSERT_ORG2_CA_CERT</code>。</p>
+<p>您需要将文本的所有实例替换<code>INSERT_ORDERER_CA_CERT</code>为排序节点的CA证书：使用以下命令将pem文件转换为可以嵌入到上述连接配置文件中的文件。</p>
+<pre><code>awk 'NF {sub(/\r/, &quot;&quot;); printf &quot;%s\\n&quot;,$0;}' crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt &gt; /tmp/composer/ca-orderer.txt
+</code></pre>
+
+<p>复制文件<code>/tmp/ca-orderer.txt</code>的内容并替换文本<code>INSERT_ORDERER_CA_CERT</code>。</p>
+<p>完成后，将该文件另存为<code>connection-network.json</code>。</p>
+<p>运行以下命令为Org1和Org2创建连接配置文件：</p>
+<pre><code>cd /tmp/composer
+cp connection-network.json ./org1/connection-org1.json
+cp connection-network.json ./org2/connection-org2.json
+</code></pre>
+
+<p>此连接配置文件现在描述了Fabric网络设置，所有peer、排序节点和证书颁发机构都是网络的一部分，它定义了参与网络的所有组织，还定义了此网络上的通道。Hyperledger Composer只能与单个通道交互，因此只能定义一个通道。</p>
+<h2 id="org1_1">(绿)第三步：自定义Org1的连接配置文件<a class="headerlink" href="#org1_1" title="Permanent link">&para;</a></h2>
+<p>这是一个为<code>alice</code>所属组织配置的例子，配置在client部分并使用了定制的超时，因此将以下内容添加到上述连接配置文件<code>connection-network.json</code>中的<code>version</code>属性之后和<code>channel</code>属性之前，并将其保存为<code>connection-org1.json</code>。</p>
+<pre><code class="json">    &quot;client&quot;: {
+        &quot;organization&quot;: &quot;Org1&quot;,
+        &quot;connection&quot;: {
+            &quot;timeout&quot;: {
+                &quot;peer&quot;: {
+                    &quot;endorser&quot;: &quot;300&quot;,
+                    &quot;eventHub&quot;: &quot;300&quot;,
+                    &quot;eventReg&quot;: &quot;300&quot;
+                },
+                &quot;orderer&quot;: &quot;300&quot;
+            }
+        }
+    },
+</code></pre>
+
+<p>所以配置文件的这部分应该看起来像</p>
+<pre><code class="json">    ...
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;client&quot;: {
+        &quot;organization&quot;: &quot;Org1&quot;,
+        &quot;connection&quot;: {
+            &quot;timeout&quot;: {
+                &quot;peer&quot;: {
+                    &quot;endorser&quot;: &quot;300&quot;,
+                    &quot;eventHub&quot;: &quot;300&quot;,
+                    &quot;eventReg&quot;: &quot;300&quot;
+                },
+                &quot;orderer&quot;: &quot;300&quot;
+            }
+        }
+    },
+    &quot;channel&quot;: {
+    ...
+</code></pre>
+
+<h2 id="org2_1">(紫)第四步：构建Org2的连接配置文件<a class="headerlink" href="#org2_1" title="Permanent link">&para;</a></h2>
+<p>为<code>bob</code>重复相同的过程，但这次指定组织为<code>Org2</code>并保存文件<code>connection-org2.json</code>，它应该有一个类似的部分</p>
+<pre><code class="json">    ...
+    &quot;version&quot;: &quot;1.0.0&quot;,
+    &quot;client&quot;: {
+        &quot;organization&quot;: &quot;Org2&quot;,
+        &quot;connection&quot;: {
+            &quot;timeout&quot;: {
+                &quot;peer&quot;: {
+                    &quot;endorser&quot;: &quot;300&quot;,
+                    &quot;eventHub&quot;: &quot;300&quot;,
+                    &quot;eventReg&quot;: &quot;300&quot;
+                },
+                &quot;orderer&quot;: &quot;300&quot;
+            }
+        }
+    },
+    &quot;channel&quot;: {
+    ...
+</code></pre>
+
+<h2 id="org1hyperledger-fabric">(绿)第五步：找到Org1的Hyperledger Fabric管理员的证书和私钥<a class="headerlink" href="#org1hyperledger-fabric" title="Permanent link">&para;</a></h2>
+<p>我们的Hyperledger Fabric网络的管理员是一名用户<code>Admin@org1.example.com</code>。该用户的证书和私钥文件存储在以下目录中：</p>
+<pre><code>crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp
+</code></pre>
+
+<p>您必须首先找到该用户的证书文件。证书是身份的公共部分。证书文件可以在<code>signcerts</code>子目录中找到，名称是<code>Admin@org1.example.com-cert.pem</code>。</p>
+<p>接下来，您必须找到该用户的私钥文件。私钥用于以这种身份对交易进行签名。私钥文件可以在<code>keystore</code>子目录中找到。私钥文件的名称是一个很长的以<code>_sk</code>为后缀的十六进制字符串，例如<code>78f2139bfcfc0edc7ada0801650ed785a11cfcdef3f9c36f3c8ca2ebfa00a59c_sk</code>。每次生成配置名称都会更改。</p>
+<p>记住这两个文件的路径，或将它们复制到与<code>connection-org1.json</code>在第三步中创建的连接配置文件相同的目录中。您将在接下来的步骤中需要这些文件。</p>
+<h2 id="org2hyperledger-fabric">(紫)第六步：找到Org2的Hyperledger Fabric管理员的证书和私钥<a class="headerlink" href="#org2hyperledger-fabric" title="Permanent link">&para;</a></h2>
+<p>我们的Hyperledger Fabric网络的管理员是一名用户<code>Admin@org2.example.com</code>。该用户的证书和私钥文件存储在以下目录中：</p>
+<pre><code>crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp
+</code></pre>
+
+<p>您必须首先找到该用户的证书文件。证书是身份的公共部分。证书文件可以在<code>signcerts</code>子目录中找到，名称是<code>Admin@org2.example.com-cert.pem</code>。</p>
+<p>接下来，您必须找到该用户的私钥文件。私钥用于以这种身份对交易进行签名。私钥文件可以在<code>keystore</code>子目录中找到。私钥文件的名称是一个很长的的<code>_sk</code>为后缀的十六进制字符串，例如<code>d4889cb2a32e167bf7aeced872a214673ee5976b63a94a6a4e61c135ca2f2dbb_sk</code>。每次生成配置名称都会更改。</p>
+<p>请记住这两个文件的路径，或将它们复制到与<code>connection-org2.json</code>您在步骤4中创建的连接配置文件相同的目录中。您将在接下来的步骤中需要这些文件。</p>
+<h2 id="org1hyperledger-fabric_1">(绿)第七步：为Org1的Hyperledger Fabric管理员创建业务网络卡片<a class="headerlink" href="#org1hyperledger-fabric_1" title="Permanent link">&para;</a></h2>
+<p>在这一步中，您将创建业务网络卡片供管理员用来将区块链业务网络部署到Hyperledger Fabric网络。</p>
+<p>运行<code>composer card create</code>命令以使用<code>Org1</code>的连接置文件创建业务网络卡片。您必须指定所有三个文件的路径，您可以在之前的步骤中创建或找到它们（注意：<em>sk</em>文件将有所不同）。</p>
+<pre><code>composer card create -p connection-org1.json -u PeerAdmin -c Admin@org1.example.com-cert.pem -k 78f2139bfcfc0edc7ada0801650ed785a11cfcdef3f9c36f3c8ca2ebfa00a59c_sk -r PeerAdmin -r ChannelAdmin
+</code></pre>
+
+<p>如果该命令成功，则将一个叫<code>PeerAdmin@byfn-network-org1.card</code>的业务网络卡片文件写入当前目录。</p>
+<h2 id="org2hyperledger-fabric_1">(紫)第八步：为Org2的Hyperledger Fabric管理员创建业务网络卡片<a class="headerlink" href="#org2hyperledger-fabric_1" title="Permanent link">&para;</a></h2>
+<p>在这一步中，您将创建业务网络卡片供管理员用来将区块链业务网络部署到Hyperledger Fabric网络。</p>
+<p>运行<code>composer card create</code>命令以使用连接配置文件为<code>Org2</code>创建业务网络卡片。您必须指定您在以前的步骤中创建或找到的所有三个文件的路径：</p>
+<pre><code>composer card create -p connection-org2.json -u PeerAdmin -c Admin@org2.example.com-cert.pem -k d4889cb2a32e167bf7aeced872a214673ee5976b63a94a6a4e61c135ca2f2dbb_sk -r PeerAdmin -r ChannelAdmin
+</code></pre>
+
+<p>如果该命令成功，则将一个叫<code>PeerAdmin@byfn-network-org2.card</code>的业务网络卡片文件写入当前目录。</p>
+<h2 id="org1hyperledger-fabric_2">(绿)第九步：为Org1的Hyperledger Fabric管理员导入商业网卡<a class="headerlink" href="#org1hyperledger-fabric_2" title="Permanent link">&para;</a></h2>
+<p>运行<code>composer card import</code>命令将<code>Org1</code>的业务网络卡片导入钱包：</p>
+<pre><code>composer card import -f PeerAdmin@byfn-network-org1.card --name PeerAdmin@byfn-network-org1
+</code></pre>
+
+<p>如果命令成功，一个名为<code>PeerAdmin@byfn-network-org1</code>的业务网络卡片将被导入钱包。</p>
+<h2 id="org2hyperledger-fabric_2">(紫) 第十步：导入Org2的Hyperledger Fabric管理员的业务网络卡片<a class="headerlink" href="#org2hyperledger-fabric_2" title="Permanent link">&para;</a></h2>
+<p>运行<code>composer card import</code>命令将<code>Org2</code>的业务网络卡片导入钱包：</p>
+<pre><code>composer card import -f PeerAdmin@byfn-network-org2.card --name PeerAdmin@byfn-network-org2
+</code></pre>
+
+<p>如果命令成功，一个名为<code>PeerAdmin@byfn-network-org2</code>的业务网络卡片将被导入钱包。</p>
+<h2 id="hyperledger-composerorg1hyperledger-fabric-peer">(绿)步骤十一：将Hyperledger Composer运行时安装到Org1的Hyperledger Fabric peer节点上<a class="headerlink" href="#hyperledger-composerorg1hyperledger-fabric-peer" title="Permanent link">&para;</a></h2>
+<p>运行以下<code>composer runtime install</code>命令将Hyperledger Composer运行时安装到您在步骤三中创建的连接配置文件中指定的<code>Org1</code>的所有Hyperledger Fabric peer节点上：</p>
+<pre><code>composer runtime install -c PeerAdmin@byfn-network-org1 -n tutorial-network
+</code></pre>
+
+<h2 id="hyperledger-composerorg2hyperledger-fabric-peer">(紫)第十二步：将Hyperledger Composer运行时安装到Org2的Hyperledger Fabric peer节点上<a class="headerlink" href="#hyperledger-composerorg2hyperledger-fabric-peer" title="Permanent link">&para;</a></h2>
+<p>运行以下<code>composer runtime install</code>命令，将Hyperledger Composer运行时安装到您在步骤4中创建的连接配置文件中指定的<code>Org2</code>的所有Hyperledger Fabric peer节点上：</p>
+<pre><code>composer runtime install -c PeerAdmin@byfn-network-org2 -n tutorial-network
+</code></pre>
+
+<h2 id="_7">(灰)第十三步：确定业务网络的背书策略<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>正在运行的业务网络有一个背书策略，该策略定义了组织必须支持的交易的规则，然后才能将其交付给区块链。默认情况下，业务网络部署的背书政策规定只有一个组织必须先签署交易，然后才能将其交付给区块链。</p>
+<p>在现实世界的区块链业务网络中，多个组织希望交易在提交到区块链前先经过他们背书，所以默认的背书策略是不合适的。相反，您可以在启动业务网络时指定自定义的背书策略。</p>
+<p>你可以在Hyperledger Fabric文档<a href="https://hyperledger-fabric.readthedocs.io/en/release/endorsement-policies.html">背书策略</a>中找到背书策略的详细信息。</p>
+<blockquote>
+<p>请注意，用于业务网络的背书策略必须采用Hyperledger Fabric Node.js SDK使用的JSON格式。这与Hyperledger Fabric CLI使用的简单背书策略格式有所不同，您可以在Hyperledger Fabric文档中看到这种格式。</p>
+</blockquote>
+<p>使用以下内容创建一个叫<code>endorsement-policy.json</code>的背书策略文件，并将其保存到磁盘。你将在后面的步骤中使用这个文件，所以记住你的位置！</p>
+<pre><code class="json">{
+    &quot;identities&quot;: [
+        {
+            &quot;role&quot;: {
+                &quot;name&quot;: &quot;member&quot;,
+                &quot;mspId&quot;: &quot;Org1MSP&quot;
+            }
+        },
+        {
+            &quot;role&quot;: {
+                &quot;name&quot;: &quot;member&quot;,
+                &quot;mspId&quot;: &quot;Org2MSP&quot;
+            }
+        }
+    ],
+    &quot;policy&quot;: {
+        &quot;2-of&quot;: [
+            {
+                &quot;signed-by&quot;: 0
+            },
+            {
+                &quot;signed-by&quot;: 1
+            }
+        ]
+    }
+}
+</code></pre>
+
+<p>您刚刚创建的背书策略指出，在提交到区块链之前，<code>Org1</code>和<code>Org2</code>必须先对交易背书。如果<code>Org1</code>或<code>Org2</code>不对交易背书，或对交易结果不同意，交易将被业务网络拒绝。</p>
+<h2 id="_8">(灰)步骤十四：了解并选择业务网络管理员<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p>业务网络启动时，业务网络必须配置一组初始参与者。这些参与者将负责引导业务网络，并将其他参与者引入业务网络。在Hyperledger Composer中，我们将这些初始参与者称为业务网络管理员。</p>
+<p>在我们的业务网络中，组织<code>Org1</code>和<code>Org2</code>拥有平等的权利。每个组织将为业务网络提供一个业务网络管理员，这些业务网络管理员将加载其组织中的其他参与者。<code>Org1</code>的业务网络管理员将是Alice，而<code>Org2</code>的业务网络管理员将是Bob。</p>
+<p>在启动业务网络时，必须将所有业务网络管理员的证书（身份的公共部分）传递给执行命令的组织以启动业务网络。业务网络启动后，所有业务网络管理员都可以使用自己的身份与业务网络进行交互。</p>
+<p>您可以在<a href="https://hyperledger.github.io/composer/next/business-network/bnd-deploy.html">部署业务网络中</a>找到有关业务网络管理员的更多信息。</p>
+<h2 id="org1_2">(绿)第十五步：获取Org1的业务网络管理员证书<a class="headerlink" href="#org1_2" title="Permanent link">&para;</a></h2>
+<p>运行<code>composer identity request</code>命令以获取Alice的业务网络管理员的证书，用于<code>Org1</code>：</p>
+<pre><code>composer identity request -c PeerAdmin@byfn-network-org1 -u admin -s adminpw -d alice
+</code></pre>
+
+<p>命令选项<code>-u admin</code>的<code>-s adminpw</code>要与Hyperledger Fabric CA（证书颁发机构）注册的默认用户相对应。</p>
+<p>证书将被放置在当前工作目录中叫<code>alice</code>的目录中。有三个证书文件创建，但只有两个是重要的。它们是<code>admin-pub.pem</code>证书（包括公钥）和<code>admin-priv.pem</code>私钥。只有<code>admin-pub.pem</code>文件适合与其他组织共享。<code>admin-priv.pem</code>文件必须保密，因为它可以代表签发机构用于签署交易。</p>
+<h2 id="org2_2">(紫)第十六步：检索Org2的业务网络管理员证书<a class="headerlink" href="#org2_2" title="Permanent link">&para;</a></h2>
+<p>运行<code>composer identity request</code>命令以获取Bob的业务网络管理员证书，用于<code>Org2</code>：</p>
+<pre><code>composer identity request -c PeerAdmin@byfn-network-org2 -u admin -s adminpw -d bob
+</code></pre>
+
+<p>命令选项<code>-u admin</code>的<code>-s adminpw</code>要与Hyperledger Fabric CA（证书颁发机构）注册的默认用户相对应。</p>
+<p>certficates将被放置在当前工作目录叫<code>bob</code>的目录中。有三个证书文件创建，但只有两个是重要的。它们是<code>admin-pub.pem</code>证书（包括公钥）和<code>admin-priv.pem</code>私钥。只有<code>admin-pub.pem</code>文件适合与其他组织共享。<code>admin-priv.pem</code>文件必须保密，因为它可以代表签发机构用于签署交易。</p>
+<h2 id="_9">(绿)第十七步：启动业务网络<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h2>
+<p>运行<code>composer network start</code>命令启动业务网络。只<code>Org1</code>需要执行这个操作。此命令使用<code>endorsement-policy.json</code>第十三步创建的<code>admin-pub.pem</code>文件以及Alice和Bob在步骤十五和十六中创建的文件，因此您必须确保所有这些文件都可以通过此命令访问：</p>
+<pre><code>composer network start -c PeerAdmin@byfn-network-org1 -a tutorial-network@0.0.1.bna -o endorsementPolicyFile=endorsement-policy.json -A alice -C alice/admin-pub.pem -A bob -C bob/admin-pub.pem
+</code></pre>
+
+<p>一旦这个命令完成，业务网络将被启动。Alice和Bob都可以访问业务网络，开始建立业务网络，并从其各自的组织中加载其他参与者。但是，Alice和Bob都必须使用他们在前面的步骤中创建的证书创建新的业务网络卡片，以便他们可以访问业务网络。</p>
+<h2 id="org1_3">(绿)步骤十八：创建一个业务网络卡片作为Org1访问业务网络<a class="headerlink" href="#org1_3" title="Permanent link">&para;</a></h2>
+<p>运行<code>composer card create</code>命令创建 <code>Org1</code>的业务网络管理员Alice用来访问业务网络的业务网络卡片：</p>
+<pre><code>composer card create -p connection-org1.json -u alice -n tutorial-network -c alice/admin-pub.pem -k alice/admin-priv.pem
+</code></pre>
+
+<p>运行<code>composer card import</code>命令导入刚创建的业务网络卡片：</p>
+<pre><code>composer card import -f alice@tutorial-network.card
+</code></pre>
+
+<p>运行<code>composer network ping</code>命令测试与区块链业务网络的连接：</p>
+<pre><code>composer network ping -c alice@tutorial-network
+</code></pre>
+
+<p>如果命令成功完成，则应在命令的输出中看到完全限定的参与者标识符<code>org.hyperledger.composer.system.NetworkAdmin#alice</code>。现在，您可以使用此业务网络卡片与区块链业务网络进行交互，并与组织中的其他参与者进行交互。</p>
+<h2 id="org2_3">(紫)第十九步：创建一个商业网卡作为Org2访问业务网络<a class="headerlink" href="#org2_3" title="Permanent link">&para;</a></h2>
+<p>运行<code>composer card create</code>命令创建<code>Org2</code>的业务网络管理员Bob 用来访问业务网络的业务网络卡片：</p>
+<pre><code>composer card create -p connection-org2.json -u bob -n tutorial-network -c bob/admin-pub.pem -k bob/admin-priv.pem
+</code></pre>
+
+<p>运行<code>composer card import</code>命令导入刚创建的业务网络卡片：</p>
+<pre><code>composer card import -f bob@tutorial-network.card
+</code></pre>
+
+<p>运行<code>composer network ping</code>命令测试与区块链业务网络的连接：</p>
+<pre><code>composer network ping -c bob@tutorial-network
+</code></pre>
+
+<p>如果命令成功完成，则应在命令的输出中看到完全限定的参与者标识符<code>org.hyperledger.composer.system.NetworkAdmin#bob</code>。现在，您可以使用此业务网络卡片与区块链业务网络进行交互，并与组织中的其他参与者进行交互。</p>
+<h2 id="_10">(灰)结论<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h2>
+<p>在本教程中，您已经看到了如何配置Hyperledger Composer所需的所有信息，以连接到跨多个组织的Hyperledger Fabric网络，以及如何部署跨Hyperledger Fabric网络中所有组织的区块链业务网络。</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../playground_playground-index/" class="btn btn-neutral float-right" title="使用Playground">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../tutorials_deploy-to-fabric-multi-org/" class="btn btn-neutral" title="为多个组织部署Hyperledger Fabric"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>wbwangk(wbwang@inspur.com)</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/wbwangk/ComposerDocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../tutorials_deploy-to-fabric-multi-org/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../playground_playground-index/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>
