@@ -94,26 +94,26 @@ rm -fr ~/.composer
 
 Hyperledger Fabric网络由多个组件组成：
 
-- `Org1`的两个peer节点，名为`peer0.org1.example.com` 和`peer1.org1.example.com`  。
+- `Org1`的两个peer节点，名为`peer0.org1.example.com` 和`peer1.org1.example.com`。  
   请求端口为`peer0`7051。  
-  事件集线器端口为`peer0`7053。
-  请求端口为`peer1`8051。
-  事件集线器端口为`peer1`8053。
+  事件集线器端口为`peer0`7053。  
+  请求端口为`peer1`8051。  
+  事件集线器端口为`peer1`8053。  
 
-- 一个`Org1`的CA（证书颁发机构），名为`ca.org1.example.com`。
-  CA端口是7054。
+- 一个`Org1`的CA（证书颁发机构），名为`ca.org1.example.com`。  
+  CA端口是7054。  
 
-- 'Org2`的两个peer节点` peer0.org2.example.com`和` peer1.org2.example.com`。
-  请求端口为`peer0`9051。
-  事件中心端口为`peer0`9053。
-  请求端口为`peer1`10051。
-  事件中心端口为`peer1`10053。
+- 'Org2`的两个peer节点` peer0.org2.example.com`和` peer1.org2.example.com`。   
+  请求端口为`peer0`9051。   
+  事件中心端口为`peer0`9053。   
+  请求端口为`peer1`10051。  
+  事件中心端口为`peer1`10053。  
 
-- 一个`Org2`的CA（证书颁发机构），名为`ca.org2.example.com` 。
-  CA端口是8054。
+- 一个`Org2`的CA（证书颁发机构），名为`ca.org2.example.com`。  
+  CA端口是8054。  
 
-- 单个排序节点，名为`orderer.example.com` 。
-  排序端口是7050。
+- 单个排序节点，名为`orderer.example.com`。  
+  排序端口是7050。  
 
 这些组件在Docker容器中运行。在Docker容器中运行Hyperledger Composer时，上面的名称（例如，`peer0.org1.example.com`）可用于与Hyperledger Fabric网络进行交互。
 
