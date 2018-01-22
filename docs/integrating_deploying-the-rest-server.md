@@ -79,7 +79,7 @@ docker build -t myorg/my-composer-rest-server .
    如果此命令成功完成，则会创建一个新的名为`myorg/my-composer-rest-server`的Docker镜像，并将其存储在系统的本地Docker镜像库中。如果你想在其他主机上使用这个Docker镜像，你可能需要将Docker镜像推送到Docker镜像库，如Docker Hub。
 
 4.REST服务器的Docker映像是使用环境变量而不是命令行选项配置的。创建一个名为`envvars.txt`的新文件，为REST服务器存储环境变量，其中包含以下内容：
-   ```bash
+```bash
    COMPOSER_CARD=admin@my-network
    COMPOSER_NAMESPACES=never
    COMPOSER_AUTHENTICATION=true
@@ -103,7 +103,7 @@ docker build -t myorg/my-composer-rest-server .
            "host": "mongo"
        }
    }'
-   ```
+```
 
    请注意，发现业务网络卡片的名称`admin@my-network`已被设置为`COMPOSER_CARD`环境变量的值。我们已经通过环境变量`never`的值来禁用生成的REST API中的命名空间`COMPOSER_NAMESPACES`。我们通过设置环境变量`COMPOSER_AUTHENTICATION`的值为`true`来启用REST API客户端身份认证，并通过设置环境变量`COMPOSER_MULTIUSER`的值为`true`来启用多用户模式。
 
@@ -112,9 +112,9 @@ docker build -t myorg/my-composer-rest-server .
    我们通过在`COMPOSER_DATASOURCES`环境变量中配置MongoDB的LoopBack连接器来让REST服务器使用MongoDB实例。请注意，MongoDB实例的主机名`mongo`被指定名为`db`的LoopBack数据源的`host`属性值。
 
    通过运行以下命令将环境变量加载到当前shell中：
-   ```bash
+```bash
    source envvars.txt
-   ```
+```
 
    如果你打开一个新的shell，例如一个新的终端窗口或标签，那么你必须再次运行相同的`source`命令，把环境变量加载到新的shell中。
 
@@ -122,7 +122,7 @@ docker build -t myorg/my-composer-rest-server .
 
 5.通过运行以下`docker run`命令，为步骤3中创建的REST服务器的扩展Docker镜像启动新实例：
 
-   ```bash
+```bash
    docker run \
        -d \
        -e COMPOSER_CARD=${COMPOSER_CARD} \
@@ -136,7 +136,7 @@ docker build -t myorg/my-composer-rest-server .
        --network composer_default \
        -p 3000:3000 \
        myorg/my-composer-rest-server
-   ```
+```
 
    请注意，我们通过使用多个`-e`选项传入前面步骤中设置的所有环境变量。如果你需要添加或删除其他环境变量来配置REST服务器，则需要添加或删除相应的`-e`选项。
 
@@ -145,9 +145,9 @@ docker build -t myorg/my-composer-rest-server .
    我们还指定了Docker网络名称`composer_default`和Docker容器的名称`rest`。这意味在`composer_default`Docker网络上，可以使用主机名`rest`访问REST服务器实例。REST服务器端口`3000`也使用端口`3000`暴露在主机网络上。
 
    你可以使用`docker logs`命令检查REST服务器是否已成功启动，例如：
-   ```bash
+```bash
    docker logs -f rest
-   ```
+```
 
    如果REST服务器已经成功启动，那么你将看到它输出的日志消息类似于`Browse your REST API at http://localhost:3000/explorer`。
 
