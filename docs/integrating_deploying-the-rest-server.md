@@ -49,16 +49,16 @@ docker build -t myorg/my-composer-rest-server .
 这些例子基于作为开发者教程的一部分部署到Hyperledger Fabric v1.0的业务网络，可能需要调整你的配置，例如，如果Docker网络名称不匹配。
 
 1.通过运行以下`composer network ping`命令，确保你的业务网络的有效业务网络卡片位于本地业务网络卡片存储中。这个例子在业务网络`my-network`上，使用了用户`admin`的业务网络卡片：
-   ```bash
+```bash
    composer network ping -c admin@my-network
-   ```
+```
 
    请注意，在继续之前，你**必须**使用`composer network ping`命令来测试与业务网络的连接。如果业务网络卡片只包含了用户ID和登记密码，则`composer network ping`命令会触发登记过程，并将证书存储在业务网络卡片中。以Docker镜像方式运行REST服务器时，**不**建议使用只有一个用户ID和登记密码的业务网络卡片。
 
 2.启动一个名为`mongo`的MongoDB Docker实例。这个MongoDB实例被REST服务器用来保存被认证用户和他们钱包（当多个用户模式被启用时会包含多个用户业务网络卡片）的所有信息。
-   ```bash
+```bash
    docker run -d --name mongo --network composer_default -p 27017:27017 mongo
-   ```
+```
 
    请注意，MongoDB实例已连接到名为`composer_default`的Docker网络。这意味着在Docker网络`composer_default`中可以使用主机名`mongo`来访问MongoDB实例。在随后的步骤我们将使用主机名`mongo`来配置REST服务器。根据你的Docker网络配置，你可能需要指定不同的Docker网络名称。MongoDB端口`27017`也使用端口`27017`暴露在主机网络上，因此如果需要，你也可以使用其他MongoDB客户端应用与此MongoDB实例进行交互。
 
@@ -69,12 +69,12 @@ docker build -t myorg/my-composer-rest-server .
    RUN npm install --production loopback-connector-mongodb passport-github && \
        npm cache clean --force && \
        ln -s node_modules .node_modules
-   ```
+```
 
    在包含新建的`Dockerfile`文件的目录中运行以下的`docker build`命令来构建扩展的Docker镜像：
-   ```bash
+```bash
    docker build -t myorg/my-composer-rest-server .
-   ```
+```
 
    如果此命令成功完成，则会创建一个新的名为`myorg/my-composer-rest-server`的Docker镜像，并将其存储在系统的本地Docker镜像库中。如果你想在其他主机上使用这个Docker镜像，你可能需要将Docker镜像推送到Docker镜像库，如Docker Hub。
 
