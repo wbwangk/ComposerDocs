@@ -238,5 +238,5 @@ participant Buyer extends Person {
 
 下面的例子获取附加到一个类声明的myField属性的foo装饰器的第三个参数：
 ```
-const val = myField.getDecorator('foo').getArgu
+const val = myField.getDecorator('foo').getArguments()[2];
 ```
