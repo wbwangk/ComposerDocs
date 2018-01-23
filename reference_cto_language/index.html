@@ -727,7 +727,7 @@ participant Buyer extends Person {
 <h2 id="api">装饰器API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h2>
 <p>装饰器可以通过ModelManager的introspect API在运行时访问。这允许外部工具和实用程序使用Composer建模语言（Composer Modeling Language，CTO）文件格式来描述核心模型，同时使用足够的元数据为自己的目的进行装饰。</p>
 <p>下面的例子获取附加到一个类声明的myField属性的foo装饰器的第三个参数：</p>
-<pre><code>const val = myField.getDecorator('foo').getArgu
+<pre><code>const val = myField.getDecorator('foo').getArguments()[2];
 </code></pre>
               
             </div>
